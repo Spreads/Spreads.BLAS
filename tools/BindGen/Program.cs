@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using CppSharp;
 using CppSharp.AST;
 using CppSharp.Generators;
@@ -12,11 +13,19 @@ namespace BindGen
     {
         public static void Main(string[] args)
         {
-            ConsoleDriver.Run(new OpenBlasLibrary());
-            ConsoleDriver.Run(new MklLibrary());
+            HiLevelGen();
+            // ConsoleDriver.Run(new OpenBlasLibrary());
+            // ConsoleDriver.Run(new MklLibrary());
+        }
+
+        private static void HiLevelGen()
+        {
+            var obt = typeof(Spreads.Native.OpenBLAS);
+            var methods = obt.GetMethods(BindingFlags.Static);
         }
     }
 
+    
     public class MklLibrary : ILibrary
     {
         public void Preprocess(Driver driver, ASTContext ctx)

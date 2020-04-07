@@ -28,191 +28,191 @@ namespace Spreads.Native
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Get_Version")]
-        internal static extern void MKL_GetVersion(global::System.IntPtr ver);
+        public static extern void MKL_GetVersion(global::System.IntPtr ver);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Get_Version_String")]
-        internal static extern void MKL_GetVersionString(sbyte* buffer, int len);
+        public static extern void MKL_GetVersionString(sbyte* buffer, int len);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Free_Buffers")]
-        internal static extern void MKL_FreeBuffers();
+        public static extern void MKL_FreeBuffers();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Thread_Free_Buffers")]
-        internal static extern void MKL_ThreadFreeBuffers();
+        public static extern void MKL_ThreadFreeBuffers();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Mem_Stat")]
-        internal static extern long MKL_MemStat(int* nbuffers);
+        public static extern long MKL_MemStat(int* nbuffers);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Peak_Mem_Usage")]
-        internal static extern long MKL_PeakMemUsage(int reset);
+        public static extern long MKL_PeakMemUsage(int reset);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_malloc")]
-        internal static extern global::System.IntPtr MKL_malloc(ulong size, int align);
+        public static extern global::System.IntPtr MKL_malloc(ulong size, int align);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_calloc")]
-        internal static extern global::System.IntPtr MKL_calloc(ulong num, ulong size, int align);
+        public static extern global::System.IntPtr MKL_calloc(ulong num, ulong size, int align);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_realloc")]
-        internal static extern global::System.IntPtr MKL_realloc(global::System.IntPtr ptr, ulong size);
+        public static extern global::System.IntPtr MKL_realloc(global::System.IntPtr ptr, ulong size);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_free")]
-        internal static extern void MKL_free(global::System.IntPtr ptr);
+        public static extern void MKL_free(global::System.IntPtr ptr);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Disable_Fast_MM")]
-        internal static extern int MKL_DisableFastMM();
+        public static extern int MKL_DisableFastMM();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Get_Cpu_Clocks")]
-        internal static extern void MKL_GetCpuClocks(ulong* _0);
+        public static extern void MKL_GetCpuClocks(ulong* _0);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Get_Cpu_Frequency")]
-        internal static extern double MKL_GetCpuFrequency();
+        public static extern double MKL_GetCpuFrequency();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Get_Max_Cpu_Frequency")]
-        internal static extern double MKL_GetMaxCpuFrequency();
+        public static extern double MKL_GetMaxCpuFrequency();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Get_Clocks_Frequency")]
-        internal static extern double MKL_GetClocksFrequency();
+        public static extern double MKL_GetClocksFrequency();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Set_Num_Threads_Local")]
-        internal static extern int MKL_SetNumThreadsLocal(int nth);
+        public static extern int MKL_SetNumThreadsLocal(int nth);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Set_Num_Threads")]
-        internal static extern void MKL_SetNumThreads(int nth);
+        public static extern void MKL_SetNumThreads(int nth);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Get_Max_Threads")]
-        internal static extern int MKL_GetMaxThreads();
+        public static extern int MKL_GetMaxThreads();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Set_Num_Stripes")]
-        internal static extern void MKL_SetNumStripes(int nstripes);
+        public static extern void MKL_SetNumStripes(int nstripes);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Get_Num_Stripes")]
-        internal static extern int MKL_GetNumStripes();
+        public static extern int MKL_GetNumStripes();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Domain_Set_Num_Threads")]
-        internal static extern int MKL_DomainSetNumThreads(int nth, int MKL_DOMAIN);
+        public static extern int MKL_DomainSetNumThreads(int nth, int MKL_DOMAIN);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Domain_Get_Max_Threads")]
-        internal static extern int MKL_DomainGetMaxThreads(int MKL_DOMAIN);
+        public static extern int MKL_DomainGetMaxThreads(int MKL_DOMAIN);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Set_Dynamic")]
-        internal static extern void MKL_SetDynamic(int bool_MKL_DYNAMIC);
+        public static extern void MKL_SetDynamic(int bool_MKL_DYNAMIC);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Get_Dynamic")]
-        internal static extern int MKL_GetDynamic();
+        public static extern int MKL_GetDynamic();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Enable_Instructions")]
-        internal static extern int MKL_EnableInstructions(int _0);
+        public static extern int MKL_EnableInstructions(int _0);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Set_Interface_Layer")]
-        internal static extern int MKL_SetInterfaceLayer(int code);
+        public static extern int MKL_SetInterfaceLayer(int code);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Set_Threading_Layer")]
-        internal static extern int MKL_SetThreadingLayer(int code);
+        public static extern int MKL_SetThreadingLayer(int code);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "mkl_set_xerbla")]
-        internal static extern global::System.IntPtr MklSetXerbla(global::System.IntPtr xerbla);
+        public static extern global::System.IntPtr MklSetXerbla(global::System.IntPtr xerbla);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "mkl_set_progress")]
-        internal static extern global::System.IntPtr MklSetProgress(global::System.IntPtr progress);
+        public static extern global::System.IntPtr MklSetProgress(global::System.IntPtr progress);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_CBWR_Get")]
-        internal static extern int MKL_CBWR_Get(int _0);
+        public static extern int MKL_CBWR_Get(int _0);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_CBWR_Set")]
-        internal static extern int MKL_CBWR_Set(int _0);
+        public static extern int MKL_CBWR_Set(int _0);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_CBWR_Get_Auto_Branch")]
-        internal static extern int MKL_CBWR_GetAutoBranch();
+        public static extern int MKL_CBWR_GetAutoBranch();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Set_Env_Mode")]
-        internal static extern int MKL_SetEnvMode(int _0);
+        public static extern int MKL_SetEnvMode(int _0);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Verbose")]
-        internal static extern int MKL_Verbose(int _0);
+        public static extern int MKL_Verbose(int _0);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Verbose_Output_File")]
-        internal static extern int MKL_VerboseOutputFile(sbyte* _0);
+        public static extern int MKL_VerboseOutputFile(sbyte* _0);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Set_Exit_Handler")]
-        internal static extern void MKL_SetExitHandler(global::System.IntPtr h);
+        public static extern void MKL_SetExitHandler(global::System.IntPtr h);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Set_Memory_Limit")]
-        internal static extern int MKL_SetMemoryLimit(int mem_type, ulong limit);
+        public static extern int MKL_SetMemoryLimit(int mem_type, ulong limit);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Finalize")]
-        internal static extern void MKL_Finalize();
+        public static extern void MKL_Finalize();
     }
 }

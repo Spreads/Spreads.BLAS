@@ -6,11 +6,12 @@ using System.Runtime.InteropServices;
 
 namespace Spreads
 {
-    public static unsafe partial class BLAS
+    public static partial class BLAS
     {
-        public static bool IsOpenBLASSupported = Native.OpenBLAS.IsSupoprted;
+        public static readonly bool IsMKLSupported = Native.MKL.IsSupoprted;
         
-        public static bool IsMKLSupported = Native.MKL.IsSupoprted;
+        
+        
         
         public enum LAYOUT
         {

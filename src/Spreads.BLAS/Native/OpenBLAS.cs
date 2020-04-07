@@ -27,36 +27,36 @@ namespace Spreads.Native
         [SuppressUnmanagedCodeSecurity]
         [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "openblas_set_num_threads")]
-        internal static extern void OpenblasSetNumThreads(int num_threads);
+        public static extern void OpenblasSetNumThreads(int num_threads);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "goto_set_num_threads")]
-        internal static extern void GotoSetNumThreads(int num_threads);
+        public static extern void GotoSetNumThreads(int num_threads);
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "openblas_get_num_threads")]
-        internal static extern int OpenblasGetNumThreads();
+        public static extern int OpenblasGetNumThreads();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "openblas_get_num_procs")]
-        internal static extern int OpenblasGetNumProcs();
+        public static extern int OpenblasGetNumProcs();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "openblas_get_config")]
-        internal static extern sbyte* OpenblasGetConfig();
+        public static extern sbyte* OpenblasGetConfig();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "openblas_get_corename")]
-        internal static extern sbyte* OpenblasGetCorename();
+        public static extern sbyte* OpenblasGetCorename();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
             EntryPoint = "openblas_get_parallel")]
-        internal static extern int OpenblasGetParallel();
+        public static extern int OpenblasGetParallel();
     }
 }
