@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  spreads.blas.tests.run:
+    image: ${DOCKER_REGISTRY}spreadsblastestsrun
+    build:
+      context: .
+      dockerfile: ../Spreads.BLAS.Tests.Run/Dockerfile
+    volumes:
+      - G:/localdata/tmp/TestData:/TestData
+    pid: "host"
