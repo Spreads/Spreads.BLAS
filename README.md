@@ -18,7 +18,7 @@ and the binaries should be in native libraries search path for the bindings to w
 
 MKL is free (as in beer, it's not OSS) for a long time, but it's redistribution is bulky (on Windows, NuGet compressed package is 173 MB 
 and uncompressed binaries size is 481 MB) and downloads from Intel web site require stupid registration
-(and they do spam with marketing bullshit afterward even if you uncheck the boxes). Also, MKL
+(and they do spam with marketing bullshit afterwards even if you uncheck the boxes). Also, MKL
 could be slower on AMD processors because Intel artificially de-optimizes MKL on non-Intel hardware
 even if it is capable of running the very optimized code. Therefore, usage of MKL is discouraged
 unless BLAS routines are the main bottleneck in your application. And in that case, MKL should be 
@@ -78,12 +78,22 @@ Potentially (but unlikely soon) we could add additional native bindings, but the
 
 Documentation for [CBLAS](https://www.netlib.org/blas/#_blas_routines) and [LAPACKE](https://www.netlib.org/lapack/lapacke.html). 
 
+## Status
+
+Low-level native API and OpenBLAS binaries are in [NuGet package](https://www.nuget.org/packages/Spreads.BLAS) and ready to use.
+
+High-level API is a proof of concept for S/Dgemm. No .NET intrinsics yet.
+
+Full and clean native API without any wrappers is the main value proposition of this library and should be stable going forward.
+Full high-level API is impossible to implement manually, it just requires boilerplate & copy-paste for 100s of functions,
+which is not a good use of time even during quarantine. If you have an idea for codegen solution please share it in a new issue here.   
+
 ## Building
 
 Bindings are generated using [CppSharp](https://github.com/mono/CppSharp) and then manually copied to appropriate places in the static classes.
 
 Binaries for OpenBLAS are not committed and could be taken from [conda-forge distribution](https://anaconda.org/conda-forge/libopenblas/files)
-(Fortran runtime and OpenMP dependencies must be included from dependent conda packages, as well as C runtime for Windows must be present).
+(Fortran runtime and OpenMP dependencies must be included from relevant conda packages, as well as C runtime for Windows must be present).
 
 The first version of Spreads.BLAS has binaries from conda-forge because they just work.
 
