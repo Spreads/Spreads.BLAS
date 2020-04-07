@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>latest</LangVersion>
+    <RootNamespace>Spreads.Tests.Run</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup>

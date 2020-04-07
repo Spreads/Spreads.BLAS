@@ -1,39 +1,45 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using NumSharp;
 using NUnit.Framework;
 using Spreads.Native;
 
+// ReSharper disable InconsistentNaming
 // ReSharper disable HeapView.BoxingAllocation
 
-namespace Spreads.BLAS.Tests
+namespace Spreads.Tests
 {
+    [Category("CI")]
     [TestFixture]
     public class OpenBLASTests
     {
         [Test]
         public void OpenBlasCallsWork()
         {
-            Assert.AreEqual(Environment.ProcessorCount, Native.OpenBLAS.CBLAS.OpenblasGetNumThreads());
+            Assert.AreEqual(Environment.ProcessorCount, OpenBLAS.OpenblasGetNumThreads());
             var threads = Math.Min(Environment.ProcessorCount, 3);
-            Native.OpenBLAS.CBLAS.OpenblasSetNumThreads(threads);
-            Assert.AreEqual(threads, Native.OpenBLAS.CBLAS.OpenblasGetNumThreads());
-            Assert.AreEqual(Environment.ProcessorCount, Native.OpenBLAS.CBLAS.OpenblasGetNumProcs());
+            OpenBLAS.OpenblasSetNumThreads(threads);
+            Assert.AreEqual(threads, OpenBLAS.OpenblasGetNumThreads());
+            Assert.AreEqual(Environment.ProcessorCount, OpenBLAS.OpenblasGetNumProcs());
         }
 
-        [Test]
+        [Test, Explicit("depends on MKL")]
         public void MklCallsWork()
         {
-            Assert.IsTrue(MKL.MKL_GetMaxThreads() == Environment.ProcessorCount || MKL.MKL_GetMaxThreads() == Environment.ProcessorCount / 2);
-            // var threads = Math.Min(Environment.ProcessorCount, 3);
-            // OpenBLAS.CBLAS.OpenblasSetNumThreads(threads);
-            // Assert.AreEqual(threads, OpenBLAS.CBLAS.OpenblasGetNumThreads());
-            // Assert.AreEqual(Environment.ProcessorCount, OpenBLAS.CBLAS.OpenblasGetNumProcs());
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Assert.IsTrue(MKL.MKL_GetMaxThreads() == Environment.ProcessorCount || MKL.MKL_GetMaxThreads() == Environment.ProcessorCount / 2);
+            }
+            else
+            {
+                Assert.Inconclusive();
+            }
         }
 
-        [Test]
+        [Test, Explicit("Bench")]
         public unsafe void SgemmBenchmark()
         {
-            var sizes = new[] { 2, 3, 5, 7, 10, 20, 30, 40,}; // 
+            var sizes = new[] {2, 3, 5, 7, 10, 20, 30, 40,}; // 
             foreach (var mnk in sizes)
             {
                 var count = 100;
@@ -45,11 +51,11 @@ namespace Spreads.BLAS.Tests
                     x[i] = (i + 1);
                 }
 
-                Native.OpenBLAS.CBLAS.OpenblasSetNumThreads(1);
+                OpenBLAS.OpenblasSetNumThreads(1);
                 MKL.MKL_SetThreadingLayer(1);
                 MathNet.Numerics.Control.UseSingleThread();
                 var nd = np.arange(mnk * mnk).reshape(mnk, mnk);
-                
+
                 var h = x.AsMemory().Pin();
                 var c = new float[mnk * mnk];
                 var hc = c.AsMemory().Pin();
@@ -63,16 +69,16 @@ namespace Spreads.BLAS.Tests
                     {
                         for (int i = 0; i < count; i++)
                         {
-                            Native.OpenBLAS.CBLAS.CblasSgemm(Native.OpenBLAS.CBLAS_ORDER.CblasRowMajor, Native.OpenBLAS.CBLAS_TRANSPOSE.CblasNoTrans, Native.OpenBLAS.CBLAS_TRANSPOSE.CblasNoTrans,
+                            OpenBLAS.CBLAS.Sgemm(BLAS.LAYOUT.RowMajor, BLAS.TRANSPOSE.NoTrans, BLAS.TRANSPOSE.NoTrans,
                                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
                         }
                     }
-                    
+
                     using (Benchmark.Run($"MKL_Sgemm_{mnk}", count * 2L * mnk * mnk * mnk))
                     {
                         for (int i = 0; i < count; i++)
                         {
-                            MKL.CblasSgemm(MKL.CBLAS_LAYOUT.CblasRowMajor, MKL.CBLAS_TRANSPOSE.CblasNoTrans, MKL.CBLAS_TRANSPOSE.CblasNoTrans,
+                            MKL.CBLAS.Sgemm(BLAS.LAYOUT.RowMajor, BLAS.TRANSPOSE.NoTrans, BLAS.TRANSPOSE.NoTrans,
                                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
                         }
                     }
@@ -85,17 +91,16 @@ namespace Spreads.BLAS.Tests
                             mdnX.Multiply(mdnX, mdnC);
                         }
                     }
-                    
+
                     GC.Collect(2, GCCollectionMode.Forced);
                     using (Benchmark.Run($"N#_Sgemm_{mnk}", (count / 50) * 2L * mnk * mnk * mnk))
                     {
                         for (int i = 0; i < count / 50; i++)
                         {
-                            
                             np.matmul(nd, nd);
                         }
                     }
-                    
+
                     GC.Collect(2, GCCollectionMode.Forced);
                 }
             }

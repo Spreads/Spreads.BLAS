@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace Spreads.BLAS.Tests
+namespace Spreads.Tests
 {
     public static class TestUtils
     {

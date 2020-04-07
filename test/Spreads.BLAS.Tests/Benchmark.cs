@@ -10,7 +10,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
-namespace Spreads.BLAS.Tests
+namespace Spreads.Tests
 {
     // TODO median for Dump() MOPS
 

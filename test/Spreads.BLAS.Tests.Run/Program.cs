@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Spreads.BLAS.Tests.Run
+namespace Spreads.Tests.Run
 {
     internal class ConsoleListener : TraceListener
     {
@@ -20,13 +20,12 @@ namespace Spreads.BLAS.Tests.Run
     {
         private static unsafe void Main(string[] args)
         {
-            var test = new Spreads.BLAS.Tests.OpenBLASTests();
+            var test = new Spreads.Tests.OpenBLASTests();
             test.SgemmBenchmark();
-            Console.WriteLine("Done");
+            
+            Console.WriteLine();
+            Console.WriteLine("Finished, press enter to exit...");
             Console.ReadLine();
         }
     }
-
-
-   
 }

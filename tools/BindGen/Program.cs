@@ -154,7 +154,7 @@ namespace BindGen
 
         public override Type CSharpSignatureType(TypePrinterContext ctx)
         {
-            return new CustomType("Spreads.BLAS.ComplexFloat");
+            return new CustomType("Spreads.ComplexFloat");
         }
     }
 
@@ -168,7 +168,7 @@ namespace BindGen
 
         public override Type CSharpSignatureType(TypePrinterContext ctx)
         {
-            return new CustomType("Spreads.BLAS.ComplexDouble");
+            return new CustomType("Spreads.ComplexDouble");
         }
     }
 

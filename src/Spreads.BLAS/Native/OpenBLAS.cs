@@ -1,6 +1,13 @@
-﻿namespace Spreads.Native
+﻿// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+using System.Runtime.InteropServices;
+using System.Security;
+
+namespace Spreads.Native
 {
-    public static partial class OpenBLAS
+    public static unsafe partial class OpenBLAS
     {
         public static readonly bool IsSupoprted = Init();
 
@@ -8,7 +15,7 @@
         {
             try
             {
-                return CBLAS.OpenblasGetNumProcs() > 0;
+                return OpenblasGetNumProcs() > 0;
             }
             catch
             {
@@ -17,36 +24,39 @@
             return false;
         }
 
-        public enum CBLAS_ORDER
-        {
-            CblasRowMajor = 101,
-            CblasColMajor = 102
-        }
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "openblas_set_num_threads")]
+        internal static extern void OpenblasSetNumThreads(int num_threads);
 
-        public enum CBLAS_TRANSPOSE
-        {
-            CblasNoTrans = 111,
-            CblasTrans = 112,
-            CblasConjTrans = 113,
-            CblasConjNoTrans = 114
-        }
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "goto_set_num_threads")]
+        internal static extern void GotoSetNumThreads(int num_threads);
 
-        public enum CBLAS_UPLO
-        {
-            CblasUpper = 121,
-            CblasLower = 122
-        }
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "openblas_get_num_threads")]
+        internal static extern int OpenblasGetNumThreads();
 
-        public enum CBLAS_DIAG
-        {
-            CblasNonUnit = 131,
-            CblasUnit = 132
-        }
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "openblas_get_num_procs")]
+        internal static extern int OpenblasGetNumProcs();
 
-        public enum CBLAS_SIDE
-        {
-            CblasLeft = 141,
-            CblasRight = 142
-        }
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "openblas_get_config")]
+        internal static extern sbyte* OpenblasGetConfig();
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "openblas_get_corename")]
+        internal static extern sbyte* OpenblasGetCorename();
+
+        [SuppressUnmanagedCodeSecurity]
+        [DllImport("openblas", CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "openblas_get_parallel")]
+        internal static extern int OpenblasGetParallel();
     }
 }
