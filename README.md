@@ -1,12 +1,8 @@
-|   Linux    |  Windows   |     Mac    |
-|:----------:|:----------:|:----------:|
-|   [![Build Status](https://dev.azure.com/DataSpreads/Spreads/_apis/build/status/Spreads.Spreads.Native?branchName=master&jobName=Linux)](https://dev.azure.com/DataSpreads/Spreads/_build/latest?definitionId=7&branchName=master)    |  [![Build Status](https://dev.azure.com/DataSpreads/Spreads/_apis/build/status/Spreads.Spreads.Native?branchName=master&jobName=Windows)](https://dev.azure.com/DataSpreads/Spreads/_build/latest?definitionId=7&branchName=master)    | [![Build Status](https://dev.azure.com/DataSpreads/Spreads/_apis/build/status/Spreads.Spreads.Native?branchName=master&jobName=Mac)](https://dev.azure.com/DataSpreads/Spreads/_build/latest?definitionId=7&branchName=master)  |
-
 # Spreads.BLAS
 
 This library contains CBLAS and LAPACKE API bindings to OpenBLAS and MKL and OpenBLAS binaries 
-for Windows, Linux and MacOS. Additionally, it has select BLAS routines implemented
-using .NET intrinsics (operations with scalars and 1-dimensional vector math).
+for Windows, Linux and MacOS included in it's [NuGet package](https://www.nuget.org/packages/Spreads.BLAS).
+Additionally, it has select BLAS routines implemented using .NET intrinsics (operations with scalars and 1-dimensional vector math).
 
 [OpenBLAS](https://github.com/xianyi/OpenBLAS) (OB) binaries have reasonable size and included in this library's NuGet package for Windows, Linux and MacOS.
 OB has performance very close to MKL, especially for large matrices. It is a good default, because 
