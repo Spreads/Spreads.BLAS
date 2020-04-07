@@ -17,7 +17,7 @@ jobs:
       version: '3.1.x'
       packageType: sdk
 
-  - script: dotnet test test/Spreads.BLAS.Tests.NuGet/Spreads.BLAS.Tests.NuGet.csproj -f netcoreapp3.0 -c Release -v m
+  - script: dotnet test test/Spreads.BLAS.Tests.NuGet/Spreads.BLAS.Tests.NuGet.csproj -f netcoreapp3.0 -c Release --filter TestCategory=CI -v m
     displayName: 'Test netcoreapp3.0'
 
 - job: Linux
@@ -31,7 +31,7 @@ jobs:
       version: '3.1.x'
       packageType: sdk
 
-  - script: dotnet test test/Spreads.BLAS.Tests.NuGet/Spreads.BLAS.Tests.NuGet.csproj -f netcoreapp3.0 -c Release -v m
+  - script: dotnet test test/Spreads.BLAS.Tests.NuGet/Spreads.BLAS.Tests.NuGet.csproj -f netcoreapp3.0 -c Release --filter TestCategory=CI -v m
     displayName: 'Test netcoreapp3.0'
 
 - job: Windows
@@ -45,5 +45,5 @@ jobs:
       version: '3.1.x'
       packageType: sdk
 
-  - script: dotnet test test/Spreads.BLAS.Tests.NuGet/Spreads.BLAS.Tests.NuGet.csproj -f netcoreapp3.0 -c Release -v m
+  - script: dotnet test test/Spreads.BLAS.Tests.NuGet/Spreads.BLAS.Tests.NuGet.csproj -f netcoreapp3.0 -c Release --filter TestCategory=CI -v m
     displayName: 'Test netcoreapp3.0'
