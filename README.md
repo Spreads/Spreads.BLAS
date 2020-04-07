@@ -1,3 +1,8 @@
+
+|   Linux    |  Windows   |     Mac    |
+|:----------:|:----------:|:----------:|
+|  [![Build Status](https://dev.azure.com/DataSpreads/Spreads/_apis/build/status/Spreads.Spreads.BLAS?branchName=master&jobName=Linux)](https://dev.azure.com/DataSpreads/Spreads/_build/latest?definitionId=10&branchName=master)    |  [![Build Status](https://dev.azure.com/DataSpreads/Spreads/_apis/build/status/Spreads.Spreads.BLAS?branchName=master&jobName=Windows)](https://dev.azure.com/DataSpreads/Spreads/_build/latest?definitionId=10&branchName=master)   |  [![Build Status](https://dev.azure.com/DataSpreads/Spreads/_apis/build/status/Spreads.Spreads.BLAS?branchName=master&jobName=Mac)](https://dev.azure.com/DataSpreads/Spreads/_build/latest?definitionId=10&branchName=master) |
+
 # Spreads.BLAS
 
 This library contains CBLAS and LAPACKE API bindings to OpenBLAS and MKL and OpenBLAS binaries 
