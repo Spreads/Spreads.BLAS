@@ -14,11 +14,6 @@ namespace Spreads.Native
         {
             [SuppressUnmanagedCodeSecurity]
             [DllImport("openblas", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-                EntryPoint = "lapack_make_complex_double")]
-            public static extern void LapackMakeComplexDouble(global::System.IntPtr @return, double re, double im);
-
-            [SuppressUnmanagedCodeSecurity]
-            [DllImport("openblas", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
                 EntryPoint = "LAPACKE_sbdsdc")]
             public static extern int Sbdsdc(BLAS.LAYOUT matrixLayout, sbyte uplo, sbyte compq, int n, float* d, float* e, float* u, int ldu, float* vt, int ldvt, float* q,
                 int* iq);

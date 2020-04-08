@@ -8,7 +8,7 @@
 This library contains CBLAS and LAPACKE API bindings to OpenBLAS and MKL and OpenBLAS binaries 
 for Windows, Linux and MacOS included in it's [NuGet package](https://www.nuget.org/packages/Spreads.BLAS).
 
-[OpenBLAS](https://github.com/xianyi/OpenBLAS) (OB) binaries have reasonable size and included in this library's NuGet package for Windows, Linux and MacOS.
+[OpenBLAS](https://github.com/xianyi/OpenBLAS) (OB) binaries have reasonable size and are included in this library's NuGet package for Windows, Linux and MacOS.
 OB has performance very close to MKL, especially for large matrices. It is a good default, because 
 more often the main question is whether to use an optimized library or use a managed one. The existing
 .NET libraries are just too slow and it makes no sense to avoid small OB dependency as default.
@@ -22,8 +22,8 @@ and the binaries should be in native libraries search path for the bindings to w
 
 MKL is free (as in beer, it's not OSS) for a long time, but it's redistribution is bulky (on Windows, NuGet compressed package is 173 MB 
 and uncompressed binaries size is 481 MB) and downloads from Intel web site require stupid registration
-(and they do spam with marketing bullshit afterwards even if you had unchecked the boxes and then unsubscribed after the first email). Also, MKL
-could be slower on AMD processors because Intel artificially de-optimizes MKL on non-Intel hardware
+(and they do spam with marketing bullshit afterwards even if you had unchecked the boxes and then unsubscribed after the first email). 
+Also, MKL could be slower on AMD processors because Intel artificially de-optimizes MKL on non-Intel hardware
 even if it is capable of running the very optimized code. Therefore, usage of MKL is discouraged
 unless BLAS routines are the main bottleneck in your application. And in that case, MKL should be 
 added as the very last step after profiling and confirming the bottleneck.
@@ -62,8 +62,8 @@ public static void Sgemm(...params)
 The parent classes expose their specific service methods, e.g. `OpenBLAS.OpenblasSetNumThreads` or `MKL.MKL_SetThreadingLayer`.
 
 There is a setting `Spreads.Native.BLASSettings.UseMKLIfAvailable: bool` that could be set to false, 
-in which case `MKL.IsSupported` will be false, but only if the setting is set before calling
-any method from MKL (including `IsSupported` property itself, after it is accessed and initialized 
+in which case `MKL.IsSupported` will be false even when MKL is present, but only if the setting is set before calling
+any method from this library (including `IsSupported` property itself, after it is accessed and initialized 
 it becomes a constant). Despite comments on MKL above, `UseMKLIfAvailable` is set to true because 
 usually its presence on the system already indicates the user preference. Disabling MKL using this 
 setting could be useful for benchmarking a final application (and to delete MKL after that if 

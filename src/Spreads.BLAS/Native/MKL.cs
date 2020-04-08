@@ -20,6 +20,7 @@ namespace Spreads.Native
             }
             catch
             {
+                // ignored
             }
 
             return false;
@@ -54,31 +55,6 @@ namespace Spreads.Native
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
             EntryPoint = "MKL_Peak_Mem_Usage")]
         public static extern long MKL_PeakMemUsage(int reset);
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-            EntryPoint = "MKL_malloc")]
-        public static extern global::System.IntPtr MKL_malloc(ulong size, int align);
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-            EntryPoint = "MKL_calloc")]
-        public static extern global::System.IntPtr MKL_calloc(ulong num, ulong size, int align);
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-            EntryPoint = "MKL_realloc")]
-        public static extern global::System.IntPtr MKL_realloc(global::System.IntPtr ptr, ulong size);
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-            EntryPoint = "MKL_free")]
-        public static extern void MKL_free(global::System.IntPtr ptr);
-
-        [SuppressUnmanagedCodeSecurity]
-        [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
-            EntryPoint = "MKL_Disable_Fast_MM")]
-        public static extern int MKL_DisableFastMM();
 
         [SuppressUnmanagedCodeSecurity]
         [DllImport("mkl_rt", CallingConvention = global::System.Runtime.InteropServices.CallingConvention.Cdecl,
