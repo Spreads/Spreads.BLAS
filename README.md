@@ -7,7 +7,6 @@
 
 This library contains CBLAS and LAPACKE API bindings to OpenBLAS and MKL and OpenBLAS binaries 
 for Windows, Linux and MacOS included in it's [NuGet package](https://www.nuget.org/packages/Spreads.BLAS).
-Additionally, it has select BLAS routines implemented using .NET intrinsics (operations with scalars and 1-dimensional vector math).
 
 [OpenBLAS](https://github.com/xianyi/OpenBLAS) (OB) binaries have reasonable size and included in this library's NuGet package for Windows, Linux and MacOS.
 OB has performance very close to MKL, especially for large matrices. It is a good default, because 
@@ -23,13 +22,13 @@ and the binaries should be in native libraries search path for the bindings to w
 
 MKL is free (as in beer, it's not OSS) for a long time, but it's redistribution is bulky (on Windows, NuGet compressed package is 173 MB 
 and uncompressed binaries size is 481 MB) and downloads from Intel web site require stupid registration
-(and they do spam with marketing bullshit afterwards even if you uncheck the boxes). Also, MKL
+(and they do spam with marketing bullshit afterwards even if you had unchecked the boxes and then unsubscribed after the first email). Also, MKL
 could be slower on AMD processors because Intel artificially de-optimizes MKL on non-Intel hardware
 even if it is capable of running the very optimized code. Therefore, usage of MKL is discouraged
 unless BLAS routines are the main bottleneck in your application. And in that case, MKL should be 
 added as the very last step after profiling and confirming the bottleneck.
 
-## Low-level usage
+## Low-level native API
 
 The native bindings are generated using CppSharp and exposed directly (non-wrapped P/Invokes calls).
 
@@ -43,7 +42,7 @@ true for OpenBLAS (otherwise NuGet packaging is not working correctly, please re
 
 The usage might be:
 
-```
+```csharp
 public static void Sgemm(...params)
     if(Spreads.Native.MKL.IsSupported)
     {
@@ -59,6 +58,7 @@ public static void Sgemm(...params)
     throw new NotSupportedException();
 ```    
 
+
 The parent classes expose their specific service methods, e.g. `OpenBLAS.OpenblasSetNumThreads` or `MKL.MKL_SetThreadingLayer`.
 
 There is a setting `Spreads.Native.BLASSettings.UseMKLIfAvailable: bool` that could be set to false, 
@@ -69,29 +69,66 @@ usually its presence on the system already indicates the user preference. Disabl
 setting could be useful for benchmarking a final application (and to delete MKL after that if 
 it is not substantially better for a particular case).
 
-## High-level usage
+## Higher-level API
 
-A static class `Spreads.BLAS` exposes unified interfaces that are implemented exactly like in the low-level usage example above.
+A static class `Spreads.BLAS` exposes a unified API with methods implemented exactly like in the low-level usage example above. E.g.
+
+```csharp
+public static void Saxpby(int n, float alpha, float* x, int incX, float beta, float* y, int incY)
+{
+    if (MKL.IsSupoprted)
+    {
+        MKL.CBLAS.Saxpby(n, alpha, x, incX, beta, y, incY);
+        return;
+    }
+
+    OpenBLAS.CBLAS.Saxpby(n, alpha, x, incX, beta, y, incY);
+}
+
+```
+
+Such API hides selection of native libraries and allows to add new native bindings or alternative implementation without changing code.
+E.g. some BLAS routines may be implemented using .NET intrinsics in the future.
+This could remove native calls overheads for small-dimension operations with scalars and 1-dimensional vector math.
+
 Instead of using `Spreads.Native.OpenBLAS.CBLAS.XXX` or `Spreads.Native.MKL.CBLAS.XXX` you could use `Spreads.BLAS.CBLAS.XXX` 
-(same with `Spreads.BLAS.LAPACKE`). In some cases (operations with scalars and 1-dimensional vector math) we use .NET Intrinsics
-directly.
+(same with `Spreads.BLAS.LAPACKE`). It is convenient to import `Spreads.BLAS` statically because that allows to remove `BLAS.` 
+prefix in many places.
 
-Potentially (but unlikely soon) we could add additional native bindings, but the high-level usage should remain unchanged.
 
-> Initially there are just a couple of high-level APIs. Until there is some codegen 
-> solution found every API is implemented manually only when needed. PRs are welcome!
+```csharp
+using static Spreads.BLAS; // allows to remove all BLAS. prefixes
+
+namespace Spreads.Tests
+{
+    public class HigherLevelUsage
+    {
+        public static unsafe void Sample()
+        {
+            BlasNumThreads = 1;
+
+            var mnk = 2;
+            var x = new float[mnk * mnk];
+            var c = new float[mnk * mnk];
+
+            for (int i = 0; i < mnk * mnk; i++)
+            {
+                x[i] = (i + 1);
+            }
+
+            fixed (float* xP = &x[0])
+            fixed (float* cP = &c[0])
+            {
+                CBLAS.Sgemm(LAYOUT.RowMajor, TRANSPOSE.NoTrans, TRANSPOSE.NoTrans,
+                    mnk, mnk, mnk, alpha: 1f, xP, mnk, xP, mnk, beta: 0, cP, mnk);
+            }
+        }
+    }
+}
+
+```
 
 Documentation for [CBLAS](https://www.netlib.org/blas/#_blas_routines) and [LAPACKE](https://www.netlib.org/lapack/lapacke.html). 
-
-## Status
-
-Low-level native API and OpenBLAS binaries are in [NuGet package](https://www.nuget.org/packages/Spreads.BLAS) and ready to use.
-
-High-level API is a proof of concept for S/Dgemm. No .NET intrinsics yet.
-
-Full and clean native API without any wrappers is the main value proposition of this library and should be stable going forward.
-Full high-level API is impossible to implement manually, it just requires boilerplate & copy-paste for 100s of functions,
-which is not a good use of time even during quarantine. If you have an idea for codegen solution please share it in a new issue here.   
 
 ## Building
 

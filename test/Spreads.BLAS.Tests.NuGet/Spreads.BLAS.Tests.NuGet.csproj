@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Spreads.BLAS" Version="2020.0.*" />
+    <PackageReference Include="Spreads.BLAS" Version="2020.*" />
     <PackageReference Include="intelmkl.redist.win-x64" Version="2020.1.216" Condition=" '$(OS)' == 'Windows_NT'" />
     <PackageReference Include="MathNet.Numerics" Version="4.9.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />

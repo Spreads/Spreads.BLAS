@@ -1,4 +1,9 @@
-﻿using System;
+﻿// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+using System;
+using System.Linq;
 using System.Reflection;
 using CppSharp;
 using CppSharp.AST;
@@ -13,19 +18,13 @@ namespace BindGen
     {
         public static void Main(string[] args)
         {
-            HiLevelGen();
+            HiLevelGen.GenForTypes("CBLAS", typeof(Spreads.Native.OpenBLAS.CBLAS), typeof(Spreads.Native.MKL.CBLAS));
+            HiLevelGen.GenForTypes("LAPACKE", typeof(Spreads.Native.OpenBLAS.LAPACKE), typeof(Spreads.Native.MKL.LAPACKE));
             // ConsoleDriver.Run(new OpenBlasLibrary());
             // ConsoleDriver.Run(new MklLibrary());
         }
-
-        private static void HiLevelGen()
-        {
-            var obt = typeof(Spreads.Native.OpenBLAS);
-            var methods = obt.GetMethods(BindingFlags.Static);
-        }
     }
 
-    
     public class MklLibrary : ILibrary
     {
         public void Preprocess(Driver driver, ASTContext ctx)
@@ -163,7 +162,7 @@ namespace BindGen
 
         public override Type CSharpSignatureType(TypePrinterContext ctx)
         {
-            return new CustomType("Spreads.ComplexFloat");
+            return new CustomType("Spreads.DataTypes.ComplexFloat");
         }
     }
 
@@ -177,7 +176,7 @@ namespace BindGen
 
         public override Type CSharpSignatureType(TypePrinterContext ctx)
         {
-            return new CustomType("Spreads.ComplexDouble");
+            return new CustomType("Spreads.DataTypes.ComplexDouble");
         }
     }
 

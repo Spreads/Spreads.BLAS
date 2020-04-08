@@ -6,7 +6,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Spreads
+namespace Spreads.DataTypes
 {
     [StructLayout(LayoutKind.Explicit, Size = 16, Pack = 8)]
     public readonly struct ComplexDouble : IEquatable<ComplexDouble>

@@ -17,7 +17,6 @@ namespace Spreads.Tests
         [Test]
         public void OpenBlasCallsWork()
         {
-            Assert.AreEqual(Environment.ProcessorCount, OpenBLAS.OpenblasGetNumThreads());
             var threads = Math.Min(Environment.ProcessorCount, 3);
             OpenBLAS.OpenblasSetNumThreads(threads);
             Assert.AreEqual(threads, OpenBLAS.OpenblasGetNumThreads());
@@ -48,10 +47,33 @@ namespace Spreads.Tests
             var h = x.AsMemory().Pin();
             var c = new float[mnk * mnk];
             var hc = c.AsMemory().Pin();
-
+            
             CBLAS.Sgemm(LAYOUT.RowMajor, TRANSPOSE.NoTrans, TRANSPOSE.NoTrans,
                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
+            
         }
+
+        [Test]
+        public void CouldCallHigherLevelSample()
+        {
+            var initThreads = BlasNumThreads;
+            HigherLevelUsage.Sample();
+            BlasNumThreads = initThreads;
+        }
+        
+
+        [Test]
+        public void CouldSetNumThreads()
+        {
+            var init = BlasNumThreads;
+            BlasNumThreads = 2;
+            Assert.AreEqual(2, MKL.MKL_GetMaxThreads(), "MKL.MKL_GetMaxThreads");
+            Assert.AreEqual(2, OpenBLAS.OpenblasGetNumThreads(), "OpenBLAS.OpenblasGetNumThreads");
+            Assert.AreEqual(2, BlasNumThreads, "BlasNumThreads");
+
+            BlasNumThreads = init;
+        }
+        
 
         [Test, Explicit("Bench")]
         public unsafe void SgemmBenchmark()

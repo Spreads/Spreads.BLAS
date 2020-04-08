@@ -4,6 +4,7 @@
 
 using System.Runtime.InteropServices;
 using System.Security;
+using Spreads.DataTypes;
 
 // ReSharper disable InconsistentNaming
 
