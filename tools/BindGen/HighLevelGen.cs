@@ -9,7 +9,7 @@ using System.Text;
 
 namespace BindGen
 {
-    public static class HiLevelGen
+    public static class HighLevelGen
     {
         /// <summary>
         /// Generate high level API for all shared functions and the ones available in OB
@@ -27,33 +27,46 @@ namespace BindGen
             var sharedMethods = obMethods.Join(mkMethods, x => x.Key, x => x.Key,
                     (x, y) => (x, y))
                 .Select(t => (t.x.Key, t.x.Value, t.y.Value))
+                .OrderBy(t => t.Key.Substring(1))
+                .ThenBy(t =>
+                {
+                    var c = t.Key.ToLower()[0];
+                    switch (c)
+                    {
+                        case 's':
+                            return 0;
+                        case 'd':
+                            return 1;
+                        case 'c':
+                            return 2;
+                        default:
+                            return 3;
+                    }
+                })
                 .ToArray();
-
-            Array.Sort(sharedMethods, new TupleComparer());
-
+            
             var sb = new StringBuilder();
 
             foreach (var sharedMethod in sharedMethods)
             {
                 GenMethod(apiName, sharedMethod, sb);
             }
-            
-            Directory.CreateDirectory(@"..\..\Generated\HiLevel");
-            
-            File.WriteAllText($@"..\..\Generated\HiLevel\{apiName}.cspart", sb.ToString());
+
+            Directory.CreateDirectory(@"..\..\Generated\HighLevel");
+
+            File.WriteAllText($@"..\..\Generated\HighLevel\{apiName}.cspart", sb.ToString());
         }
 
         private static void GenMethod(string apiName, (string methodName, MethodInfo ob, MethodInfo mk) m, StringBuilder sb)
         {
             var ps = GetMethodParams(m.ob, m.mk);
 
-            var rt = m.ob.ReturnType.ToString();
+            var rt = ReplaceTypes(m.ob.ReturnType.ToString());
 
-            var methodBody = 
-                rt.ToLower().Contains("void") 
+            var methodBody =
+                rt.ToLower().Contains("void")
                     ? GenVoidMethod(apiName, m.methodName, ps)
                     : GetReturningMethod(apiName, m.methodName, rt, ps);
-
 
             sb.Append(methodBody);
         }
@@ -61,15 +74,15 @@ namespace BindGen
         private static string GenVoidMethod(string apiName, string methodName, (string types, string signature, string args) ps)
         {
             var template = $@"
-public static void {methodName}({ps.signature})
-{{
-    if (MKL.IsSupoprted)
-    {{
-        MKL.{apiName}.{methodName}({ps.args});
-        return;
-    }}
-    OpenBLAS.{apiName}.{methodName}({ps.args});
-}}
+            public static void {methodName}({ps.signature})
+            {{
+                if (MKL.IsSupoprted)
+                {{
+                    MKL.{apiName}.{methodName}({ps.args});
+                    return;
+                }}
+                OpenBLAS.{apiName}.{methodName}({ps.args});
+            }}
 ";
 
             return template;
@@ -78,13 +91,13 @@ public static void {methodName}({ps.signature})
         private static string GetReturningMethod(string apiName, string methodName, string rt, (string types, string signature, string args) ps)
         {
             var template = $@"
-public static {rt} {methodName}({ps.signature})
-{{
-    if (MKL.IsSupoprted)
-        return MKL.{apiName}.{methodName}({ps.args});
+            public static {rt} {methodName}({ps.signature})
+            {{
+                if (MKL.IsSupoprted)
+                    return MKL.{apiName}.{methodName}({ps.args});
 
-    return OpenBLAS.{apiName}.{methodName}({ps.args});
-}}
+                return OpenBLAS.{apiName}.{methodName}({ps.args});
+            }}
 ";
 
             return template;
@@ -111,13 +124,13 @@ public static {rt} {methodName}({ps.signature})
 
             if (obPs.Length > 0)
             {
-
-
-
                 foreach (var pi in obPs)
                 {
                     var t = pi.ParameterType.ToString();
                     t = t.Replace("+", ".");
+
+                    t = ReplaceTypes(t);
+
                     var n = pi.Name;
                     if (char.IsUpper(n[0]))
                         n = char.ToLower(n[0]) + n.Substring(1);
@@ -130,7 +143,7 @@ public static {rt} {methodName}({ps.signature})
 
                     if (n == "params")
                         n = "parameters";
-                    
+
                     types += t + ", ";
                     signature += t + " " + n + ", ";
                     args += n + ", ";
@@ -144,34 +157,18 @@ public static {rt} {methodName}({ps.signature})
             return (types, signature, args);
         }
 
-        private class TupleComparer : IComparer<(string, MethodInfo, MethodInfo)>
+        private static string ReplaceTypes(string t)
         {
-            private MethodNameComparer _c = new MethodNameComparer();
-
-            public int Compare((string, MethodInfo, MethodInfo) x, (string, MethodInfo, MethodInfo) y)
-            {
-                return _c.Compare(x.Item1, y.Item1);
-            }
-        }
-
-        private class MethodNameComparer : IComparer<string>
-        {
-            private static char[] order = new[] {'s', 'd', 'c', 'z'};
-
-            public int Compare(string x, string y)
-            {
-                x = x.ToLower();
-                y = y.ToLower();
-                var xF = x.Substring((1));
-                var yF = y.Substring((1));
-                var c = String.Compare(xF, yF, StringComparison.Ordinal);
-                if (c != 0)
-                    return c;
-
-                var xI = Array.IndexOf(order, x[0]);
-                var yI = Array.IndexOf(order, y[0]);
-                return xI.CompareTo(yI);
-            }
+            t = t.Replace("System.Double", "double");
+            t = t.Replace("System.Single", "float");
+            t = t.Replace("System.SByte", "sbyte");
+            t = t.Replace("System.Int32", "int");
+            t = t.Replace("System.UInt64", "ulong");
+            t = t.Replace("System.Int64", "long");
+            t = t.Replace("System.Void", "void");
+            t = t.Replace("Spreads.BLAS.", "");
+            t = t.Replace("Spreads.DataTypes.", "");
+            return t;
         }
     }
 }

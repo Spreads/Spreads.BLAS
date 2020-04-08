@@ -18,8 +18,8 @@ namespace BindGen
     {
         public static void Main(string[] args)
         {
-            HiLevelGen.GenForTypes("CBLAS", typeof(Spreads.Native.OpenBLAS.CBLAS), typeof(Spreads.Native.MKL.CBLAS));
-            HiLevelGen.GenForTypes("LAPACKE", typeof(Spreads.Native.OpenBLAS.LAPACKE), typeof(Spreads.Native.MKL.LAPACKE));
+            HighLevelGen.GenForTypes("CBLAS", typeof(Spreads.Native.OpenBLAS.CBLAS), typeof(Spreads.Native.MKL.CBLAS));
+            HighLevelGen.GenForTypes("LAPACKE", typeof(Spreads.Native.OpenBLAS.LAPACKE), typeof(Spreads.Native.MKL.LAPACKE));
             // ConsoleDriver.Run(new OpenBlasLibrary());
             // ConsoleDriver.Run(new MklLibrary());
         }
