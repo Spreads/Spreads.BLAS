@@ -128,7 +128,11 @@ namespace Spreads.Tests
 
 ```
 
-Documentation for [CBLAS](https://www.netlib.org/blas/#_blas_routines) and [LAPACKE](https://www.netlib.org/lapack/lapacke.html). 
+Documentation for [CBLAS](https://www.netlib.org/blas/#_blas_routines) and [LAPACKE](https://www.netlib.org/lapack/lapacke.html) at netlib.org.
+
+[Intel documentation](https://software.intel.com/en-us/mkl-developer-reference-fortran-overview).
+
+[LAPACK Function Finding Advisor](https://software.intel.com/en-us/articles/intel-mkl-function-finding-advisor)
 
 ## Building
 

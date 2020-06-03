@@ -20,8 +20,9 @@ namespace Spreads.Tests.Run
     {
         private static unsafe void Main(string[] args)
         {
-            var test = new Spreads.Tests.OpenBLASTests();
-            test.SgemmBenchmark();
+            var test = new Spreads.Tests.LinAlg.ShermanMorrison();
+            test.SetUp();
+            test.CouldUseSMFormulaCorrectly();
             
             Console.WriteLine();
             Console.WriteLine("Finished, press enter to exit...");
