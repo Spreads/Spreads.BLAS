@@ -71,7 +71,7 @@ A static class `Spreads.BLAS` exposes a unified API with methods implemented exa
 ```csharp
 public static void Saxpby(int n, float alpha, float* x, int incX, float beta, float* y, int incY)
 {
-    if (MKL.IsSupoprted)
+    if (MKL.IsSupported)
     {
         MKL.CBLAS.Saxpby(n, alpha, x, incX, beta, y, incY);
         return;
