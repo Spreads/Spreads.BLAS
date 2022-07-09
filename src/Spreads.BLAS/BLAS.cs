@@ -20,29 +20,41 @@ namespace Spreads
         {
             get
             {
-                if (MKL.IsSupoprted)
+                if (IsUsingMKL)
                     return MKL.MKL_GetMaxThreads();
 
-                return OpenBLAS.OpenblasGetNumThreads();
+                if(OpenBLAS.IsSupoprted)
+                    return OpenBLAS.OpenblasGetNumThreads();
+                
+                throw new InvalidOperationException("No native library is available");
             }
 
             set
             {
                 var nt = Math.Max(1, Math.Min(Environment.ProcessorCount, value));
 
-                if (MKL.IsSupoprted)
+                if (IsUsingMKL)
                     MKL.MKL_SetNumThreads(nt);
 
-                OpenBLAS.OpenblasSetNumThreads(nt);
+                if(OpenBLAS.IsSupoprted)
+                    OpenBLAS.OpenblasSetNumThreads(nt);
+
+                throw new InvalidOperationException("No native library is available");
             }
         }
 
-        public enum LAYOUT
+        /// <summary>
+        /// Matrix layout parameter both for CBLAS and LAPACKE
+        /// </summary>
+        public enum MatrixLayout
         {
             RowMajor = 101,
             ColMajor = 102
         }
 
+        /// <summary>
+        /// Transpose parameter for CBLAS
+        /// </summary>
         public enum TRANSPOSE
         {
             NoTrans = 111,
