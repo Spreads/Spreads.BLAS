@@ -16,7 +16,7 @@ namespace Spreads.Native
         {
             try
             {
-                return BLASSettings.UseMKLIfAvailable && MKL_GetMaxThreads() > 0;
+                return MKL_GetMaxThreads() > 0;
             }
             catch
             {

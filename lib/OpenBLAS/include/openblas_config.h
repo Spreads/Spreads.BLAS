@@ -1,52 +1,29 @@
 #ifndef OPENBLAS_CONFIG_H
 #define OPENBLAS_CONFIG_H
-#define OPENBLAS_OS_WINNT	1
-#define OPENBLAS_ARCH_X86_64	1
-#define OPENBLAS_C_Clang	1
-#define OPENBLAS___64BIT__	1
-#define OPENBLAS_FUNDERSCORE	
+#define OPENBLAS_OS_WINNT 1
+#define OPENBLAS_ARCH_X86_64 1
+#define OPENBLAS_C_GCC 1
+#define OPENBLAS___64BIT__ 1
+#define OPENBLAS_HAVE_C11 1
+#define OPENBLAS_PTHREAD_CREATE_FUNC pthread_create
 #define OPENBLAS_BUNDERSCORE _
 #define OPENBLAS_NEEDBUNDERSCORE 1
-#define OPENBLAS_NEED2UNDERSCORES 0
-#define OPENBLAS_HASWELL
-#define OPENBLAS_L1_CODE_SIZE 32768
-#define OPENBLAS_L1_CODE_ASSOCIATIVE 8
-#define OPENBLAS_L1_CODE_LINESIZE 64
+#define OPENBLAS_GENERIC 
 #define OPENBLAS_L1_DATA_SIZE 32768
-#define OPENBLAS_L1_DATA_ASSOCIATIVE 8
-#define OPENBLAS_L1_DATA_LINESIZE 64
-#define OPENBLAS_L2_SIZE 262144
-#define OPENBLAS_L2_ASSOCIATIVE 8
-#define OPENBLAS_L2_LINESIZE 64
-#define OPENBLAS_ITB_SIZE 2097152
-#define OPENBLAS_ITB_ASSOCIATIVE 0
-#define OPENBLAS_ITB_ENTRIES 8
+#define OPENBLAS_L1_DATA_LINESIZE 128
+#define OPENBLAS_L2_SIZE 512488
+#define OPENBLAS_L2_LINESIZE 128
+#define OPENBLAS_DTB_DEFAULT_ENTRIES 128
 #define OPENBLAS_DTB_SIZE 4096
-#define OPENBLAS_DTB_ASSOCIATIVE 4
-#define OPENBLAS_DTB_DEFAULT_ENTRIES 64
-#define OPENBLAS_HAVE_CMOV
-#define OPENBLAS_HAVE_MMX
-#define OPENBLAS_HAVE_SSE
-#define OPENBLAS_HAVE_SSE2
-#define OPENBLAS_HAVE_SSE3
-#define OPENBLAS_HAVE_SSSE3
-#define OPENBLAS_HAVE_SSE4_1
-#define OPENBLAS_HAVE_SSE4_2
-#define OPENBLAS_HAVE_AVX
-#define OPENBLAS_HAVE_AVX2
-#define OPENBLAS_HAVE_FMA3
-#define OPENBLAS_HAVE_CFLUSH
-#define OPENBLAS_HAVE_HIT 1
-#define OPENBLAS_NUM_SHAREDCACHE 1
-#define OPENBLAS_NUM_CORES 2
-#define OPENBLAS_CORE_HASWELL
-#define OPENBLAS_CHAR_CORENAME "HASWELL"
-#define OPENBLAS_SLOCAL_BUFFER_SIZE	20480
-#define OPENBLAS_DLOCAL_BUFFER_SIZE	32768
-#define OPENBLAS_CLOCAL_BUFFER_SIZE	16384
-#define OPENBLAS_ZLOCAL_BUFFER_SIZE	12288
-#define OPENBLAS_GEMM_MULTITHREAD_THRESHOLD	4
-#define OPENBLAS_VERSION "OpenBLAS 0.3.9"
+#define OPENBLAS_L2_ASSOCIATIVE 8
+#define OPENBLAS_CORE_generic 
+#define OPENBLAS_CHAR_CORENAME "generic"
+#define OPENBLAS_SLOCAL_BUFFER_SIZE 4096
+#define OPENBLAS_DLOCAL_BUFFER_SIZE 4096
+#define OPENBLAS_CLOCAL_BUFFER_SIZE 8192
+#define OPENBLAS_ZLOCAL_BUFFER_SIZE 8192
+#define OPENBLAS_GEMM_MULTITHREAD_THRESHOLD 4
+#define OPENBLAS_VERSION " OpenBLAS 0.3.20 "
 /*This is only for "make install" target.*/
 
 #if defined(OPENBLAS_OS_WINNT) || defined(OPENBLAS_OS_CYGWIN_NT) || defined(OPENBLAS_OS_INTERIX)
@@ -81,6 +58,11 @@ typedef unsigned long long BLASULONG;
 #else
 typedef long BLASLONG;
 typedef unsigned long BLASULONG;
+#endif
+
+#ifndef BFLOAT16
+#include <stdint.h>
+typedef uint16_t bfloat16;
 #endif
 
 #ifdef OPENBLAS_USE64BITINT
@@ -128,8 +110,8 @@ typedef int blasint;
 #else
   #define OPENBLAS_COMPLEX_STRUCT
   typedef struct { float real, imag; } openblas_complex_float;
-  typedef struct { float real, imag; } openblas_complex_double;
-  // typedef struct { xdouble real, imag; } openblas_complex_xdouble;
+  typedef struct { double real, imag; } openblas_complex_double;
+  typedef struct { xdouble real, imag; } openblas_complex_xdouble;
   #define openblas_make_complex_float(real, imag)    {(real), (imag)}
   #define openblas_make_complex_double(real, imag)   {(real), (imag)}
   #define openblas_make_complex_xdouble(real, imag)  {(real), (imag)}
@@ -141,4 +123,11 @@ typedef int blasint;
   #define openblas_complex_xdouble_imag(z)           ((z).imag)
 #endif
 
+/* Inclusion of Linux-specific header is needed for definition of cpu_set_t. */
+#ifdef OPENBLAS_OS_LINUX
+#ifndef _GNU_SOURCE
+ #define _GNU_SOURCE
+#endif
+#include <sched.h>
+#endif
 #endif /* OPENBLAS_CONFIG_H */

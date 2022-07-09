@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using CppSharp;
@@ -18,8 +19,8 @@ namespace BindGen
     {
         public static void Main(string[] args)
         {
-            HighLevelGen.GenForTypes("CBLAS", typeof(Spreads.Native.OpenBLAS.CBLAS), typeof(Spreads.Native.MKL.CBLAS));
-            HighLevelGen.GenForTypes("LAPACKE", typeof(Spreads.Native.OpenBLAS.LAPACKE), typeof(Spreads.Native.MKL.LAPACKE));
+            new HighLevelGen("CBLAS").GenForTypes(typeof(Spreads.Native.OpenBLAS.CBLAS), typeof(Spreads.Native.MKL.CBLAS));
+            new HighLevelGen("LAPACKE").GenForTypes(typeof(Spreads.Native.OpenBLAS.LAPACKE), typeof(Spreads.Native.MKL.LAPACKE));
             // ConsoleDriver.Run(new OpenBlasLibrary());
             // ConsoleDriver.Run(new MklLibrary());
         }
@@ -71,7 +72,7 @@ namespace BindGen
             var options = driver.Options;
             options.GeneratorKind = GeneratorKind.CSharp;
 
-            options.OutputDir = @"..\..\Generated\MKL";
+            options.OutputDir = Path.GetFullPath(@"..\..\..\Generated\MKL");
             options.Verbose = true;
             options.GenerateSingleCSharpFile = false;
             options.GenerateFunctionTemplates = false;
@@ -80,15 +81,15 @@ namespace BindGen
 
             var module = options.AddModule("mkl_rt");
 
-            module.IncludeDirs.Add(@"..\..\..\..\lib\MKL\include\");
+            module.IncludeDirs.Add(Path.GetFullPath(@"..\..\..\..\..\lib\MKL\include"));
 
-            // module.Headers.Add("mkl.h");
+            module.Headers.Add("mkl_service.h");
             module.Headers.Add("mkl_cblas.h");
             module.Headers.Add("mkl_lapacke.h");
-
-            // module.Defines.Add("MKL_ILP64");
-
+            
             module.OutputNamespace = "Spreads.Native.MKL";
+            
+            driver.ParserOptions.Verbose = true;
         }
 
         public void SetupPasses(Driver driver)
@@ -103,8 +104,10 @@ namespace BindGen
         {
             driver.Context.TypeMaps.TypeMaps.Add("openblas_complex_float", new ComplexFloat());
             driver.Context.TypeMaps.TypeMaps.Add("openblas_complex_double", new ComplexDouble());
-            // driver.Context.TypeMaps.TypeMaps.Add("lapack_complex_float", new ComplexFloat());
-            // driver.Context.TypeMaps.TypeMaps.Add("lapack_complex_double", new ComplexDouble());
+            driver.Context.TypeMaps.TypeMaps.Add("lapack_complex_float", new ComplexFloat());
+            driver.Context.TypeMaps.TypeMaps.Add("lapack_complex_double", new ComplexDouble());
+            
+            driver.Context.TypeMaps.TypeMaps.Add("double _Complex", new ComplexDouble());
             driver.Context.TypeMaps.TypeMaps.Add("CBLAS_ORDER", new CBLAS_LAYOUT());
             driver.Context.TypeMaps.TypeMaps.Add("CBLAS_TRANSPOSE", new CBLAS_TRANSPOSE());
             driver.Context.TypeMaps.TypeMaps.Add("CBLAS_UPLO", new CBLAS_UPLO());
@@ -118,6 +121,10 @@ namespace BindGen
 
         public void Postprocess(Driver driver, ASTContext ctx)
         {
+            Console.WriteLine("Catch me");
+            var p = ctx.FindFunction("Zbbcsd").First().Parameters.Single(x => x.Name == "v2t");
+            
+            p.QualifiedType = new QualifiedType(new PointerType(new QualifiedType(new CustomType("custom_type"))));
         }
 
         public void Setup(Driver driver)
@@ -125,7 +132,7 @@ namespace BindGen
             var options = driver.Options;
             options.GeneratorKind = GeneratorKind.CSharp;
 
-            options.OutputDir = @"..\..\Generated\OpenBLAS";
+            options.OutputDir = Path.GetFullPath(@"..\..\..\Generated\OpenBLAS");
             options.Verbose = true;
             options.GenerateSingleCSharpFile = false;
             options.GenerateFunctionTemplates = false;
@@ -134,7 +141,7 @@ namespace BindGen
 
             var module = options.AddModule("libopenblas");
 
-            module.IncludeDirs.Add(@"..\..\..\..\lib\OpenBLAS\include\");
+            module.IncludeDirs.Add(Path.GetFullPath(@"..\..\..\..\..\lib\OpenBLAS\include"));
 
             module.Headers.Add("cblas.h");
             module.Headers.Add("lapacke.h");
@@ -144,6 +151,8 @@ namespace BindGen
             module.Defines.Add("OPENBLAS_COMPLEX_STRUCT");
 
             module.OutputNamespace = "Spreads.Native.OpenBLAS";
+
+            driver.ParserOptions.Verbose = true;
         }
 
         public void SetupPasses(Driver driver)
@@ -173,7 +182,7 @@ namespace BindGen
         public override bool IsIgnored => false;
 
         public override bool IsValueType => true;
-
+        
         public override Type CSharpSignatureType(TypePrinterContext ctx)
         {
             return new CustomType("Spreads.DataTypes.ComplexDouble");
@@ -252,20 +261,19 @@ namespace BindGen
 
     public class RemoveFunctionPrefixPass : TranslationUnitPass
     {
+        private string[] Prefixes = new[] { "cblas_", "LAPACKE_", "MKL_", "openblas_" };
+        
         public override bool VisitFunctionDecl(Function function)
         {
-            if (function.Name.StartsWith("cblas_"))
+            foreach (string prefix in Prefixes)
             {
-                function.Name = function.Name.Replace("cblas_", string.Empty);
-                return false;
+                if (function.Name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                {
+                    function.Name = function.Name.Substring(prefix.Length);
+                    return false;
+                }
             }
-
-            if (function.Name.StartsWith("LAPACKE_"))
-            {
-                function.Name = function.Name.Replace("LAPACKE_", string.Empty);
-                return false;
-            }
-
+            
             return true;
         }
     }

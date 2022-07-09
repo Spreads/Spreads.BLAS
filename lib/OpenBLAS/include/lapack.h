@@ -4,7 +4,6 @@
 /*
 *  Turn on HAVE_LAPACK_CONFIG_H to redefine C-LAPACK datatypes
 */
-
 #ifdef HAVE_LAPACK_CONFIG_H
 #include "lapacke_config.h"
 #endif
@@ -12,27 +11,6 @@
 #include "lapacke_mangling.h"
 
 #include <stdlib.h>
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/*----------------------------------------------------------------------------*/
-#ifndef lapack_int
-#define lapack_int     int
-#endif
-
-#ifndef lapack_logical
-#define lapack_logical lapack_int
-#endif
-
-/* f2c, hence clapack and MacOS Accelerate, returns double instead of float
- * for sdot, slange, clange, etc. */
-#if defined(LAPACK_F2C)
-    typedef double lapack_float_return;
-#else
-    typedef float lapack_float_return;
-#endif
 
 /* Complex types are structures equivalent to the
 * Fortran complex types COMPLEX(4) and COMPLEX(8).
@@ -88,6 +66,29 @@ extern "C" {
 #endif
 
 #endif /* LAPACK_COMPLEX_CUSTOM */
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/*----------------------------------------------------------------------------*/
+#ifndef lapack_int
+#define lapack_int     int
+#endif
+
+#ifndef lapack_logical
+#define lapack_logical lapack_int
+#endif
+
+/* f2c, hence clapack and MacOS Accelerate, returns double instead of float
+ * for sdot, slange, clange, etc. */
+#if defined(LAPACK_F2C)
+    typedef double lapack_float_return;
+#else
+    typedef float lapack_float_return;
+#endif
+
 
 /* Callback logical functions of one, two, or three arguments are used
 *  to select eigenvalues to sort to the top left of the Schur form.
@@ -565,8 +566,8 @@ void LAPACK_cgbrfsx(
     lapack_int const* n, lapack_int const* kl, lapack_int const* ku, lapack_int const* nrhs,
     lapack_complex_float const* AB, lapack_int const* ldab,
     lapack_complex_float const* AFB, lapack_int const* ldafb, lapack_int const* ipiv,
-    float* R,
-    float* C,
+    const float* R,
+    const float* C,
     lapack_complex_float const* B, lapack_int const* ldb,
     lapack_complex_float* X, lapack_int const* ldx,
     float* rcond,
@@ -584,8 +585,8 @@ void LAPACK_dgbrfsx(
     lapack_int const* n, lapack_int const* kl, lapack_int const* ku, lapack_int const* nrhs,
     double const* AB, lapack_int const* ldab,
     double const* AFB, lapack_int const* ldafb, lapack_int const* ipiv,
-    double* R,
-    double* C,
+    const double* R,
+    const double* C,
     double const* B, lapack_int const* ldb,
     double* X, lapack_int const* ldx,
     double* rcond,
@@ -603,8 +604,8 @@ void LAPACK_sgbrfsx(
     lapack_int const* n, lapack_int const* kl, lapack_int const* ku, lapack_int const* nrhs,
     float const* AB, lapack_int const* ldab,
     float const* AFB, lapack_int const* ldafb, lapack_int const* ipiv,
-    float* R,
-    float* C,
+    const float* R,
+    const float* C,
     float const* B, lapack_int const* ldb,
     float* X, lapack_int const* ldx,
     float* rcond,
@@ -622,8 +623,8 @@ void LAPACK_zgbrfsx(
     lapack_int const* n, lapack_int const* kl, lapack_int const* ku, lapack_int const* nrhs,
     lapack_complex_double const* AB, lapack_int const* ldab,
     lapack_complex_double const* AFB, lapack_int const* ldafb, lapack_int const* ipiv,
-    double* R,
-    double* C,
+    const double* R,
+    const double* C,
     lapack_complex_double const* B, lapack_int const* ldb,
     lapack_complex_double* X, lapack_int const* ldx,
     double* rcond,
@@ -2512,7 +2513,7 @@ void LAPACK_zgesvdq(
     lapack_complex_double* U, lapack_int const* ldu,
     lapack_complex_double* V, lapack_int const* ldv, lapack_int* numrank,
     lapack_int* iwork, lapack_int const* liwork,
-    lapack_complex_float* cwork, lapack_int* lcwork,
+    lapack_complex_double* cwork, lapack_int* lcwork,
     double* rwork, lapack_int const* lrwork,
     lapack_int* info );
 
@@ -2937,6 +2938,42 @@ void LAPACK_zgetsls(
     lapack_int const* m, lapack_int const* n, lapack_int const* nrhs,
     lapack_complex_double* A, lapack_int const* lda,
     lapack_complex_double* B, lapack_int const* ldb,
+    lapack_complex_double* work, lapack_int const* lwork,
+    lapack_int* info );
+
+#define LAPACK_cgetsqrhrt LAPACK_GLOBAL(cgetsqrhrt,CGETSQRHRT)
+void LAPACK_cgetsqrhrt(
+    lapack_int const* m, lapack_int const* n,
+    lapack_int const* mb1, lapack_int const* nb1, lapack_int const* nb2,
+    lapack_complex_float* A, lapack_int const* lda,
+    lapack_complex_float* T, lapack_int const* ldt,
+    lapack_complex_float* work, lapack_int const* lwork,
+    lapack_int* info );
+
+#define LAPACK_dgetsqrhrt LAPACK_GLOBAL(dgetsqrhrt,DGETSQRHRT)
+void LAPACK_dgetsqrhrt(
+    lapack_int const* m, lapack_int const* n,
+    lapack_int const* mb1, lapack_int const* nb1, lapack_int const* nb2,
+    double* A, lapack_int const* lda,
+    double* T, lapack_int const* ldt,
+    double* work, lapack_int const* lwork,
+    lapack_int* info );
+
+#define LAPACK_sgetsqrhrt LAPACK_GLOBAL(sgetsqrhrt,SGETSQRHRT)
+void LAPACK_sgetsqrhrt(
+    lapack_int const* m, lapack_int const* n,
+    lapack_int const* mb1, lapack_int const* nb1, lapack_int const* nb2,
+    float* A, lapack_int const* lda,
+    float* T, lapack_int const* ldt,
+    float* work, lapack_int const* lwork,
+    lapack_int* info );
+
+#define LAPACK_zgetsqrhrt LAPACK_GLOBAL(zgetsqrhrt,ZGETSQRHRT)
+void LAPACK_zgetsqrhrt(
+    lapack_int const* m, lapack_int const* n,
+    lapack_int const* mb1, lapack_int const* nb1, lapack_int const* nb2,
+    lapack_complex_double* A, lapack_int const* lda,
+    lapack_complex_double* T, lapack_int const* ldt,
     lapack_complex_double* work, lapack_int const* lwork,
     lapack_int* info );
 
@@ -3649,45 +3686,58 @@ void LAPACK_zggrqf(
     lapack_int* info );
 
 #define LAPACK_sggsvd LAPACK_GLOBAL(sggsvd,SGGSVD)
-lapack_int LAPACKE_sggsvd( int matrix_layout, char jobu, char jobv, char jobq,
-                           lapack_int m, lapack_int n, lapack_int p,
-                           lapack_int* k, lapack_int* l, float* a,
-                           lapack_int lda, float* b, lapack_int ldb,
-                           float* alpha, float* beta, float* u, lapack_int ldu,
-                           float* v, lapack_int ldv, float* q, lapack_int ldq,
-                           lapack_int* iwork );
+lapack_int LAPACK_sggsvd(
+    char const* jobu, char const* jobv, char const* jobq,
+    lapack_int const* m, lapack_int const* n, lapack_int const* p,
+    lapack_int* k, lapack_int* l,
+    float* a, lapack_int const* lda,
+    float* b, lapack_int const* ldb,
+    float* alpha, float* beta,
+    float* u, lapack_int const* ldu,
+    float* v, lapack_int const* ldv,
+    float* q, lapack_int const* ldq,
+    float* work, lapack_int* iwork, lapack_int* info );
 
 #define LAPACK_dggsvd LAPACK_GLOBAL(dggsvd,DGGSVD)
-lapack_int LAPACKE_dggsvd( int matrix_layout, char jobu, char jobv, char jobq,
-                           lapack_int m, lapack_int n, lapack_int p,
-                           lapack_int* k, lapack_int* l, double* a,
-                           lapack_int lda, double* b, lapack_int ldb,
-                           double* alpha, double* beta, double* u,
-                           lapack_int ldu, double* v, lapack_int ldv, double* q,
-                           lapack_int ldq, lapack_int* iwork );
+lapack_int LAPACK_dggsvd(
+    char const* jobu, char const* jobv, char const* jobq,
+    lapack_int const* m, lapack_int const* n, lapack_int const* p,
+    lapack_int* k, lapack_int* l,
+    double* a, lapack_int const* lda,
+    double* b, lapack_int const* ldb,
+    double* alpha, double* beta,
+    double* u, lapack_int const* ldu,
+    double* v, lapack_int const* ldv,
+    double* q, lapack_int const* ldq,
+    double* work, lapack_int* iwork, lapack_int* info );
 
 #define LAPACK_cggsvd LAPACK_GLOBAL(cggsvd,CGGSVD)
-lapack_int LAPACKE_cggsvd( int matrix_layout, char jobu, char jobv, char jobq,
-                           lapack_int m, lapack_int n, lapack_int p,
-                           lapack_int* k, lapack_int* l,
-                           lapack_complex_float* a, lapack_int lda,
-                           lapack_complex_float* b, lapack_int ldb,
-                           float* alpha, float* beta, lapack_complex_float* u,
-                           lapack_int ldu, lapack_complex_float* v,
-                           lapack_int ldv, lapack_complex_float* q,
-                           lapack_int ldq, lapack_int* iwork );
+lapack_int LAPACK_cggsvd(
+    char const* jobu, char const* jobv, char const* jobq,
+    lapack_int const* m, lapack_int const* n, lapack_int const* p,
+    lapack_int* k, lapack_int* l,
+    lapack_complex_float* a, lapack_int const* lda,
+    lapack_complex_float* b, lapack_int const* ldb,
+    float* alpha, float* beta,
+    lapack_complex_float* u, lapack_int const* ldu,
+    lapack_complex_float* v, lapack_int const* ldv,
+    lapack_complex_float* q, lapack_int const* ldq,
+    lapack_complex_float* work, float* rwork,
+    lapack_int* iwork, lapack_int* info );
 
 #define LAPACK_zggsvd LAPACK_GLOBAL(zggsvd,ZGGSVD)
-lapack_int LAPACKE_zggsvd( int matrix_layout, char jobu, char jobv, char jobq,
-                           lapack_int m, lapack_int n, lapack_int p,
-                           lapack_int* k, lapack_int* l,
-                           lapack_complex_double* a, lapack_int lda,
-                           lapack_complex_double* b, lapack_int ldb,
-                           double* alpha, double* beta,
-                           lapack_complex_double* u, lapack_int ldu,
-                           lapack_complex_double* v, lapack_int ldv,
-                           lapack_complex_double* q, lapack_int ldq,
-                           lapack_int* iwork );
+lapack_int LAPACK_zggsvd(
+    char const* jobu, char const* jobv, char const* jobq,
+    lapack_int const* m, lapack_int const* n, lapack_int const* p,
+    lapack_int* k, lapack_int* l,
+    lapack_complex_double* a, lapack_int const* lda,
+    lapack_complex_double* b, lapack_int const* ldb,
+    double* alpha, double* beta,
+    lapack_complex_double* u, lapack_int const* ldu,
+    lapack_complex_double* v, lapack_int const* ldv,
+    lapack_complex_double* q, lapack_int const* ldq,
+    lapack_complex_double* work, double* rwork,
+    lapack_int* iwork, lapack_int* info );
 
 #define LAPACK_cggsvd3 LAPACK_GLOBAL(cggsvd3,CGGSVD3)
 void LAPACK_cggsvd3(
@@ -3752,41 +3802,58 @@ void LAPACK_zggsvd3(
     lapack_int* info );
 
 #define LAPACK_sggsvp LAPACK_GLOBAL(sggsvp,SGGSVP)
-lapack_int LAPACKE_sggsvp( int matrix_layout, char jobu, char jobv, char jobq,
-                           lapack_int m, lapack_int p, lapack_int n, float* a,
-                           lapack_int lda, float* b, lapack_int ldb, float tola,
-                           float tolb, lapack_int* k, lapack_int* l, float* u,
-                           lapack_int ldu, float* v, lapack_int ldv, float* q,
-                           lapack_int ldq );
+lapack_int LAPACK_sggsvp(
+    char const* jobu, char const* jobv, char const* jobq,
+    lapack_int const* m, lapack_int const* p, lapack_int const* n,
+    float* a, lapack_int const* lda,
+    float* b, lapack_int const* ldb,
+    float* tola, float* tolb,
+    lapack_int* k, lapack_int* l,
+    float* u, lapack_int const* ldu,
+    float* v, lapack_int const* ldv,
+    float* q, lapack_int const* ldq,
+    lapack_int* iwork, float* tau,
+    float* work, lapack_int* info );
 
 #define LAPACK_dggsvp LAPACK_GLOBAL(dggsvp,DGGSVP)
-lapack_int LAPACKE_dggsvp( int matrix_layout, char jobu, char jobv, char jobq,
-                           lapack_int m, lapack_int p, lapack_int n, double* a,
-                           lapack_int lda, double* b, lapack_int ldb,
-                           double tola, double tolb, lapack_int* k,
-                           lapack_int* l, double* u, lapack_int ldu, double* v,
-                           lapack_int ldv, double* q, lapack_int ldq );
+lapack_int LAPACK_dggsvp(
+    char const* jobu, char const* jobv, char const* jobq,
+    lapack_int const* m, lapack_int const* p, lapack_int const* n,
+    double* a, lapack_int const* lda,
+    double* b, lapack_int const* ldb,
+    double* tola, double* tolb,
+    lapack_int* k, lapack_int* l,
+    double* u, lapack_int const* ldu,
+    double* v, lapack_int const* ldv,
+    double* q, lapack_int const* ldq,
+    lapack_int* iwork, double* tau,
+    double* work, lapack_int* info );
 
 #define LAPACK_cggsvp LAPACK_GLOBAL(cggsvp,CGGSVP)
-lapack_int LAPACKE_cggsvp( int matrix_layout, char jobu, char jobv, char jobq,
-                           lapack_int m, lapack_int p, lapack_int n,
-                           lapack_complex_float* a, lapack_int lda,
-                           lapack_complex_float* b, lapack_int ldb, float tola,
-                           float tolb, lapack_int* k, lapack_int* l,
-                           lapack_complex_float* u, lapack_int ldu,
-                           lapack_complex_float* v, lapack_int ldv,
-                           lapack_complex_float* q, lapack_int ldq );
+lapack_int LAPACK_cggsvp(
+    char const* jobu, char const* jobv, char const* jobq,
+    lapack_int const* m, lapack_int const* p, lapack_int const* n,
+    lapack_complex_float* a, lapack_int const* lda,
+    lapack_complex_float* b, lapack_int const* ldb,
+    float* tola, float* tolb, lapack_int* k, lapack_int* l,
+    lapack_complex_float* u, lapack_int const* ldu,
+    lapack_complex_float* v, lapack_int const* ldv,
+    lapack_complex_float* q, lapack_int const* ldq,
+    lapack_int* iwork, float* rwork, lapack_complex_float* tau,
+    lapack_complex_float* work, lapack_int* info );
 
 #define LAPACK_zggsvp LAPACK_GLOBAL(zggsvp,ZGGSVP)
-lapack_int LAPACKE_zggsvp( int matrix_layout, char jobu, char jobv, char jobq,
-                           lapack_int m, lapack_int p, lapack_int n,
-                           lapack_complex_double* a, lapack_int lda,
-                           lapack_complex_double* b, lapack_int ldb,
-                           double tola, double tolb, lapack_int* k,
-                           lapack_int* l, lapack_complex_double* u,
-                           lapack_int ldu, lapack_complex_double* v,
-                           lapack_int ldv, lapack_complex_double* q,
-                           lapack_int ldq );
+lapack_int LAPACK_zggsvp(
+    char const* jobu, char const* jobv, char const* jobq,
+    lapack_int const* m, lapack_int const* p, lapack_int const* n,
+    lapack_complex_double* a, lapack_int const* lda,
+    lapack_complex_double* b, lapack_int const* ldb,
+    double* tola, double* tolb, lapack_int* k, lapack_int* l,
+    lapack_complex_double* u, lapack_int const* ldu,
+    lapack_complex_double* v, lapack_int const* ldv,
+    lapack_complex_double* q, lapack_int const* ldq,
+    lapack_int* iwork, double* rwork, lapack_complex_double* tau,
+    lapack_complex_double* work, lapack_int* info );
 
 #define LAPACK_cggsvp3 LAPACK_GLOBAL(cggsvp3,CGGSVP3)
 void LAPACK_cggsvp3(
@@ -4737,7 +4804,7 @@ void LAPACK_chegst(
     lapack_int const* itype, char const* uplo,
     lapack_int const* n,
     lapack_complex_float* A, lapack_int const* lda,
-    lapack_complex_float* B, lapack_int const* ldb,
+    const lapack_complex_float* B, lapack_int const* ldb,
     lapack_int* info );
 
 #define LAPACK_zhegst LAPACK_GLOBAL(zhegst,ZHEGST)
@@ -4745,7 +4812,7 @@ void LAPACK_zhegst(
     lapack_int const* itype, char const* uplo,
     lapack_int const* n,
     lapack_complex_double* A, lapack_int const* lda,
-    lapack_complex_double* B, lapack_int const* ldb,
+    const lapack_complex_double* B, lapack_int const* ldb,
     lapack_int* info );
 
 #define LAPACK_chegv LAPACK_GLOBAL(chegv,CHEGV)
@@ -4882,7 +4949,7 @@ void LAPACK_cherfsx(
     lapack_int const* n, lapack_int const* nrhs,
     lapack_complex_float const* A, lapack_int const* lda,
     lapack_complex_float const* AF, lapack_int const* ldaf, lapack_int const* ipiv,
-    float* S,
+    const float* S,
     lapack_complex_float const* B, lapack_int const* ldb,
     lapack_complex_float* X, lapack_int const* ldx,
     float* rcond,
@@ -4900,7 +4967,7 @@ void LAPACK_zherfsx(
     lapack_int const* n, lapack_int const* nrhs,
     lapack_complex_double const* A, lapack_int const* lda,
     lapack_complex_double const* AF, lapack_int const* ldaf, lapack_int const* ipiv,
-    double* S,
+    const double* S,
     lapack_complex_double const* B, lapack_int const* ldb,
     lapack_complex_double* X, lapack_int const* ldx,
     double* rcond,
@@ -7220,6 +7287,24 @@ void LAPACK_sorgtr(
     float* work, lapack_int const* lwork,
     lapack_int* info );
 
+#define LAPACK_dorgtsqr_row LAPACK_GLOBAL(dorgtsqr_row,DORGTSQR_ROW)
+void LAPACK_dorgtsqr_row(
+    lapack_int const* m, lapack_int const* n,
+    lapack_int const* mb, lapack_int const* nb,
+    double* A, lapack_int const* lda,
+    double const* T, lapack_int const* ldt,
+    double* work, lapack_int const* lwork,
+    lapack_int* info );
+
+#define LAPACK_sorgtsqr_row LAPACK_GLOBAL(sorgtsqr_row,SORGTSQR_ROW)
+void LAPACK_sorgtsqr_row(
+    lapack_int const* m, lapack_int const* n,
+    lapack_int const* mb, lapack_int const* nb,
+    float* A, lapack_int const* lda,
+    float const* T, lapack_int const* ldt,
+    float* work, lapack_int const* lwork,
+    lapack_int* info );
+
 #define LAPACK_dormbr LAPACK_GLOBAL(dormbr,DORMBR)
 void LAPACK_dormbr(
     char const* vect, char const* side, char const* trans,
@@ -7974,7 +8059,7 @@ void LAPACK_cporfsx(
     lapack_int const* n, lapack_int const* nrhs,
     lapack_complex_float const* A, lapack_int const* lda,
     lapack_complex_float const* AF, lapack_int const* ldaf,
-    float* S,
+    const float* S,
     lapack_complex_float const* B, lapack_int const* ldb,
     lapack_complex_float* X, lapack_int const* ldx,
     float* rcond,
@@ -7992,7 +8077,7 @@ void LAPACK_dporfsx(
     lapack_int const* n, lapack_int const* nrhs,
     double const* A, lapack_int const* lda,
     double const* AF, lapack_int const* ldaf,
-    double* S,
+    const double* S,
     double const* B, lapack_int const* ldb,
     double* X, lapack_int const* ldx,
     double* rcond,
@@ -8010,7 +8095,7 @@ void LAPACK_sporfsx(
     lapack_int const* n, lapack_int const* nrhs,
     float const* A, lapack_int const* lda,
     float const* AF, lapack_int const* ldaf,
-    float* S,
+    const float* S,
     float const* B, lapack_int const* ldb,
     float* X, lapack_int const* ldx,
     float* rcond,
@@ -8028,7 +8113,7 @@ void LAPACK_zporfsx(
     lapack_int const* n, lapack_int const* nrhs,
     lapack_complex_double const* A, lapack_int const* lda,
     lapack_complex_double const* AF, lapack_int const* ldaf,
-    double* S,
+    const double* S,
     lapack_complex_double const* B, lapack_int const* ldb,
     lapack_complex_double* X, lapack_int const* ldx,
     double* rcond,
@@ -10725,7 +10810,7 @@ void LAPACK_csyrfsx(
     lapack_int const* n, lapack_int const* nrhs,
     lapack_complex_float const* A, lapack_int const* lda,
     lapack_complex_float const* AF, lapack_int const* ldaf, lapack_int const* ipiv,
-    float* S,
+    const float* S,
     lapack_complex_float const* B, lapack_int const* ldb,
     lapack_complex_float* X, lapack_int const* ldx,
     float* rcond,
@@ -10743,7 +10828,7 @@ void LAPACK_dsyrfsx(
     lapack_int const* n, lapack_int const* nrhs,
     double const* A, lapack_int const* lda,
     double const* AF, lapack_int const* ldaf, lapack_int const* ipiv,
-    double* S,
+    const double* S,
     double const* B, lapack_int const* ldb,
     double* X, lapack_int const* ldx,
     double* rcond,
@@ -10761,7 +10846,7 @@ void LAPACK_ssyrfsx(
     lapack_int const* n, lapack_int const* nrhs,
     float const* A, lapack_int const* lda,
     float const* AF, lapack_int const* ldaf, lapack_int const* ipiv,
-    float* S,
+    const float* S,
     float const* B, lapack_int const* ldb,
     float* X, lapack_int const* ldx,
     float* rcond,
@@ -10779,7 +10864,7 @@ void LAPACK_zsyrfsx(
     lapack_int const* n, lapack_int const* nrhs,
     lapack_complex_double const* A, lapack_int const* lda,
     lapack_complex_double const* AF, lapack_int const* ldaf, lapack_int const* ipiv,
-    double* S,
+    const double* S,
     lapack_complex_double const* B, lapack_int const* ldb,
     lapack_complex_double* X, lapack_int const* ldx,
     double* rcond,
@@ -11525,7 +11610,7 @@ void LAPACK_zsytrs(
 void LAPACK_csytrs2(
     char const* uplo,
     lapack_int const* n, lapack_int const* nrhs,
-    lapack_complex_float* A, lapack_int const* lda, lapack_int const* ipiv,
+    const lapack_complex_float* A, lapack_int const* lda, lapack_int const* ipiv,
     lapack_complex_float* B, lapack_int const* ldb,
     lapack_complex_float* work,
     lapack_int* info );
@@ -11534,7 +11619,7 @@ void LAPACK_csytrs2(
 void LAPACK_dsytrs2(
     char const* uplo,
     lapack_int const* n, lapack_int const* nrhs,
-    double* A, lapack_int const* lda, lapack_int const* ipiv,
+    const double* A, lapack_int const* lda, lapack_int const* ipiv,
     double* B, lapack_int const* ldb,
     double* work,
     lapack_int* info );
@@ -11543,7 +11628,7 @@ void LAPACK_dsytrs2(
 void LAPACK_ssytrs2(
     char const* uplo,
     lapack_int const* n, lapack_int const* nrhs,
-    float* A, lapack_int const* lda, lapack_int const* ipiv,
+    const float* A, lapack_int const* lda, lapack_int const* ipiv,
     float* B, lapack_int const* ldb,
     float* work,
     lapack_int* info );
@@ -11552,7 +11637,7 @@ void LAPACK_ssytrs2(
 void LAPACK_zsytrs2(
     char const* uplo,
     lapack_int const* n, lapack_int const* nrhs,
-    lapack_complex_double* A, lapack_int const* lda, lapack_int const* ipiv,
+    const lapack_complex_double* A, lapack_int const* lda, lapack_int const* ipiv,
     lapack_complex_double* B, lapack_int const* ldb,
     lapack_complex_double* work,
     lapack_int* info );
@@ -13506,6 +13591,24 @@ void LAPACK_zungtr(
     lapack_int const* n,
     lapack_complex_double* A, lapack_int const* lda,
     lapack_complex_double const* tau,
+    lapack_complex_double* work, lapack_int const* lwork,
+    lapack_int* info );
+
+#define LAPACK_cungtsqr_row LAPACK_GLOBAL(cungtsqr_row,CUNGTSQR_ROW)
+void LAPACK_cungtsqr_row(
+    lapack_int const* m, lapack_int const* n,
+    lapack_int const* mb, lapack_int const* nb,
+    lapack_complex_float* A, lapack_int const* lda,
+    lapack_complex_float const* T, lapack_int const* ldt,
+    lapack_complex_float* work, lapack_int const* lwork,
+    lapack_int* info );
+
+#define LAPACK_zungtsqr_row LAPACK_GLOBAL(zungtsqr_row,ZUNGTSQR_ROW)
+void LAPACK_zungtsqr_row(
+    lapack_int const* m, lapack_int const* n,
+    lapack_int const* mb, lapack_int const* nb,
+    lapack_complex_double* A, lapack_int const* lda,
+    lapack_complex_double const* T, lapack_int const* ldt,
     lapack_complex_double* work, lapack_int const* lwork,
     lapack_int* info );
 

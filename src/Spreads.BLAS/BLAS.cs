@@ -10,8 +10,7 @@ namespace Spreads
 {
     public static partial class BLAS
     {
-        public static readonly bool IsMKLSupported = Native.MKL.IsSupoprted;
-
+        public static readonly bool IsUsingMKL = BLASSettings.UseMKLIfAvailable && MKL.IsSupoprted;
 
         /// <summary>
         /// Not thread-safe, should be set at application startup.

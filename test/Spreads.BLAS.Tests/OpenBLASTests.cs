@@ -67,7 +67,7 @@ namespace Spreads.Tests
         {
             var init = BlasNumThreads;
             BlasNumThreads = 2;
-            if(IsMKLSupported)
+            if(IsUsingMKL)
                 Assert.AreEqual(2, MKL.MKL_GetMaxThreads(), "MKL.MKL_GetMaxThreads");
             Assert.AreEqual(2, OpenBLAS.OpenblasGetNumThreads(), "OpenBLAS.OpenblasGetNumThreads");
             Assert.AreEqual(2, BlasNumThreads, "BlasNumThreads");

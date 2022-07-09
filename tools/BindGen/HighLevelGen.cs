@@ -9,14 +9,22 @@ using System.Text;
 
 namespace BindGen
 {
-    public static class HighLevelGen
+    public class HighLevelGen
     {
+        private readonly string _apiName;
+
+        public HighLevelGen(string apiName)
+        {
+            _apiName = apiName;
+
+        }
+        
         /// <summary>
         /// Generate high level API for all shared functions and the ones available in OB
         /// </summary>
         /// <param name="tOb"></param>
         /// <param name="tMk"></param>
-        public static void GenForTypes(string apiName, Type tOb, Type tMk)
+        public void GenForTypes(Type tOb, Type tMk)
         {
             var obMethods = tOb.GetMethods(BindingFlags.Static | BindingFlags.Public)
                 .ToDictionary(x => x.Name, x => x);
@@ -49,15 +57,15 @@ namespace BindGen
 
             foreach (var sharedMethod in sharedMethods)
             {
-                GenMethod(apiName, sharedMethod, sb);
+                GenMethod(sharedMethod, sb);
             }
 
             Directory.CreateDirectory(@"..\..\Generated\HighLevel");
 
-            File.WriteAllText($@"..\..\Generated\HighLevel\{apiName}.cspart", sb.ToString());
+            File.WriteAllText($@"..\..\Generated\HighLevel\{_apiName}.cspart", sb.ToString());
         }
 
-        private static void GenMethod(string apiName, (string methodName, MethodInfo ob, MethodInfo mk) m, StringBuilder sb)
+        private void GenMethod((string methodName, MethodInfo ob, MethodInfo mk) m, StringBuilder sb)
         {
             var ps = GetMethodParams(m.ob, m.mk);
 
@@ -65,38 +73,38 @@ namespace BindGen
 
             var methodBody =
                 rt.ToLower().Contains("void")
-                    ? GenVoidMethod(apiName, m.methodName, ps)
-                    : GetReturningMethod(apiName, m.methodName, rt, ps);
+                    ? GetReturningMethod(m.methodName, "void", ps)
+                    : GetReturningMethod(m.methodName, rt, ps);
 
             sb.Append(methodBody);
         }
 
-        private static string GenVoidMethod(string apiName, string methodName, (string types, string signature, string args) ps)
+        private string GenVoidMethod(string methodName, (string types, string signature, string args) ps)
         {
             var template = $@"
             public static void {methodName}({ps.signature})
             {{
                 if (MKL.IsSupoprted)
                 {{
-                    MKL.{apiName}.{methodName}({ps.args});
+                    MKL.{_apiName}.{methodName}({ps.args});
                     return;
                 }}
-                OpenBLAS.{apiName}.{methodName}({ps.args});
+                OpenBLAS.{_apiName}.{methodName}({ps.args});
             }}
 ";
 
             return template;
         }
 
-        private static string GetReturningMethod(string apiName, string methodName, string rt, (string types, string signature, string args) ps)
+        private string GetReturningMethod(string methodName, string rt, (string types, string signature, string args) ps)
         {
             var template = $@"
             public static {rt} {methodName}({ps.signature})
             {{
                 if (MKL.IsSupoprted)
-                    return MKL.{apiName}.{methodName}({ps.args});
+                    return MKL.{_apiName}.{methodName}({ps.args});
 
-                return OpenBLAS.{apiName}.{methodName}({ps.args});
+                return OpenBLAS.{_apiName}.{methodName}({ps.args});
             }}
 ";
 
