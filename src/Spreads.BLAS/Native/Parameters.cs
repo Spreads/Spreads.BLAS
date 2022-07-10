@@ -41,4 +41,16 @@ namespace Spreads.Native
         Upper = (sbyte)'U',
         Lower = (sbyte)'L'
     }
+    
+    public enum DiagCblas
+    {
+        NonUnit = 131,
+        Unit = 132
+    }
+
+    public enum SideCblas
+    {
+        Left = 141,
+        Right = 142
+    }
 }

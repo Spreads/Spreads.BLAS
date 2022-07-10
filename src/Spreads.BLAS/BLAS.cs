@@ -66,16 +66,6 @@ namespace Spreads
         public static readonly UpLo Upper = UpLo.Upper;
         public static readonly UpLo Lower = UpLo.Lower;
 
-        public enum DIAG
-        {
-            NonUnit = 131,
-            Unit = 132
-        }
-
-        public enum SIDE
-        {
-            Left = 141,
-            Right = 142
-        }
+        
     }
 }
