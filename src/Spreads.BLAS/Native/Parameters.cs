@@ -10,7 +10,6 @@ namespace Spreads.Native
         NoTrans = 111,
         Trans = 112,
         ConjTrans = 113,
-        [Obsolete("OpenBlas-only, use a cast (TransCblas)114 instead")]
         ConjNoTrans = 114
     }
 
@@ -21,7 +20,8 @@ namespace Spreads.Native
     {
         NoTrans = (sbyte)'N',
         Trans = (sbyte)'T',
-        ConjTrans = (sbyte)'C'
+        ConjTrans = (sbyte)'C',
+        ConjNoTrans = (sbyte)'R',
     }
     
     /// <summary>

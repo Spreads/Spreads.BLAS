@@ -29,6 +29,7 @@ namespace Spreads
         public static readonly Transpose NoTrans = new Transpose((sbyte)'N');
         public static readonly Transpose Trans = new Transpose((sbyte)'T');
         public static readonly Transpose ConjTrans = new Transpose((sbyte)'C');
+        public static readonly Transpose ConjNoTrans = new Transpose((sbyte)'R');
 
         [FieldOffset(0)]
         private readonly sbyte _value;
@@ -50,6 +51,9 @@ namespace Spreads
 
             if ((char)transpose._value == 'C' || (char)transpose._value == 'c')
                 return TransCblas.ConjTrans;
+            
+            if ((char)transpose._value == 'R' || (char)transpose._value == 'r')
+                return TransCblas.ConjNoTrans;
 
             ThrowIndalidValue((char)transpose._value);
             return default;
@@ -66,6 +70,9 @@ namespace Spreads
             if (transposeChar == 'C' || transposeChar == 'c')
                 return ConjTrans;
 
+            if (transposeChar == 'R' || transposeChar == 'r')
+                return ConjNoTrans;
+            
             ThrowIndalidValue(transposeChar);
             return default;
         }
