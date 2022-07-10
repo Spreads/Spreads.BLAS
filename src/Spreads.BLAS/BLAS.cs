@@ -16,28 +16,28 @@ namespace Spreads
         /// If both MKL and OpenBlas are available then prefer MKL.
         /// </summary>
         public static bool MKLIsPreferred = true;
-        
+
         /// <summary>
         /// Require MKL. Calling a shared method will throw even if OpenBlas is available and could perform the required call. 
         /// </summary>
         public static bool RequireMkl = true;
-        
+
         public static readonly bool IsUsingMKL = MKLIsPreferred && MKL.IsSupoprted;
         public static readonly bool IsUsingOpenBlas = !RequireMkl && !IsUsingMKL && OpenBLAS.IsSupoprted;
 
         /// <summary>
         /// Not thread-safe, should be set at application startup.
-        /// See details on threading (there are a lot of them!) in OpenBLAS and MKL docs. 
+        /// See details on threading (there are a lot of them) in OpenBLAS and MKL docs. 
         /// </summary>
         public static int BlasNumThreads
         {
             get
             {
                 if (IsUsingMKL)
-                    return MKL.MKL_GetMaxThreads();
+                    return MKL.GetMaxThreads();
 
                 if (OpenBLAS.IsSupoprted)
-                    return OpenBLAS.OpenblasGetNumThreads();
+                    return OpenBLAS.GetNumThreads();
 
                 throw new InvalidOperationException("No native library is available");
             }
@@ -47,10 +47,10 @@ namespace Spreads
                 var nt = Math.Max(1, Math.Min(Environment.ProcessorCount, value));
 
                 if (IsUsingMKL)
-                    MKL.MKL_SetNumThreads(nt);
+                    MKL.SetNumThreads(nt);
 
                 if (OpenBLAS.IsSupoprted)
-                    OpenBLAS.OpenblasSetNumThreads(nt);
+                    OpenBLAS.SetNumThreads(nt);
 
                 throw new InvalidOperationException("No native library is available");
             }
@@ -58,7 +58,7 @@ namespace Spreads
 
         // TODO Other static fields for high-level params
         public static MatrixLayout RowMajor = MatrixLayout.RowMajor;
-            
+
         /// <summary>
         /// Matrix layout parameter for CBLAS and LAPACKE.
         /// </summary>
@@ -66,28 +66,6 @@ namespace Spreads
         {
             RowMajor = 101,
             ColMajor = 102
-        }
-
-        /// <summary>
-        /// Native transpose parameter for CBLAS.
-        /// </summary>
-        public enum TransCblas
-        {
-            NoTrans = 111,
-            Trans = 112,
-            ConjTrans = 113,
-            [Obsolete("OpenBlas-only, use a cast (TransCblas)114 instead")]
-            ConjNoTrans = 114
-        }
-
-        /// <summary>
-        /// Native transpose parameter for LAPACKE.
-        /// </summary>
-        public enum TransLapack : sbyte
-        {
-            NoTrans = (sbyte)'N',
-            Trans = (sbyte)'T',
-            ConjTrans = (sbyte)'C'
         }
 
         /// <summary>
@@ -163,18 +141,6 @@ namespace Spreads
             private static void ThrowIndalidValue(char value) => throw new InvalidCastException($"Invalid transpose value {value}");
         }
 
-        public enum UpLoCblas
-        {
-            Upper = 121,
-            Lower = 122
-        }
-        
-        public enum UpLoLapack : sbyte
-        {
-            Upper = (sbyte)'U',
-            Lower = (sbyte)'L'
-        }
-        
         /// <summary>
         /// Transpose parameter for CBLAS and LAPACKE.
         /// </summary>

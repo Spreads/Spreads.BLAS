@@ -17,7 +17,7 @@ namespace Spreads.Native
         {
             try
             {
-                return OpenblasGetNumProcs() > 0;
+                return GetNumProcs() > 0;
             }
             catch
             {
@@ -28,21 +28,21 @@ namespace Spreads.Native
         }
 
         [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_set_num_threads")]
-        public static extern void OpenblasSetNumThreads(int num_threads);
+        public static extern void SetNumThreads(int num_threads);
         
         [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_num_threads")]
-        public static extern int OpenblasGetNumThreads();
+        public static extern int GetNumThreads();
 
         [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_num_procs")]
-        public static extern int OpenblasGetNumProcs();
+        public static extern int GetNumProcs();
 
         [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_config")]
-        public static extern sbyte* OpenblasGetConfig();
+        public static extern sbyte* GetConfig();
 
         [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_corename")]
-        public static extern sbyte* OpenblasGetCorename();
+        public static extern sbyte* GetCorename();
 
         [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_parallel")]
-        public static extern int OpenblasGetParallel();
+        public static extern int GetParallel();
     }
 }

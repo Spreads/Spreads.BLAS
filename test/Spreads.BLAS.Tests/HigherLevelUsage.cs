@@ -1,4 +1,5 @@
-﻿using static Spreads.BLAS; // allows to remove all BLAS. prefixes
+﻿using Spreads.Native;
+using static Spreads.BLAS; // allows to remove all BLAS. prefixes
 
 namespace Spreads.Tests
 {
@@ -20,7 +21,7 @@ namespace Spreads.Tests
             fixed (float* xP = &x[0])
             fixed (float* cP = &c[0])
             {
-                CBLAS.Sgemm(LAYOUT.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
+                CBLAS.Sgemm(MatrixLayout.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
                     mnk, mnk, mnk, alpha: 1f, xP, mnk, xP, mnk, beta: 0, cP, mnk);
             }
         }

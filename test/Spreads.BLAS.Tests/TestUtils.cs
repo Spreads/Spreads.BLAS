@@ -28,7 +28,7 @@ namespace Spreads.Tests
         {
             var group =
                 InDocker
-                    ? groupPath.Split("\\").Last().Replace(".cs", "")
+                    ? groupPath.Split('\\').Last().Replace(".cs", "")
                     :
                 Path.GetFileName(Path.GetFileNameWithoutExtension(groupPath));
             var path = Path.Combine(BaseDataPath, group, testPath);

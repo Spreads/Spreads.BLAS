@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\build\common.props" />
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net48</TargetFrameworks>
     <AssemblyName>Spreads.BLAS.Tests</AssemblyName>
     <RootNamespace>Spreads.BLAS.Tests</RootNamespace>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
     <IsTestProject>true</IsTestProject>
     <RootNamespace>Spreads.Tests</RootNamespace>
   </PropertyGroup>
@@ -35,10 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Spreads.BLAS\Spreads.BLAS.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <NativeLibs Include="..\..\lib\runtimes\win-x64\native\*.*" />
     <NativeLibs Include="..\..\lib\runtimes\linux-x64\native\*.*" />
     <NativeLibs Include="..\..\lib\runtimes\osx-x64\native\*.*" />
@@ -47,5 +43,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Visible>False</Visible>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Spreads.BLAS\Spreads.BLAS.csproj" />
   </ItemGroup>
 </Project>

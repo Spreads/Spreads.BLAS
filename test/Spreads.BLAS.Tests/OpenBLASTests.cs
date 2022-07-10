@@ -18,10 +18,10 @@ namespace Spreads.Tests
         public void OpenBlasCallsWork()
         {
             var threads = Math.Min(Environment.ProcessorCount, 3);
-            OpenBLAS.OpenblasSetNumThreads(threads);
-            Assert.AreEqual(threads, OpenBLAS.OpenblasGetNumThreads());
-            Assert.AreEqual(Environment.ProcessorCount, OpenBLAS.OpenblasGetNumProcs());
-            Console.WriteLine(OpenBLAS.OpenblasGetNumProcs());
+            OpenBLAS.SetNumThreads(threads);
+            Assert.AreEqual(threads, OpenBLAS.GetNumThreads());
+            Assert.AreEqual(Environment.ProcessorCount, OpenBLAS.GetNumProcs());
+            Console.WriteLine(OpenBLAS.GetNumProcs());
         }
 
         [Test]
@@ -29,7 +29,7 @@ namespace Spreads.Tests
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                Assert.IsTrue(MKL.MKL_GetMaxThreads() == Environment.ProcessorCount || MKL.MKL_GetMaxThreads() == Environment.ProcessorCount / 2);
+                Assert.IsTrue(MKL.GetMaxThreads() == Environment.ProcessorCount || MKL.GetMaxThreads() == Environment.ProcessorCount / 2);
             }
         }
 
@@ -48,7 +48,7 @@ namespace Spreads.Tests
             var c = new float[mnk * mnk];
             var hc = c.AsMemory().Pin();
             
-            CBLAS.Sgemm(LAYOUT.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
+            CBLAS.Sgemm(MatrixLayout.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
             
         }
@@ -68,8 +68,8 @@ namespace Spreads.Tests
             var init = BlasNumThreads;
             BlasNumThreads = 2;
             if(IsUsingMKL)
-                Assert.AreEqual(2, MKL.MKL_GetMaxThreads(), "MKL.MKL_GetMaxThreads");
-            Assert.AreEqual(2, OpenBLAS.OpenblasGetNumThreads(), "OpenBLAS.OpenblasGetNumThreads");
+                Assert.AreEqual(2, MKL.GetMaxThreads(), "MKL.MKL_GetMaxThreads");
+            Assert.AreEqual(2, OpenBLAS.GetNumThreads(), "OpenBLAS.OpenblasGetNumThreads");
             Assert.AreEqual(2, BlasNumThreads, "BlasNumThreads");
 
             BlasNumThreads = init;
@@ -91,8 +91,8 @@ namespace Spreads.Tests
                     x[i] = (i + 1);
                 }
 
-                OpenBLAS.OpenblasSetNumThreads(1);
-                MKL.MKL_SetThreadingLayer(1);
+                OpenBLAS.SetNumThreads(1);
+                MKL.SetThreadingLayer(1);
                 MathNet.Numerics.Control.UseSingleThread();
                 var nd = np.arange(mnk * mnk).reshape(mnk, mnk);
 
@@ -109,7 +109,7 @@ namespace Spreads.Tests
                     {
                         for (int i = 0; i < count; i++)
                         {
-                            OpenBLAS.CBLAS.Sgemm(LAYOUT.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
+                            OpenBLAS.CBLAS.Sgemm(MatrixLayout.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
                                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
                         }
                     }
@@ -118,7 +118,7 @@ namespace Spreads.Tests
                     {
                         for (int i = 0; i < count; i++)
                         {
-                            MKL.CBLAS.Sgemm(LAYOUT.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
+                            MKL.CBLAS.Sgemm(MatrixLayout.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
                                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
                         }
                     }
