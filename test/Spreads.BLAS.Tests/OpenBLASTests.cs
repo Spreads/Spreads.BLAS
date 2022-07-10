@@ -48,7 +48,7 @@ namespace Spreads.Tests
             var c = new float[mnk * mnk];
             var hc = c.AsMemory().Pin();
             
-            CBLAS.Sgemm(MatrixLayout.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
+            CBLAS.Sgemm(RowMajor, NoTrans, NoTrans,
                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
             
         }

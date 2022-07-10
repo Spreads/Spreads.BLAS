@@ -79,7 +79,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZbbcsdWork(matrixLayout, jobu1, jobu2, jobv1t, jobv2t, trans, m, p, q, theta, phi, u1, ldu1, u2, ldu2, v1t, ldv1t, v2t, ldv2t, b11d, b11e, b12d, b12e, b21d, b21e, b22d, b22e, rwork, lrwork);
             }
 
-            public static int Sbdsdc(MatrixLayout matrixLayout, sbyte uplo, sbyte compq, int n, float* d, float* e, float* u, int ldU, float* vt, int ldvt, float* q, int* iq)
+            public static int Sbdsdc(MatrixLayout matrixLayout, UpLo uplo, sbyte compq, int n, float* d, float* e, float* u, int ldU, float* vt, int ldvt, float* q, int* iq)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sbdsdc(matrixLayout, uplo, compq, n, d, e, u, ldU, vt, ldvt, q, iq);
@@ -87,7 +87,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sbdsdc(matrixLayout, uplo, compq, n, d, e, u, ldU, vt, ldvt, q, iq);
             }
 
-            public static int Dbdsdc(MatrixLayout matrixLayout, sbyte uplo, sbyte compq, int n, double* d, double* e, double* u, int ldU, double* vt, int ldvt, double* q, int* iq)
+            public static int Dbdsdc(MatrixLayout matrixLayout, UpLo uplo, sbyte compq, int n, double* d, double* e, double* u, int ldU, double* vt, int ldvt, double* q, int* iq)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dbdsdc(matrixLayout, uplo, compq, n, d, e, u, ldU, vt, ldvt, q, iq);
@@ -95,7 +95,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dbdsdc(matrixLayout, uplo, compq, n, d, e, u, ldU, vt, ldvt, q, iq);
             }
 
-            public static int SbdsdcWork(MatrixLayout matrixLayout, sbyte uplo, sbyte compq, int n, float* d, float* e, float* u, int ldU, float* vt, int ldvt, float* q, int* iq, float* work, int* iwork)
+            public static int SbdsdcWork(MatrixLayout matrixLayout, UpLo uplo, sbyte compq, int n, float* d, float* e, float* u, int ldU, float* vt, int ldvt, float* q, int* iq, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SbdsdcWork(matrixLayout, uplo, compq, n, d, e, u, ldU, vt, ldvt, q, iq, work, iwork);
@@ -103,7 +103,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SbdsdcWork(matrixLayout, uplo, compq, n, d, e, u, ldU, vt, ldvt, q, iq, work, iwork);
             }
 
-            public static int DbdsdcWork(MatrixLayout matrixLayout, sbyte uplo, sbyte compq, int n, double* d, double* e, double* u, int ldU, double* vt, int ldvt, double* q, int* iq, double* work, int* iwork)
+            public static int DbdsdcWork(MatrixLayout matrixLayout, UpLo uplo, sbyte compq, int n, double* d, double* e, double* u, int ldU, double* vt, int ldvt, double* q, int* iq, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DbdsdcWork(matrixLayout, uplo, compq, n, d, e, u, ldU, vt, ldvt, q, iq, work, iwork);
@@ -111,7 +111,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DbdsdcWork(matrixLayout, uplo, compq, n, d, e, u, ldU, vt, ldvt, q, iq, work, iwork);
             }
 
-            public static int Sbdsqr(MatrixLayout matrixLayout, sbyte uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, float* vt, int ldvt, float* u, int ldU, float* c, int ldC)
+            public static int Sbdsqr(MatrixLayout matrixLayout, UpLo uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, float* vt, int ldvt, float* u, int ldU, float* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sbdsqr(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC);
@@ -119,7 +119,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sbdsqr(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC);
             }
 
-            public static int Dbdsqr(MatrixLayout matrixLayout, sbyte uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, double* vt, int ldvt, double* u, int ldU, double* c, int ldC)
+            public static int Dbdsqr(MatrixLayout matrixLayout, UpLo uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, double* vt, int ldvt, double* u, int ldU, double* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dbdsqr(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC);
@@ -127,7 +127,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dbdsqr(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC);
             }
 
-            public static int Cbdsqr(MatrixLayout matrixLayout, sbyte uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, System.IntPtr vt, int ldvt, System.IntPtr u, int ldU, System.IntPtr c, int ldC)
+            public static int Cbdsqr(MatrixLayout matrixLayout, UpLo uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, System.IntPtr vt, int ldvt, System.IntPtr u, int ldU, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cbdsqr(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC);
@@ -135,7 +135,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cbdsqr(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC);
             }
 
-            public static int Zbdsqr(MatrixLayout matrixLayout, sbyte uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, System.IntPtr vt, int ldvt, System.IntPtr u, int ldU, System.IntPtr c, int ldC)
+            public static int Zbdsqr(MatrixLayout matrixLayout, UpLo uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, System.IntPtr vt, int ldvt, System.IntPtr u, int ldU, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zbdsqr(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC);
@@ -143,7 +143,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zbdsqr(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC);
             }
 
-            public static int SbdsqrWork(MatrixLayout matrixLayout, sbyte uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, float* vt, int ldvt, float* u, int ldU, float* c, int ldC, float* work)
+            public static int SbdsqrWork(MatrixLayout matrixLayout, UpLo uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, float* vt, int ldvt, float* u, int ldU, float* c, int ldC, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SbdsqrWork(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC, work);
@@ -151,7 +151,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SbdsqrWork(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC, work);
             }
 
-            public static int DbdsqrWork(MatrixLayout matrixLayout, sbyte uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, double* vt, int ldvt, double* u, int ldU, double* c, int ldC, double* work)
+            public static int DbdsqrWork(MatrixLayout matrixLayout, UpLo uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, double* vt, int ldvt, double* u, int ldU, double* c, int ldC, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DbdsqrWork(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC, work);
@@ -159,7 +159,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DbdsqrWork(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC, work);
             }
 
-            public static int CbdsqrWork(MatrixLayout matrixLayout, sbyte uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, System.IntPtr vt, int ldvt, System.IntPtr u, int ldU, System.IntPtr c, int ldC, float* work)
+            public static int CbdsqrWork(MatrixLayout matrixLayout, UpLo uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, System.IntPtr vt, int ldvt, System.IntPtr u, int ldU, System.IntPtr c, int ldC, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CbdsqrWork(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC, work);
@@ -167,7 +167,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CbdsqrWork(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC, work);
             }
 
-            public static int ZbdsqrWork(MatrixLayout matrixLayout, sbyte uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, System.IntPtr vt, int ldvt, System.IntPtr u, int ldU, System.IntPtr c, int ldC, double* work)
+            public static int ZbdsqrWork(MatrixLayout matrixLayout, UpLo uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, System.IntPtr vt, int ldvt, System.IntPtr u, int ldU, System.IntPtr c, int ldC, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZbdsqrWork(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC, work);
@@ -175,7 +175,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZbdsqrWork(matrixLayout, uplo, n, ncvt, nru, ncc, d, e, vt, ldvt, u, ldU, c, ldC, work);
             }
 
-            public static int Sbdsvdx(MatrixLayout matrixLayout, sbyte uplo, sbyte jobz, sbyte range, int n, float* d, float* e, float vl, float vu, int il, int iu, int* ns, float* s, float* z, int ldZ, int* superb)
+            public static int Sbdsvdx(MatrixLayout matrixLayout, UpLo uplo, sbyte jobz, sbyte range, int n, float* d, float* e, float vl, float vu, int il, int iu, int* ns, float* s, float* z, int ldZ, int* superb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sbdsvdx(matrixLayout, uplo, jobz, range, n, d, e, vl, vu, il, iu, ns, s, z, ldZ, superb);
@@ -183,7 +183,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sbdsvdx(matrixLayout, uplo, jobz, range, n, d, e, vl, vu, il, iu, ns, s, z, ldZ, superb);
             }
 
-            public static int Dbdsvdx(MatrixLayout matrixLayout, sbyte uplo, sbyte jobz, sbyte range, int n, double* d, double* e, double vl, double vu, int il, int iu, int* ns, double* s, double* z, int ldZ, int* superb)
+            public static int Dbdsvdx(MatrixLayout matrixLayout, UpLo uplo, sbyte jobz, sbyte range, int n, double* d, double* e, double vl, double vu, int il, int iu, int* ns, double* s, double* z, int ldZ, int* superb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dbdsvdx(matrixLayout, uplo, jobz, range, n, d, e, vl, vu, il, iu, ns, s, z, ldZ, superb);
@@ -191,7 +191,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dbdsvdx(matrixLayout, uplo, jobz, range, n, d, e, vl, vu, il, iu, ns, s, z, ldZ, superb);
             }
 
-            public static int SbdsvdxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte jobz, sbyte range, int n, float* d, float* e, float vl, float vu, int il, int iu, int* ns, float* s, float* z, int ldZ, float* work, int* iwork)
+            public static int SbdsvdxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte jobz, sbyte range, int n, float* d, float* e, float vl, float vu, int il, int iu, int* ns, float* s, float* z, int ldZ, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SbdsvdxWork(matrixLayout, uplo, jobz, range, n, d, e, vl, vu, il, iu, ns, s, z, ldZ, work, iwork);
@@ -199,7 +199,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SbdsvdxWork(matrixLayout, uplo, jobz, range, n, d, e, vl, vu, il, iu, ns, s, z, ldZ, work, iwork);
             }
 
-            public static int DbdsvdxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte jobz, sbyte range, int n, double* d, double* e, double vl, double vu, int il, int iu, int* ns, double* s, double* z, int ldZ, double* work, int* iwork)
+            public static int DbdsvdxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte jobz, sbyte range, int n, double* d, double* e, double vl, double vu, int il, int iu, int* ns, double* s, double* z, int ldZ, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DbdsvdxWork(matrixLayout, uplo, jobz, range, n, d, e, vl, vu, il, iu, ns, s, z, ldZ, work, iwork);
@@ -223,7 +223,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZcgesvWork(matrixLayout, n, nrhs, a, ldA, ipiv, b, ldB, x, ldX, work, swork, rwork, iter);
             }
 
-            public static int Zcposv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, int* iter)
+            public static int Zcposv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, int* iter)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zcposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB, x, ldX, iter);
@@ -231,7 +231,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zcposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB, x, ldX, iter);
             }
 
-            public static int ZcposvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, System.IntPtr work, System.IntPtr swork, double* rwork, int* iter)
+            public static int ZcposvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, System.IntPtr work, System.IntPtr swork, double* rwork, int* iter)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZcposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB, x, ldX, work, swork, rwork, iter);
@@ -5601,7 +5601,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZgttrsWork(matrixLayout, trans, n, nrhs, dl, d, du, du2, ipiv, b, ldB);
             }
 
-            public static int Chbev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ)
+            public static int Chbev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbev(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -5609,7 +5609,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbev(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Zhbev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ)
+            public static int Zhbev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbev(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -5617,7 +5617,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbev(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Chbev2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ)
+            public static int Chbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbev2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -5625,7 +5625,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbev2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Zhbev2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ)
+            public static int Zhbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbev2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -5633,7 +5633,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbev2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Chbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork)
+            public static int Chbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbev2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork);
@@ -5641,7 +5641,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbev2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork);
             }
 
-            public static int Zhbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork)
+            public static int Zhbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbev2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork);
@@ -5649,7 +5649,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbev2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork);
             }
 
-            public static int Chbevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ)
+            public static int Chbevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbevd(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -5657,7 +5657,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbevd(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Zhbevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ)
+            public static int Zhbevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbevd(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -5665,7 +5665,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbevd(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Chbevd2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ)
+            public static int Chbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbevd2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -5673,7 +5673,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbevd2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Zhbevd2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ)
+            public static int Zhbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbevd2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -5681,7 +5681,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbevd2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Chbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int Chbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbevd2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -5689,7 +5689,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbevd2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int Zhbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int Zhbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbevd2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -5697,7 +5697,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbevd2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ChbevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int ChbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChbevdWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -5705,7 +5705,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChbevdWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ZhbevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int ZhbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhbevdWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -5713,7 +5713,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhbevdWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ChbevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork)
+            public static int ChbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChbevWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, rwork);
@@ -5721,7 +5721,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChbevWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, rwork);
             }
 
-            public static int ZhbevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork)
+            public static int ZhbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhbevWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, rwork);
@@ -5729,7 +5729,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhbevWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, rwork);
             }
 
-            public static int Chbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Chbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbevx(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -5737,7 +5737,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbevx(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Zhbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Zhbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbevx(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -5745,7 +5745,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbevx(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Chbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Chbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbevx2stage(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -5753,7 +5753,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbevx2stage(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Zhbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Zhbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbevx2stage(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -5761,7 +5761,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbevx2stage(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Chbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int* iwork, int* ifail)
+            public static int Chbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbevx2stageWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
@@ -5769,7 +5769,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbevx2stageWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
             }
 
-            public static int Zhbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int* iwork, int* ifail)
+            public static int Zhbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbevx2stageWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
@@ -5777,7 +5777,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbevx2stageWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
             }
 
-            public static int ChbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork, int* iwork, int* ifail)
+            public static int ChbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChbevxWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
@@ -5785,7 +5785,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChbevxWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
             }
 
-            public static int ZhbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork, int* iwork, int* ifail)
+            public static int ZhbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhbevxWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
@@ -5793,7 +5793,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhbevxWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
             }
 
-            public static int Chbgst(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr x, int ldX)
+            public static int Chbgst(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr x, int ldX)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbgst(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX);
@@ -5801,7 +5801,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbgst(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX);
             }
 
-            public static int Zhbgst(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr x, int ldX)
+            public static int Zhbgst(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr x, int ldX)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbgst(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX);
@@ -5809,7 +5809,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbgst(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX);
             }
 
-            public static int ChbgstWork(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr x, int ldX, System.IntPtr work, float* rwork)
+            public static int ChbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr x, int ldX, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChbgstWork(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX, work, rwork);
@@ -5817,7 +5817,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChbgstWork(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX, work, rwork);
             }
 
-            public static int ZhbgstWork(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr x, int ldX, System.IntPtr work, double* rwork)
+            public static int ZhbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr x, int ldX, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhbgstWork(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX, work, rwork);
@@ -5825,7 +5825,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhbgstWork(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX, work, rwork);
             }
 
-            public static int Chbgv(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, float* w, System.IntPtr z, int ldZ)
+            public static int Chbgv(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbgv(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
@@ -5833,7 +5833,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbgv(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
             }
 
-            public static int Zhbgv(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, double* w, System.IntPtr z, int ldZ)
+            public static int Zhbgv(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbgv(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
@@ -5841,7 +5841,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbgv(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
             }
 
-            public static int Chbgvd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, float* w, System.IntPtr z, int ldZ)
+            public static int Chbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbgvd(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
@@ -5849,7 +5849,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbgvd(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
             }
 
-            public static int Zhbgvd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, double* w, System.IntPtr z, int ldZ)
+            public static int Zhbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbgvd(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
@@ -5857,7 +5857,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbgvd(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
             }
 
-            public static int ChbgvdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int ChbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChbgvdWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -5865,7 +5865,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChbgvdWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ZhbgvdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int ZhbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhbgvdWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -5873,7 +5873,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhbgvdWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ChbgvWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork)
+            public static int ChbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChbgvWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, rwork);
@@ -5881,7 +5881,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChbgvWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, rwork);
             }
 
-            public static int ZhbgvWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork)
+            public static int ZhbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhbgvWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, rwork);
@@ -5889,7 +5889,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhbgvWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, rwork);
             }
 
-            public static int Chbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Chbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbgvx(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -5897,7 +5897,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbgvx(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Zhbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Zhbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbgvx(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -5905,7 +5905,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbgvx(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int ChbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork, int* iwork, int* ifail)
+            public static int ChbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChbgvxWork(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
@@ -5913,7 +5913,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChbgvxWork(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
             }
 
-            public static int ZhbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork, int* iwork, int* ifail)
+            public static int ZhbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int ka, int kb, System.IntPtr ab, int ldab, System.IntPtr bb, int ldbb, System.IntPtr q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhbgvxWork(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
@@ -5921,7 +5921,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhbgvxWork(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
             }
 
-            public static int Chbtrd(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* d, float* e, System.IntPtr q, int ldQ)
+            public static int Chbtrd(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* d, float* e, System.IntPtr q, int ldQ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chbtrd(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ);
@@ -5929,7 +5929,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chbtrd(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ);
             }
 
-            public static int Zhbtrd(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* d, double* e, System.IntPtr q, int ldQ)
+            public static int Zhbtrd(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* d, double* e, System.IntPtr q, int ldQ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhbtrd(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ);
@@ -5937,7 +5937,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhbtrd(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ);
             }
 
-            public static int ChbtrdWork(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* d, float* e, System.IntPtr q, int ldQ, System.IntPtr work)
+            public static int ChbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* d, float* e, System.IntPtr q, int ldQ, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChbtrdWork(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ, work);
@@ -5945,7 +5945,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChbtrdWork(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ, work);
             }
 
-            public static int ZhbtrdWork(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* d, double* e, System.IntPtr q, int ldQ, System.IntPtr work)
+            public static int ZhbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* d, double* e, System.IntPtr q, int ldQ, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhbtrdWork(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ, work);
@@ -5953,7 +5953,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhbtrdWork(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ, work);
             }
 
-            public static int Checon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, float anorm, float* rcond)
+            public static int Checon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Checon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
@@ -5961,7 +5961,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Checon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
             }
 
-            public static int Zhecon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, double anorm, double* rcond)
+            public static int Zhecon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhecon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
@@ -5969,7 +5969,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhecon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
             }
 
-            public static int Checon3(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, float anorm, float* rcond)
+            public static int Checon3(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Checon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
@@ -5977,7 +5977,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Checon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
             }
 
-            public static int Zhecon3(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, double anorm, double* rcond)
+            public static int Zhecon3(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhecon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
@@ -5985,7 +5985,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhecon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
             }
 
-            public static int Checon3Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, float anorm, float* rcond, System.IntPtr work)
+            public static int Checon3Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, float anorm, float* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Checon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work);
@@ -5993,7 +5993,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Checon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work);
             }
 
-            public static int Zhecon3Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, double anorm, double* rcond, System.IntPtr work)
+            public static int Zhecon3Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, double anorm, double* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhecon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work);
@@ -6001,7 +6001,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhecon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work);
             }
 
-            public static int CheconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, float anorm, float* rcond, System.IntPtr work)
+            public static int CheconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, float anorm, float* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CheconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work);
@@ -6009,7 +6009,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CheconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work);
             }
 
-            public static int ZheconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, double anorm, double* rcond, System.IntPtr work)
+            public static int ZheconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, double anorm, double* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZheconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work);
@@ -6017,7 +6017,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZheconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work);
             }
 
-            public static int Cheequb(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, float* s, float* scond, float* amax)
+            public static int Cheequb(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
@@ -6025,7 +6025,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
             }
 
-            public static int Zheequb(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, double* s, double* scond, double* amax)
+            public static int Zheequb(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
@@ -6033,7 +6033,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
             }
 
-            public static int CheequbWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, float* s, float* scond, float* amax, System.IntPtr work)
+            public static int CheequbWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, float* s, float* scond, float* amax, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CheequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
@@ -6041,7 +6041,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CheequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
             }
 
-            public static int ZheequbWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, double* s, double* scond, double* amax, System.IntPtr work)
+            public static int ZheequbWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, double* s, double* scond, double* amax, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZheequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
@@ -6049,7 +6049,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZheequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
             }
 
-            public static int Cheev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, float* w)
+            public static int Cheev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheev(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -6057,7 +6057,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheev(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Zheev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, double* w)
+            public static int Zheev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheev(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -6065,7 +6065,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheev(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Cheev2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, float* w)
+            public static int Cheev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheev2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -6073,7 +6073,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheev2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Zheev2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, double* w)
+            public static int Zheev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheev2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -6081,7 +6081,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheev2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Cheev2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, float* w, System.IntPtr work, int lwork, float* rwork)
+            public static int Cheev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, float* w, System.IntPtr work, int lwork, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheev2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork);
@@ -6089,7 +6089,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheev2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork);
             }
 
-            public static int Zheev2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, double* w, System.IntPtr work, int lwork, double* rwork)
+            public static int Zheev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, double* w, System.IntPtr work, int lwork, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheev2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork);
@@ -6097,7 +6097,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheev2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork);
             }
 
-            public static int Cheevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, float* w)
+            public static int Cheevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheevd(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -6105,7 +6105,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheevd(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Zheevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, double* w)
+            public static int Zheevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheevd(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -6113,7 +6113,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheevd(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Cheevd2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, float* w)
+            public static int Cheevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheevd2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -6121,7 +6121,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheevd2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Zheevd2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, double* w)
+            public static int Zheevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheevd2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -6129,7 +6129,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheevd2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Cheevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, float* w, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int Cheevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, float* w, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheevd2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6137,7 +6137,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheevd2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int Zheevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, double* w, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int Zheevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, double* w, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheevd2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6145,7 +6145,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheevd2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int CheevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, float* w, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int CheevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, float* w, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CheevdWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6153,7 +6153,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CheevdWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ZheevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, double* w, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int ZheevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, double* w, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZheevdWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6161,7 +6161,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZheevdWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int Cheevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* isuppz)
+            public static int Cheevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* isuppz)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheevr(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
@@ -6169,7 +6169,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheevr(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
             }
 
-            public static int Zheevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* isuppz)
+            public static int Zheevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* isuppz)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheevr(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
@@ -6177,7 +6177,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheevr(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
             }
 
-            public static int Cheevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* isuppz)
+            public static int Cheevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* isuppz)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheevr2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
@@ -6185,7 +6185,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheevr2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
             }
 
-            public static int Zheevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* isuppz)
+            public static int Zheevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* isuppz)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheevr2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
@@ -6193,7 +6193,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheevr2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
             }
 
-            public static int Cheevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* isuppz, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int Cheevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* isuppz, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheevr2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6201,7 +6201,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheevr2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int Zheevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* isuppz, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int Zheevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* isuppz, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheevr2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6209,7 +6209,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheevr2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int CheevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* isuppz, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int CheevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* isuppz, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CheevrWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6217,7 +6217,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CheevrWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ZheevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* isuppz, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int ZheevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* isuppz, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZheevrWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6225,7 +6225,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZheevrWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int CheevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, float* w, System.IntPtr work, int lwork, float* rwork)
+            public static int CheevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, float* w, System.IntPtr work, int lwork, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CheevWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork);
@@ -6233,7 +6233,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CheevWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork);
             }
 
-            public static int ZheevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, double* w, System.IntPtr work, int lwork, double* rwork)
+            public static int ZheevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, double* w, System.IntPtr work, int lwork, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZheevWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork);
@@ -6241,7 +6241,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZheevWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, rwork);
             }
 
-            public static int Cheevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Cheevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheevx(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -6249,7 +6249,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheevx(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Zheevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Zheevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheevx(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -6257,7 +6257,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheevx(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Cheevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Cheevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheevx2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -6265,7 +6265,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheevx2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Zheevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Zheevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheevx2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -6273,7 +6273,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheevx2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Cheevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int* iwork, int* ifail)
+            public static int Cheevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheevx2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
@@ -6281,7 +6281,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheevx2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
             }
 
-            public static int Zheevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int* iwork, int* ifail)
+            public static int Zheevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheevx2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
@@ -6289,7 +6289,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheevx2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
             }
 
-            public static int CheevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int* iwork, int* ifail)
+            public static int CheevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CheevxWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
@@ -6297,7 +6297,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CheevxWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
             }
 
-            public static int ZheevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int* iwork, int* ifail)
+            public static int ZheevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZheevxWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
@@ -6305,7 +6305,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZheevxWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
             }
 
-            public static int Chegst(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Chegst(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chegst(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
@@ -6313,7 +6313,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chegst(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
             }
 
-            public static int Zhegst(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Zhegst(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhegst(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
@@ -6321,7 +6321,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhegst(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
             }
 
-            public static int ChegstWork(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int ChegstWork(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChegstWork(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
@@ -6329,7 +6329,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChegstWork(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
             }
 
-            public static int ZhegstWork(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int ZhegstWork(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhegstWork(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
@@ -6337,7 +6337,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhegstWork(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
             }
 
-            public static int Chegv(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w)
+            public static int Chegv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chegv(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -6345,7 +6345,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chegv(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Zhegv(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w)
+            public static int Zhegv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhegv(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -6353,7 +6353,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhegv(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Chegv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w)
+            public static int Chegv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chegv2stage(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -6361,7 +6361,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chegv2stage(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Zhegv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w)
+            public static int Zhegv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhegv2stage(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -6369,7 +6369,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhegv2stage(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Chegv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w, System.IntPtr work, int lwork, float* rwork)
+            public static int Chegv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w, System.IntPtr work, int lwork, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chegv2stageWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork);
@@ -6377,7 +6377,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chegv2stageWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork);
             }
 
-            public static int Zhegv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w, System.IntPtr work, int lwork, double* rwork)
+            public static int Zhegv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w, System.IntPtr work, int lwork, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhegv2stageWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork);
@@ -6385,7 +6385,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhegv2stageWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork);
             }
 
-            public static int Chegvd(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w)
+            public static int Chegvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chegvd(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -6393,7 +6393,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chegvd(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Zhegvd(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w)
+            public static int Zhegvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhegvd(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -6401,7 +6401,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhegvd(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int ChegvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int ChegvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChegvdWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6409,7 +6409,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChegvdWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ZhegvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int ZhegvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhegvdWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork, lrwork, iwork, liwork);
@@ -6417,7 +6417,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhegvdWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ChegvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w, System.IntPtr work, int lwork, float* rwork)
+            public static int ChegvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float* w, System.IntPtr work, int lwork, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChegvWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork);
@@ -6425,7 +6425,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChegvWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork);
             }
 
-            public static int ZhegvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w, System.IntPtr work, int lwork, double* rwork)
+            public static int ZhegvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double* w, System.IntPtr work, int lwork, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhegvWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork);
@@ -6433,7 +6433,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhegvWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, rwork);
             }
 
-            public static int Chegvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Chegvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chegvx(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -6441,7 +6441,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chegvx(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Zhegvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Zhegvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhegvx(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -6449,7 +6449,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhegvx(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int ChegvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int* iwork, int* ifail)
+            public static int ChegvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChegvxWork(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
@@ -6457,7 +6457,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChegvxWork(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
             }
 
-            public static int ZhegvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int* iwork, int* ifail)
+            public static int ZhegvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhegvxWork(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
@@ -6465,7 +6465,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhegvxWork(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, rwork, iwork, ifail);
             }
 
-            public static int Cherfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Cherfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cherfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -6473,7 +6473,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cherfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Zherfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Zherfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zherfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -6481,7 +6481,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zherfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int CherfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CherfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CherfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -6489,7 +6489,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CherfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZherfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZherfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZherfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -6497,7 +6497,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZherfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int Cherfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Cherfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cherfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -6505,7 +6505,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cherfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Zherfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Zherfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zherfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -6513,7 +6513,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zherfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int CherfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
+            public static int CherfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CherfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -6521,7 +6521,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CherfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int ZherfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
+            public static int ZherfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZherfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -6529,7 +6529,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZherfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int Chesv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Chesv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chesv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -6537,7 +6537,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chesv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Zhesv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zhesv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhesv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -6545,7 +6545,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhesv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ChesvAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ChesvAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChesvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -6553,7 +6553,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChesvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZhesvAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZhesvAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhesvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -6561,7 +6561,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhesvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ChesvAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int ChesvAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChesvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -6569,7 +6569,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChesvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int ZhesvAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int ZhesvAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhesvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -6577,7 +6577,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhesvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int ChesvAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ChesvAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChesvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
@@ -6585,7 +6585,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChesvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
             }
 
-            public static int ZhesvAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZhesvAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhesvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
@@ -6593,7 +6593,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhesvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
             }
 
-            public static int ChesvAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ChesvAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChesvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -6601,7 +6601,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChesvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ZhesvAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZhesvAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhesvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -6609,7 +6609,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhesvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ChesvRk(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int ChesvRk(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChesvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -6617,7 +6617,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChesvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int ZhesvRk(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZhesvRk(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhesvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -6625,7 +6625,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhesvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int ChesvRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ChesvRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChesvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
@@ -6633,7 +6633,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChesvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ZhesvRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZhesvRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhesvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
@@ -6641,7 +6641,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhesvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ChesvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ChesvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChesvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -6649,7 +6649,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChesvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ZhesvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZhesvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhesvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -6657,7 +6657,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhesvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int Chesvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Chesvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chesvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -6665,7 +6665,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chesvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Zhesvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Zhesvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhesvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -6673,7 +6673,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhesvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int ChesvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, int lwork, float* rwork)
+            public static int ChesvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, int lwork, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChesvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, rwork);
@@ -6681,7 +6681,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChesvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, rwork);
             }
 
-            public static int ZhesvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, int lwork, double* rwork)
+            public static int ZhesvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, int lwork, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhesvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, rwork);
@@ -6689,7 +6689,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhesvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, rwork);
             }
 
-            public static int Chesvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Chesvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chesvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -6697,7 +6697,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chesvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Zhesvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Zhesvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhesvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -6705,7 +6705,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhesvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int ChesvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
+            public static int ChesvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChesvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -6713,7 +6713,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChesvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int ZhesvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
+            public static int ZhesvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhesvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -6721,7 +6721,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhesvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int Cheswapr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
+            public static int Cheswapr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cheswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -6729,7 +6729,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cheswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int Zheswapr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
+            public static int Zheswapr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zheswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -6737,7 +6737,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zheswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int CheswaprWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
+            public static int CheswaprWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CheswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -6745,7 +6745,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CheswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int ZheswaprWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
+            public static int ZheswaprWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZheswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -6753,7 +6753,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZheswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int Chetrd(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, float* d, float* e, System.IntPtr tau)
+            public static int Chetrd(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, float* d, float* e, System.IntPtr tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetrd(matrixLayout, uplo, n, a, ldA, d, e, tau);
@@ -6761,7 +6761,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetrd(matrixLayout, uplo, n, a, ldA, d, e, tau);
             }
 
-            public static int Zhetrd(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, double* d, double* e, System.IntPtr tau)
+            public static int Zhetrd(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, double* d, double* e, System.IntPtr tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetrd(matrixLayout, uplo, n, a, ldA, d, e, tau);
@@ -6769,7 +6769,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetrd(matrixLayout, uplo, n, a, ldA, d, e, tau);
             }
 
-            public static int ChetrdWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, float* d, float* e, System.IntPtr tau, System.IntPtr work, int lwork)
+            public static int ChetrdWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, float* d, float* e, System.IntPtr tau, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrdWork(matrixLayout, uplo, n, a, ldA, d, e, tau, work, lwork);
@@ -6777,7 +6777,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrdWork(matrixLayout, uplo, n, a, ldA, d, e, tau, work, lwork);
             }
 
-            public static int ZhetrdWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, double* d, double* e, System.IntPtr tau, System.IntPtr work, int lwork)
+            public static int ZhetrdWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, double* d, double* e, System.IntPtr tau, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrdWork(matrixLayout, uplo, n, a, ldA, d, e, tau, work, lwork);
@@ -6785,7 +6785,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrdWork(matrixLayout, uplo, n, a, ldA, d, e, tau, work, lwork);
             }
 
-            public static int Chetrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Chetrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetrf(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6793,7 +6793,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetrf(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Zhetrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Zhetrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetrf(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6801,7 +6801,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetrf(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int ChetrfAa(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int ChetrfAa(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6809,7 +6809,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int ZhetrfAa(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int ZhetrfAa(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6817,7 +6817,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int ChetrfAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2)
+            public static int ChetrfAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
@@ -6825,7 +6825,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
             }
 
-            public static int ZhetrfAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2)
+            public static int ZhetrfAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
@@ -6833,7 +6833,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
             }
 
-            public static int ChetrfAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr work, int lwork)
+            public static int ChetrfAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
@@ -6841,7 +6841,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
             }
 
-            public static int ZhetrfAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr work, int lwork)
+            public static int ZhetrfAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
@@ -6849,7 +6849,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
             }
 
-            public static int ChetrfAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int ChetrfAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -6857,7 +6857,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int ZhetrfAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int ZhetrfAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -6865,7 +6865,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int ChetrfRk(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
+            public static int ChetrfRk(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -6873,7 +6873,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int ZhetrfRk(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
+            public static int ZhetrfRk(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -6881,7 +6881,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int ChetrfRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
+            public static int ChetrfRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -6889,7 +6889,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int ZhetrfRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
+            public static int ZhetrfRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -6897,7 +6897,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int ChetrfRook(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int ChetrfRook(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6905,7 +6905,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int ZhetrfRook(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int ZhetrfRook(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6913,7 +6913,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int ChetrfRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int ChetrfRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -6921,7 +6921,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int ZhetrfRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int ZhetrfRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -6929,7 +6929,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int ChetrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int ChetrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -6937,7 +6937,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int ZhetrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int ZhetrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -6945,7 +6945,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int Chetri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Chetri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetri(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6953,7 +6953,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetri(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Zhetri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Zhetri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetri(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6961,7 +6961,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetri(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Chetri2(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Chetri2(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetri2(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6969,7 +6969,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetri2(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Zhetri2(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Zhetri2(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetri2(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -6977,7 +6977,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetri2(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Chetri2Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int Chetri2Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -6985,7 +6985,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int Zhetri2Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int Zhetri2Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -6993,7 +6993,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int Chetri2x(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, int nb)
+            public static int Chetri2x(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
@@ -7001,7 +7001,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
             }
 
-            public static int Zhetri2x(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, int nb)
+            public static int Zhetri2x(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
@@ -7009,7 +7009,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
             }
 
-            public static int Chetri2xWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int nb)
+            public static int Chetri2xWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
@@ -7017,7 +7017,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
             }
 
-            public static int Zhetri2xWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int nb)
+            public static int Zhetri2xWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
@@ -7025,7 +7025,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
             }
 
-            public static int Chetri3(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
+            public static int Chetri3(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -7033,7 +7033,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int Zhetri3(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
+            public static int Zhetri3(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -7041,7 +7041,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int Chetri3Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
+            public static int Chetri3Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -7049,7 +7049,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int Zhetri3Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
+            public static int Zhetri3Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -7057,7 +7057,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int ChetriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work)
+            public static int ChetriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
@@ -7065,7 +7065,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
             }
 
-            public static int ZhetriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work)
+            public static int ZhetriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
@@ -7073,7 +7073,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
             }
 
-            public static int Chetrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Chetrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7081,7 +7081,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Zhetrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zhetrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7089,7 +7089,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Chetrs2(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Chetrs2(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7097,7 +7097,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Zhetrs2(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zhetrs2(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7105,7 +7105,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Chetrs2Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work)
+            public static int Chetrs2Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
@@ -7113,7 +7113,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
             }
 
-            public static int Zhetrs2Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work)
+            public static int Zhetrs2Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
@@ -7121,7 +7121,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
             }
 
-            public static int Chetrs3(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int Chetrs3(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -7129,7 +7129,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Zhetrs3(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zhetrs3(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -7137,7 +7137,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Chetrs3Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int Chetrs3Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chetrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -7145,7 +7145,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chetrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Zhetrs3Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zhetrs3Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhetrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -7153,7 +7153,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhetrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int ChetrsAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ChetrsAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7161,7 +7161,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZhetrsAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZhetrsAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7169,7 +7169,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ChetrsAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int ChetrsAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -7177,7 +7177,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int ZhetrsAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int ZhetrsAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -7185,7 +7185,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int ChetrsAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int ChetrsAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -7193,7 +7193,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int ZhetrsAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int ZhetrsAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -7201,7 +7201,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int ChetrsAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ChetrsAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -7209,7 +7209,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ZhetrsAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZhetrsAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -7217,7 +7217,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ChetrsRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ChetrsRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7225,7 +7225,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZhetrsRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZhetrsRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7233,7 +7233,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ChetrsRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ChetrsRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7241,7 +7241,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZhetrsRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZhetrsRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7249,7 +7249,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ChetrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ChetrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChetrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7257,7 +7257,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChetrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZhetrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZhetrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhetrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -7265,7 +7265,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhetrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Chfrk(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, TransLapack trans, int n, int k, float alpha, System.IntPtr a, int ldA, float beta, System.IntPtr c)
+            public static int Chfrk(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, TransLapack trans, int n, int k, float alpha, System.IntPtr a, int ldA, float beta, System.IntPtr c)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chfrk(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
@@ -7273,7 +7273,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chfrk(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
             }
 
-            public static int Zhfrk(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, TransLapack trans, int n, int k, double alpha, System.IntPtr a, int ldA, double beta, System.IntPtr c)
+            public static int Zhfrk(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, TransLapack trans, int n, int k, double alpha, System.IntPtr a, int ldA, double beta, System.IntPtr c)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhfrk(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
@@ -7281,7 +7281,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhfrk(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
             }
 
-            public static int ChfrkWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, TransLapack trans, int n, int k, float alpha, System.IntPtr a, int ldA, float beta, System.IntPtr c)
+            public static int ChfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, TransLapack trans, int n, int k, float alpha, System.IntPtr a, int ldA, float beta, System.IntPtr c)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChfrkWork(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
@@ -7289,7 +7289,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChfrkWork(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
             }
 
-            public static int ZhfrkWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, TransLapack trans, int n, int k, double alpha, System.IntPtr a, int ldA, double beta, System.IntPtr c)
+            public static int ZhfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, TransLapack trans, int n, int k, double alpha, System.IntPtr a, int ldA, double beta, System.IntPtr c)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhfrkWork(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
@@ -7361,7 +7361,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhgeqzWork(matrixLayout, job, compq, compz, n, ilo, ihi, h, ldH, t, ldT, alpha, beta, q, ldQ, z, ldZ, work, lwork, rwork);
             }
 
-            public static int Chpcon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, float anorm, float* rcond)
+            public static int Chpcon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
@@ -7369,7 +7369,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
             }
 
-            public static int Zhpcon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, double anorm, double* rcond)
+            public static int Zhpcon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
@@ -7377,7 +7377,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
             }
 
-            public static int ChpconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, float anorm, float* rcond, System.IntPtr work)
+            public static int ChpconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, float anorm, float* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work);
@@ -7385,7 +7385,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work);
             }
 
-            public static int ZhpconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, double anorm, double* rcond, System.IntPtr work)
+            public static int ZhpconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, double anorm, double* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work);
@@ -7393,7 +7393,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work);
             }
 
-            public static int Chpev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, float* w, System.IntPtr z, int ldZ)
+            public static int Chpev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpev(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
@@ -7401,7 +7401,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpev(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
             }
 
-            public static int Zhpev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, double* w, System.IntPtr z, int ldZ)
+            public static int Zhpev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpev(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
@@ -7409,7 +7409,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpev(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
             }
 
-            public static int Chpevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, float* w, System.IntPtr z, int ldZ)
+            public static int Chpevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpevd(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
@@ -7417,7 +7417,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpevd(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
             }
 
-            public static int Zhpevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, double* w, System.IntPtr z, int ldZ)
+            public static int Zhpevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpevd(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
@@ -7425,7 +7425,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpevd(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
             }
 
-            public static int ChpevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int ChpevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpevdWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -7433,7 +7433,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpevdWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ZhpevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int ZhpevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpevdWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -7441,7 +7441,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpevdWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ChpevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork)
+            public static int ChpevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpevWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, rwork);
@@ -7449,7 +7449,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpevWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, rwork);
             }
 
-            public static int ZhpevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork)
+            public static int ZhpevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpevWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, rwork);
@@ -7457,7 +7457,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpevWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, rwork);
             }
 
-            public static int Chpevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Chpevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpevx(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -7465,7 +7465,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpevx(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Zhpevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Zhpevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpevx(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -7473,7 +7473,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpevx(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int ChpevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork, int* iwork, int* ifail)
+            public static int ChpevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpevxWork(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
@@ -7481,7 +7481,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpevxWork(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
             }
 
-            public static int ZhpevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork, int* iwork, int* ifail)
+            public static int ZhpevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpevxWork(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
@@ -7489,7 +7489,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpevxWork(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
             }
 
-            public static int Chpgst(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp)
+            public static int Chpgst(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpgst(matrixLayout, itype, uplo, n, ap, bp);
@@ -7497,7 +7497,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpgst(matrixLayout, itype, uplo, n, ap, bp);
             }
 
-            public static int Zhpgst(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp)
+            public static int Zhpgst(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpgst(matrixLayout, itype, uplo, n, ap, bp);
@@ -7505,7 +7505,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpgst(matrixLayout, itype, uplo, n, ap, bp);
             }
 
-            public static int ChpgstWork(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp)
+            public static int ChpgstWork(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpgstWork(matrixLayout, itype, uplo, n, ap, bp);
@@ -7513,7 +7513,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpgstWork(matrixLayout, itype, uplo, n, ap, bp);
             }
 
-            public static int ZhpgstWork(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp)
+            public static int ZhpgstWork(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpgstWork(matrixLayout, itype, uplo, n, ap, bp);
@@ -7521,7 +7521,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpgstWork(matrixLayout, itype, uplo, n, ap, bp);
             }
 
-            public static int Chpgv(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, float* w, System.IntPtr z, int ldZ)
+            public static int Chpgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpgv(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
@@ -7529,7 +7529,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpgv(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
             }
 
-            public static int Zhpgv(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, double* w, System.IntPtr z, int ldZ)
+            public static int Zhpgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpgv(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
@@ -7537,7 +7537,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpgv(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
             }
 
-            public static int Chpgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, float* w, System.IntPtr z, int ldZ)
+            public static int Chpgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, float* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpgvd(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
@@ -7545,7 +7545,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpgvd(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
             }
 
-            public static int Zhpgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, double* w, System.IntPtr z, int ldZ)
+            public static int Zhpgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, double* w, System.IntPtr z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpgvd(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
@@ -7553,7 +7553,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpgvd(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
             }
 
-            public static int ChpgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
+            public static int ChpgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, float* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpgvdWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -7561,7 +7561,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpgvdWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ZhpgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
+            public static int ZhpgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, double* w, System.IntPtr z, int ldZ, System.IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpgvdWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
@@ -7569,7 +7569,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpgvdWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, lwork, rwork, lrwork, iwork, liwork);
             }
 
-            public static int ChpgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork)
+            public static int ChpgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpgvWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, rwork);
@@ -7577,7 +7577,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpgvWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, rwork);
             }
 
-            public static int ZhpgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork)
+            public static int ZhpgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpgvWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, rwork);
@@ -7585,7 +7585,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpgvWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, rwork);
             }
 
-            public static int Chpgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Chpgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpgvx(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -7593,7 +7593,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpgvx(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Zhpgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
+            public static int Zhpgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpgvx(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -7601,7 +7601,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpgvx(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int ChpgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork, int* iwork, int* ifail)
+            public static int ChpgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, System.IntPtr z, int ldZ, System.IntPtr work, float* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpgvxWork(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
@@ -7609,7 +7609,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpgvxWork(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
             }
 
-            public static int ZhpgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, System.IntPtr ap, System.IntPtr bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork, int* iwork, int* ifail)
+            public static int ZhpgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, System.IntPtr ap, System.IntPtr bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, System.IntPtr z, int ldZ, System.IntPtr work, double* rwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpgvxWork(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
@@ -7617,7 +7617,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpgvxWork(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, work, rwork, iwork, ifail);
             }
 
-            public static int Chprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Chprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -7625,7 +7625,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Zhprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Zhprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -7633,7 +7633,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int ChprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int ChprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -7641,7 +7641,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZhprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZhprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -7649,7 +7649,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int Chpsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int Chpsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -7657,7 +7657,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Zhpsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zhpsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -7665,7 +7665,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int ChpsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int ChpsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -7673,7 +7673,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int ZhpsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZhpsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -7681,7 +7681,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Chpsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Chpsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chpsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -7689,7 +7689,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chpsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Zhpsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Zhpsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhpsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -7697,7 +7697,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhpsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int ChpsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int ChpsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChpsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -7705,7 +7705,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChpsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int ZhpsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZhpsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhpsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -7713,7 +7713,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhpsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int Chptrd(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, float* d, float* e, System.IntPtr tau)
+            public static int Chptrd(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, float* d, float* e, System.IntPtr tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chptrd(matrixLayout, uplo, n, ap, d, e, tau);
@@ -7721,7 +7721,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chptrd(matrixLayout, uplo, n, ap, d, e, tau);
             }
 
-            public static int Zhptrd(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, double* d, double* e, System.IntPtr tau)
+            public static int Zhptrd(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, double* d, double* e, System.IntPtr tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhptrd(matrixLayout, uplo, n, ap, d, e, tau);
@@ -7729,7 +7729,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhptrd(matrixLayout, uplo, n, ap, d, e, tau);
             }
 
-            public static int ChptrdWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, float* d, float* e, System.IntPtr tau)
+            public static int ChptrdWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, float* d, float* e, System.IntPtr tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChptrdWork(matrixLayout, uplo, n, ap, d, e, tau);
@@ -7737,7 +7737,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChptrdWork(matrixLayout, uplo, n, ap, d, e, tau);
             }
 
-            public static int ZhptrdWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, double* d, double* e, System.IntPtr tau)
+            public static int ZhptrdWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, double* d, double* e, System.IntPtr tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhptrdWork(matrixLayout, uplo, n, ap, d, e, tau);
@@ -7745,7 +7745,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhptrdWork(matrixLayout, uplo, n, ap, d, e, tau);
             }
 
-            public static int Chptrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int Chptrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chptrf(matrixLayout, uplo, n, ap, ipiv);
@@ -7753,7 +7753,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chptrf(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Zhptrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int Zhptrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhptrf(matrixLayout, uplo, n, ap, ipiv);
@@ -7761,7 +7761,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhptrf(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int ChptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int ChptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChptrfWork(matrixLayout, uplo, n, ap, ipiv);
@@ -7769,7 +7769,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChptrfWork(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int ZhptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int ZhptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhptrfWork(matrixLayout, uplo, n, ap, ipiv);
@@ -7777,7 +7777,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhptrfWork(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Chptri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int Chptri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chptri(matrixLayout, uplo, n, ap, ipiv);
@@ -7785,7 +7785,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chptri(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Zhptri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int Zhptri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhptri(matrixLayout, uplo, n, ap, ipiv);
@@ -7793,7 +7793,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhptri(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int ChptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, System.IntPtr work)
+            public static int ChptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChptriWork(matrixLayout, uplo, n, ap, ipiv, work);
@@ -7801,7 +7801,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChptriWork(matrixLayout, uplo, n, ap, ipiv, work);
             }
 
-            public static int ZhptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, System.IntPtr work)
+            public static int ZhptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhptriWork(matrixLayout, uplo, n, ap, ipiv, work);
@@ -7809,7 +7809,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZhptriWork(matrixLayout, uplo, n, ap, ipiv, work);
             }
 
-            public static int Chptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int Chptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Chptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -7817,7 +7817,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Chptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Zhptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zhptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zhptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -7825,7 +7825,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zhptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int ChptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int ChptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ChptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -7833,7 +7833,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ChptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int ZhptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZhptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZhptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -8065,7 +8065,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zlacn2Work(n, v, x, est, kase, isave);
             }
 
-            public static int Clacp2(MatrixLayout matrixLayout, sbyte uplo, int m, int n, float* a, int ldA, System.IntPtr b, int ldB)
+            public static int Clacp2(MatrixLayout matrixLayout, UpLo uplo, int m, int n, float* a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Clacp2(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8073,7 +8073,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Clacp2(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int Zlacp2(MatrixLayout matrixLayout, sbyte uplo, int m, int n, double* a, int ldA, System.IntPtr b, int ldB)
+            public static int Zlacp2(MatrixLayout matrixLayout, UpLo uplo, int m, int n, double* a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zlacp2(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8081,7 +8081,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zlacp2(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int Clacp2Work(MatrixLayout matrixLayout, sbyte uplo, int m, int n, float* a, int ldA, System.IntPtr b, int ldB)
+            public static int Clacp2Work(MatrixLayout matrixLayout, UpLo uplo, int m, int n, float* a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Clacp2Work(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8089,7 +8089,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Clacp2Work(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int Zlacp2Work(MatrixLayout matrixLayout, sbyte uplo, int m, int n, double* a, int ldA, System.IntPtr b, int ldB)
+            public static int Zlacp2Work(MatrixLayout matrixLayout, UpLo uplo, int m, int n, double* a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zlacp2Work(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8097,7 +8097,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zlacp2Work(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int Slacpy(MatrixLayout matrixLayout, sbyte uplo, int m, int n, float* a, int ldA, float* b, int ldB)
+            public static int Slacpy(MatrixLayout matrixLayout, UpLo uplo, int m, int n, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Slacpy(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8105,7 +8105,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Slacpy(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int Dlacpy(MatrixLayout matrixLayout, sbyte uplo, int m, int n, double* a, int ldA, double* b, int ldB)
+            public static int Dlacpy(MatrixLayout matrixLayout, UpLo uplo, int m, int n, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dlacpy(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8113,7 +8113,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dlacpy(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int Clacpy(MatrixLayout matrixLayout, sbyte uplo, int m, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Clacpy(MatrixLayout matrixLayout, UpLo uplo, int m, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Clacpy(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8121,7 +8121,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Clacpy(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int Zlacpy(MatrixLayout matrixLayout, sbyte uplo, int m, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Zlacpy(MatrixLayout matrixLayout, UpLo uplo, int m, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zlacpy(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8129,7 +8129,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zlacpy(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int SlacpyWork(MatrixLayout matrixLayout, sbyte uplo, int m, int n, float* a, int ldA, float* b, int ldB)
+            public static int SlacpyWork(MatrixLayout matrixLayout, UpLo uplo, int m, int n, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SlacpyWork(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8137,7 +8137,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SlacpyWork(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int DlacpyWork(MatrixLayout matrixLayout, sbyte uplo, int m, int n, double* a, int ldA, double* b, int ldB)
+            public static int DlacpyWork(MatrixLayout matrixLayout, UpLo uplo, int m, int n, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DlacpyWork(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8145,7 +8145,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DlacpyWork(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int ClacpyWork(MatrixLayout matrixLayout, sbyte uplo, int m, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int ClacpyWork(MatrixLayout matrixLayout, UpLo uplo, int m, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ClacpyWork(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8153,7 +8153,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ClacpyWork(matrixLayout, uplo, m, n, a, ldA, b, ldB);
             }
 
-            public static int ZlacpyWork(MatrixLayout matrixLayout, sbyte uplo, int m, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int ZlacpyWork(MatrixLayout matrixLayout, UpLo uplo, int m, int n, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZlacpyWork(matrixLayout, uplo, m, n, a, ldA, b, ldB);
@@ -8513,7 +8513,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZlangeWork(matrixLayout, norm, m, n, a, ldA, work);
             }
 
-            public static float Clanhe(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static float Clanhe(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Clanhe(matrixLayout, norm, uplo, n, a, ldA);
@@ -8521,7 +8521,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Clanhe(matrixLayout, norm, uplo, n, a, ldA);
             }
 
-            public static double Zlanhe(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static double Zlanhe(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zlanhe(matrixLayout, norm, uplo, n, a, ldA);
@@ -8529,7 +8529,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zlanhe(matrixLayout, norm, uplo, n, a, ldA);
             }
 
-            public static float ClanheWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, System.IntPtr a, int ldA, float* work)
+            public static float ClanheWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, System.IntPtr a, int ldA, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ClanheWork(matrixLayout, norm, uplo, n, a, ldA, work);
@@ -8537,7 +8537,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ClanheWork(matrixLayout, norm, uplo, n, a, ldA, work);
             }
 
-            public static double ZlanheWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, System.IntPtr a, int ldA, double* work)
+            public static double ZlanheWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, System.IntPtr a, int ldA, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZlanheWork(matrixLayout, norm, uplo, n, a, ldA, work);
@@ -8545,7 +8545,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZlanheWork(matrixLayout, norm, uplo, n, a, ldA, work);
             }
 
-            public static float Slansy(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, float* a, int ldA)
+            public static float Slansy(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Slansy(matrixLayout, norm, uplo, n, a, ldA);
@@ -8553,7 +8553,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Slansy(matrixLayout, norm, uplo, n, a, ldA);
             }
 
-            public static double Dlansy(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, double* a, int ldA)
+            public static double Dlansy(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dlansy(matrixLayout, norm, uplo, n, a, ldA);
@@ -8561,7 +8561,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dlansy(matrixLayout, norm, uplo, n, a, ldA);
             }
 
-            public static float Clansy(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static float Clansy(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Clansy(matrixLayout, norm, uplo, n, a, ldA);
@@ -8569,7 +8569,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Clansy(matrixLayout, norm, uplo, n, a, ldA);
             }
 
-            public static double Zlansy(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static double Zlansy(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zlansy(matrixLayout, norm, uplo, n, a, ldA);
@@ -8577,7 +8577,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zlansy(matrixLayout, norm, uplo, n, a, ldA);
             }
 
-            public static float SlansyWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, float* a, int ldA, float* work)
+            public static float SlansyWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, float* a, int ldA, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SlansyWork(matrixLayout, norm, uplo, n, a, ldA, work);
@@ -8585,7 +8585,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SlansyWork(matrixLayout, norm, uplo, n, a, ldA, work);
             }
 
-            public static double DlansyWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, double* a, int ldA, double* work)
+            public static double DlansyWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, double* a, int ldA, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DlansyWork(matrixLayout, norm, uplo, n, a, ldA, work);
@@ -8593,7 +8593,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DlansyWork(matrixLayout, norm, uplo, n, a, ldA, work);
             }
 
-            public static float ClansyWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, System.IntPtr a, int ldA, float* work)
+            public static float ClansyWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, System.IntPtr a, int ldA, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ClansyWork(matrixLayout, norm, uplo, n, a, ldA, work);
@@ -8601,7 +8601,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ClansyWork(matrixLayout, norm, uplo, n, a, ldA, work);
             }
 
-            public static double ZlansyWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, int n, System.IntPtr a, int ldA, double* work)
+            public static double ZlansyWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, int n, System.IntPtr a, int ldA, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZlansyWork(matrixLayout, norm, uplo, n, a, ldA, work);
@@ -8609,7 +8609,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZlansyWork(matrixLayout, norm, uplo, n, a, ldA, work);
             }
 
-            public static float Slantr(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int m, int n, float* a, int ldA)
+            public static float Slantr(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int m, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Slantr(matrixLayout, norm, uplo, diag, m, n, a, ldA);
@@ -8617,7 +8617,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Slantr(matrixLayout, norm, uplo, diag, m, n, a, ldA);
             }
 
-            public static double Dlantr(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int m, int n, double* a, int ldA)
+            public static double Dlantr(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int m, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dlantr(matrixLayout, norm, uplo, diag, m, n, a, ldA);
@@ -8625,7 +8625,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dlantr(matrixLayout, norm, uplo, diag, m, n, a, ldA);
             }
 
-            public static float Clantr(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int m, int n, System.IntPtr a, int ldA)
+            public static float Clantr(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int m, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Clantr(matrixLayout, norm, uplo, diag, m, n, a, ldA);
@@ -8633,7 +8633,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Clantr(matrixLayout, norm, uplo, diag, m, n, a, ldA);
             }
 
-            public static double Zlantr(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int m, int n, System.IntPtr a, int ldA)
+            public static double Zlantr(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int m, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zlantr(matrixLayout, norm, uplo, diag, m, n, a, ldA);
@@ -8641,7 +8641,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zlantr(matrixLayout, norm, uplo, diag, m, n, a, ldA);
             }
 
-            public static float SlantrWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int m, int n, float* a, int ldA, float* work)
+            public static float SlantrWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int m, int n, float* a, int ldA, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SlantrWork(matrixLayout, norm, uplo, diag, m, n, a, ldA, work);
@@ -8649,7 +8649,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SlantrWork(matrixLayout, norm, uplo, diag, m, n, a, ldA, work);
             }
 
-            public static double DlantrWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int m, int n, double* a, int ldA, double* work)
+            public static double DlantrWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int m, int n, double* a, int ldA, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DlantrWork(matrixLayout, norm, uplo, diag, m, n, a, ldA, work);
@@ -8657,7 +8657,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DlantrWork(matrixLayout, norm, uplo, diag, m, n, a, ldA, work);
             }
 
-            public static float ClantrWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int m, int n, System.IntPtr a, int ldA, float* work)
+            public static float ClantrWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int m, int n, System.IntPtr a, int ldA, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ClantrWork(matrixLayout, norm, uplo, diag, m, n, a, ldA, work);
@@ -8665,7 +8665,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ClantrWork(matrixLayout, norm, uplo, diag, m, n, a, ldA, work);
             }
 
-            public static double ZlantrWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int m, int n, System.IntPtr a, int ldA, double* work)
+            public static double ZlantrWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int m, int n, System.IntPtr a, int ldA, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZlantrWork(matrixLayout, norm, uplo, diag, m, n, a, ldA, work);
@@ -9345,7 +9345,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZlasclWork(matrixLayout, type, kl, ku, cfrom, cto, m, n, a, ldA);
             }
 
-            public static int Slaset(MatrixLayout matrixLayout, sbyte uplo, int m, int n, float alpha, float beta, float* a, int ldA)
+            public static int Slaset(MatrixLayout matrixLayout, UpLo uplo, int m, int n, float alpha, float beta, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Slaset(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
@@ -9353,7 +9353,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Slaset(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
             }
 
-            public static int Dlaset(MatrixLayout matrixLayout, sbyte uplo, int m, int n, double alpha, double beta, double* a, int ldA)
+            public static int Dlaset(MatrixLayout matrixLayout, UpLo uplo, int m, int n, double alpha, double beta, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dlaset(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
@@ -9361,7 +9361,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dlaset(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
             }
 
-            public static int Claset(MatrixLayout matrixLayout, sbyte uplo, int m, int n, ComplexFloat alpha, ComplexFloat beta, System.IntPtr a, int ldA)
+            public static int Claset(MatrixLayout matrixLayout, UpLo uplo, int m, int n, ComplexFloat alpha, ComplexFloat beta, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Claset(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
@@ -9369,7 +9369,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Claset(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
             }
 
-            public static int Zlaset(MatrixLayout matrixLayout, sbyte uplo, int m, int n, System.IntPtr alpha, System.IntPtr beta, System.IntPtr a, int ldA)
+            public static int Zlaset(MatrixLayout matrixLayout, UpLo uplo, int m, int n, System.IntPtr alpha, System.IntPtr beta, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zlaset(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
@@ -9377,7 +9377,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zlaset(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
             }
 
-            public static int SlasetWork(MatrixLayout matrixLayout, sbyte uplo, int m, int n, float alpha, float beta, float* a, int ldA)
+            public static int SlasetWork(MatrixLayout matrixLayout, UpLo uplo, int m, int n, float alpha, float beta, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SlasetWork(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
@@ -9385,7 +9385,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SlasetWork(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
             }
 
-            public static int DlasetWork(MatrixLayout matrixLayout, sbyte uplo, int m, int n, double alpha, double beta, double* a, int ldA)
+            public static int DlasetWork(MatrixLayout matrixLayout, UpLo uplo, int m, int n, double alpha, double beta, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DlasetWork(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
@@ -9393,7 +9393,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DlasetWork(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
             }
 
-            public static int ClasetWork(MatrixLayout matrixLayout, sbyte uplo, int m, int n, ComplexFloat alpha, ComplexFloat beta, System.IntPtr a, int ldA)
+            public static int ClasetWork(MatrixLayout matrixLayout, UpLo uplo, int m, int n, ComplexFloat alpha, ComplexFloat beta, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ClasetWork(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
@@ -9401,7 +9401,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ClasetWork(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
             }
 
-            public static int ZlasetWork(MatrixLayout matrixLayout, sbyte uplo, int m, int n, System.IntPtr alpha, System.IntPtr beta, System.IntPtr a, int ldA)
+            public static int ZlasetWork(MatrixLayout matrixLayout, UpLo uplo, int m, int n, System.IntPtr alpha, System.IntPtr beta, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZlasetWork(matrixLayout, uplo, m, n, alpha, beta, a, ldA);
@@ -9569,7 +9569,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZlatmsWork(matrixLayout, m, n, dist, iseed, sym, d, mode, cond, dmax, kl, ku, pack, a, ldA, work);
             }
 
-            public static int Slauum(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA)
+            public static int Slauum(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Slauum(matrixLayout, uplo, n, a, ldA);
@@ -9577,7 +9577,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Slauum(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Dlauum(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA)
+            public static int Dlauum(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dlauum(matrixLayout, uplo, n, a, ldA);
@@ -9585,7 +9585,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dlauum(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Clauum(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Clauum(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Clauum(matrixLayout, uplo, n, a, ldA);
@@ -9593,7 +9593,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Clauum(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Zlauum(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Zlauum(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zlauum(matrixLayout, uplo, n, a, ldA);
@@ -9601,7 +9601,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zlauum(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int SlauumWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA)
+            public static int SlauumWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SlauumWork(matrixLayout, uplo, n, a, ldA);
@@ -9609,7 +9609,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SlauumWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int DlauumWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA)
+            public static int DlauumWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DlauumWork(matrixLayout, uplo, n, a, ldA);
@@ -9617,7 +9617,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DlauumWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int ClauumWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int ClauumWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ClauumWork(matrixLayout, uplo, n, a, ldA);
@@ -9625,7 +9625,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ClauumWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int ZlauumWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int ZlauumWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZlauumWork(matrixLayout, uplo, n, a, ldA);
@@ -9643,7 +9643,7 @@ namespace Spreads
                 OpenBLAS.LAPACKE.Ilaver(vers_major, vers_minor, vers_patch);
             }
 
-            public static int Sopgtr(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float* tau, float* q, int ldQ)
+            public static int Sopgtr(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float* tau, float* q, int ldQ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sopgtr(matrixLayout, uplo, n, ap, tau, q, ldQ);
@@ -9651,7 +9651,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sopgtr(matrixLayout, uplo, n, ap, tau, q, ldQ);
             }
 
-            public static int Dopgtr(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double* tau, double* q, int ldQ)
+            public static int Dopgtr(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double* tau, double* q, int ldQ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dopgtr(matrixLayout, uplo, n, ap, tau, q, ldQ);
@@ -9659,7 +9659,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dopgtr(matrixLayout, uplo, n, ap, tau, q, ldQ);
             }
 
-            public static int SopgtrWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float* tau, float* q, int ldQ, float* work)
+            public static int SopgtrWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float* tau, float* q, int ldQ, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SopgtrWork(matrixLayout, uplo, n, ap, tau, q, ldQ, work);
@@ -9667,7 +9667,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SopgtrWork(matrixLayout, uplo, n, ap, tau, q, ldQ, work);
             }
 
-            public static int DopgtrWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double* tau, double* q, int ldQ, double* work)
+            public static int DopgtrWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double* tau, double* q, int ldQ, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DopgtrWork(matrixLayout, uplo, n, ap, tau, q, ldQ, work);
@@ -9675,7 +9675,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DopgtrWork(matrixLayout, uplo, n, ap, tau, q, ldQ, work);
             }
 
-            public static int Sopmtr(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, float* ap, float* tau, float* c, int ldC)
+            public static int Sopmtr(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, float* ap, float* tau, float* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sopmtr(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC);
@@ -9683,7 +9683,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sopmtr(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC);
             }
 
-            public static int Dopmtr(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, double* ap, double* tau, double* c, int ldC)
+            public static int Dopmtr(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, double* ap, double* tau, double* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dopmtr(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC);
@@ -9691,7 +9691,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dopmtr(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC);
             }
 
-            public static int SopmtrWork(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, float* ap, float* tau, float* c, int ldC, float* work)
+            public static int SopmtrWork(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, float* ap, float* tau, float* c, int ldC, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SopmtrWork(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC, work);
@@ -9699,7 +9699,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SopmtrWork(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC, work);
             }
 
-            public static int DopmtrWork(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, double* ap, double* tau, double* c, int ldC, double* work)
+            public static int DopmtrWork(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, double* ap, double* tau, double* c, int ldC, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DopmtrWork(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC, work);
@@ -9995,7 +9995,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DorgrqWork(matrixLayout, m, n, k, a, ldA, tau, work, lwork);
             }
 
-            public static int Sorgtr(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* tau)
+            public static int Sorgtr(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sorgtr(matrixLayout, uplo, n, a, ldA, tau);
@@ -10003,7 +10003,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sorgtr(matrixLayout, uplo, n, a, ldA, tau);
             }
 
-            public static int Dorgtr(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* tau)
+            public static int Dorgtr(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dorgtr(matrixLayout, uplo, n, a, ldA, tau);
@@ -10011,7 +10011,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dorgtr(matrixLayout, uplo, n, a, ldA, tau);
             }
 
-            public static int SorgtrWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* tau, float* work, int lwork)
+            public static int SorgtrWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* tau, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SorgtrWork(matrixLayout, uplo, n, a, ldA, tau, work, lwork);
@@ -10019,7 +10019,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SorgtrWork(matrixLayout, uplo, n, a, ldA, tau, work, lwork);
             }
 
-            public static int DorgtrWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* tau, double* work, int lwork)
+            public static int DorgtrWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* tau, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DorgtrWork(matrixLayout, uplo, n, a, ldA, tau, work, lwork);
@@ -10251,7 +10251,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DormrzWork(matrixLayout, side, trans, m, n, k, l, a, ldA, tau, c, ldC, work, lwork);
             }
 
-            public static int Sormtr(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, float* a, int ldA, float* tau, float* c, int ldC)
+            public static int Sormtr(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, float* a, int ldA, float* tau, float* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sormtr(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC);
@@ -10259,7 +10259,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sormtr(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC);
             }
 
-            public static int Dormtr(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, double* a, int ldA, double* tau, double* c, int ldC)
+            public static int Dormtr(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, double* a, int ldA, double* tau, double* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dormtr(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC);
@@ -10267,7 +10267,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dormtr(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC);
             }
 
-            public static int SormtrWork(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, float* a, int ldA, float* tau, float* c, int ldC, float* work, int lwork)
+            public static int SormtrWork(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, float* a, int ldA, float* tau, float* c, int ldC, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SormtrWork(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC, work, lwork);
@@ -10275,7 +10275,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SormtrWork(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC, work, lwork);
             }
 
-            public static int DormtrWork(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, double* a, int ldA, double* tau, double* c, int ldC, double* work, int lwork)
+            public static int DormtrWork(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, double* a, int ldA, double* tau, double* c, int ldC, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DormtrWork(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC, work, lwork);
@@ -10283,7 +10283,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DormtrWork(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC, work, lwork);
             }
 
-            public static int Spbcon(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, float* ab, int ldab, float anorm, float* rcond)
+            public static int Spbcon(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, float* ab, int ldab, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spbcon(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond);
@@ -10291,7 +10291,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spbcon(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond);
             }
 
-            public static int Dpbcon(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, double* ab, int ldab, double anorm, double* rcond)
+            public static int Dpbcon(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, double* ab, int ldab, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpbcon(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond);
@@ -10299,7 +10299,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpbcon(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond);
             }
 
-            public static int Cpbcon(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float anorm, float* rcond)
+            public static int Cpbcon(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpbcon(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond);
@@ -10307,7 +10307,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpbcon(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond);
             }
 
-            public static int Zpbcon(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double anorm, double* rcond)
+            public static int Zpbcon(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpbcon(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond);
@@ -10315,7 +10315,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpbcon(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond);
             }
 
-            public static int SpbconWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, float* ab, int ldab, float anorm, float* rcond, float* work, int* iwork)
+            public static int SpbconWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, float* ab, int ldab, float anorm, float* rcond, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpbconWork(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond, work, iwork);
@@ -10323,7 +10323,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpbconWork(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond, work, iwork);
             }
 
-            public static int DpbconWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, double* ab, int ldab, double anorm, double* rcond, double* work, int* iwork)
+            public static int DpbconWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, double* ab, int ldab, double anorm, double* rcond, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpbconWork(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond, work, iwork);
@@ -10331,7 +10331,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpbconWork(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond, work, iwork);
             }
 
-            public static int CpbconWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float anorm, float* rcond, System.IntPtr work, float* rwork)
+            public static int CpbconWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float anorm, float* rcond, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpbconWork(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond, work, rwork);
@@ -10339,7 +10339,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpbconWork(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond, work, rwork);
             }
 
-            public static int ZpbconWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double anorm, double* rcond, System.IntPtr work, double* rwork)
+            public static int ZpbconWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double anorm, double* rcond, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpbconWork(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond, work, rwork);
@@ -10347,7 +10347,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpbconWork(matrixLayout, uplo, n, kd, ab, ldab, anorm, rcond, work, rwork);
             }
 
-            public static int Spbequ(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, float* ab, int ldab, float* s, float* scond, float* amax)
+            public static int Spbequ(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, float* ab, int ldab, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spbequ(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
@@ -10355,7 +10355,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spbequ(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
             }
 
-            public static int Dpbequ(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, double* ab, int ldab, double* s, double* scond, double* amax)
+            public static int Dpbequ(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, double* ab, int ldab, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpbequ(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
@@ -10363,7 +10363,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpbequ(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
             }
 
-            public static int Cpbequ(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* s, float* scond, float* amax)
+            public static int Cpbequ(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpbequ(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
@@ -10371,7 +10371,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpbequ(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
             }
 
-            public static int Zpbequ(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* s, double* scond, double* amax)
+            public static int Zpbequ(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpbequ(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
@@ -10379,7 +10379,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpbequ(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
             }
 
-            public static int SpbequWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, float* ab, int ldab, float* s, float* scond, float* amax)
+            public static int SpbequWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, float* ab, int ldab, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpbequWork(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
@@ -10387,7 +10387,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpbequWork(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
             }
 
-            public static int DpbequWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, double* ab, int ldab, double* s, double* scond, double* amax)
+            public static int DpbequWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, double* ab, int ldab, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpbequWork(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
@@ -10395,7 +10395,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpbequWork(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
             }
 
-            public static int CpbequWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, float* s, float* scond, float* amax)
+            public static int CpbequWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpbequWork(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
@@ -10403,7 +10403,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpbequWork(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
             }
 
-            public static int ZpbequWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab, double* s, double* scond, double* amax)
+            public static int ZpbequWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpbequWork(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
@@ -10411,7 +10411,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpbequWork(matrixLayout, uplo, n, kd, ab, ldab, s, scond, amax);
             }
 
-            public static int Spbrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
+            public static int Spbrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spbrfs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr);
@@ -10419,7 +10419,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spbrfs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Dpbrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
+            public static int Dpbrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpbrfs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr);
@@ -10427,7 +10427,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpbrfs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Cpbrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Cpbrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpbrfs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr);
@@ -10435,7 +10435,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpbrfs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Zpbrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Zpbrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpbrfs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr);
@@ -10443,7 +10443,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpbrfs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int SpbrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
+            public static int SpbrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpbrfsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -10451,7 +10451,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpbrfsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int DpbrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
+            public static int DpbrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpbrfsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -10459,7 +10459,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpbrfsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int CpbrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CpbrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpbrfsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -10467,7 +10467,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpbrfsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZpbrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZpbrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpbrfsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -10475,7 +10475,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpbrfsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int Spbstf(MatrixLayout matrixLayout, sbyte uplo, int n, int kb, float* bb, int ldbb)
+            public static int Spbstf(MatrixLayout matrixLayout, UpLo uplo, int n, int kb, float* bb, int ldbb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spbstf(matrixLayout, uplo, n, kb, bb, ldbb);
@@ -10483,7 +10483,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spbstf(matrixLayout, uplo, n, kb, bb, ldbb);
             }
 
-            public static int Dpbstf(MatrixLayout matrixLayout, sbyte uplo, int n, int kb, double* bb, int ldbb)
+            public static int Dpbstf(MatrixLayout matrixLayout, UpLo uplo, int n, int kb, double* bb, int ldbb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpbstf(matrixLayout, uplo, n, kb, bb, ldbb);
@@ -10491,7 +10491,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpbstf(matrixLayout, uplo, n, kb, bb, ldbb);
             }
 
-            public static int Cpbstf(MatrixLayout matrixLayout, sbyte uplo, int n, int kb, System.IntPtr bb, int ldbb)
+            public static int Cpbstf(MatrixLayout matrixLayout, UpLo uplo, int n, int kb, System.IntPtr bb, int ldbb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpbstf(matrixLayout, uplo, n, kb, bb, ldbb);
@@ -10499,7 +10499,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpbstf(matrixLayout, uplo, n, kb, bb, ldbb);
             }
 
-            public static int Zpbstf(MatrixLayout matrixLayout, sbyte uplo, int n, int kb, System.IntPtr bb, int ldbb)
+            public static int Zpbstf(MatrixLayout matrixLayout, UpLo uplo, int n, int kb, System.IntPtr bb, int ldbb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpbstf(matrixLayout, uplo, n, kb, bb, ldbb);
@@ -10507,7 +10507,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpbstf(matrixLayout, uplo, n, kb, bb, ldbb);
             }
 
-            public static int SpbstfWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kb, float* bb, int ldbb)
+            public static int SpbstfWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kb, float* bb, int ldbb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpbstfWork(matrixLayout, uplo, n, kb, bb, ldbb);
@@ -10515,7 +10515,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpbstfWork(matrixLayout, uplo, n, kb, bb, ldbb);
             }
 
-            public static int DpbstfWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kb, double* bb, int ldbb)
+            public static int DpbstfWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kb, double* bb, int ldbb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpbstfWork(matrixLayout, uplo, n, kb, bb, ldbb);
@@ -10523,7 +10523,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpbstfWork(matrixLayout, uplo, n, kb, bb, ldbb);
             }
 
-            public static int CpbstfWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kb, System.IntPtr bb, int ldbb)
+            public static int CpbstfWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kb, System.IntPtr bb, int ldbb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpbstfWork(matrixLayout, uplo, n, kb, bb, ldbb);
@@ -10531,7 +10531,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpbstfWork(matrixLayout, uplo, n, kb, bb, ldbb);
             }
 
-            public static int ZpbstfWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kb, System.IntPtr bb, int ldbb)
+            public static int ZpbstfWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kb, System.IntPtr bb, int ldbb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpbstfWork(matrixLayout, uplo, n, kb, bb, ldbb);
@@ -10539,7 +10539,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpbstfWork(matrixLayout, uplo, n, kb, bb, ldbb);
             }
 
-            public static int Spbsv(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
+            public static int Spbsv(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spbsv(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10547,7 +10547,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spbsv(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Dpbsv(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
+            public static int Dpbsv(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpbsv(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10555,7 +10555,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpbsv(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Cpbsv(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int Cpbsv(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpbsv(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10563,7 +10563,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpbsv(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Zpbsv(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int Zpbsv(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpbsv(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10571,7 +10571,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpbsv(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int SpbsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
+            public static int SpbsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpbsvWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10579,7 +10579,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpbsvWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int DpbsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
+            public static int DpbsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpbsvWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10587,7 +10587,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpbsvWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int CpbsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int CpbsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpbsvWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10595,7 +10595,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpbsvWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int ZpbsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int ZpbsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpbsvWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10603,7 +10603,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpbsvWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Spbsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Spbsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spbsvx(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -10611,7 +10611,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spbsvx(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Dpbsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Dpbsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpbsvx(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -10619,7 +10619,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpbsvx(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Cpbsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Cpbsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpbsvx(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -10627,7 +10627,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpbsvx(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Zpbsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Zpbsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpbsvx(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -10635,7 +10635,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpbsvx(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int SpbsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int* iwork)
+            public static int SpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpbsvxWork(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
@@ -10643,7 +10643,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpbsvxWork(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
             }
 
-            public static int DpbsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int* iwork)
+            public static int DpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpbsvxWork(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
@@ -10651,7 +10651,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpbsvxWork(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
             }
 
-            public static int CpbsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpbsvxWork(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -10659,7 +10659,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpbsvxWork(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int ZpbsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr afb, int ldafb, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpbsvxWork(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -10667,7 +10667,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpbsvxWork(matrixLayout, fact, uplo, n, kd, nrhs, ab, ldab, afb, ldafb, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int Spbtrf(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, float* ab, int ldab)
+            public static int Spbtrf(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, float* ab, int ldab)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spbtrf(matrixLayout, uplo, n, kd, ab, ldab);
@@ -10675,7 +10675,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spbtrf(matrixLayout, uplo, n, kd, ab, ldab);
             }
 
-            public static int Dpbtrf(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, double* ab, int ldab)
+            public static int Dpbtrf(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, double* ab, int ldab)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpbtrf(matrixLayout, uplo, n, kd, ab, ldab);
@@ -10683,7 +10683,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpbtrf(matrixLayout, uplo, n, kd, ab, ldab);
             }
 
-            public static int Cpbtrf(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab)
+            public static int Cpbtrf(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpbtrf(matrixLayout, uplo, n, kd, ab, ldab);
@@ -10691,7 +10691,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpbtrf(matrixLayout, uplo, n, kd, ab, ldab);
             }
 
-            public static int Zpbtrf(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab)
+            public static int Zpbtrf(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpbtrf(matrixLayout, uplo, n, kd, ab, ldab);
@@ -10699,7 +10699,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpbtrf(matrixLayout, uplo, n, kd, ab, ldab);
             }
 
-            public static int SpbtrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, float* ab, int ldab)
+            public static int SpbtrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, float* ab, int ldab)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpbtrfWork(matrixLayout, uplo, n, kd, ab, ldab);
@@ -10707,7 +10707,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpbtrfWork(matrixLayout, uplo, n, kd, ab, ldab);
             }
 
-            public static int DpbtrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, double* ab, int ldab)
+            public static int DpbtrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, double* ab, int ldab)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpbtrfWork(matrixLayout, uplo, n, kd, ab, ldab);
@@ -10715,7 +10715,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpbtrfWork(matrixLayout, uplo, n, kd, ab, ldab);
             }
 
-            public static int CpbtrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab)
+            public static int CpbtrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpbtrfWork(matrixLayout, uplo, n, kd, ab, ldab);
@@ -10723,7 +10723,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpbtrfWork(matrixLayout, uplo, n, kd, ab, ldab);
             }
 
-            public static int ZpbtrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, System.IntPtr ab, int ldab)
+            public static int ZpbtrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, System.IntPtr ab, int ldab)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpbtrfWork(matrixLayout, uplo, n, kd, ab, ldab);
@@ -10731,7 +10731,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpbtrfWork(matrixLayout, uplo, n, kd, ab, ldab);
             }
 
-            public static int Spbtrs(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
+            public static int Spbtrs(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spbtrs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10739,7 +10739,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spbtrs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Dpbtrs(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
+            public static int Dpbtrs(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpbtrs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10747,7 +10747,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpbtrs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Cpbtrs(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int Cpbtrs(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpbtrs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10755,7 +10755,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpbtrs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Zpbtrs(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int Zpbtrs(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpbtrs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10763,7 +10763,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpbtrs(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int SpbtrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
+            public static int SpbtrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpbtrsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10771,7 +10771,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpbtrsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int DpbtrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
+            public static int DpbtrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpbtrsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10779,7 +10779,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpbtrsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int CpbtrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int CpbtrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpbtrsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10787,7 +10787,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpbtrsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int ZpbtrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int ZpbtrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpbtrsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
@@ -10795,7 +10795,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpbtrsWork(matrixLayout, uplo, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Spftrf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* a)
+            public static int Spftrf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spftrf(matrixLayout, transr, uplo, n, a);
@@ -10803,7 +10803,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spftrf(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int Dpftrf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* a)
+            public static int Dpftrf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpftrf(matrixLayout, transr, uplo, n, a);
@@ -10811,7 +10811,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpftrf(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int Cpftrf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a)
+            public static int Cpftrf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpftrf(matrixLayout, transr, uplo, n, a);
@@ -10819,7 +10819,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpftrf(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int Zpftrf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a)
+            public static int Zpftrf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpftrf(matrixLayout, transr, uplo, n, a);
@@ -10827,7 +10827,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpftrf(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int SpftrfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* a)
+            public static int SpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpftrfWork(matrixLayout, transr, uplo, n, a);
@@ -10835,7 +10835,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpftrfWork(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int DpftrfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* a)
+            public static int DpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpftrfWork(matrixLayout, transr, uplo, n, a);
@@ -10843,7 +10843,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpftrfWork(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int CpftrfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a)
+            public static int CpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpftrfWork(matrixLayout, transr, uplo, n, a);
@@ -10851,7 +10851,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpftrfWork(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int ZpftrfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a)
+            public static int ZpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpftrfWork(matrixLayout, transr, uplo, n, a);
@@ -10859,7 +10859,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpftrfWork(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int Spftri(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* a)
+            public static int Spftri(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spftri(matrixLayout, transr, uplo, n, a);
@@ -10867,7 +10867,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spftri(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int Dpftri(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* a)
+            public static int Dpftri(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpftri(matrixLayout, transr, uplo, n, a);
@@ -10875,7 +10875,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpftri(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int Cpftri(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a)
+            public static int Cpftri(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpftri(matrixLayout, transr, uplo, n, a);
@@ -10883,7 +10883,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpftri(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int Zpftri(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a)
+            public static int Zpftri(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpftri(matrixLayout, transr, uplo, n, a);
@@ -10891,7 +10891,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpftri(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int SpftriWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* a)
+            public static int SpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpftriWork(matrixLayout, transr, uplo, n, a);
@@ -10899,7 +10899,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpftriWork(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int DpftriWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* a)
+            public static int DpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpftriWork(matrixLayout, transr, uplo, n, a);
@@ -10907,7 +10907,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpftriWork(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int CpftriWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a)
+            public static int CpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpftriWork(matrixLayout, transr, uplo, n, a);
@@ -10915,7 +10915,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpftriWork(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int ZpftriWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a)
+            public static int ZpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpftriWork(matrixLayout, transr, uplo, n, a);
@@ -10923,7 +10923,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpftriWork(matrixLayout, transr, uplo, n, a);
             }
 
-            public static int Spftrs(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, int nrhs, float* a, float* b, int ldB)
+            public static int Spftrs(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, int nrhs, float* a, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spftrs(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
@@ -10931,7 +10931,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spftrs(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
             }
 
-            public static int Dpftrs(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, int nrhs, double* a, double* b, int ldB)
+            public static int Dpftrs(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, int nrhs, double* a, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpftrs(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
@@ -10939,7 +10939,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpftrs(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
             }
 
-            public static int Cpftrs(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, int nrhs, System.IntPtr a, System.IntPtr b, int ldB)
+            public static int Cpftrs(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, int nrhs, System.IntPtr a, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpftrs(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
@@ -10947,7 +10947,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpftrs(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
             }
 
-            public static int Zpftrs(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, int nrhs, System.IntPtr a, System.IntPtr b, int ldB)
+            public static int Zpftrs(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, int nrhs, System.IntPtr a, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpftrs(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
@@ -10955,7 +10955,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpftrs(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
             }
 
-            public static int SpftrsWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, int nrhs, float* a, float* b, int ldB)
+            public static int SpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, int nrhs, float* a, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpftrsWork(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
@@ -10963,7 +10963,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpftrsWork(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
             }
 
-            public static int DpftrsWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, int nrhs, double* a, double* b, int ldB)
+            public static int DpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, int nrhs, double* a, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpftrsWork(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
@@ -10971,7 +10971,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpftrsWork(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
             }
 
-            public static int CpftrsWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, int nrhs, System.IntPtr a, System.IntPtr b, int ldB)
+            public static int CpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, int nrhs, System.IntPtr a, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpftrsWork(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
@@ -10979,7 +10979,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpftrsWork(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
             }
 
-            public static int ZpftrsWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, int nrhs, System.IntPtr a, System.IntPtr b, int ldB)
+            public static int ZpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, int nrhs, System.IntPtr a, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpftrsWork(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
@@ -10987,7 +10987,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpftrsWork(matrixLayout, transr, uplo, n, nrhs, a, b, ldB);
             }
 
-            public static int Spocon(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float anorm, float* rcond)
+            public static int Spocon(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spocon(matrixLayout, uplo, n, a, ldA, anorm, rcond);
@@ -10995,7 +10995,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spocon(matrixLayout, uplo, n, a, ldA, anorm, rcond);
             }
 
-            public static int Dpocon(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double anorm, double* rcond)
+            public static int Dpocon(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpocon(matrixLayout, uplo, n, a, ldA, anorm, rcond);
@@ -11003,7 +11003,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpocon(matrixLayout, uplo, n, a, ldA, anorm, rcond);
             }
 
-            public static int Cpocon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, float anorm, float* rcond)
+            public static int Cpocon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpocon(matrixLayout, uplo, n, a, ldA, anorm, rcond);
@@ -11011,7 +11011,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpocon(matrixLayout, uplo, n, a, ldA, anorm, rcond);
             }
 
-            public static int Zpocon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, double anorm, double* rcond)
+            public static int Zpocon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpocon(matrixLayout, uplo, n, a, ldA, anorm, rcond);
@@ -11019,7 +11019,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpocon(matrixLayout, uplo, n, a, ldA, anorm, rcond);
             }
 
-            public static int SpoconWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float anorm, float* rcond, float* work, int* iwork)
+            public static int SpoconWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float anorm, float* rcond, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpoconWork(matrixLayout, uplo, n, a, ldA, anorm, rcond, work, iwork);
@@ -11027,7 +11027,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpoconWork(matrixLayout, uplo, n, a, ldA, anorm, rcond, work, iwork);
             }
 
-            public static int DpoconWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double anorm, double* rcond, double* work, int* iwork)
+            public static int DpoconWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double anorm, double* rcond, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpoconWork(matrixLayout, uplo, n, a, ldA, anorm, rcond, work, iwork);
@@ -11035,7 +11035,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpoconWork(matrixLayout, uplo, n, a, ldA, anorm, rcond, work, iwork);
             }
 
-            public static int CpoconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, float anorm, float* rcond, System.IntPtr work, float* rwork)
+            public static int CpoconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, float anorm, float* rcond, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpoconWork(matrixLayout, uplo, n, a, ldA, anorm, rcond, work, rwork);
@@ -11043,7 +11043,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpoconWork(matrixLayout, uplo, n, a, ldA, anorm, rcond, work, rwork);
             }
 
-            public static int ZpoconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, double anorm, double* rcond, System.IntPtr work, double* rwork)
+            public static int ZpoconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, double anorm, double* rcond, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpoconWork(matrixLayout, uplo, n, a, ldA, anorm, rcond, work, rwork);
@@ -11179,7 +11179,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpoequWork(matrixLayout, n, a, ldA, s, scond, amax);
             }
 
-            public static int Sporfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
+            public static int Sporfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sporfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr);
@@ -11187,7 +11187,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sporfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Dporfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
+            public static int Dporfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dporfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr);
@@ -11195,7 +11195,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dporfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Cporfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Cporfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cporfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr);
@@ -11203,7 +11203,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cporfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Zporfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Zporfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zporfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr);
@@ -11211,7 +11211,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zporfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int SporfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
+            public static int SporfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SporfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -11219,7 +11219,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SporfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int DporfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
+            public static int DporfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DporfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -11227,7 +11227,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DporfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int CporfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CporfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CporfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -11235,7 +11235,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CporfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZporfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZporfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZporfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -11243,7 +11243,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZporfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int Sporfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, float* a, int ldA, float* af, int ldaf, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Sporfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, float* a, int ldA, float* af, int ldaf, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sporfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -11251,7 +11251,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sporfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Dporfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, double* a, int ldA, double* af, int ldaf, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Dporfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, double* a, int ldA, double* af, int ldaf, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dporfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -11259,7 +11259,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dporfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Cporfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Cporfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cporfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -11267,7 +11267,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cporfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Zporfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Zporfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zporfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -11275,7 +11275,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zporfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int SporfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, float* a, int ldA, float* af, int ldaf, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, float* work, int* iwork)
+            public static int SporfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, float* a, int ldA, float* af, int ldaf, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SporfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
@@ -11283,7 +11283,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SporfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
             }
 
-            public static int DporfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, double* a, int ldA, double* af, int ldaf, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, double* work, int* iwork)
+            public static int DporfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, double* a, int ldA, double* af, int ldaf, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DporfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
@@ -11291,7 +11291,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DporfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
             }
 
-            public static int CporfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
+            public static int CporfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CporfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -11299,7 +11299,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CporfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int ZporfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
+            public static int ZporfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZporfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -11307,7 +11307,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZporfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int Sposv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* b, int ldB)
+            public static int Sposv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11315,7 +11315,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Dposv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB)
+            public static int Dposv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11323,7 +11323,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Cposv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Cposv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11331,7 +11331,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Zposv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Zposv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11339,7 +11339,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int SposvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* b, int ldB)
+            public static int SposvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11347,7 +11347,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int DposvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB)
+            public static int DposvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11355,7 +11355,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int CposvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int CposvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11363,7 +11363,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int ZposvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int ZposvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11371,7 +11371,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Sposvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Sposvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sposvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -11379,7 +11379,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sposvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Dposvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Dposvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dposvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -11387,7 +11387,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dposvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Cposvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Cposvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cposvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -11395,7 +11395,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cposvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Zposvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Zposvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zposvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -11403,7 +11403,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zposvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int SposvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int* iwork)
+            public static int SposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SposvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
@@ -11411,7 +11411,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SposvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
             }
 
-            public static int DposvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int* iwork)
+            public static int DposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DposvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
@@ -11419,7 +11419,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DposvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
             }
 
-            public static int CposvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CposvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -11427,7 +11427,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CposvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int ZposvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZposvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -11435,7 +11435,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZposvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int Sposvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Sposvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sposvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -11443,7 +11443,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sposvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Dposvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Dposvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dposvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -11451,7 +11451,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dposvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Cposvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Cposvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cposvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -11459,7 +11459,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cposvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Zposvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Zposvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zposvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -11467,7 +11467,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zposvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int SposvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, float* work, int* iwork)
+            public static int SposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SposvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
@@ -11475,7 +11475,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SposvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
             }
 
-            public static int DposvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, double* work, int* iwork)
+            public static int DposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DposvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
@@ -11483,7 +11483,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DposvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
             }
 
-            public static int CposvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
+            public static int CposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CposvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -11491,7 +11491,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CposvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int ZposvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
+            public static int ZposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZposvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -11499,7 +11499,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZposvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int Spotrf(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA)
+            public static int Spotrf(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spotrf(matrixLayout, uplo, n, a, ldA);
@@ -11507,7 +11507,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spotrf(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Dpotrf(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA)
+            public static int Dpotrf(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpotrf(matrixLayout, uplo, n, a, ldA);
@@ -11515,7 +11515,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpotrf(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Cpotrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Cpotrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpotrf(matrixLayout, uplo, n, a, ldA);
@@ -11523,7 +11523,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpotrf(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Zpotrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Zpotrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpotrf(matrixLayout, uplo, n, a, ldA);
@@ -11531,7 +11531,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpotrf(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Spotrf2(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA)
+            public static int Spotrf2(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spotrf2(matrixLayout, uplo, n, a, ldA);
@@ -11539,7 +11539,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spotrf2(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Dpotrf2(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA)
+            public static int Dpotrf2(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpotrf2(matrixLayout, uplo, n, a, ldA);
@@ -11547,7 +11547,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpotrf2(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Cpotrf2(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Cpotrf2(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpotrf2(matrixLayout, uplo, n, a, ldA);
@@ -11555,7 +11555,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpotrf2(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Zpotrf2(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Zpotrf2(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpotrf2(matrixLayout, uplo, n, a, ldA);
@@ -11563,7 +11563,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpotrf2(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Spotrf2Work(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA)
+            public static int Spotrf2Work(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spotrf2Work(matrixLayout, uplo, n, a, ldA);
@@ -11571,7 +11571,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spotrf2Work(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Dpotrf2Work(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA)
+            public static int Dpotrf2Work(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpotrf2Work(matrixLayout, uplo, n, a, ldA);
@@ -11579,7 +11579,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpotrf2Work(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Cpotrf2Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Cpotrf2Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpotrf2Work(matrixLayout, uplo, n, a, ldA);
@@ -11587,7 +11587,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpotrf2Work(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Zpotrf2Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Zpotrf2Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpotrf2Work(matrixLayout, uplo, n, a, ldA);
@@ -11595,7 +11595,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpotrf2Work(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int SpotrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA)
+            public static int SpotrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpotrfWork(matrixLayout, uplo, n, a, ldA);
@@ -11603,7 +11603,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpotrfWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int DpotrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA)
+            public static int DpotrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpotrfWork(matrixLayout, uplo, n, a, ldA);
@@ -11611,7 +11611,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpotrfWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int CpotrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int CpotrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpotrfWork(matrixLayout, uplo, n, a, ldA);
@@ -11619,7 +11619,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpotrfWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int ZpotrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int ZpotrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpotrfWork(matrixLayout, uplo, n, a, ldA);
@@ -11627,7 +11627,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpotrfWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Spotri(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA)
+            public static int Spotri(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spotri(matrixLayout, uplo, n, a, ldA);
@@ -11635,7 +11635,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spotri(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Dpotri(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA)
+            public static int Dpotri(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpotri(matrixLayout, uplo, n, a, ldA);
@@ -11643,7 +11643,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpotri(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Cpotri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Cpotri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpotri(matrixLayout, uplo, n, a, ldA);
@@ -11651,7 +11651,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpotri(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Zpotri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int Zpotri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpotri(matrixLayout, uplo, n, a, ldA);
@@ -11659,7 +11659,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpotri(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int SpotriWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA)
+            public static int SpotriWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpotriWork(matrixLayout, uplo, n, a, ldA);
@@ -11667,7 +11667,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpotriWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int DpotriWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA)
+            public static int DpotriWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpotriWork(matrixLayout, uplo, n, a, ldA);
@@ -11675,7 +11675,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpotriWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int CpotriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int CpotriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpotriWork(matrixLayout, uplo, n, a, ldA);
@@ -11683,7 +11683,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpotriWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int ZpotriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA)
+            public static int ZpotriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpotriWork(matrixLayout, uplo, n, a, ldA);
@@ -11691,7 +11691,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpotriWork(matrixLayout, uplo, n, a, ldA);
             }
 
-            public static int Spotrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* b, int ldB)
+            public static int Spotrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spotrs(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11699,7 +11699,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spotrs(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Dpotrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB)
+            public static int Dpotrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpotrs(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11707,7 +11707,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpotrs(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Cpotrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Cpotrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpotrs(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11715,7 +11715,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpotrs(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Zpotrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Zpotrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpotrs(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11723,7 +11723,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpotrs(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int SpotrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* b, int ldB)
+            public static int SpotrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpotrsWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11731,7 +11731,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpotrsWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int DpotrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB)
+            public static int DpotrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpotrsWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11739,7 +11739,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpotrsWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int CpotrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int CpotrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpotrsWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11747,7 +11747,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpotrsWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int ZpotrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int ZpotrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpotrsWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
@@ -11755,7 +11755,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpotrsWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Sppcon(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float anorm, float* rcond)
+            public static int Sppcon(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sppcon(matrixLayout, uplo, n, ap, anorm, rcond);
@@ -11763,7 +11763,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sppcon(matrixLayout, uplo, n, ap, anorm, rcond);
             }
 
-            public static int Dppcon(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double anorm, double* rcond)
+            public static int Dppcon(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dppcon(matrixLayout, uplo, n, ap, anorm, rcond);
@@ -11771,7 +11771,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dppcon(matrixLayout, uplo, n, ap, anorm, rcond);
             }
 
-            public static int Cppcon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, float anorm, float* rcond)
+            public static int Cppcon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cppcon(matrixLayout, uplo, n, ap, anorm, rcond);
@@ -11779,7 +11779,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cppcon(matrixLayout, uplo, n, ap, anorm, rcond);
             }
 
-            public static int Zppcon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, double anorm, double* rcond)
+            public static int Zppcon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zppcon(matrixLayout, uplo, n, ap, anorm, rcond);
@@ -11787,7 +11787,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zppcon(matrixLayout, uplo, n, ap, anorm, rcond);
             }
 
-            public static int SppconWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float anorm, float* rcond, float* work, int* iwork)
+            public static int SppconWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float anorm, float* rcond, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SppconWork(matrixLayout, uplo, n, ap, anorm, rcond, work, iwork);
@@ -11795,7 +11795,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SppconWork(matrixLayout, uplo, n, ap, anorm, rcond, work, iwork);
             }
 
-            public static int DppconWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double anorm, double* rcond, double* work, int* iwork)
+            public static int DppconWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double anorm, double* rcond, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DppconWork(matrixLayout, uplo, n, ap, anorm, rcond, work, iwork);
@@ -11803,7 +11803,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DppconWork(matrixLayout, uplo, n, ap, anorm, rcond, work, iwork);
             }
 
-            public static int CppconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, float anorm, float* rcond, System.IntPtr work, float* rwork)
+            public static int CppconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, float anorm, float* rcond, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CppconWork(matrixLayout, uplo, n, ap, anorm, rcond, work, rwork);
@@ -11811,7 +11811,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CppconWork(matrixLayout, uplo, n, ap, anorm, rcond, work, rwork);
             }
 
-            public static int ZppconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, double anorm, double* rcond, System.IntPtr work, double* rwork)
+            public static int ZppconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, double anorm, double* rcond, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZppconWork(matrixLayout, uplo, n, ap, anorm, rcond, work, rwork);
@@ -11819,7 +11819,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZppconWork(matrixLayout, uplo, n, ap, anorm, rcond, work, rwork);
             }
 
-            public static int Sppequ(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float* s, float* scond, float* amax)
+            public static int Sppequ(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sppequ(matrixLayout, uplo, n, ap, s, scond, amax);
@@ -11827,7 +11827,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sppequ(matrixLayout, uplo, n, ap, s, scond, amax);
             }
 
-            public static int Dppequ(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double* s, double* scond, double* amax)
+            public static int Dppequ(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dppequ(matrixLayout, uplo, n, ap, s, scond, amax);
@@ -11835,7 +11835,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dppequ(matrixLayout, uplo, n, ap, s, scond, amax);
             }
 
-            public static int Cppequ(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, float* s, float* scond, float* amax)
+            public static int Cppequ(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cppequ(matrixLayout, uplo, n, ap, s, scond, amax);
@@ -11843,7 +11843,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cppequ(matrixLayout, uplo, n, ap, s, scond, amax);
             }
 
-            public static int Zppequ(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, double* s, double* scond, double* amax)
+            public static int Zppequ(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zppequ(matrixLayout, uplo, n, ap, s, scond, amax);
@@ -11851,7 +11851,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zppequ(matrixLayout, uplo, n, ap, s, scond, amax);
             }
 
-            public static int SppequWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float* s, float* scond, float* amax)
+            public static int SppequWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SppequWork(matrixLayout, uplo, n, ap, s, scond, amax);
@@ -11859,7 +11859,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SppequWork(matrixLayout, uplo, n, ap, s, scond, amax);
             }
 
-            public static int DppequWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double* s, double* scond, double* amax)
+            public static int DppequWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DppequWork(matrixLayout, uplo, n, ap, s, scond, amax);
@@ -11867,7 +11867,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DppequWork(matrixLayout, uplo, n, ap, s, scond, amax);
             }
 
-            public static int CppequWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, float* s, float* scond, float* amax)
+            public static int CppequWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CppequWork(matrixLayout, uplo, n, ap, s, scond, amax);
@@ -11875,7 +11875,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CppequWork(matrixLayout, uplo, n, ap, s, scond, amax);
             }
 
-            public static int ZppequWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, double* s, double* scond, double* amax)
+            public static int ZppequWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZppequWork(matrixLayout, uplo, n, ap, s, scond, amax);
@@ -11883,7 +11883,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZppequWork(matrixLayout, uplo, n, ap, s, scond, amax);
             }
 
-            public static int Spprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, float* afp, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
+            public static int Spprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, float* afp, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spprfs(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr);
@@ -11891,7 +11891,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spprfs(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Dpprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, double* afp, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
+            public static int Dpprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, double* afp, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpprfs(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr);
@@ -11899,7 +11899,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpprfs(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Cpprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Cpprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpprfs(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr);
@@ -11907,7 +11907,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpprfs(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Zpprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Zpprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpprfs(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr);
@@ -11915,7 +11915,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpprfs(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int SpprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, float* afp, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
+            public static int SpprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, float* afp, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -11923,7 +11923,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int DpprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, double* afp, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
+            public static int DpprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, double* afp, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -11931,7 +11931,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int CpprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CpprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -11939,7 +11939,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZpprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZpprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -11947,7 +11947,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int Sppsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, float* b, int ldB)
+            public static int Sppsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sppsv(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -11955,7 +11955,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sppsv(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int Dppsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, double* b, int ldB)
+            public static int Dppsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dppsv(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -11963,7 +11963,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dppsv(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int Cppsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int Cppsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cppsv(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -11971,7 +11971,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cppsv(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int Zppsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int Zppsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zppsv(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -11979,7 +11979,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zppsv(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int SppsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, float* b, int ldB)
+            public static int SppsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SppsvWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -11987,7 +11987,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SppsvWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int DppsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, double* b, int ldB)
+            public static int DppsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DppsvWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -11995,7 +11995,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DppsvWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int CppsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int CppsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CppsvWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12003,7 +12003,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CppsvWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int ZppsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int ZppsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZppsvWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12011,7 +12011,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZppsvWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int Sppsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* ap, float* afp, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Sppsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* ap, float* afp, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sppsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -12019,7 +12019,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sppsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Dppsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* ap, double* afp, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Dppsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* ap, double* afp, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dppsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -12027,7 +12027,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dppsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Cppsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Cppsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cppsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -12035,7 +12035,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cppsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Zppsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Zppsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zppsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
@@ -12043,7 +12043,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zppsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int SppsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* ap, float* afp, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int* iwork)
+            public static int SppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* ap, float* afp, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SppsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
@@ -12051,7 +12051,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SppsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
             }
 
-            public static int DppsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* ap, double* afp, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int* iwork)
+            public static int DppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* ap, double* afp, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DppsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
@@ -12059,7 +12059,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DppsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
             }
 
-            public static int CppsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CppsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -12067,7 +12067,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CppsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int ZppsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZppsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -12075,7 +12075,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZppsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, equed, s, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int Spptrf(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap)
+            public static int Spptrf(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spptrf(matrixLayout, uplo, n, ap);
@@ -12083,7 +12083,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spptrf(matrixLayout, uplo, n, ap);
             }
 
-            public static int Dpptrf(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap)
+            public static int Dpptrf(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpptrf(matrixLayout, uplo, n, ap);
@@ -12091,7 +12091,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpptrf(matrixLayout, uplo, n, ap);
             }
 
-            public static int Cpptrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap)
+            public static int Cpptrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpptrf(matrixLayout, uplo, n, ap);
@@ -12099,7 +12099,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpptrf(matrixLayout, uplo, n, ap);
             }
 
-            public static int Zpptrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap)
+            public static int Zpptrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpptrf(matrixLayout, uplo, n, ap);
@@ -12107,7 +12107,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpptrf(matrixLayout, uplo, n, ap);
             }
 
-            public static int SpptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap)
+            public static int SpptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpptrfWork(matrixLayout, uplo, n, ap);
@@ -12115,7 +12115,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpptrfWork(matrixLayout, uplo, n, ap);
             }
 
-            public static int DpptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap)
+            public static int DpptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpptrfWork(matrixLayout, uplo, n, ap);
@@ -12123,7 +12123,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpptrfWork(matrixLayout, uplo, n, ap);
             }
 
-            public static int CpptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap)
+            public static int CpptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpptrfWork(matrixLayout, uplo, n, ap);
@@ -12131,7 +12131,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpptrfWork(matrixLayout, uplo, n, ap);
             }
 
-            public static int ZpptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap)
+            public static int ZpptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpptrfWork(matrixLayout, uplo, n, ap);
@@ -12139,7 +12139,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpptrfWork(matrixLayout, uplo, n, ap);
             }
 
-            public static int Spptri(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap)
+            public static int Spptri(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spptri(matrixLayout, uplo, n, ap);
@@ -12147,7 +12147,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spptri(matrixLayout, uplo, n, ap);
             }
 
-            public static int Dpptri(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap)
+            public static int Dpptri(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpptri(matrixLayout, uplo, n, ap);
@@ -12155,7 +12155,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpptri(matrixLayout, uplo, n, ap);
             }
 
-            public static int Cpptri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap)
+            public static int Cpptri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpptri(matrixLayout, uplo, n, ap);
@@ -12163,7 +12163,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpptri(matrixLayout, uplo, n, ap);
             }
 
-            public static int Zpptri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap)
+            public static int Zpptri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpptri(matrixLayout, uplo, n, ap);
@@ -12171,7 +12171,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpptri(matrixLayout, uplo, n, ap);
             }
 
-            public static int SpptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap)
+            public static int SpptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpptriWork(matrixLayout, uplo, n, ap);
@@ -12179,7 +12179,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpptriWork(matrixLayout, uplo, n, ap);
             }
 
-            public static int DpptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap)
+            public static int DpptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpptriWork(matrixLayout, uplo, n, ap);
@@ -12187,7 +12187,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpptriWork(matrixLayout, uplo, n, ap);
             }
 
-            public static int CpptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap)
+            public static int CpptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpptriWork(matrixLayout, uplo, n, ap);
@@ -12195,7 +12195,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpptriWork(matrixLayout, uplo, n, ap);
             }
 
-            public static int ZpptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap)
+            public static int ZpptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpptriWork(matrixLayout, uplo, n, ap);
@@ -12203,7 +12203,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpptriWork(matrixLayout, uplo, n, ap);
             }
 
-            public static int Spptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, float* b, int ldB)
+            public static int Spptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spptrs(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12211,7 +12211,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spptrs(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int Dpptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, double* b, int ldB)
+            public static int Dpptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpptrs(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12219,7 +12219,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpptrs(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int Cpptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int Cpptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpptrs(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12227,7 +12227,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpptrs(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int Zpptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int Zpptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpptrs(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12235,7 +12235,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpptrs(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int SpptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, float* b, int ldB)
+            public static int SpptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpptrsWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12243,7 +12243,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpptrsWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int DpptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, double* b, int ldB)
+            public static int DpptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpptrsWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12251,7 +12251,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpptrsWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int CpptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int CpptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpptrsWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12259,7 +12259,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpptrsWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int ZpptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int ZpptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpptrsWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
@@ -12267,7 +12267,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpptrsWork(matrixLayout, uplo, n, nrhs, ap, b, ldB);
             }
 
-            public static int Spstrf(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* piv, int* rank, float tol)
+            public static int Spstrf(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* piv, int* rank, float tol)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Spstrf(matrixLayout, uplo, n, a, ldA, piv, rank, tol);
@@ -12275,7 +12275,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Spstrf(matrixLayout, uplo, n, a, ldA, piv, rank, tol);
             }
 
-            public static int Dpstrf(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* piv, int* rank, double tol)
+            public static int Dpstrf(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* piv, int* rank, double tol)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dpstrf(matrixLayout, uplo, n, a, ldA, piv, rank, tol);
@@ -12283,7 +12283,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpstrf(matrixLayout, uplo, n, a, ldA, piv, rank, tol);
             }
 
-            public static int Cpstrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* piv, int* rank, float tol)
+            public static int Cpstrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* piv, int* rank, float tol)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpstrf(matrixLayout, uplo, n, a, ldA, piv, rank, tol);
@@ -12291,7 +12291,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpstrf(matrixLayout, uplo, n, a, ldA, piv, rank, tol);
             }
 
-            public static int Zpstrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* piv, int* rank, double tol)
+            public static int Zpstrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* piv, int* rank, double tol)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpstrf(matrixLayout, uplo, n, a, ldA, piv, rank, tol);
@@ -12299,7 +12299,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zpstrf(matrixLayout, uplo, n, a, ldA, piv, rank, tol);
             }
 
-            public static int SpstrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* piv, int* rank, float tol, float* work)
+            public static int SpstrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* piv, int* rank, float tol, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SpstrfWork(matrixLayout, uplo, n, a, ldA, piv, rank, tol, work);
@@ -12307,7 +12307,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SpstrfWork(matrixLayout, uplo, n, a, ldA, piv, rank, tol, work);
             }
 
-            public static int DpstrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* piv, int* rank, double tol, double* work)
+            public static int DpstrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* piv, int* rank, double tol, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DpstrfWork(matrixLayout, uplo, n, a, ldA, piv, rank, tol, work);
@@ -12315,7 +12315,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpstrfWork(matrixLayout, uplo, n, a, ldA, piv, rank, tol, work);
             }
 
-            public static int CpstrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* piv, int* rank, float tol, float* work)
+            public static int CpstrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* piv, int* rank, float tol, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpstrfWork(matrixLayout, uplo, n, a, ldA, piv, rank, tol, work);
@@ -12323,7 +12323,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpstrfWork(matrixLayout, uplo, n, a, ldA, piv, rank, tol, work);
             }
 
-            public static int ZpstrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* piv, int* rank, double tol, double* work)
+            public static int ZpstrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* piv, int* rank, double tol, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpstrfWork(matrixLayout, uplo, n, a, ldA, piv, rank, tol, work);
@@ -12475,7 +12475,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dptrfs(matrixLayout, n, nrhs, d, e, df, ef, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Cptrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* d, System.IntPtr e, float* df, System.IntPtr ef, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Cptrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* d, System.IntPtr e, float* df, System.IntPtr ef, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cptrfs(matrixLayout, uplo, n, nrhs, d, e, df, ef, b, ldB, x, ldX, ferr, berr);
@@ -12483,7 +12483,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cptrfs(matrixLayout, uplo, n, nrhs, d, e, df, ef, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Zptrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* d, System.IntPtr e, double* df, System.IntPtr ef, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Zptrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* d, System.IntPtr e, double* df, System.IntPtr ef, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zptrfs(matrixLayout, uplo, n, nrhs, d, e, df, ef, b, ldB, x, ldX, ferr, berr);
@@ -12507,7 +12507,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DptrfsWork(matrixLayout, n, nrhs, d, e, df, ef, b, ldB, x, ldX, ferr, berr, work);
             }
 
-            public static int CptrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* d, System.IntPtr e, float* df, System.IntPtr ef, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CptrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* d, System.IntPtr e, float* df, System.IntPtr ef, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CptrfsWork(matrixLayout, uplo, n, nrhs, d, e, df, ef, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -12515,7 +12515,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CptrfsWork(matrixLayout, uplo, n, nrhs, d, e, df, ef, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZptrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* d, System.IntPtr e, double* df, System.IntPtr ef, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZptrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* d, System.IntPtr e, double* df, System.IntPtr ef, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZptrfsWork(matrixLayout, uplo, n, nrhs, d, e, df, ef, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -12731,7 +12731,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dpttrs(matrixLayout, n, nrhs, d, e, b, ldB);
             }
 
-            public static int Cpttrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* d, System.IntPtr e, System.IntPtr b, int ldB)
+            public static int Cpttrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* d, System.IntPtr e, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cpttrs(matrixLayout, uplo, n, nrhs, d, e, b, ldB);
@@ -12739,7 +12739,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cpttrs(matrixLayout, uplo, n, nrhs, d, e, b, ldB);
             }
 
-            public static int Zpttrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* d, System.IntPtr e, System.IntPtr b, int ldB)
+            public static int Zpttrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* d, System.IntPtr e, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zpttrs(matrixLayout, uplo, n, nrhs, d, e, b, ldB);
@@ -12763,7 +12763,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DpttrsWork(matrixLayout, n, nrhs, d, e, b, ldB);
             }
 
-            public static int CpttrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* d, System.IntPtr e, System.IntPtr b, int ldB)
+            public static int CpttrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* d, System.IntPtr e, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CpttrsWork(matrixLayout, uplo, n, nrhs, d, e, b, ldB);
@@ -12771,7 +12771,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CpttrsWork(matrixLayout, uplo, n, nrhs, d, e, b, ldB);
             }
 
-            public static int ZpttrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* d, System.IntPtr e, System.IntPtr b, int ldB)
+            public static int ZpttrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* d, System.IntPtr e, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZpttrsWork(matrixLayout, uplo, n, nrhs, d, e, b, ldB);
@@ -12779,7 +12779,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZpttrsWork(matrixLayout, uplo, n, nrhs, d, e, b, ldB);
             }
 
-            public static int Ssbev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ)
+            public static int Ssbev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbev(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -12787,7 +12787,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbev(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Dsbev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ)
+            public static int Dsbev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbev(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -12795,7 +12795,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbev(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Ssbev2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ)
+            public static int Ssbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbev2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -12803,7 +12803,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbev2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Dsbev2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ)
+            public static int Dsbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbev2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -12811,7 +12811,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbev2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Ssbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ, float* work, int lwork)
+            public static int Ssbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbev2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork);
@@ -12819,7 +12819,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbev2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork);
             }
 
-            public static int Dsbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ, double* work, int lwork)
+            public static int Dsbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbev2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork);
@@ -12827,7 +12827,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbev2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork);
             }
 
-            public static int Ssbevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ)
+            public static int Ssbevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbevd(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -12835,7 +12835,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbevd(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Dsbevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ)
+            public static int Dsbevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbevd(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -12843,7 +12843,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbevd(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Ssbevd2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ)
+            public static int Ssbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbevd2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -12851,7 +12851,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbevd2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Dsbevd2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ)
+            public static int Dsbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbevd2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
@@ -12859,7 +12859,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbevd2stage(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ);
             }
 
-            public static int Ssbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
+            public static int Ssbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbevd2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, iwork, liwork);
@@ -12867,7 +12867,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbevd2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int Dsbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
+            public static int Dsbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbevd2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, iwork, liwork);
@@ -12875,7 +12875,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbevd2stageWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int SsbevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
+            public static int SsbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsbevdWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, iwork, liwork);
@@ -12883,7 +12883,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsbevdWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int DsbevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
+            public static int DsbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsbevdWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, iwork, liwork);
@@ -12891,7 +12891,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsbevdWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int SsbevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ, float* work)
+            public static int SsbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldZ, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsbevWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work);
@@ -12899,7 +12899,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsbevWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work);
             }
 
-            public static int DsbevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ, double* work)
+            public static int DsbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldZ, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsbevWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work);
@@ -12907,7 +12907,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsbevWork(matrixLayout, jobz, uplo, n, kd, ab, ldab, w, z, ldZ, work);
             }
 
-            public static int Ssbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, float* ab, int ldab, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
+            public static int Ssbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, float* ab, int ldab, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbevx(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -12915,7 +12915,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbevx(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Dsbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, double* ab, int ldab, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
+            public static int Dsbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, double* ab, int ldab, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbevx(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -12923,7 +12923,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbevx(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Ssbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, float* ab, int ldab, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
+            public static int Ssbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, float* ab, int ldab, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbevx2stage(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -12931,7 +12931,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbevx2stage(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Dsbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, double* ab, int ldab, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
+            public static int Dsbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, double* ab, int ldab, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbevx2stage(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -12939,7 +12939,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbevx2stage(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Ssbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, float* ab, int ldab, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int* ifail)
+            public static int Ssbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, float* ab, int ldab, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbevx2stageWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
@@ -12947,7 +12947,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbevx2stageWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
             }
 
-            public static int Dsbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, double* ab, int ldab, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int* ifail)
+            public static int Dsbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, double* ab, int ldab, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbevx2stageWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
@@ -12955,7 +12955,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbevx2stageWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
             }
 
-            public static int SsbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, float* ab, int ldab, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int* iwork, int* ifail)
+            public static int SsbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, float* ab, int ldab, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsbevxWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
@@ -12963,7 +12963,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsbevxWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
             }
 
-            public static int DsbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int kd, double* ab, int ldab, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int* iwork, int* ifail)
+            public static int DsbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int kd, double* ab, int ldab, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsbevxWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
@@ -12971,7 +12971,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsbevxWork(matrixLayout, jobz, range, uplo, n, kd, ab, ldab, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
             }
 
-            public static int Ssbgst(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* x, int ldX)
+            public static int Ssbgst(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* x, int ldX)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbgst(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX);
@@ -12979,7 +12979,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbgst(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX);
             }
 
-            public static int Dsbgst(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* x, int ldX)
+            public static int Dsbgst(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* x, int ldX)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbgst(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX);
@@ -12987,7 +12987,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbgst(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX);
             }
 
-            public static int SsbgstWork(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* x, int ldX, float* work)
+            public static int SsbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* x, int ldX, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsbgstWork(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX, work);
@@ -12995,7 +12995,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsbgstWork(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX, work);
             }
 
-            public static int DsbgstWork(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* x, int ldX, double* work)
+            public static int DsbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* x, int ldX, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsbgstWork(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX, work);
@@ -13003,7 +13003,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsbgstWork(matrixLayout, vect, uplo, n, ka, kb, ab, ldab, bb, ldbb, x, ldX, work);
             }
 
-            public static int Ssbgv(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldZ)
+            public static int Ssbgv(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbgv(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
@@ -13011,7 +13011,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbgv(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
             }
 
-            public static int Dsbgv(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldZ)
+            public static int Dsbgv(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbgv(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
@@ -13019,7 +13019,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbgv(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
             }
 
-            public static int Ssbgvd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldZ)
+            public static int Ssbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbgvd(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
@@ -13027,7 +13027,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbgvd(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
             }
 
-            public static int Dsbgvd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldZ)
+            public static int Dsbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbgvd(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
@@ -13035,7 +13035,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbgvd(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ);
             }
 
-            public static int SsbgvdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
+            public static int SsbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsbgvdWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, lwork, iwork, liwork);
@@ -13043,7 +13043,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsbgvdWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int DsbgvdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
+            public static int DsbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsbgvdWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, lwork, iwork, liwork);
@@ -13051,7 +13051,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsbgvdWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int SsbgvWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldZ, float* work)
+            public static int SsbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldZ, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsbgvWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work);
@@ -13059,7 +13059,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsbgvWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work);
             }
 
-            public static int DsbgvWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldZ, double* work)
+            public static int DsbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldZ, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsbgvWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work);
@@ -13067,7 +13067,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsbgvWork(matrixLayout, jobz, uplo, n, ka, kb, ab, ldab, bb, ldbb, w, z, ldZ, work);
             }
 
-            public static int Ssbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
+            public static int Ssbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbgvx(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -13075,7 +13075,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbgvx(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Dsbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
+            public static int Dsbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbgvx(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -13083,7 +13083,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbgvx(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int SsbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int* iwork, int* ifail)
+            public static int SsbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* q, int ldQ, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsbgvxWork(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
@@ -13091,7 +13091,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsbgvxWork(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
             }
 
-            public static int DsbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int* iwork, int* ifail)
+            public static int DsbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* q, int ldQ, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsbgvxWork(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
@@ -13099,7 +13099,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsbgvxWork(matrixLayout, jobz, range, uplo, n, ka, kb, ab, ldab, bb, ldbb, q, ldQ, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
             }
 
-            public static int Ssbtrd(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int kd, float* ab, int ldab, float* d, float* e, float* q, int ldQ)
+            public static int Ssbtrd(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int kd, float* ab, int ldab, float* d, float* e, float* q, int ldQ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssbtrd(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ);
@@ -13107,7 +13107,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssbtrd(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ);
             }
 
-            public static int Dsbtrd(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int kd, double* ab, int ldab, double* d, double* e, double* q, int ldQ)
+            public static int Dsbtrd(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int kd, double* ab, int ldab, double* d, double* e, double* q, int ldQ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsbtrd(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ);
@@ -13115,7 +13115,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsbtrd(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ);
             }
 
-            public static int SsbtrdWork(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int kd, float* ab, int ldab, float* d, float* e, float* q, int ldQ, float* work)
+            public static int SsbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int kd, float* ab, int ldab, float* d, float* e, float* q, int ldQ, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsbtrdWork(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ, work);
@@ -13123,7 +13123,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsbtrdWork(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ, work);
             }
 
-            public static int DsbtrdWork(MatrixLayout matrixLayout, sbyte vect, sbyte uplo, int n, int kd, double* ab, int ldab, double* d, double* e, double* q, int ldQ, double* work)
+            public static int DsbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLo uplo, int n, int kd, double* ab, int ldab, double* d, double* e, double* q, int ldQ, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsbtrdWork(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ, work);
@@ -13131,7 +13131,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsbtrdWork(matrixLayout, vect, uplo, n, kd, ab, ldab, d, e, q, ldQ, work);
             }
 
-            public static int Ssfrk(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, TransLapack trans, int n, int k, float alpha, float* a, int ldA, float beta, float* c)
+            public static int Ssfrk(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, TransLapack trans, int n, int k, float alpha, float* a, int ldA, float beta, float* c)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssfrk(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
@@ -13139,7 +13139,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssfrk(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
             }
 
-            public static int Dsfrk(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, TransLapack trans, int n, int k, double alpha, double* a, int ldA, double beta, double* c)
+            public static int Dsfrk(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, TransLapack trans, int n, int k, double alpha, double* a, int ldA, double beta, double* c)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsfrk(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
@@ -13147,7 +13147,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsfrk(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
             }
 
-            public static int SsfrkWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, TransLapack trans, int n, int k, float alpha, float* a, int ldA, float beta, float* c)
+            public static int SsfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, TransLapack trans, int n, int k, float alpha, float* a, int ldA, float beta, float* c)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsfrkWork(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
@@ -13155,7 +13155,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsfrkWork(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
             }
 
-            public static int DsfrkWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, TransLapack trans, int n, int k, double alpha, double* a, int ldA, double beta, double* c)
+            public static int DsfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, TransLapack trans, int n, int k, double alpha, double* a, int ldA, double beta, double* c)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsfrkWork(matrixLayout, transr, uplo, trans, n, k, alpha, a, ldA, beta, c);
@@ -13179,7 +13179,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsgesvWork(matrixLayout, n, nrhs, a, ldA, ipiv, b, ldB, x, ldX, work, swork, iter);
             }
 
-            public static int Sspcon(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, int* ipiv, float anorm, float* rcond)
+            public static int Sspcon(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, int* ipiv, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
@@ -13187,7 +13187,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
             }
 
-            public static int Dspcon(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, int* ipiv, double anorm, double* rcond)
+            public static int Dspcon(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, int* ipiv, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
@@ -13195,7 +13195,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
             }
 
-            public static int Cspcon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, float anorm, float* rcond)
+            public static int Cspcon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cspcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
@@ -13203,7 +13203,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cspcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
             }
 
-            public static int Zspcon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, double anorm, double* rcond)
+            public static int Zspcon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zspcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
@@ -13211,7 +13211,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zspcon(matrixLayout, uplo, n, ap, ipiv, anorm, rcond);
             }
 
-            public static int SspconWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, int* ipiv, float anorm, float* rcond, float* work, int* iwork)
+            public static int SspconWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, int* ipiv, float anorm, float* rcond, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work, iwork);
@@ -13219,7 +13219,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work, iwork);
             }
 
-            public static int DspconWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, int* ipiv, double anorm, double* rcond, double* work, int* iwork)
+            public static int DspconWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, int* ipiv, double anorm, double* rcond, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work, iwork);
@@ -13227,7 +13227,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work, iwork);
             }
 
-            public static int CspconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, float anorm, float* rcond, System.IntPtr work)
+            public static int CspconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, float anorm, float* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CspconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work);
@@ -13235,7 +13235,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CspconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work);
             }
 
-            public static int ZspconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, double anorm, double* rcond, System.IntPtr work)
+            public static int ZspconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, double anorm, double* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZspconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work);
@@ -13243,7 +13243,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZspconWork(matrixLayout, uplo, n, ap, ipiv, anorm, rcond, work);
             }
 
-            public static int Sspev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* ap, float* w, float* z, int ldZ)
+            public static int Sspev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* ap, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspev(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
@@ -13251,7 +13251,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspev(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
             }
 
-            public static int Dspev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* ap, double* w, double* z, int ldZ)
+            public static int Dspev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* ap, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspev(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
@@ -13259,7 +13259,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspev(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
             }
 
-            public static int Sspevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* ap, float* w, float* z, int ldZ)
+            public static int Sspevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* ap, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspevd(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
@@ -13267,7 +13267,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspevd(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
             }
 
-            public static int Dspevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* ap, double* w, double* z, int ldZ)
+            public static int Dspevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* ap, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspevd(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
@@ -13275,7 +13275,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspevd(matrixLayout, jobz, uplo, n, ap, w, z, ldZ);
             }
 
-            public static int SspevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* ap, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
+            public static int SspevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* ap, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspevdWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, lwork, iwork, liwork);
@@ -13283,7 +13283,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspevdWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int DspevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* ap, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
+            public static int DspevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* ap, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspevdWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, lwork, iwork, liwork);
@@ -13291,7 +13291,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspevdWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int SspevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* ap, float* w, float* z, int ldZ, float* work)
+            public static int SspevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* ap, float* w, float* z, int ldZ, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspevWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work);
@@ -13299,7 +13299,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspevWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work);
             }
 
-            public static int DspevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* ap, double* w, double* z, int ldZ, double* work)
+            public static int DspevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* ap, double* w, double* z, int ldZ, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspevWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work);
@@ -13307,7 +13307,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspevWork(matrixLayout, jobz, uplo, n, ap, w, z, ldZ, work);
             }
 
-            public static int Sspevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
+            public static int Sspevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspevx(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -13315,7 +13315,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspevx(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Dspevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
+            public static int Dspevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspevx(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -13323,7 +13323,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspevx(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int SspevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int* iwork, int* ifail)
+            public static int SspevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspevxWork(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
@@ -13331,7 +13331,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspevxWork(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
             }
 
-            public static int DspevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int* iwork, int* ifail)
+            public static int DspevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspevxWork(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
@@ -13339,7 +13339,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspevxWork(matrixLayout, jobz, range, uplo, n, ap, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
             }
 
-            public static int Sspgst(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, float* ap, float* bp)
+            public static int Sspgst(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, float* ap, float* bp)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspgst(matrixLayout, itype, uplo, n, ap, bp);
@@ -13347,7 +13347,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspgst(matrixLayout, itype, uplo, n, ap, bp);
             }
 
-            public static int Dspgst(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, double* ap, double* bp)
+            public static int Dspgst(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, double* ap, double* bp)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspgst(matrixLayout, itype, uplo, n, ap, bp);
@@ -13355,7 +13355,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspgst(matrixLayout, itype, uplo, n, ap, bp);
             }
 
-            public static int SspgstWork(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, float* ap, float* bp)
+            public static int SspgstWork(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, float* ap, float* bp)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspgstWork(matrixLayout, itype, uplo, n, ap, bp);
@@ -13363,7 +13363,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspgstWork(matrixLayout, itype, uplo, n, ap, bp);
             }
 
-            public static int DspgstWork(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, double* ap, double* bp)
+            public static int DspgstWork(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, double* ap, double* bp)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspgstWork(matrixLayout, itype, uplo, n, ap, bp);
@@ -13371,7 +13371,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspgstWork(matrixLayout, itype, uplo, n, ap, bp);
             }
 
-            public static int Sspgv(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* ap, float* bp, float* w, float* z, int ldZ)
+            public static int Sspgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* ap, float* bp, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspgv(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
@@ -13379,7 +13379,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspgv(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
             }
 
-            public static int Dspgv(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* ap, double* bp, double* w, double* z, int ldZ)
+            public static int Dspgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* ap, double* bp, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspgv(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
@@ -13387,7 +13387,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspgv(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
             }
 
-            public static int Sspgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* ap, float* bp, float* w, float* z, int ldZ)
+            public static int Sspgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* ap, float* bp, float* w, float* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspgvd(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
@@ -13395,7 +13395,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspgvd(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
             }
 
-            public static int Dspgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* ap, double* bp, double* w, double* z, int ldZ)
+            public static int Dspgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* ap, double* bp, double* w, double* z, int ldZ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspgvd(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
@@ -13403,7 +13403,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspgvd(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ);
             }
 
-            public static int SspgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* ap, float* bp, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
+            public static int SspgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* ap, float* bp, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspgvdWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, lwork, iwork, liwork);
@@ -13411,7 +13411,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspgvdWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int DspgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* ap, double* bp, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
+            public static int DspgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* ap, double* bp, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspgvdWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, lwork, iwork, liwork);
@@ -13419,7 +13419,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspgvdWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work, lwork, iwork, liwork);
             }
 
-            public static int SspgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* ap, float* bp, float* w, float* z, int ldZ, float* work)
+            public static int SspgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* ap, float* bp, float* w, float* z, int ldZ, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspgvWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work);
@@ -13427,7 +13427,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspgvWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work);
             }
 
-            public static int DspgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* ap, double* bp, double* w, double* z, int ldZ, double* work)
+            public static int DspgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* ap, double* bp, double* w, double* z, int ldZ, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspgvWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work);
@@ -13435,7 +13435,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspgvWork(matrixLayout, itype, jobz, uplo, n, ap, bp, w, z, ldZ, work);
             }
 
-            public static int Sspgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, float* ap, float* bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
+            public static int Sspgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, float* ap, float* bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspgvx(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -13443,7 +13443,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspgvx(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Dspgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, double* ap, double* bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
+            public static int Dspgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, double* ap, double* bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspgvx(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -13451,7 +13451,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspgvx(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int SspgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, float* ap, float* bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int* iwork, int* ifail)
+            public static int SspgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, float* ap, float* bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspgvxWork(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
@@ -13459,7 +13459,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspgvxWork(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
             }
 
-            public static int DspgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, double* ap, double* bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int* iwork, int* ifail)
+            public static int DspgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, double* ap, double* bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspgvxWork(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
@@ -13467,7 +13467,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspgvxWork(matrixLayout, itype, jobz, range, uplo, n, ap, bp, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
             }
 
-            public static int Dsposv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB, double* x, int ldX, int* iter)
+            public static int Dsposv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB, double* x, int ldX, int* iter)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB, x, ldX, iter);
@@ -13475,7 +13475,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsposv(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB, x, ldX, iter);
             }
 
-            public static int DsposvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB, double* x, int ldX, double* work, float* swork, int* iter)
+            public static int DsposvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* b, int ldB, double* x, int ldX, double* work, float* swork, int* iter)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB, x, ldX, work, swork, iter);
@@ -13483,7 +13483,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsposvWork(matrixLayout, uplo, n, nrhs, a, ldA, b, ldB, x, ldX, work, swork, iter);
             }
 
-            public static int Ssprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
+            public static int Ssprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -13491,7 +13491,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Dsprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
+            public static int Dsprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -13499,7 +13499,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Csprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Csprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -13507,7 +13507,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Zsprfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Zsprfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -13515,7 +13515,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsprfs(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int SsprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
+            public static int SsprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -13523,7 +13523,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int DsprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
+            public static int DsprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -13531,7 +13531,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int CsprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CsprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -13539,7 +13539,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZsprfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZsprfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -13547,7 +13547,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsprfsWork(matrixLayout, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int Sspsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldB)
+            public static int Sspsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13555,7 +13555,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Dspsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldB)
+            public static int Dspsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13563,7 +13563,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Cspsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int Cspsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cspsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13571,7 +13571,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cspsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Zspsv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zspsv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zspsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13579,7 +13579,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zspsv(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int SspsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldB)
+            public static int SspsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13587,7 +13587,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int DspsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldB)
+            public static int DspsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13595,7 +13595,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int CspsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int CspsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CspsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13603,7 +13603,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CspsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int ZspsvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZspsvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZspsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13611,7 +13611,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZspsvWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Sspsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Sspsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Sspsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -13619,7 +13619,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Sspsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Dspsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Dspsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dspsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -13627,7 +13627,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dspsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Cspsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Cspsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cspsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -13635,7 +13635,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cspsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Zspsvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Zspsvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zspsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -13643,7 +13643,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zspsvx(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int SspsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int* iwork)
+            public static int SspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SspsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
@@ -13651,7 +13651,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SspsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
             }
 
-            public static int DspsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int* iwork)
+            public static int DspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DspsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
@@ -13659,7 +13659,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DspsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, iwork);
             }
 
-            public static int CspsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CspsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -13667,7 +13667,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CspsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int ZspsvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr ap, System.IntPtr afp, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZspsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
@@ -13675,7 +13675,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZspsvxWork(matrixLayout, fact, uplo, n, nrhs, ap, afp, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, rwork);
             }
 
-            public static int Ssptrd(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float* d, float* e, float* tau)
+            public static int Ssptrd(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float* d, float* e, float* tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssptrd(matrixLayout, uplo, n, ap, d, e, tau);
@@ -13683,7 +13683,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssptrd(matrixLayout, uplo, n, ap, d, e, tau);
             }
 
-            public static int Dsptrd(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double* d, double* e, double* tau)
+            public static int Dsptrd(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double* d, double* e, double* tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsptrd(matrixLayout, uplo, n, ap, d, e, tau);
@@ -13691,7 +13691,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsptrd(matrixLayout, uplo, n, ap, d, e, tau);
             }
 
-            public static int SsptrdWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float* d, float* e, float* tau)
+            public static int SsptrdWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float* d, float* e, float* tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsptrdWork(matrixLayout, uplo, n, ap, d, e, tau);
@@ -13699,7 +13699,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsptrdWork(matrixLayout, uplo, n, ap, d, e, tau);
             }
 
-            public static int DsptrdWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double* d, double* e, double* tau)
+            public static int DsptrdWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double* d, double* e, double* tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsptrdWork(matrixLayout, uplo, n, ap, d, e, tau);
@@ -13707,7 +13707,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsptrdWork(matrixLayout, uplo, n, ap, d, e, tau);
             }
 
-            public static int Ssptrf(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, int* ipiv)
+            public static int Ssptrf(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssptrf(matrixLayout, uplo, n, ap, ipiv);
@@ -13715,7 +13715,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssptrf(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Dsptrf(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, int* ipiv)
+            public static int Dsptrf(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsptrf(matrixLayout, uplo, n, ap, ipiv);
@@ -13723,7 +13723,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsptrf(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Csptrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int Csptrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csptrf(matrixLayout, uplo, n, ap, ipiv);
@@ -13731,7 +13731,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csptrf(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Zsptrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int Zsptrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsptrf(matrixLayout, uplo, n, ap, ipiv);
@@ -13739,7 +13739,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsptrf(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int SsptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, int* ipiv)
+            public static int SsptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsptrfWork(matrixLayout, uplo, n, ap, ipiv);
@@ -13747,7 +13747,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsptrfWork(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int DsptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, int* ipiv)
+            public static int DsptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsptrfWork(matrixLayout, uplo, n, ap, ipiv);
@@ -13755,7 +13755,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsptrfWork(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int CsptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int CsptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsptrfWork(matrixLayout, uplo, n, ap, ipiv);
@@ -13763,7 +13763,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsptrfWork(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int ZsptrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int ZsptrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsptrfWork(matrixLayout, uplo, n, ap, ipiv);
@@ -13771,7 +13771,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsptrfWork(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Ssptri(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, int* ipiv)
+            public static int Ssptri(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssptri(matrixLayout, uplo, n, ap, ipiv);
@@ -13779,7 +13779,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssptri(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Dsptri(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, int* ipiv)
+            public static int Dsptri(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsptri(matrixLayout, uplo, n, ap, ipiv);
@@ -13787,7 +13787,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsptri(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Csptri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int Csptri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csptri(matrixLayout, uplo, n, ap, ipiv);
@@ -13795,7 +13795,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csptri(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int Zsptri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv)
+            public static int Zsptri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsptri(matrixLayout, uplo, n, ap, ipiv);
@@ -13803,7 +13803,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsptri(matrixLayout, uplo, n, ap, ipiv);
             }
 
-            public static int SsptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, int* ipiv, float* work)
+            public static int SsptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, int* ipiv, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsptriWork(matrixLayout, uplo, n, ap, ipiv, work);
@@ -13811,7 +13811,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsptriWork(matrixLayout, uplo, n, ap, ipiv, work);
             }
 
-            public static int DsptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, int* ipiv, double* work)
+            public static int DsptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, int* ipiv, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsptriWork(matrixLayout, uplo, n, ap, ipiv, work);
@@ -13819,7 +13819,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsptriWork(matrixLayout, uplo, n, ap, ipiv, work);
             }
 
-            public static int CsptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, System.IntPtr work)
+            public static int CsptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsptriWork(matrixLayout, uplo, n, ap, ipiv, work);
@@ -13827,7 +13827,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsptriWork(matrixLayout, uplo, n, ap, ipiv, work);
             }
 
-            public static int ZsptriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, int* ipiv, System.IntPtr work)
+            public static int ZsptriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, int* ipiv, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsptriWork(matrixLayout, uplo, n, ap, ipiv, work);
@@ -13835,7 +13835,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsptriWork(matrixLayout, uplo, n, ap, ipiv, work);
             }
 
-            public static int Ssptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldB)
+            public static int Ssptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13843,7 +13843,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Dsptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldB)
+            public static int Dsptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13851,7 +13851,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Csptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int Csptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13859,7 +13859,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int Zsptrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zsptrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13867,7 +13867,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsptrs(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int SsptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldB)
+            public static int SsptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13875,7 +13875,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int DsptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldB)
+            public static int DsptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13883,7 +13883,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int CsptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int CsptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -13891,7 +13891,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
             }
 
-            public static int ZsptrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZsptrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr ap, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsptrsWork(matrixLayout, uplo, n, nrhs, ap, ipiv, b, ldB);
@@ -14411,7 +14411,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DstevxWork(matrixLayout, jobz, range, n, d, e, vl, vu, il, iu, abstol, m, w, z, ldZ, work, iwork, ifail);
             }
 
-            public static int Ssycon(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv, float anorm, float* rcond)
+            public static int Ssycon(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssycon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
@@ -14419,7 +14419,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssycon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
             }
 
-            public static int Dsycon(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv, double anorm, double* rcond)
+            public static int Dsycon(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsycon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
@@ -14427,7 +14427,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsycon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
             }
 
-            public static int Csycon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, float anorm, float* rcond)
+            public static int Csycon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csycon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
@@ -14435,7 +14435,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csycon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
             }
 
-            public static int Zsycon(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, double anorm, double* rcond)
+            public static int Zsycon(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsycon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
@@ -14443,7 +14443,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsycon(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond);
             }
 
-            public static int Ssycon3(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* e, int* ipiv, float anorm, float* rcond)
+            public static int Ssycon3(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* e, int* ipiv, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssycon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
@@ -14451,7 +14451,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssycon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
             }
 
-            public static int Dsycon3(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* e, int* ipiv, double anorm, double* rcond)
+            public static int Dsycon3(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* e, int* ipiv, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsycon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
@@ -14459,7 +14459,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsycon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
             }
 
-            public static int Csycon3(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, float anorm, float* rcond)
+            public static int Csycon3(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, float anorm, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csycon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
@@ -14467,7 +14467,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csycon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
             }
 
-            public static int Zsycon3(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, double anorm, double* rcond)
+            public static int Zsycon3(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, double anorm, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsycon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
@@ -14475,7 +14475,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsycon3(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond);
             }
 
-            public static int Ssycon3Work(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* e, int* ipiv, float anorm, float* rcond, float* work, int* iwork)
+            public static int Ssycon3Work(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* e, int* ipiv, float anorm, float* rcond, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssycon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work, iwork);
@@ -14483,7 +14483,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssycon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work, iwork);
             }
 
-            public static int Dsycon3Work(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* e, int* ipiv, double anorm, double* rcond, double* work, int* iwork)
+            public static int Dsycon3Work(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* e, int* ipiv, double anorm, double* rcond, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsycon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work, iwork);
@@ -14491,7 +14491,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsycon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work, iwork);
             }
 
-            public static int Csycon3Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, float anorm, float* rcond, System.IntPtr work)
+            public static int Csycon3Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, float anorm, float* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csycon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work);
@@ -14499,7 +14499,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csycon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work);
             }
 
-            public static int Zsycon3Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, double anorm, double* rcond, System.IntPtr work)
+            public static int Zsycon3Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, double anorm, double* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsycon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work);
@@ -14507,7 +14507,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsycon3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, anorm, rcond, work);
             }
 
-            public static int Ssyconv(MatrixLayout matrixLayout, sbyte uplo, sbyte way, int n, float* a, int ldA, int* ipiv, float* e)
+            public static int Ssyconv(MatrixLayout matrixLayout, UpLo uplo, sbyte way, int n, float* a, int ldA, int* ipiv, float* e)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyconv(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
@@ -14515,7 +14515,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyconv(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
             }
 
-            public static int Dsyconv(MatrixLayout matrixLayout, sbyte uplo, sbyte way, int n, double* a, int ldA, int* ipiv, double* e)
+            public static int Dsyconv(MatrixLayout matrixLayout, UpLo uplo, sbyte way, int n, double* a, int ldA, int* ipiv, double* e)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyconv(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
@@ -14523,7 +14523,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyconv(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
             }
 
-            public static int Csyconv(MatrixLayout matrixLayout, sbyte uplo, sbyte way, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr e)
+            public static int Csyconv(MatrixLayout matrixLayout, UpLo uplo, sbyte way, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr e)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csyconv(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
@@ -14531,7 +14531,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csyconv(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
             }
 
-            public static int Zsyconv(MatrixLayout matrixLayout, sbyte uplo, sbyte way, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr e)
+            public static int Zsyconv(MatrixLayout matrixLayout, UpLo uplo, sbyte way, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr e)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsyconv(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
@@ -14539,7 +14539,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsyconv(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
             }
 
-            public static int SsyconvWork(MatrixLayout matrixLayout, sbyte uplo, sbyte way, int n, float* a, int ldA, int* ipiv, float* e)
+            public static int SsyconvWork(MatrixLayout matrixLayout, UpLo uplo, sbyte way, int n, float* a, int ldA, int* ipiv, float* e)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyconvWork(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
@@ -14547,7 +14547,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyconvWork(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
             }
 
-            public static int DsyconvWork(MatrixLayout matrixLayout, sbyte uplo, sbyte way, int n, double* a, int ldA, int* ipiv, double* e)
+            public static int DsyconvWork(MatrixLayout matrixLayout, UpLo uplo, sbyte way, int n, double* a, int ldA, int* ipiv, double* e)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyconvWork(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
@@ -14555,7 +14555,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyconvWork(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
             }
 
-            public static int CsyconvWork(MatrixLayout matrixLayout, sbyte uplo, sbyte way, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr e)
+            public static int CsyconvWork(MatrixLayout matrixLayout, UpLo uplo, sbyte way, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr e)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsyconvWork(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
@@ -14563,7 +14563,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsyconvWork(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
             }
 
-            public static int ZsyconvWork(MatrixLayout matrixLayout, sbyte uplo, sbyte way, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr e)
+            public static int ZsyconvWork(MatrixLayout matrixLayout, UpLo uplo, sbyte way, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr e)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsyconvWork(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
@@ -14571,7 +14571,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsyconvWork(matrixLayout, uplo, way, n, a, ldA, ipiv, e);
             }
 
-            public static int SsyconWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv, float anorm, float* rcond, float* work, int* iwork)
+            public static int SsyconWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv, float anorm, float* rcond, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work, iwork);
@@ -14579,7 +14579,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work, iwork);
             }
 
-            public static int DsyconWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv, double anorm, double* rcond, double* work, int* iwork)
+            public static int DsyconWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv, double anorm, double* rcond, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work, iwork);
@@ -14587,7 +14587,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work, iwork);
             }
 
-            public static int CsyconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, float anorm, float* rcond, System.IntPtr work)
+            public static int CsyconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, float anorm, float* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsyconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work);
@@ -14595,7 +14595,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsyconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work);
             }
 
-            public static int ZsyconWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, double anorm, double* rcond, System.IntPtr work)
+            public static int ZsyconWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, double anorm, double* rcond, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsyconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work);
@@ -14603,7 +14603,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsyconWork(matrixLayout, uplo, n, a, ldA, ipiv, anorm, rcond, work);
             }
 
-            public static int Ssyequb(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* s, float* scond, float* amax)
+            public static int Ssyequb(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
@@ -14611,7 +14611,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
             }
 
-            public static int Dsyequb(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* s, double* scond, double* amax)
+            public static int Dsyequb(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
@@ -14619,7 +14619,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
             }
 
-            public static int Csyequb(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, float* s, float* scond, float* amax)
+            public static int Csyequb(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, float* s, float* scond, float* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csyequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
@@ -14627,7 +14627,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csyequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
             }
 
-            public static int Zsyequb(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, double* s, double* scond, double* amax)
+            public static int Zsyequb(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, double* s, double* scond, double* amax)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsyequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
@@ -14635,7 +14635,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsyequb(matrixLayout, uplo, n, a, ldA, s, scond, amax);
             }
 
-            public static int SsyequbWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* s, float* scond, float* amax, float* work)
+            public static int SsyequbWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* s, float* scond, float* amax, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
@@ -14643,7 +14643,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
             }
 
-            public static int DsyequbWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* s, double* scond, double* amax, double* work)
+            public static int DsyequbWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* s, double* scond, double* amax, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
@@ -14651,7 +14651,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
             }
 
-            public static int CsyequbWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, float* s, float* scond, float* amax, System.IntPtr work)
+            public static int CsyequbWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, float* s, float* scond, float* amax, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsyequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
@@ -14659,7 +14659,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsyequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
             }
 
-            public static int ZsyequbWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, double* s, double* scond, double* amax, System.IntPtr work)
+            public static int ZsyequbWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, double* s, double* scond, double* amax, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsyequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
@@ -14667,7 +14667,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsyequbWork(matrixLayout, uplo, n, a, ldA, s, scond, amax, work);
             }
 
-            public static int Ssyev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* w)
+            public static int Ssyev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyev(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -14675,7 +14675,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyev(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Dsyev(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* w)
+            public static int Dsyev(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyev(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -14683,7 +14683,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyev(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Ssyev2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* w)
+            public static int Ssyev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyev2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -14691,7 +14691,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyev2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Dsyev2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* w)
+            public static int Dsyev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyev2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -14699,7 +14699,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyev2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Ssyev2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* w, float* work, int lwork)
+            public static int Ssyev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* w, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyev2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork);
@@ -14707,7 +14707,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyev2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork);
             }
 
-            public static int Dsyev2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* w, double* work, int lwork)
+            public static int Dsyev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* w, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyev2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork);
@@ -14715,7 +14715,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyev2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork);
             }
 
-            public static int Ssyevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* w)
+            public static int Ssyevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyevd(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -14723,7 +14723,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyevd(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Dsyevd(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* w)
+            public static int Dsyevd(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyevd(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -14731,7 +14731,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyevd(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Ssyevd2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* w)
+            public static int Ssyevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyevd2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -14739,7 +14739,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyevd2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Dsyevd2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* w)
+            public static int Dsyevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyevd2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
@@ -14747,7 +14747,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyevd2stage(matrixLayout, jobz, uplo, n, a, ldA, w);
             }
 
-            public static int Ssyevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* w, float* work, int lwork, int* iwork, int liwork)
+            public static int Ssyevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* w, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyevd2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, iwork, liwork);
@@ -14755,7 +14755,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyevd2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, iwork, liwork);
             }
 
-            public static int Dsyevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* w, double* work, int lwork, int* iwork, int liwork)
+            public static int Dsyevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* w, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyevd2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, iwork, liwork);
@@ -14763,7 +14763,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyevd2stageWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, iwork, liwork);
             }
 
-            public static int SsyevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* w, float* work, int lwork, int* iwork, int liwork)
+            public static int SsyevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* w, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyevdWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, iwork, liwork);
@@ -14771,7 +14771,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyevdWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, iwork, liwork);
             }
 
-            public static int DsyevdWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* w, double* work, int lwork, int* iwork, int liwork)
+            public static int DsyevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* w, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyevdWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, iwork, liwork);
@@ -14779,7 +14779,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyevdWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork, iwork, liwork);
             }
 
-            public static int Ssyevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* isuppz)
+            public static int Ssyevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* isuppz)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyevr(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
@@ -14787,7 +14787,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyevr(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
             }
 
-            public static int Dsyevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* isuppz)
+            public static int Dsyevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* isuppz)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyevr(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
@@ -14795,7 +14795,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyevr(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
             }
 
-            public static int Ssyevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* isuppz)
+            public static int Ssyevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* isuppz)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyevr2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
@@ -14803,7 +14803,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyevr2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
             }
 
-            public static int Dsyevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* isuppz)
+            public static int Dsyevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* isuppz)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyevr2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
@@ -14811,7 +14811,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyevr2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz);
             }
 
-            public static int Ssyevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* isuppz, float* work, int lwork, int* iwork, int liwork)
+            public static int Ssyevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* isuppz, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyevr2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, iwork, liwork);
@@ -14819,7 +14819,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyevr2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, iwork, liwork);
             }
 
-            public static int Dsyevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* isuppz, double* work, int lwork, int* iwork, int liwork)
+            public static int Dsyevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* isuppz, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyevr2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, iwork, liwork);
@@ -14827,7 +14827,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyevr2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, iwork, liwork);
             }
 
-            public static int SsyevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* isuppz, float* work, int lwork, int* iwork, int liwork)
+            public static int SsyevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* isuppz, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyevrWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, iwork, liwork);
@@ -14835,7 +14835,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyevrWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, iwork, liwork);
             }
 
-            public static int DsyevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* isuppz, double* work, int lwork, int* iwork, int liwork)
+            public static int DsyevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* isuppz, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyevrWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, iwork, liwork);
@@ -14843,7 +14843,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyevrWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, isuppz, work, lwork, iwork, liwork);
             }
 
-            public static int SsyevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* w, float* work, int lwork)
+            public static int SsyevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* w, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyevWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork);
@@ -14851,7 +14851,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyevWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork);
             }
 
-            public static int DsyevWork(MatrixLayout matrixLayout, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* w, double* work, int lwork)
+            public static int DsyevWork(MatrixLayout matrixLayout, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* w, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyevWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork);
@@ -14859,7 +14859,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyevWork(matrixLayout, jobz, uplo, n, a, ldA, w, work, lwork);
             }
 
-            public static int Ssyevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
+            public static int Ssyevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyevx(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -14867,7 +14867,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyevx(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Dsyevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
+            public static int Dsyevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyevx(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -14875,7 +14875,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyevx(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Ssyevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
+            public static int Ssyevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyevx2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -14883,7 +14883,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyevx2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Dsyevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
+            public static int Dsyevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyevx2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -14891,7 +14891,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyevx2stage(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Ssyevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int* ifail)
+            public static int Ssyevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyevx2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
@@ -14899,7 +14899,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyevx2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
             }
 
-            public static int Dsyevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int* ifail)
+            public static int Dsyevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyevx2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
@@ -14907,7 +14907,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyevx2stageWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
             }
 
-            public static int SsyevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int* ifail)
+            public static int SsyevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyevxWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
@@ -14915,7 +14915,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyevxWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
             }
 
-            public static int DsyevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int* ifail)
+            public static int DsyevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyevxWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
@@ -14923,7 +14923,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyevxWork(matrixLayout, jobz, range, uplo, n, a, ldA, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
             }
 
-            public static int Ssygst(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, float* a, int ldA, float* b, int ldB)
+            public static int Ssygst(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssygst(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
@@ -14931,7 +14931,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssygst(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
             }
 
-            public static int Dsygst(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, double* a, int ldA, double* b, int ldB)
+            public static int Dsygst(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsygst(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
@@ -14939,7 +14939,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsygst(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
             }
 
-            public static int SsygstWork(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, float* a, int ldA, float* b, int ldB)
+            public static int SsygstWork(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsygstWork(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
@@ -14947,7 +14947,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsygstWork(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
             }
 
-            public static int DsygstWork(MatrixLayout matrixLayout, int itype, sbyte uplo, int n, double* a, int ldA, double* b, int ldB)
+            public static int DsygstWork(MatrixLayout matrixLayout, int itype, UpLo uplo, int n, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsygstWork(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
@@ -14955,7 +14955,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsygstWork(matrixLayout, itype, uplo, n, a, ldA, b, ldB);
             }
 
-            public static int Ssygv(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* b, int ldB, float* w)
+            public static int Ssygv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* b, int ldB, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssygv(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -14963,7 +14963,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssygv(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Dsygv(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* b, int ldB, double* w)
+            public static int Dsygv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* b, int ldB, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsygv(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -14971,7 +14971,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsygv(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Ssygv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* b, int ldB, float* w)
+            public static int Ssygv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* b, int ldB, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssygv2stage(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -14979,7 +14979,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssygv2stage(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Dsygv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* b, int ldB, double* w)
+            public static int Dsygv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* b, int ldB, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsygv2stage(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -14987,7 +14987,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsygv2stage(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Ssygv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* b, int ldB, float* w, float* work, int lwork)
+            public static int Ssygv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* b, int ldB, float* w, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssygv2stageWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork);
@@ -14995,7 +14995,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssygv2stageWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork);
             }
 
-            public static int Dsygv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* b, int ldB, double* w, double* work, int lwork)
+            public static int Dsygv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* b, int ldB, double* w, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsygv2stageWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork);
@@ -15003,7 +15003,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsygv2stageWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork);
             }
 
-            public static int Ssygvd(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* b, int ldB, float* w)
+            public static int Ssygvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* b, int ldB, float* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssygvd(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -15011,7 +15011,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssygvd(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int Dsygvd(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* b, int ldB, double* w)
+            public static int Dsygvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* b, int ldB, double* w)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsygvd(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
@@ -15019,7 +15019,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsygvd(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w);
             }
 
-            public static int SsygvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* b, int ldB, float* w, float* work, int lwork, int* iwork, int liwork)
+            public static int SsygvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* b, int ldB, float* w, float* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsygvdWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, iwork, liwork);
@@ -15027,7 +15027,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsygvdWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, iwork, liwork);
             }
 
-            public static int DsygvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* b, int ldB, double* w, double* work, int lwork, int* iwork, int liwork)
+            public static int DsygvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* b, int ldB, double* w, double* work, int lwork, int* iwork, int liwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsygvdWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, iwork, liwork);
@@ -15035,7 +15035,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsygvdWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork, iwork, liwork);
             }
 
-            public static int SsygvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, float* a, int ldA, float* b, int ldB, float* w, float* work, int lwork)
+            public static int SsygvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, float* a, int ldA, float* b, int ldB, float* w, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsygvWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork);
@@ -15043,7 +15043,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsygvWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork);
             }
 
-            public static int DsygvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte uplo, int n, double* a, int ldA, double* b, int ldB, double* w, double* work, int lwork)
+            public static int DsygvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLo uplo, int n, double* a, int ldA, double* b, int ldB, double* w, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsygvWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork);
@@ -15051,7 +15051,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsygvWork(matrixLayout, itype, jobz, uplo, n, a, ldA, b, ldB, w, work, lwork);
             }
 
-            public static int Ssygvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float* b, int ldB, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
+            public static int Ssygvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float* b, int ldB, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssygvx(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -15059,7 +15059,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssygvx(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int Dsygvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double* b, int ldB, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
+            public static int Dsygvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double* b, int ldB, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsygvx(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
@@ -15067,7 +15067,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsygvx(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, ifail);
             }
 
-            public static int SsygvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, float* a, int ldA, float* b, int ldB, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int* ifail)
+            public static int SsygvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, float* a, int ldA, float* b, int ldB, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldZ, float* work, int lwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsygvxWork(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
@@ -15075,7 +15075,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsygvxWork(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
             }
 
-            public static int DsygvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, sbyte uplo, int n, double* a, int ldA, double* b, int ldB, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int* ifail)
+            public static int DsygvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLo uplo, int n, double* a, int ldA, double* b, int ldB, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldZ, double* work, int lwork, int* iwork, int* ifail)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsygvxWork(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
@@ -15083,7 +15083,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsygvxWork(matrixLayout, itype, jobz, range, uplo, n, a, ldA, b, ldB, vl, vu, il, iu, abstol, m, w, z, ldZ, work, lwork, iwork, ifail);
             }
 
-            public static int Csyr(MatrixLayout matrixLayout, sbyte uplo, int n, ComplexFloat alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
+            public static int Csyr(MatrixLayout matrixLayout, UpLo uplo, int n, ComplexFloat alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csyr(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
@@ -15091,7 +15091,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csyr(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
             }
 
-            public static int Zsyr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
+            public static int Zsyr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsyr(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
@@ -15099,7 +15099,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsyr(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
             }
 
-            public static int Ssyrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
+            public static int Ssyrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyrfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -15107,7 +15107,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyrfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Dsyrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
+            public static int Dsyrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyrfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -15115,7 +15115,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyrfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Csyrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Csyrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csyrfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -15123,7 +15123,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csyrfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Zsyrfs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Zsyrfs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsyrfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
@@ -15131,7 +15131,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsyrfs(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int SsyrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
+            public static int SsyrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyrfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -15139,7 +15139,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyrfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int DsyrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
+            public static int DsyrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyrfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -15147,7 +15147,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyrfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int CsyrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CsyrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsyrfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -15155,7 +15155,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsyrfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZsyrfsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZsyrfsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsyrfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -15163,7 +15163,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsyrfsWork(matrixLayout, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int Ssyrfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Ssyrfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyrfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -15171,7 +15171,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyrfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Dsyrfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Dsyrfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyrfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -15179,7 +15179,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyrfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Csyrfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Csyrfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csyrfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -15187,7 +15187,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csyrfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Zsyrfsx(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Zsyrfsx(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsyrfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -15195,7 +15195,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsyrfsx(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int SsyrfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, float* work, int* iwork)
+            public static int SsyrfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyrfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
@@ -15203,7 +15203,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyrfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
             }
 
-            public static int DsyrfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, double* work, int* iwork)
+            public static int DsyrfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyrfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
@@ -15211,7 +15211,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyrfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
             }
 
-            public static int CsyrfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
+            public static int CsyrfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsyrfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -15219,7 +15219,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsyrfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int ZsyrfsxWork(MatrixLayout matrixLayout, sbyte uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
+            public static int ZsyrfsxWork(MatrixLayout matrixLayout, UpLo uplo, sbyte equed, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsyrfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -15227,7 +15227,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsyrfsxWork(matrixLayout, uplo, equed, n, nrhs, a, ldA, af, ldaf, ipiv, s, b, ldB, x, ldX, rcond, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int CsyrWork(MatrixLayout matrixLayout, sbyte uplo, int n, ComplexFloat alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
+            public static int CsyrWork(MatrixLayout matrixLayout, UpLo uplo, int n, ComplexFloat alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsyrWork(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
@@ -15235,7 +15235,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsyrWork(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
             }
 
-            public static int ZsyrWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
+            public static int ZsyrWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsyrWork(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
@@ -15243,7 +15243,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsyrWork(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
             }
 
-            public static int Ssysv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
+            public static int Ssysv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssysv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15251,7 +15251,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssysv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Dsysv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
+            public static int Dsysv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsysv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15259,7 +15259,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsysv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Csysv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Csysv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csysv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15267,7 +15267,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csysv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Zsysv(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zsysv(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsysv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15275,7 +15275,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsysv(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int SsysvAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
+            public static int SsysvAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15283,7 +15283,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int DsysvAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
+            public static int DsysvAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15291,7 +15291,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int CsysvAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int CsysvAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15299,7 +15299,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZsysvAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZsysvAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15307,7 +15307,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int SsysvAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldB)
+            public static int SsysvAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -15315,7 +15315,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int DsysvAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldB)
+            public static int DsysvAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -15323,7 +15323,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int CsysvAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int CsysvAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -15331,7 +15331,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int ZsysvAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int ZsysvAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -15339,7 +15339,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int SsysvAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldB, float* work, int lwork)
+            public static int SsysvAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldB, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
@@ -15347,7 +15347,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
             }
 
-            public static int DsysvAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldB, double* work, int lwork)
+            public static int DsysvAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldB, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
@@ -15355,7 +15355,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
             }
 
-            public static int CsysvAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int CsysvAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
@@ -15363,7 +15363,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
             }
 
-            public static int ZsysvAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZsysvAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
@@ -15371,7 +15371,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB, work, lwork);
             }
 
-            public static int SsysvAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work, int lwork)
+            public static int SsysvAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15379,7 +15379,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int DsysvAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work, int lwork)
+            public static int DsysvAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15387,7 +15387,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int CsysvAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int CsysvAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15395,7 +15395,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ZsysvAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZsysvAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15403,7 +15403,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int SsysvRk(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* e, int* ipiv, float* b, int ldB)
+            public static int SsysvRk(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* e, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -15411,7 +15411,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int DsysvRk(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* e, int* ipiv, double* b, int ldB)
+            public static int DsysvRk(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* e, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -15419,7 +15419,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int CsysvRk(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int CsysvRk(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -15427,7 +15427,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int ZsysvRk(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZsysvRk(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -15435,7 +15435,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvRk(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int SsysvRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* e, int* ipiv, float* b, int ldB, float* work, int lwork)
+            public static int SsysvRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* e, int* ipiv, float* b, int ldB, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
@@ -15443,7 +15443,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
             }
 
-            public static int DsysvRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* e, int* ipiv, double* b, int ldB, double* work, int lwork)
+            public static int DsysvRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* e, int* ipiv, double* b, int ldB, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
@@ -15451,7 +15451,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
             }
 
-            public static int CsysvRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int CsysvRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
@@ -15459,7 +15459,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ZsysvRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZsysvRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
@@ -15467,7 +15467,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvRkWork(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB, work, lwork);
             }
 
-            public static int SsysvRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
+            public static int SsysvRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15475,7 +15475,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int DsysvRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
+            public static int DsysvRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15483,7 +15483,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int CsysvRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int CsysvRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15491,7 +15491,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZsysvRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZsysvRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -15499,7 +15499,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int SsysvRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work, int lwork)
+            public static int SsysvRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15507,7 +15507,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int DsysvRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work, int lwork)
+            public static int DsysvRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15515,7 +15515,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int CsysvRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int CsysvRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15523,7 +15523,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ZsysvRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZsysvRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15531,7 +15531,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int SsysvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work, int lwork)
+            public static int SsysvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15539,7 +15539,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int DsysvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work, int lwork)
+            public static int DsysvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15547,7 +15547,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int CsysvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int CsysvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15555,7 +15555,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ZsysvWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZsysvWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -15563,7 +15563,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int Ssysvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Ssysvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssysvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -15571,7 +15571,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssysvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Dsysvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Dsysvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsysvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -15579,7 +15579,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsysvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Csysvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
+            public static int Csysvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csysvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -15587,7 +15587,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csysvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int Zsysvx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
+            public static int Zsysvx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsysvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
@@ -15595,7 +15595,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsysvx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr);
             }
 
-            public static int SsysvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int lwork, int* iwork)
+            public static int SsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, float* b, int ldB, float* x, int ldX, float* rcond, float* ferr, float* berr, float* work, int lwork, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, iwork);
@@ -15603,7 +15603,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, iwork);
             }
 
-            public static int DsysvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int lwork, int* iwork)
+            public static int DsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, double* b, int ldB, double* x, int ldX, double* rcond, double* ferr, double* berr, double* work, int lwork, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, iwork);
@@ -15611,7 +15611,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, iwork);
             }
 
-            public static int CsysvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, int lwork, float* rwork)
+            public static int CsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* ferr, float* berr, System.IntPtr work, int lwork, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, rwork);
@@ -15619,7 +15619,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, rwork);
             }
 
-            public static int ZsysvxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, int lwork, double* rwork)
+            public static int ZsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* ferr, double* berr, System.IntPtr work, int lwork, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, rwork);
@@ -15627,7 +15627,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, b, ldB, x, ldX, rcond, ferr, berr, work, lwork, rwork);
             }
 
-            public static int Ssysvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Ssysvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssysvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -15635,7 +15635,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssysvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Dsysvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Dsysvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsysvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -15643,7 +15643,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsysvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Csysvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
+            public static int Csysvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csysvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -15651,7 +15651,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csysvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int Zsysvxx(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
+            public static int Zsysvxx(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsysvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
@@ -15659,7 +15659,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsysvxx(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters);
             }
 
-            public static int SsysvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, float* work, int* iwork)
+            public static int SsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, float* a, int ldA, float* af, int ldaf, int* ipiv, sbyte* equed, float* s, float* b, int ldB, float* x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsysvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
@@ -15667,7 +15667,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsysvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
             }
 
-            public static int DsysvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, double* work, int* iwork)
+            public static int DsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, double* a, int ldA, double* af, int ldaf, int* ipiv, sbyte* equed, double* s, double* b, int ldB, double* x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsysvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
@@ -15675,7 +15675,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsysvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, iwork);
             }
 
-            public static int CsysvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
+            public static int CsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* parameters, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsysvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -15683,7 +15683,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsysvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int ZsysvxxWork(MatrixLayout matrixLayout, sbyte fact, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
+            public static int ZsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* parameters, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsysvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
@@ -15691,7 +15691,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsysvxxWork(matrixLayout, fact, uplo, n, nrhs, a, ldA, af, ldaf, ipiv, equed, s, b, ldB, x, ldX, rcond, rpvgrw, berr, n_err_bnds, err_bnds_norm, err_bnds_comp, nparams, parameters, work, rwork);
             }
 
-            public static int Ssyswapr(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int i1, int i2)
+            public static int Ssyswapr(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssyswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -15699,7 +15699,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssyswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int Dsyswapr(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int i1, int i2)
+            public static int Dsyswapr(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsyswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -15707,7 +15707,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsyswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int Csyswapr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
+            public static int Csyswapr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csyswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -15715,7 +15715,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csyswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int Zsyswapr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
+            public static int Zsyswapr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsyswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -15723,7 +15723,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsyswapr(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int SsyswaprWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int i1, int i2)
+            public static int SsyswaprWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsyswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -15731,7 +15731,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsyswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int DsyswaprWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int i1, int i2)
+            public static int DsyswaprWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsyswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -15739,7 +15739,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsyswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int CsyswaprWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
+            public static int CsyswaprWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsyswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -15747,7 +15747,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsyswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int ZsyswaprWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
+            public static int ZsyswaprWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int i1, int i2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsyswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
@@ -15755,7 +15755,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsyswaprWork(matrixLayout, uplo, n, a, ldA, i1, i2);
             }
 
-            public static int Ssytrd(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* d, float* e, float* tau)
+            public static int Ssytrd(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* d, float* e, float* tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytrd(matrixLayout, uplo, n, a, ldA, d, e, tau);
@@ -15763,7 +15763,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytrd(matrixLayout, uplo, n, a, ldA, d, e, tau);
             }
 
-            public static int Dsytrd(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* d, double* e, double* tau)
+            public static int Dsytrd(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* d, double* e, double* tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytrd(matrixLayout, uplo, n, a, ldA, d, e, tau);
@@ -15771,7 +15771,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytrd(matrixLayout, uplo, n, a, ldA, d, e, tau);
             }
 
-            public static int SsytrdWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* d, float* e, float* tau, float* work, int lwork)
+            public static int SsytrdWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* d, float* e, float* tau, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrdWork(matrixLayout, uplo, n, a, ldA, d, e, tau, work, lwork);
@@ -15779,7 +15779,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrdWork(matrixLayout, uplo, n, a, ldA, d, e, tau, work, lwork);
             }
 
-            public static int DsytrdWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* d, double* e, double* tau, double* work, int lwork)
+            public static int DsytrdWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* d, double* e, double* tau, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrdWork(matrixLayout, uplo, n, a, ldA, d, e, tau, work, lwork);
@@ -15787,7 +15787,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrdWork(matrixLayout, uplo, n, a, ldA, d, e, tau, work, lwork);
             }
 
-            public static int Ssytrf(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv)
+            public static int Ssytrf(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytrf(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -15795,7 +15795,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytrf(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Dsytrf(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv)
+            public static int Dsytrf(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytrf(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -15803,7 +15803,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytrf(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Csytrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Csytrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytrf(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -15811,7 +15811,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytrf(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Zsytrf(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Zsytrf(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytrf(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -15819,7 +15819,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytrf(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int SsytrfAa(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv)
+            public static int SsytrfAa(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -15827,7 +15827,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int DsytrfAa(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv)
+            public static int DsytrfAa(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -15835,7 +15835,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int CsytrfAa(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int CsytrfAa(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -15843,7 +15843,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int ZsytrfAa(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int ZsytrfAa(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -15851,7 +15851,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrfAa(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int SsytrfAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2)
+            public static int SsytrfAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
@@ -15859,7 +15859,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
             }
 
-            public static int DsytrfAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2)
+            public static int DsytrfAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
@@ -15867,7 +15867,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
             }
 
-            public static int CsytrfAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2)
+            public static int CsytrfAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
@@ -15875,7 +15875,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
             }
 
-            public static int ZsytrfAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2)
+            public static int ZsytrfAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
@@ -15883,7 +15883,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrfAa2stage(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2);
             }
 
-            public static int SsytrfAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* work, int lwork)
+            public static int SsytrfAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
@@ -15891,7 +15891,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
             }
 
-            public static int DsytrfAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* work, int lwork)
+            public static int DsytrfAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
@@ -15899,7 +15899,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
             }
 
-            public static int CsytrfAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr work, int lwork)
+            public static int CsytrfAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
@@ -15907,7 +15907,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
             }
 
-            public static int ZsytrfAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr work, int lwork)
+            public static int ZsytrfAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
@@ -15915,7 +15915,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrfAa2stageWork(matrixLayout, uplo, n, a, ldA, tb, ltb, ipiv, ipiv2, work, lwork);
             }
 
-            public static int SsytrfAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv, float* work, int lwork)
+            public static int SsytrfAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -15923,7 +15923,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int DsytrfAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv, double* work, int lwork)
+            public static int DsytrfAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -15931,7 +15931,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int CsytrfAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int CsytrfAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -15939,7 +15939,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int ZsytrfAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int ZsytrfAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -15947,7 +15947,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrfAaWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int SsytrfRk(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* e, int* ipiv)
+            public static int SsytrfRk(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -15955,7 +15955,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int DsytrfRk(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* e, int* ipiv)
+            public static int DsytrfRk(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -15963,7 +15963,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int CsytrfRk(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
+            public static int CsytrfRk(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -15971,7 +15971,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int ZsytrfRk(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
+            public static int ZsytrfRk(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -15979,7 +15979,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrfRk(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int SsytrfRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* e, int* ipiv, float* work, int lwork)
+            public static int SsytrfRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* e, int* ipiv, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -15987,7 +15987,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int DsytrfRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* e, int* ipiv, double* work, int lwork)
+            public static int DsytrfRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* e, int* ipiv, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -15995,7 +15995,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int CsytrfRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
+            public static int CsytrfRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -16003,7 +16003,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int ZsytrfRkWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
+            public static int ZsytrfRkWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -16011,7 +16011,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrfRkWork(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int SsytrfRook(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv)
+            public static int SsytrfRook(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16019,7 +16019,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int DsytrfRook(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv)
+            public static int DsytrfRook(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16027,7 +16027,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int CsytrfRook(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int CsytrfRook(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16035,7 +16035,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int ZsytrfRook(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int ZsytrfRook(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16043,7 +16043,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrfRook(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int SsytrfRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv, float* work, int lwork)
+            public static int SsytrfRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16051,7 +16051,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int DsytrfRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv, double* work, int lwork)
+            public static int DsytrfRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16059,7 +16059,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int CsytrfRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int CsytrfRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16067,7 +16067,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int ZsytrfRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int ZsytrfRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16075,7 +16075,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrfRookWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int SsytrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv, float* work, int lwork)
+            public static int SsytrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16083,7 +16083,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int DsytrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv, double* work, int lwork)
+            public static int DsytrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16091,7 +16091,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int CsytrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int CsytrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16099,7 +16099,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int ZsytrfWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int ZsytrfWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16107,7 +16107,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrfWork(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int Ssytri(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv)
+            public static int Ssytri(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytri(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16115,7 +16115,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytri(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Dsytri(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv)
+            public static int Dsytri(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytri(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16123,7 +16123,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytri(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Csytri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Csytri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytri(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16131,7 +16131,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytri(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Zsytri(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Zsytri(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytri(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16139,7 +16139,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytri(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Ssytri2(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv)
+            public static int Ssytri2(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytri2(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16147,7 +16147,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytri2(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Dsytri2(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv)
+            public static int Dsytri2(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytri2(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16155,7 +16155,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytri2(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Csytri2(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Csytri2(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytri2(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16163,7 +16163,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytri2(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Zsytri2(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv)
+            public static int Zsytri2(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytri2(matrixLayout, uplo, n, a, ldA, ipiv);
@@ -16171,7 +16171,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytri2(matrixLayout, uplo, n, a, ldA, ipiv);
             }
 
-            public static int Ssytri2Work(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv, float* work, int lwork)
+            public static int Ssytri2Work(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16179,7 +16179,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int Dsytri2Work(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv, double* work, int lwork)
+            public static int Dsytri2Work(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16187,7 +16187,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int Csytri2Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int Csytri2Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16195,7 +16195,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int Zsytri2Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
+            public static int Zsytri2Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
@@ -16203,7 +16203,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytri2Work(matrixLayout, uplo, n, a, ldA, ipiv, work, lwork);
             }
 
-            public static int Ssytri2x(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv, int nb)
+            public static int Ssytri2x(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
@@ -16211,7 +16211,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
             }
 
-            public static int Dsytri2x(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv, int nb)
+            public static int Dsytri2x(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
@@ -16219,7 +16219,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
             }
 
-            public static int Csytri2x(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, int nb)
+            public static int Csytri2x(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
@@ -16227,7 +16227,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
             }
 
-            public static int Zsytri2x(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, int nb)
+            public static int Zsytri2x(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
@@ -16235,7 +16235,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytri2x(matrixLayout, uplo, n, a, ldA, ipiv, nb);
             }
 
-            public static int Ssytri2xWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv, float* work, int nb)
+            public static int Ssytri2xWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv, float* work, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
@@ -16243,7 +16243,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
             }
 
-            public static int Dsytri2xWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv, double* work, int nb)
+            public static int Dsytri2xWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv, double* work, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
@@ -16251,7 +16251,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
             }
 
-            public static int Csytri2xWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int nb)
+            public static int Csytri2xWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
@@ -16259,7 +16259,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
             }
 
-            public static int Zsytri2xWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int nb)
+            public static int Zsytri2xWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work, int nb)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
@@ -16267,7 +16267,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytri2xWork(matrixLayout, uplo, n, a, ldA, ipiv, work, nb);
             }
 
-            public static int Ssytri3(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* e, int* ipiv)
+            public static int Ssytri3(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -16275,7 +16275,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int Dsytri3(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* e, int* ipiv)
+            public static int Dsytri3(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -16283,7 +16283,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int Csytri3(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
+            public static int Csytri3(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -16291,7 +16291,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int Zsytri3(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
+            public static int Zsytri3(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
@@ -16299,7 +16299,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytri3(matrixLayout, uplo, n, a, ldA, e, ipiv);
             }
 
-            public static int Ssytri3Work(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* e, int* ipiv, float* work, int lwork)
+            public static int Ssytri3Work(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* e, int* ipiv, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -16307,7 +16307,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int Dsytri3Work(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* e, int* ipiv, double* work, int lwork)
+            public static int Dsytri3Work(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* e, int* ipiv, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -16315,7 +16315,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int Csytri3Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
+            public static int Csytri3Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -16323,7 +16323,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int Zsytri3Work(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
+            public static int Zsytri3Work(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
@@ -16331,7 +16331,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytri3Work(matrixLayout, uplo, n, a, ldA, e, ipiv, work, lwork);
             }
 
-            public static int SsytriWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, int* ipiv, float* work)
+            public static int SsytriWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, int* ipiv, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
@@ -16339,7 +16339,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
             }
 
-            public static int DsytriWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, int* ipiv, double* work)
+            public static int DsytriWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, int* ipiv, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
@@ -16347,7 +16347,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
             }
 
-            public static int CsytriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work)
+            public static int CsytriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
@@ -16355,7 +16355,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
             }
 
-            public static int ZsytriWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work)
+            public static int ZsytriWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, int* ipiv, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
@@ -16363,7 +16363,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytriWork(matrixLayout, uplo, n, a, ldA, ipiv, work);
             }
 
-            public static int Ssytrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
+            public static int Ssytrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16371,7 +16371,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Dsytrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
+            public static int Dsytrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16379,7 +16379,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Csytrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Csytrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16387,7 +16387,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Zsytrs(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zsytrs(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16395,7 +16395,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytrs(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Ssytrs2(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
+            public static int Ssytrs2(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16403,7 +16403,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Dsytrs2(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
+            public static int Dsytrs2(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16411,7 +16411,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Csytrs2(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Csytrs2(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16419,7 +16419,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Zsytrs2(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zsytrs2(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16427,7 +16427,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytrs2(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Ssytrs2Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work)
+            public static int Ssytrs2Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
@@ -16435,7 +16435,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
             }
 
-            public static int Dsytrs2Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work)
+            public static int Dsytrs2Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
@@ -16443,7 +16443,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
             }
 
-            public static int Csytrs2Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work)
+            public static int Csytrs2Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
@@ -16451,7 +16451,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
             }
 
-            public static int Zsytrs2Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work)
+            public static int Zsytrs2Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
@@ -16459,7 +16459,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytrs2Work(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work);
             }
 
-            public static int Ssytrs3(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* e, int* ipiv, float* b, int ldB)
+            public static int Ssytrs3(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* e, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -16467,7 +16467,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Dsytrs3(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* e, int* ipiv, double* b, int ldB)
+            public static int Dsytrs3(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* e, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -16475,7 +16475,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Csytrs3(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int Csytrs3(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -16483,7 +16483,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Zsytrs3(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zsytrs3(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -16491,7 +16491,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytrs3(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Ssytrs3Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* e, int* ipiv, float* b, int ldB)
+            public static int Ssytrs3Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* e, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ssytrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -16499,7 +16499,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ssytrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Dsytrs3Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* e, int* ipiv, double* b, int ldB)
+            public static int Dsytrs3Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* e, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dsytrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -16507,7 +16507,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dsytrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Csytrs3Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int Csytrs3Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Csytrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -16515,7 +16515,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Csytrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int Zsytrs3Work(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
+            public static int Zsytrs3Work(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr e, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zsytrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
@@ -16523,7 +16523,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zsytrs3Work(matrixLayout, uplo, n, nrhs, a, ldA, e, ipiv, b, ldB);
             }
 
-            public static int SsytrsAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
+            public static int SsytrsAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16531,7 +16531,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int DsytrsAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
+            public static int DsytrsAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16539,7 +16539,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int CsytrsAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int CsytrsAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16547,7 +16547,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZsytrsAa(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZsytrsAa(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16555,7 +16555,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrsAa(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int SsytrsAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldB)
+            public static int SsytrsAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -16563,7 +16563,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int DsytrsAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldB)
+            public static int DsytrsAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -16571,7 +16571,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int CsytrsAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int CsytrsAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -16579,7 +16579,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int ZsytrsAa2stage(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int ZsytrsAa2stage(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -16587,7 +16587,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrsAa2stage(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int SsytrsAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldB)
+            public static int SsytrsAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -16595,7 +16595,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int DsytrsAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldB)
+            public static int DsytrsAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -16603,7 +16603,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int CsytrsAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int CsytrsAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -16611,7 +16611,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int ZsytrsAa2stageWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
+            public static int ZsytrsAa2stageWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr tb, int ltb, int* ipiv, int* ipiv2, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
@@ -16619,7 +16619,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrsAa2stageWork(matrixLayout, uplo, n, nrhs, a, ldA, tb, ltb, ipiv, ipiv2, b, ldB);
             }
 
-            public static int SsytrsAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work, int lwork)
+            public static int SsytrsAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB, float* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -16627,7 +16627,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int DsytrsAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work, int lwork)
+            public static int DsytrsAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB, double* work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -16635,7 +16635,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int CsytrsAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int CsytrsAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -16643,7 +16643,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int ZsytrsAaWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
+            public static int ZsytrsAaWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
@@ -16651,7 +16651,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrsAaWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB, work, lwork);
             }
 
-            public static int SsytrsRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
+            public static int SsytrsRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16659,7 +16659,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int DsytrsRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
+            public static int DsytrsRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16667,7 +16667,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int CsytrsRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int CsytrsRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16675,7 +16675,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZsytrsRook(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZsytrsRook(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16683,7 +16683,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrsRook(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int SsytrsRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
+            public static int SsytrsRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16691,7 +16691,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int DsytrsRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
+            public static int DsytrsRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16699,7 +16699,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int CsytrsRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int CsytrsRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16707,7 +16707,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZsytrsRookWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZsytrsRookWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16715,7 +16715,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrsRookWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int SsytrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
+            public static int SsytrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, float* a, int ldA, int* ipiv, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.SsytrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16723,7 +16723,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.SsytrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int DsytrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
+            public static int DsytrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, double* a, int ldA, int* ipiv, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DsytrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16731,7 +16731,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DsytrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int CsytrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int CsytrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CsytrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16739,7 +16739,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CsytrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int ZsytrsWork(MatrixLayout matrixLayout, sbyte uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
+            public static int ZsytrsWork(MatrixLayout matrixLayout, UpLo uplo, int n, int nrhs, System.IntPtr a, int ldA, int* ipiv, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZsytrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
@@ -16747,7 +16747,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZsytrsWork(matrixLayout, uplo, n, nrhs, a, ldA, ipiv, b, ldB);
             }
 
-            public static int Stbcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, int kd, float* ab, int ldab, float* rcond)
+            public static int Stbcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, int kd, float* ab, int ldab, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stbcon(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond);
@@ -16755,7 +16755,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stbcon(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond);
             }
 
-            public static int Dtbcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, int kd, double* ab, int ldab, double* rcond)
+            public static int Dtbcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, int kd, double* ab, int ldab, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtbcon(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond);
@@ -16763,7 +16763,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtbcon(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond);
             }
 
-            public static int Ctbcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, int kd, System.IntPtr ab, int ldab, float* rcond)
+            public static int Ctbcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, int kd, System.IntPtr ab, int ldab, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctbcon(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond);
@@ -16771,7 +16771,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctbcon(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond);
             }
 
-            public static int Ztbcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, int kd, System.IntPtr ab, int ldab, double* rcond)
+            public static int Ztbcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, int kd, System.IntPtr ab, int ldab, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztbcon(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond);
@@ -16779,7 +16779,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztbcon(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond);
             }
 
-            public static int StbconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, int kd, float* ab, int ldab, float* rcond, float* work, int* iwork)
+            public static int StbconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, int kd, float* ab, int ldab, float* rcond, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StbconWork(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond, work, iwork);
@@ -16787,7 +16787,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StbconWork(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond, work, iwork);
             }
 
-            public static int DtbconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, int kd, double* ab, int ldab, double* rcond, double* work, int* iwork)
+            public static int DtbconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, int kd, double* ab, int ldab, double* rcond, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtbconWork(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond, work, iwork);
@@ -16795,7 +16795,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtbconWork(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond, work, iwork);
             }
 
-            public static int CtbconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, int kd, System.IntPtr ab, int ldab, float* rcond, System.IntPtr work, float* rwork)
+            public static int CtbconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, int kd, System.IntPtr ab, int ldab, float* rcond, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtbconWork(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond, work, rwork);
@@ -16803,7 +16803,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtbconWork(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond, work, rwork);
             }
 
-            public static int ZtbconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, int kd, System.IntPtr ab, int ldab, double* rcond, System.IntPtr work, double* rwork)
+            public static int ZtbconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, int kd, System.IntPtr ab, int ldab, double* rcond, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtbconWork(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond, work, rwork);
@@ -16811,7 +16811,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtbconWork(matrixLayout, norm, uplo, diag, n, kd, ab, ldab, rcond, work, rwork);
             }
 
-            public static int Stbrfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
+            public static int Stbrfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stbrfs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr);
@@ -16819,7 +16819,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stbrfs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Dtbrfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
+            public static int Dtbrfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtbrfs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr);
@@ -16827,7 +16827,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtbrfs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Ctbrfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Ctbrfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctbrfs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr);
@@ -16835,7 +16835,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctbrfs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Ztbrfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Ztbrfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztbrfs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr);
@@ -16843,7 +16843,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztbrfs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int StbrfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
+            public static int StbrfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StbrfsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -16851,7 +16851,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StbrfsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int DtbrfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
+            public static int DtbrfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtbrfsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -16859,7 +16859,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtbrfsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int CtbrfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CtbrfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtbrfsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -16867,7 +16867,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtbrfsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZtbrfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZtbrfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtbrfsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -16875,7 +16875,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtbrfsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int Stbtrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
+            public static int Stbtrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stbtrs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
@@ -16883,7 +16883,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stbtrs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Dtbtrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
+            public static int Dtbtrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtbtrs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
@@ -16891,7 +16891,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtbtrs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Ctbtrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int Ctbtrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctbtrs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
@@ -16899,7 +16899,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctbtrs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Ztbtrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int Ztbtrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztbtrs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
@@ -16907,7 +16907,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztbtrs(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int StbtrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
+            public static int StbtrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StbtrsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
@@ -16915,7 +16915,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StbtrsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int DtbtrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
+            public static int DtbtrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtbtrsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
@@ -16923,7 +16923,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtbtrsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int CtbtrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int CtbtrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtbtrsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
@@ -16931,7 +16931,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtbtrsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int ZtbtrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
+            public static int ZtbtrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, System.IntPtr ab, int ldab, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtbtrsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
@@ -16939,7 +16939,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtbtrsWork(matrixLayout, uplo, trans, diag, n, kd, nrhs, ab, ldab, b, ldB);
             }
 
-            public static int Stfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, sbyte uplo, TransLapack trans, sbyte diag, int m, int n, float alpha, float* a, float* b, int ldB)
+            public static int Stfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLo uplo, TransLapack trans, sbyte diag, int m, int n, float alpha, float* a, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stfsm(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
@@ -16947,7 +16947,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stfsm(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
             }
 
-            public static int Dtfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, sbyte uplo, TransLapack trans, sbyte diag, int m, int n, double alpha, double* a, double* b, int ldB)
+            public static int Dtfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLo uplo, TransLapack trans, sbyte diag, int m, int n, double alpha, double* a, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtfsm(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
@@ -16955,7 +16955,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtfsm(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
             }
 
-            public static int Ctfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, sbyte uplo, TransLapack trans, sbyte diag, int m, int n, ComplexFloat alpha, System.IntPtr a, System.IntPtr b, int ldB)
+            public static int Ctfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLo uplo, TransLapack trans, sbyte diag, int m, int n, ComplexFloat alpha, System.IntPtr a, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctfsm(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
@@ -16963,7 +16963,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctfsm(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
             }
 
-            public static int Ztfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, sbyte uplo, TransLapack trans, sbyte diag, int m, int n, System.IntPtr alpha, System.IntPtr a, System.IntPtr b, int ldB)
+            public static int Ztfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLo uplo, TransLapack trans, sbyte diag, int m, int n, System.IntPtr alpha, System.IntPtr a, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztfsm(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
@@ -16971,7 +16971,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztfsm(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
             }
 
-            public static int StfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, sbyte uplo, TransLapack trans, sbyte diag, int m, int n, float alpha, float* a, float* b, int ldB)
+            public static int StfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLo uplo, TransLapack trans, sbyte diag, int m, int n, float alpha, float* a, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StfsmWork(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
@@ -16979,7 +16979,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StfsmWork(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
             }
 
-            public static int DtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, sbyte uplo, TransLapack trans, sbyte diag, int m, int n, double alpha, double* a, double* b, int ldB)
+            public static int DtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLo uplo, TransLapack trans, sbyte diag, int m, int n, double alpha, double* a, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtfsmWork(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
@@ -16987,7 +16987,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtfsmWork(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
             }
 
-            public static int CtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, sbyte uplo, TransLapack trans, sbyte diag, int m, int n, ComplexFloat alpha, System.IntPtr a, System.IntPtr b, int ldB)
+            public static int CtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLo uplo, TransLapack trans, sbyte diag, int m, int n, ComplexFloat alpha, System.IntPtr a, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtfsmWork(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
@@ -16995,7 +16995,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtfsmWork(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
             }
 
-            public static int ZtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, sbyte uplo, TransLapack trans, sbyte diag, int m, int n, System.IntPtr alpha, System.IntPtr a, System.IntPtr b, int ldB)
+            public static int ZtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLo uplo, TransLapack trans, sbyte diag, int m, int n, System.IntPtr alpha, System.IntPtr a, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtfsmWork(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
@@ -17003,7 +17003,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtfsmWork(matrixLayout, transr, side, uplo, trans, diag, m, n, alpha, a, b, ldB);
             }
 
-            public static int Stftri(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, sbyte diag, int n, float* a)
+            public static int Stftri(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, sbyte diag, int n, float* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stftri(matrixLayout, transr, uplo, diag, n, a);
@@ -17011,7 +17011,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stftri(matrixLayout, transr, uplo, diag, n, a);
             }
 
-            public static int Dtftri(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, sbyte diag, int n, double* a)
+            public static int Dtftri(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, sbyte diag, int n, double* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtftri(matrixLayout, transr, uplo, diag, n, a);
@@ -17019,7 +17019,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtftri(matrixLayout, transr, uplo, diag, n, a);
             }
 
-            public static int Ctftri(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, sbyte diag, int n, System.IntPtr a)
+            public static int Ctftri(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, sbyte diag, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctftri(matrixLayout, transr, uplo, diag, n, a);
@@ -17027,7 +17027,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctftri(matrixLayout, transr, uplo, diag, n, a);
             }
 
-            public static int Ztftri(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, sbyte diag, int n, System.IntPtr a)
+            public static int Ztftri(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, sbyte diag, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztftri(matrixLayout, transr, uplo, diag, n, a);
@@ -17035,7 +17035,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztftri(matrixLayout, transr, uplo, diag, n, a);
             }
 
-            public static int StftriWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, sbyte diag, int n, float* a)
+            public static int StftriWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, sbyte diag, int n, float* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StftriWork(matrixLayout, transr, uplo, diag, n, a);
@@ -17043,7 +17043,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StftriWork(matrixLayout, transr, uplo, diag, n, a);
             }
 
-            public static int DtftriWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, sbyte diag, int n, double* a)
+            public static int DtftriWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, sbyte diag, int n, double* a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtftriWork(matrixLayout, transr, uplo, diag, n, a);
@@ -17051,7 +17051,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtftriWork(matrixLayout, transr, uplo, diag, n, a);
             }
 
-            public static int CtftriWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, sbyte diag, int n, System.IntPtr a)
+            public static int CtftriWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, sbyte diag, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtftriWork(matrixLayout, transr, uplo, diag, n, a);
@@ -17059,7 +17059,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtftriWork(matrixLayout, transr, uplo, diag, n, a);
             }
 
-            public static int ZtftriWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, sbyte diag, int n, System.IntPtr a)
+            public static int ZtftriWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, sbyte diag, int n, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtftriWork(matrixLayout, transr, uplo, diag, n, a);
@@ -17067,7 +17067,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtftriWork(matrixLayout, transr, uplo, diag, n, a);
             }
 
-            public static int Stfttp(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* arf, float* ap)
+            public static int Stfttp(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* arf, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stfttp(matrixLayout, transr, uplo, n, arf, ap);
@@ -17075,7 +17075,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stfttp(matrixLayout, transr, uplo, n, arf, ap);
             }
 
-            public static int Dtfttp(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* arf, double* ap)
+            public static int Dtfttp(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* arf, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtfttp(matrixLayout, transr, uplo, n, arf, ap);
@@ -17083,7 +17083,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtfttp(matrixLayout, transr, uplo, n, arf, ap);
             }
 
-            public static int Ctfttp(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr arf, System.IntPtr ap)
+            public static int Ctfttp(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr arf, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctfttp(matrixLayout, transr, uplo, n, arf, ap);
@@ -17091,7 +17091,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctfttp(matrixLayout, transr, uplo, n, arf, ap);
             }
 
-            public static int Ztfttp(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr arf, System.IntPtr ap)
+            public static int Ztfttp(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr arf, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztfttp(matrixLayout, transr, uplo, n, arf, ap);
@@ -17099,7 +17099,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztfttp(matrixLayout, transr, uplo, n, arf, ap);
             }
 
-            public static int StfttpWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* arf, float* ap)
+            public static int StfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* arf, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StfttpWork(matrixLayout, transr, uplo, n, arf, ap);
@@ -17107,7 +17107,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StfttpWork(matrixLayout, transr, uplo, n, arf, ap);
             }
 
-            public static int DtfttpWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* arf, double* ap)
+            public static int DtfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* arf, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtfttpWork(matrixLayout, transr, uplo, n, arf, ap);
@@ -17115,7 +17115,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtfttpWork(matrixLayout, transr, uplo, n, arf, ap);
             }
 
-            public static int CtfttpWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr arf, System.IntPtr ap)
+            public static int CtfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr arf, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtfttpWork(matrixLayout, transr, uplo, n, arf, ap);
@@ -17123,7 +17123,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtfttpWork(matrixLayout, transr, uplo, n, arf, ap);
             }
 
-            public static int ZtfttpWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr arf, System.IntPtr ap)
+            public static int ZtfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr arf, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtfttpWork(matrixLayout, transr, uplo, n, arf, ap);
@@ -17131,7 +17131,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtfttpWork(matrixLayout, transr, uplo, n, arf, ap);
             }
 
-            public static int Stfttr(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* arf, float* a, int ldA)
+            public static int Stfttr(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* arf, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stfttr(matrixLayout, transr, uplo, n, arf, a, ldA);
@@ -17139,7 +17139,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stfttr(matrixLayout, transr, uplo, n, arf, a, ldA);
             }
 
-            public static int Dtfttr(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* arf, double* a, int ldA)
+            public static int Dtfttr(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* arf, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtfttr(matrixLayout, transr, uplo, n, arf, a, ldA);
@@ -17147,7 +17147,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtfttr(matrixLayout, transr, uplo, n, arf, a, ldA);
             }
 
-            public static int Ctfttr(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr arf, System.IntPtr a, int ldA)
+            public static int Ctfttr(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr arf, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctfttr(matrixLayout, transr, uplo, n, arf, a, ldA);
@@ -17155,7 +17155,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctfttr(matrixLayout, transr, uplo, n, arf, a, ldA);
             }
 
-            public static int Ztfttr(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr arf, System.IntPtr a, int ldA)
+            public static int Ztfttr(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr arf, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztfttr(matrixLayout, transr, uplo, n, arf, a, ldA);
@@ -17163,7 +17163,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztfttr(matrixLayout, transr, uplo, n, arf, a, ldA);
             }
 
-            public static int StfttrWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* arf, float* a, int ldA)
+            public static int StfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* arf, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StfttrWork(matrixLayout, transr, uplo, n, arf, a, ldA);
@@ -17171,7 +17171,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StfttrWork(matrixLayout, transr, uplo, n, arf, a, ldA);
             }
 
-            public static int DtfttrWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* arf, double* a, int ldA)
+            public static int DtfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* arf, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtfttrWork(matrixLayout, transr, uplo, n, arf, a, ldA);
@@ -17179,7 +17179,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtfttrWork(matrixLayout, transr, uplo, n, arf, a, ldA);
             }
 
-            public static int CtfttrWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr arf, System.IntPtr a, int ldA)
+            public static int CtfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr arf, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtfttrWork(matrixLayout, transr, uplo, n, arf, a, ldA);
@@ -17187,7 +17187,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtfttrWork(matrixLayout, transr, uplo, n, arf, a, ldA);
             }
 
-            public static int ZtfttrWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr arf, System.IntPtr a, int ldA)
+            public static int ZtfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr arf, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtfttrWork(matrixLayout, transr, uplo, n, arf, a, ldA);
@@ -17579,7 +17579,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtgsylWork(matrixLayout, trans, ijob, m, n, a, ldA, b, ldB, c, ldC, d, ldD, e, ldE, f, ldF, scale, dif, work, lwork, iwork);
             }
 
-            public static int Stpcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, float* ap, float* rcond)
+            public static int Stpcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, float* ap, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stpcon(matrixLayout, norm, uplo, diag, n, ap, rcond);
@@ -17587,7 +17587,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stpcon(matrixLayout, norm, uplo, diag, n, ap, rcond);
             }
 
-            public static int Dtpcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, double* ap, double* rcond)
+            public static int Dtpcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, double* ap, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtpcon(matrixLayout, norm, uplo, diag, n, ap, rcond);
@@ -17595,7 +17595,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtpcon(matrixLayout, norm, uplo, diag, n, ap, rcond);
             }
 
-            public static int Ctpcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, System.IntPtr ap, float* rcond)
+            public static int Ctpcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, System.IntPtr ap, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctpcon(matrixLayout, norm, uplo, diag, n, ap, rcond);
@@ -17603,7 +17603,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctpcon(matrixLayout, norm, uplo, diag, n, ap, rcond);
             }
 
-            public static int Ztpcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, System.IntPtr ap, double* rcond)
+            public static int Ztpcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, System.IntPtr ap, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztpcon(matrixLayout, norm, uplo, diag, n, ap, rcond);
@@ -17611,7 +17611,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztpcon(matrixLayout, norm, uplo, diag, n, ap, rcond);
             }
 
-            public static int StpconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, float* ap, float* rcond, float* work, int* iwork)
+            public static int StpconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, float* ap, float* rcond, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StpconWork(matrixLayout, norm, uplo, diag, n, ap, rcond, work, iwork);
@@ -17619,7 +17619,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StpconWork(matrixLayout, norm, uplo, diag, n, ap, rcond, work, iwork);
             }
 
-            public static int DtpconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, double* ap, double* rcond, double* work, int* iwork)
+            public static int DtpconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, double* ap, double* rcond, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtpconWork(matrixLayout, norm, uplo, diag, n, ap, rcond, work, iwork);
@@ -17627,7 +17627,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtpconWork(matrixLayout, norm, uplo, diag, n, ap, rcond, work, iwork);
             }
 
-            public static int CtpconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, System.IntPtr ap, float* rcond, System.IntPtr work, float* rwork)
+            public static int CtpconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, System.IntPtr ap, float* rcond, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtpconWork(matrixLayout, norm, uplo, diag, n, ap, rcond, work, rwork);
@@ -17635,7 +17635,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtpconWork(matrixLayout, norm, uplo, diag, n, ap, rcond, work, rwork);
             }
 
-            public static int ZtpconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, System.IntPtr ap, double* rcond, System.IntPtr work, double* rwork)
+            public static int ZtpconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, System.IntPtr ap, double* rcond, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtpconWork(matrixLayout, norm, uplo, diag, n, ap, rcond, work, rwork);
@@ -17899,7 +17899,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtprfbWork(matrixLayout, side, trans, direct, storev, m, n, k, l, v, ldV, t, ldT, a, ldA, b, ldB, work, ldwork);
             }
 
-            public static int Stprfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
+            public static int Stprfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stprfs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr);
@@ -17907,7 +17907,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stprfs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Dtprfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
+            public static int Dtprfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtprfs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr);
@@ -17915,7 +17915,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtprfs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Ctprfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Ctprfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctprfs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr);
@@ -17923,7 +17923,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctprfs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Ztprfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Ztprfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztprfs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr);
@@ -17931,7 +17931,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztprfs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int StprfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
+            public static int StprfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StprfsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -17939,7 +17939,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StprfsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int DtprfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
+            public static int DtprfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtprfsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -17947,7 +17947,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtprfsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int CtprfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CtprfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtprfsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -17955,7 +17955,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtprfsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZtprfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZtprfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtprfsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -17963,7 +17963,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtprfsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int Stptri(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, float* ap)
+            public static int Stptri(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stptri(matrixLayout, uplo, diag, n, ap);
@@ -17971,7 +17971,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stptri(matrixLayout, uplo, diag, n, ap);
             }
 
-            public static int Dtptri(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, double* ap)
+            public static int Dtptri(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtptri(matrixLayout, uplo, diag, n, ap);
@@ -17979,7 +17979,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtptri(matrixLayout, uplo, diag, n, ap);
             }
 
-            public static int Ctptri(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, System.IntPtr ap)
+            public static int Ctptri(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctptri(matrixLayout, uplo, diag, n, ap);
@@ -17987,7 +17987,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctptri(matrixLayout, uplo, diag, n, ap);
             }
 
-            public static int Ztptri(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, System.IntPtr ap)
+            public static int Ztptri(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztptri(matrixLayout, uplo, diag, n, ap);
@@ -17995,7 +17995,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztptri(matrixLayout, uplo, diag, n, ap);
             }
 
-            public static int StptriWork(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, float* ap)
+            public static int StptriWork(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StptriWork(matrixLayout, uplo, diag, n, ap);
@@ -18003,7 +18003,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StptriWork(matrixLayout, uplo, diag, n, ap);
             }
 
-            public static int DtptriWork(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, double* ap)
+            public static int DtptriWork(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtptriWork(matrixLayout, uplo, diag, n, ap);
@@ -18011,7 +18011,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtptriWork(matrixLayout, uplo, diag, n, ap);
             }
 
-            public static int CtptriWork(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, System.IntPtr ap)
+            public static int CtptriWork(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtptriWork(matrixLayout, uplo, diag, n, ap);
@@ -18019,7 +18019,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtptriWork(matrixLayout, uplo, diag, n, ap);
             }
 
-            public static int ZtptriWork(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, System.IntPtr ap)
+            public static int ZtptriWork(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtptriWork(matrixLayout, uplo, diag, n, ap);
@@ -18027,7 +18027,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtptriWork(matrixLayout, uplo, diag, n, ap);
             }
 
-            public static int Stptrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldB)
+            public static int Stptrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stptrs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
@@ -18035,7 +18035,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stptrs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
             }
 
-            public static int Dtptrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldB)
+            public static int Dtptrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtptrs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
@@ -18043,7 +18043,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtptrs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
             }
 
-            public static int Ctptrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int Ctptrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctptrs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
@@ -18051,7 +18051,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctptrs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
             }
 
-            public static int Ztptrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int Ztptrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztptrs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
@@ -18059,7 +18059,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztptrs(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
             }
 
-            public static int StptrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldB)
+            public static int StptrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StptrsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
@@ -18067,7 +18067,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StptrsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
             }
 
-            public static int DtptrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldB)
+            public static int DtptrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtptrsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
@@ -18075,7 +18075,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtptrsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
             }
 
-            public static int CtptrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int CtptrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtptrsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
@@ -18083,7 +18083,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtptrsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
             }
 
-            public static int ZtptrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
+            public static int ZtptrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr ap, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtptrsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
@@ -18091,7 +18091,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtptrsWork(matrixLayout, uplo, trans, diag, n, nrhs, ap, b, ldB);
             }
 
-            public static int Stpttf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* ap, float* arf)
+            public static int Stpttf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* ap, float* arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stpttf(matrixLayout, transr, uplo, n, ap, arf);
@@ -18099,7 +18099,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stpttf(matrixLayout, transr, uplo, n, ap, arf);
             }
 
-            public static int Dtpttf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* ap, double* arf)
+            public static int Dtpttf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* ap, double* arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtpttf(matrixLayout, transr, uplo, n, ap, arf);
@@ -18107,7 +18107,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtpttf(matrixLayout, transr, uplo, n, ap, arf);
             }
 
-            public static int Ctpttf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr ap, System.IntPtr arf)
+            public static int Ctpttf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr ap, System.IntPtr arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctpttf(matrixLayout, transr, uplo, n, ap, arf);
@@ -18115,7 +18115,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctpttf(matrixLayout, transr, uplo, n, ap, arf);
             }
 
-            public static int Ztpttf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr ap, System.IntPtr arf)
+            public static int Ztpttf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr ap, System.IntPtr arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztpttf(matrixLayout, transr, uplo, n, ap, arf);
@@ -18123,7 +18123,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztpttf(matrixLayout, transr, uplo, n, ap, arf);
             }
 
-            public static int StpttfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* ap, float* arf)
+            public static int StpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* ap, float* arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StpttfWork(matrixLayout, transr, uplo, n, ap, arf);
@@ -18131,7 +18131,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StpttfWork(matrixLayout, transr, uplo, n, ap, arf);
             }
 
-            public static int DtpttfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* ap, double* arf)
+            public static int DtpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* ap, double* arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtpttfWork(matrixLayout, transr, uplo, n, ap, arf);
@@ -18139,7 +18139,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtpttfWork(matrixLayout, transr, uplo, n, ap, arf);
             }
 
-            public static int CtpttfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr ap, System.IntPtr arf)
+            public static int CtpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr ap, System.IntPtr arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtpttfWork(matrixLayout, transr, uplo, n, ap, arf);
@@ -18147,7 +18147,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtpttfWork(matrixLayout, transr, uplo, n, ap, arf);
             }
 
-            public static int ZtpttfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr ap, System.IntPtr arf)
+            public static int ZtpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr ap, System.IntPtr arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtpttfWork(matrixLayout, transr, uplo, n, ap, arf);
@@ -18155,7 +18155,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtpttfWork(matrixLayout, transr, uplo, n, ap, arf);
             }
 
-            public static int Stpttr(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float* a, int ldA)
+            public static int Stpttr(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Stpttr(matrixLayout, uplo, n, ap, a, ldA);
@@ -18163,7 +18163,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Stpttr(matrixLayout, uplo, n, ap, a, ldA);
             }
 
-            public static int Dtpttr(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double* a, int ldA)
+            public static int Dtpttr(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtpttr(matrixLayout, uplo, n, ap, a, ldA);
@@ -18171,7 +18171,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtpttr(matrixLayout, uplo, n, ap, a, ldA);
             }
 
-            public static int Ctpttr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, System.IntPtr a, int ldA)
+            public static int Ctpttr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctpttr(matrixLayout, uplo, n, ap, a, ldA);
@@ -18179,7 +18179,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctpttr(matrixLayout, uplo, n, ap, a, ldA);
             }
 
-            public static int Ztpttr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, System.IntPtr a, int ldA)
+            public static int Ztpttr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztpttr(matrixLayout, uplo, n, ap, a, ldA);
@@ -18187,7 +18187,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztpttr(matrixLayout, uplo, n, ap, a, ldA);
             }
 
-            public static int StpttrWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* ap, float* a, int ldA)
+            public static int StpttrWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* ap, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StpttrWork(matrixLayout, uplo, n, ap, a, ldA);
@@ -18195,7 +18195,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StpttrWork(matrixLayout, uplo, n, ap, a, ldA);
             }
 
-            public static int DtpttrWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* ap, double* a, int ldA)
+            public static int DtpttrWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* ap, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtpttrWork(matrixLayout, uplo, n, ap, a, ldA);
@@ -18203,7 +18203,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtpttrWork(matrixLayout, uplo, n, ap, a, ldA);
             }
 
-            public static int CtpttrWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, System.IntPtr a, int ldA)
+            public static int CtpttrWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtpttrWork(matrixLayout, uplo, n, ap, a, ldA);
@@ -18211,7 +18211,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtpttrWork(matrixLayout, uplo, n, ap, a, ldA);
             }
 
-            public static int ZtpttrWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, System.IntPtr a, int ldA)
+            public static int ZtpttrWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtpttrWork(matrixLayout, uplo, n, ap, a, ldA);
@@ -18219,7 +18219,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtpttrWork(matrixLayout, uplo, n, ap, a, ldA);
             }
 
-            public static int Strcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, float* a, int ldA, float* rcond)
+            public static int Strcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, float* a, int ldA, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Strcon(matrixLayout, norm, uplo, diag, n, a, ldA, rcond);
@@ -18227,7 +18227,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Strcon(matrixLayout, norm, uplo, diag, n, a, ldA, rcond);
             }
 
-            public static int Dtrcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, double* a, int ldA, double* rcond)
+            public static int Dtrcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, double* a, int ldA, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtrcon(matrixLayout, norm, uplo, diag, n, a, ldA, rcond);
@@ -18235,7 +18235,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtrcon(matrixLayout, norm, uplo, diag, n, a, ldA, rcond);
             }
 
-            public static int Ctrcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, System.IntPtr a, int ldA, float* rcond)
+            public static int Ctrcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, System.IntPtr a, int ldA, float* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctrcon(matrixLayout, norm, uplo, diag, n, a, ldA, rcond);
@@ -18243,7 +18243,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctrcon(matrixLayout, norm, uplo, diag, n, a, ldA, rcond);
             }
 
-            public static int Ztrcon(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, System.IntPtr a, int ldA, double* rcond)
+            public static int Ztrcon(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, System.IntPtr a, int ldA, double* rcond)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztrcon(matrixLayout, norm, uplo, diag, n, a, ldA, rcond);
@@ -18251,7 +18251,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztrcon(matrixLayout, norm, uplo, diag, n, a, ldA, rcond);
             }
 
-            public static int StrconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, float* a, int ldA, float* rcond, float* work, int* iwork)
+            public static int StrconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, float* a, int ldA, float* rcond, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StrconWork(matrixLayout, norm, uplo, diag, n, a, ldA, rcond, work, iwork);
@@ -18259,7 +18259,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StrconWork(matrixLayout, norm, uplo, diag, n, a, ldA, rcond, work, iwork);
             }
 
-            public static int DtrconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, double* a, int ldA, double* rcond, double* work, int* iwork)
+            public static int DtrconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, double* a, int ldA, double* rcond, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtrconWork(matrixLayout, norm, uplo, diag, n, a, ldA, rcond, work, iwork);
@@ -18267,7 +18267,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtrconWork(matrixLayout, norm, uplo, diag, n, a, ldA, rcond, work, iwork);
             }
 
-            public static int CtrconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, System.IntPtr a, int ldA, float* rcond, System.IntPtr work, float* rwork)
+            public static int CtrconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, System.IntPtr a, int ldA, float* rcond, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtrconWork(matrixLayout, norm, uplo, diag, n, a, ldA, rcond, work, rwork);
@@ -18275,7 +18275,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtrconWork(matrixLayout, norm, uplo, diag, n, a, ldA, rcond, work, rwork);
             }
 
-            public static int ZtrconWork(MatrixLayout matrixLayout, sbyte norm, sbyte uplo, sbyte diag, int n, System.IntPtr a, int ldA, double* rcond, System.IntPtr work, double* rwork)
+            public static int ZtrconWork(MatrixLayout matrixLayout, sbyte norm, UpLo uplo, sbyte diag, int n, System.IntPtr a, int ldA, double* rcond, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtrconWork(matrixLayout, norm, uplo, diag, n, a, ldA, rcond, work, rwork);
@@ -18411,7 +18411,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtrexcWork(matrixLayout, compq, n, t, ldT, q, ldQ, ifst, ilst);
             }
 
-            public static int Strrfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int ldA, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
+            public static int Strrfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int ldA, float* b, int ldB, float* x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Strrfs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr);
@@ -18419,7 +18419,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Strrfs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Dtrrfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int ldA, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
+            public static int Dtrrfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int ldA, double* b, int ldB, double* x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtrrfs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr);
@@ -18427,7 +18427,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtrrfs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Ctrrfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
+            public static int Ctrrfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctrrfs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr);
@@ -18435,7 +18435,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctrrfs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int Ztrrfs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
+            public static int Ztrrfs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztrrfs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr);
@@ -18443,7 +18443,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztrrfs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr);
             }
 
-            public static int StrrfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int ldA, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
+            public static int StrrfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int ldA, float* b, int ldB, float* x, int ldX, float* ferr, float* berr, float* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StrrfsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -18451,7 +18451,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StrrfsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int DtrrfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int ldA, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
+            public static int DtrrfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int ldA, double* b, int ldB, double* x, int ldX, double* ferr, double* berr, double* work, int* iwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtrrfsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr, work, iwork);
@@ -18459,7 +18459,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtrrfsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr, work, iwork);
             }
 
-            public static int CtrrfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
+            public static int CtrrfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, float* ferr, float* berr, System.IntPtr work, float* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtrrfsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -18467,7 +18467,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtrrfsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr, work, rwork);
             }
 
-            public static int ZtrrfsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
+            public static int ZtrrfsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr x, int ldX, double* ferr, double* berr, System.IntPtr work, double* rwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtrrfsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB, x, ldX, ferr, berr, work, rwork);
@@ -18667,7 +18667,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtrsylWork(matrixLayout, trana, tranb, isgn, m, n, a, ldA, b, ldB, c, ldC, scale);
             }
 
-            public static int Strtri(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, float* a, int ldA)
+            public static int Strtri(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Strtri(matrixLayout, uplo, diag, n, a, ldA);
@@ -18675,7 +18675,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Strtri(matrixLayout, uplo, diag, n, a, ldA);
             }
 
-            public static int Dtrtri(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, double* a, int ldA)
+            public static int Dtrtri(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtrtri(matrixLayout, uplo, diag, n, a, ldA);
@@ -18683,7 +18683,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtrtri(matrixLayout, uplo, diag, n, a, ldA);
             }
 
-            public static int Ctrtri(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, System.IntPtr a, int ldA)
+            public static int Ctrtri(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctrtri(matrixLayout, uplo, diag, n, a, ldA);
@@ -18691,7 +18691,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctrtri(matrixLayout, uplo, diag, n, a, ldA);
             }
 
-            public static int Ztrtri(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, System.IntPtr a, int ldA)
+            public static int Ztrtri(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztrtri(matrixLayout, uplo, diag, n, a, ldA);
@@ -18699,7 +18699,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztrtri(matrixLayout, uplo, diag, n, a, ldA);
             }
 
-            public static int StrtriWork(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, float* a, int ldA)
+            public static int StrtriWork(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StrtriWork(matrixLayout, uplo, diag, n, a, ldA);
@@ -18707,7 +18707,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StrtriWork(matrixLayout, uplo, diag, n, a, ldA);
             }
 
-            public static int DtrtriWork(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, double* a, int ldA)
+            public static int DtrtriWork(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtrtriWork(matrixLayout, uplo, diag, n, a, ldA);
@@ -18715,7 +18715,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtrtriWork(matrixLayout, uplo, diag, n, a, ldA);
             }
 
-            public static int CtrtriWork(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, System.IntPtr a, int ldA)
+            public static int CtrtriWork(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtrtriWork(matrixLayout, uplo, diag, n, a, ldA);
@@ -18723,7 +18723,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtrtriWork(matrixLayout, uplo, diag, n, a, ldA);
             }
 
-            public static int ZtrtriWork(MatrixLayout matrixLayout, sbyte uplo, sbyte diag, int n, System.IntPtr a, int ldA)
+            public static int ZtrtriWork(MatrixLayout matrixLayout, UpLo uplo, sbyte diag, int n, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtrtriWork(matrixLayout, uplo, diag, n, a, ldA);
@@ -18731,7 +18731,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtrtriWork(matrixLayout, uplo, diag, n, a, ldA);
             }
 
-            public static int Strtrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int ldA, float* b, int ldB)
+            public static int Strtrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Strtrs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
@@ -18739,7 +18739,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Strtrs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Dtrtrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int ldA, double* b, int ldB)
+            public static int Dtrtrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtrtrs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
@@ -18747,7 +18747,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtrtrs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Ctrtrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Ctrtrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctrtrs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
@@ -18755,7 +18755,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctrtrs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Ztrtrs(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int Ztrtrs(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztrtrs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
@@ -18763,7 +18763,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztrtrs(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int StrtrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int ldA, float* b, int ldB)
+            public static int StrtrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StrtrsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
@@ -18771,7 +18771,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StrtrsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int DtrtrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int ldA, double* b, int ldB)
+            public static int DtrtrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtrtrsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
@@ -18779,7 +18779,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtrtrsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int CtrtrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int CtrtrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtrtrsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
@@ -18787,7 +18787,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtrtrsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int ZtrtrsWork(MatrixLayout matrixLayout, sbyte uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
+            public static int ZtrtrsWork(MatrixLayout matrixLayout, UpLo uplo, TransLapack trans, sbyte diag, int n, int nrhs, System.IntPtr a, int ldA, System.IntPtr b, int ldB)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtrtrsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
@@ -18795,7 +18795,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtrtrsWork(matrixLayout, uplo, trans, diag, n, nrhs, a, ldA, b, ldB);
             }
 
-            public static int Strttf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* a, int ldA, float* arf)
+            public static int Strttf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* a, int ldA, float* arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Strttf(matrixLayout, transr, uplo, n, a, ldA, arf);
@@ -18803,7 +18803,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Strttf(matrixLayout, transr, uplo, n, a, ldA, arf);
             }
 
-            public static int Dtrttf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* a, int ldA, double* arf)
+            public static int Dtrttf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* a, int ldA, double* arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtrttf(matrixLayout, transr, uplo, n, a, ldA, arf);
@@ -18811,7 +18811,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtrttf(matrixLayout, transr, uplo, n, a, ldA, arf);
             }
 
-            public static int Ctrttf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr arf)
+            public static int Ctrttf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctrttf(matrixLayout, transr, uplo, n, a, ldA, arf);
@@ -18819,7 +18819,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctrttf(matrixLayout, transr, uplo, n, a, ldA, arf);
             }
 
-            public static int Ztrttf(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr arf)
+            public static int Ztrttf(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztrttf(matrixLayout, transr, uplo, n, a, ldA, arf);
@@ -18827,7 +18827,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztrttf(matrixLayout, transr, uplo, n, a, ldA, arf);
             }
 
-            public static int StrttfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, float* a, int ldA, float* arf)
+            public static int StrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, float* a, int ldA, float* arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StrttfWork(matrixLayout, transr, uplo, n, a, ldA, arf);
@@ -18835,7 +18835,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StrttfWork(matrixLayout, transr, uplo, n, a, ldA, arf);
             }
 
-            public static int DtrttfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, double* a, int ldA, double* arf)
+            public static int DtrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, double* a, int ldA, double* arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtrttfWork(matrixLayout, transr, uplo, n, a, ldA, arf);
@@ -18843,7 +18843,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtrttfWork(matrixLayout, transr, uplo, n, a, ldA, arf);
             }
 
-            public static int CtrttfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr arf)
+            public static int CtrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtrttfWork(matrixLayout, transr, uplo, n, a, ldA, arf);
@@ -18851,7 +18851,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtrttfWork(matrixLayout, transr, uplo, n, a, ldA, arf);
             }
 
-            public static int ZtrttfWork(MatrixLayout matrixLayout, sbyte transr, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr arf)
+            public static int ZtrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr arf)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtrttfWork(matrixLayout, transr, uplo, n, a, ldA, arf);
@@ -18859,7 +18859,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZtrttfWork(matrixLayout, transr, uplo, n, a, ldA, arf);
             }
 
-            public static int Strttp(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* ap)
+            public static int Strttp(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Strttp(matrixLayout, uplo, n, a, ldA, ap);
@@ -18867,7 +18867,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Strttp(matrixLayout, uplo, n, a, ldA, ap);
             }
 
-            public static int Dtrttp(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* ap)
+            public static int Dtrttp(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Dtrttp(matrixLayout, uplo, n, a, ldA, ap);
@@ -18875,7 +18875,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Dtrttp(matrixLayout, uplo, n, a, ldA, ap);
             }
 
-            public static int Ctrttp(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr ap)
+            public static int Ctrttp(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ctrttp(matrixLayout, uplo, n, a, ldA, ap);
@@ -18883,7 +18883,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ctrttp(matrixLayout, uplo, n, a, ldA, ap);
             }
 
-            public static int Ztrttp(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr ap)
+            public static int Ztrttp(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Ztrttp(matrixLayout, uplo, n, a, ldA, ap);
@@ -18891,7 +18891,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Ztrttp(matrixLayout, uplo, n, a, ldA, ap);
             }
 
-            public static int StrttpWork(MatrixLayout matrixLayout, sbyte uplo, int n, float* a, int ldA, float* ap)
+            public static int StrttpWork(MatrixLayout matrixLayout, UpLo uplo, int n, float* a, int ldA, float* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.StrttpWork(matrixLayout, uplo, n, a, ldA, ap);
@@ -18899,7 +18899,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.StrttpWork(matrixLayout, uplo, n, a, ldA, ap);
             }
 
-            public static int DtrttpWork(MatrixLayout matrixLayout, sbyte uplo, int n, double* a, int ldA, double* ap)
+            public static int DtrttpWork(MatrixLayout matrixLayout, UpLo uplo, int n, double* a, int ldA, double* ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.DtrttpWork(matrixLayout, uplo, n, a, ldA, ap);
@@ -18907,7 +18907,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.DtrttpWork(matrixLayout, uplo, n, a, ldA, ap);
             }
 
-            public static int CtrttpWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr ap)
+            public static int CtrttpWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CtrttpWork(matrixLayout, uplo, n, a, ldA, ap);
@@ -18915,7 +18915,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CtrttpWork(matrixLayout, uplo, n, a, ldA, ap);
             }
 
-            public static int ZtrttpWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr ap)
+            public static int ZtrttpWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZtrttpWork(matrixLayout, uplo, n, a, ldA, ap);
@@ -19275,7 +19275,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZungrqWork(matrixLayout, m, n, k, a, ldA, tau, work, lwork);
             }
 
-            public static int Cungtr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tau)
+            public static int Cungtr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cungtr(matrixLayout, uplo, n, a, ldA, tau);
@@ -19283,7 +19283,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cungtr(matrixLayout, uplo, n, a, ldA, tau);
             }
 
-            public static int Zungtr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tau)
+            public static int Zungtr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tau)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zungtr(matrixLayout, uplo, n, a, ldA, tau);
@@ -19291,7 +19291,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zungtr(matrixLayout, uplo, n, a, ldA, tau);
             }
 
-            public static int CungtrWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr work, int lwork)
+            public static int CungtrWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CungtrWork(matrixLayout, uplo, n, a, ldA, tau, work, lwork);
@@ -19299,7 +19299,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CungtrWork(matrixLayout, uplo, n, a, ldA, tau, work, lwork);
             }
 
-            public static int ZungtrWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr work, int lwork)
+            public static int ZungtrWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZungtrWork(matrixLayout, uplo, n, a, ldA, tau, work, lwork);
@@ -19531,7 +19531,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZunmrzWork(matrixLayout, side, trans, m, n, k, l, a, ldA, tau, c, ldC, work, lwork);
             }
 
-            public static int Cunmtr(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr c, int ldC)
+            public static int Cunmtr(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cunmtr(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC);
@@ -19539,7 +19539,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cunmtr(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC);
             }
 
-            public static int Zunmtr(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr c, int ldC)
+            public static int Zunmtr(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zunmtr(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC);
@@ -19547,7 +19547,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zunmtr(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC);
             }
 
-            public static int CunmtrWork(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr c, int ldC, System.IntPtr work, int lwork)
+            public static int CunmtrWork(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr c, int ldC, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CunmtrWork(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC, work, lwork);
@@ -19555,7 +19555,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CunmtrWork(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC, work, lwork);
             }
 
-            public static int ZunmtrWork(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr c, int ldC, System.IntPtr work, int lwork)
+            public static int ZunmtrWork(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, System.IntPtr a, int ldA, System.IntPtr tau, System.IntPtr c, int ldC, System.IntPtr work, int lwork)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZunmtrWork(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC, work, lwork);
@@ -19563,7 +19563,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZunmtrWork(matrixLayout, side, uplo, trans, m, n, a, ldA, tau, c, ldC, work, lwork);
             }
 
-            public static int Cupgtr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr q, int ldQ)
+            public static int Cupgtr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr q, int ldQ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cupgtr(matrixLayout, uplo, n, ap, tau, q, ldQ);
@@ -19571,7 +19571,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cupgtr(matrixLayout, uplo, n, ap, tau, q, ldQ);
             }
 
-            public static int Zupgtr(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr q, int ldQ)
+            public static int Zupgtr(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr q, int ldQ)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zupgtr(matrixLayout, uplo, n, ap, tau, q, ldQ);
@@ -19579,7 +19579,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zupgtr(matrixLayout, uplo, n, ap, tau, q, ldQ);
             }
 
-            public static int CupgtrWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr q, int ldQ, System.IntPtr work)
+            public static int CupgtrWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr q, int ldQ, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CupgtrWork(matrixLayout, uplo, n, ap, tau, q, ldQ, work);
@@ -19587,7 +19587,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CupgtrWork(matrixLayout, uplo, n, ap, tau, q, ldQ, work);
             }
 
-            public static int ZupgtrWork(MatrixLayout matrixLayout, sbyte uplo, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr q, int ldQ, System.IntPtr work)
+            public static int ZupgtrWork(MatrixLayout matrixLayout, UpLo uplo, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr q, int ldQ, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZupgtrWork(matrixLayout, uplo, n, ap, tau, q, ldQ, work);
@@ -19595,7 +19595,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.ZupgtrWork(matrixLayout, uplo, n, ap, tau, q, ldQ, work);
             }
 
-            public static int Cupmtr(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr c, int ldC)
+            public static int Cupmtr(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Cupmtr(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC);
@@ -19603,7 +19603,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Cupmtr(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC);
             }
 
-            public static int Zupmtr(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr c, int ldC)
+            public static int Zupmtr(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.Zupmtr(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC);
@@ -19611,7 +19611,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.Zupmtr(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC);
             }
 
-            public static int CupmtrWork(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr c, int ldC, System.IntPtr work)
+            public static int CupmtrWork(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr c, int ldC, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.CupmtrWork(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC, work);
@@ -19619,7 +19619,7 @@ namespace Spreads
                 return OpenBLAS.LAPACKE.CupmtrWork(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC, work);
             }
 
-            public static int ZupmtrWork(MatrixLayout matrixLayout, sbyte side, sbyte uplo, TransLapack trans, int m, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr c, int ldC, System.IntPtr work)
+            public static int ZupmtrWork(MatrixLayout matrixLayout, sbyte side, UpLo uplo, TransLapack trans, int m, int n, System.IntPtr ap, System.IntPtr tau, System.IntPtr c, int ldC, System.IntPtr work)
             {
                 if (MKL.IsSupoprted)
                     return MKL.LAPACKE.ZupmtrWork(matrixLayout, side, uplo, trans, m, n, ap, tau, c, ldC, work);
