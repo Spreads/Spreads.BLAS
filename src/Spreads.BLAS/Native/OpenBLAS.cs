@@ -9,6 +9,8 @@ namespace Spreads.Native
 {
     public static unsafe partial class OpenBLAS
     {
+        private const string LibName = "openblas";
+        
         public static bool IsSupoprted = Init();
 
         private static bool Init()

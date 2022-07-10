@@ -288,7 +288,7 @@ namespace Spreads
                 return OpenBLAS.CBLAS.Sdsdot(n, sb, x, incX, y, incY);
             }
 
-            public static void Sgbmv(MatrixLayout matrixLayout, TRANSPOSE transA, int m, int n, int kL, int kU, float alpha, float* a, int ldA, float* x, int incX, float beta, float* y,
+            public static void Sgbmv(MatrixLayout matrixLayout, TransCblas transA, int m, int n, int kL, int kU, float alpha, float* a, int ldA, float* x, int incX, float beta, float* y,
                 int incY)
             {
                 if (MKL.IsSupoprted)
@@ -300,7 +300,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Sgbmv(matrixLayout, transA, m, n, kL, kU, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Dgbmv(MatrixLayout matrixLayout, TRANSPOSE transA, int m, int n, int kL, int kU, double alpha, double* a, int ldA, double* x, int incX, double beta, double* y,
+            public static void Dgbmv(MatrixLayout matrixLayout, TransCblas transA, int m, int n, int kL, int kU, double alpha, double* a, int ldA, double* x, int incX, double beta, double* y,
                 int incY)
             {
                 if (MKL.IsSupoprted)
@@ -312,7 +312,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dgbmv(matrixLayout, transA, m, n, kL, kU, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Cgbmv(MatrixLayout matrixLayout, TRANSPOSE transA, int m, int n, int kL, int kU, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX,
+            public static void Cgbmv(MatrixLayout matrixLayout, TransCblas transA, int m, int n, int kL, int kU, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX,
                 System.IntPtr beta, System.IntPtr y, int incY)
             {
                 if (MKL.IsSupoprted)
@@ -324,7 +324,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Cgbmv(matrixLayout, transA, m, n, kL, kU, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Zgbmv(MatrixLayout matrixLayout, TRANSPOSE transA, int m, int n, int kL, int kU, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX,
+            public static void Zgbmv(MatrixLayout matrixLayout, TransCblas transA, int m, int n, int kL, int kU, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX,
                 System.IntPtr beta, System.IntPtr y, int incY)
             {
                 if (MKL.IsSupoprted)
@@ -336,7 +336,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zgbmv(matrixLayout, transA, m, n, kL, kU, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Sgemm(MatrixLayout matrixLayout, TRANSPOSE transA, TRANSPOSE transB, int m, int n, int k, float alpha, float* a, int ldA, float* b, int ldB, float beta,
+            public static void Sgemm(MatrixLayout matrixLayout, TransCblas transA, TransCblas transB, int m, int n, int k, float alpha, float* a, int ldA, float* b, int ldB, float beta,
                 float* c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -348,7 +348,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Sgemm(matrixLayout, transA, transB, m, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Dgemm(MatrixLayout matrixLayout, TRANSPOSE transA, TRANSPOSE transB, int m, int n, int k, double alpha, double* a, int ldA, double* b, int ldB, double beta,
+            public static void Dgemm(MatrixLayout matrixLayout, TransCblas transA, TransCblas transB, int m, int n, int k, double alpha, double* a, int ldA, double* b, int ldB, double beta,
                 double* c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -360,7 +360,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dgemm(matrixLayout, transA, transB, m, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Cgemm(MatrixLayout matrixLayout, TRANSPOSE transA, TRANSPOSE transB, int m, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
+            public static void Cgemm(MatrixLayout matrixLayout, TransCblas transA, TransCblas transB, int m, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
                 int ldB, System.IntPtr beta, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -372,7 +372,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Cgemm(matrixLayout, transA, transB, m, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Zgemm(MatrixLayout matrixLayout, TRANSPOSE transA, TRANSPOSE transB, int m, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
+            public static void Zgemm(MatrixLayout matrixLayout, TransCblas transA, TransCblas transB, int m, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
                 int ldB, System.IntPtr beta, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -384,7 +384,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zgemm(matrixLayout, transA, transB, m, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Cgemm3m(MatrixLayout matrixLayout, TRANSPOSE transA, TRANSPOSE transB, int m, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
+            public static void Cgemm3m(MatrixLayout matrixLayout, TransCblas transA, TransCblas transB, int m, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
                 int ldB, System.IntPtr beta, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -396,7 +396,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Cgemm3m(matrixLayout, transA, transB, m, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Zgemm3m(MatrixLayout matrixLayout, TRANSPOSE transA, TRANSPOSE transB, int m, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
+            public static void Zgemm3m(MatrixLayout matrixLayout, TransCblas transA, TransCblas transB, int m, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
                 int ldB, System.IntPtr beta, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -408,7 +408,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zgemm3m(matrixLayout, transA, transB, m, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Sgemv(MatrixLayout matrixLayout, TRANSPOSE transA, int m, int n, float alpha, float* a, int ldA, float* x, int incX, float beta, float* y, int incY)
+            public static void Sgemv(MatrixLayout matrixLayout, TransCblas transA, int m, int n, float alpha, float* a, int ldA, float* x, int incX, float beta, float* y, int incY)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -419,7 +419,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Sgemv(matrixLayout, transA, m, n, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Dgemv(MatrixLayout matrixLayout, TRANSPOSE transA, int m, int n, double alpha, double* a, int ldA, double* x, int incX, double beta, double* y, int incY)
+            public static void Dgemv(MatrixLayout matrixLayout, TransCblas transA, int m, int n, double alpha, double* a, int ldA, double* x, int incX, double beta, double* y, int incY)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -430,7 +430,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dgemv(matrixLayout, transA, m, n, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Cgemv(MatrixLayout matrixLayout, TRANSPOSE transA, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta,
+            public static void Cgemv(MatrixLayout matrixLayout, TransCblas transA, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta,
                 System.IntPtr y, int incY)
             {
                 if (MKL.IsSupoprted)
@@ -442,7 +442,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Cgemv(matrixLayout, transA, m, n, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Zgemv(MatrixLayout matrixLayout, TRANSPOSE transA, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta,
+            public static void Zgemv(MatrixLayout matrixLayout, TransCblas transA, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta,
                 System.IntPtr y, int incY)
             {
                 if (MKL.IsSupoprted)
@@ -520,7 +520,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zgeru(matrixLayout, m, n, alpha, x, incX, y, incY, a, ldA);
             }
 
-            public static void Chbmv(MatrixLayout matrixLayout, UPLO uplo, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta,
+            public static void Chbmv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta,
                 System.IntPtr y, int incY)
             {
                 if (MKL.IsSupoprted)
@@ -532,7 +532,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Chbmv(matrixLayout, uplo, n, k, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Zhbmv(MatrixLayout matrixLayout, UPLO uplo, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta,
+            public static void Zhbmv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta,
                 System.IntPtr y, int incY)
             {
                 if (MKL.IsSupoprted)
@@ -544,7 +544,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zhbmv(matrixLayout, uplo, n, k, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Chemm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr beta,
+            public static void Chemm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr beta,
                 System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -556,7 +556,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Chemm(matrixLayout, side, uplo, m, n, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Zhemm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr beta,
+            public static void Zhemm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr beta,
                 System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -568,7 +568,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zhemm(matrixLayout, side, uplo, m, n, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Chemv(MatrixLayout matrixLayout, UPLO uplo, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta, System.IntPtr y,
+            public static void Chemv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta, System.IntPtr y,
                 int incY)
             {
                 if (MKL.IsSupoprted)
@@ -580,7 +580,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Chemv(matrixLayout, uplo, n, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Zhemv(MatrixLayout matrixLayout, UPLO uplo, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta, System.IntPtr y,
+            public static void Zhemv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr x, int incX, System.IntPtr beta, System.IntPtr y,
                 int incY)
             {
                 if (MKL.IsSupoprted)
@@ -592,7 +592,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zhemv(matrixLayout, uplo, n, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Cher(MatrixLayout matrixLayout, UPLO uplo, int n, float alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
+            public static void Cher(MatrixLayout matrixLayout, UpLoCblas uplo, int n, float alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -603,7 +603,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Cher(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
             }
 
-            public static void Zher(MatrixLayout matrixLayout, UPLO uplo, int n, double alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
+            public static void Zher(MatrixLayout matrixLayout, UpLoCblas uplo, int n, double alpha, System.IntPtr x, int incX, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -614,7 +614,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zher(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
             }
 
-            public static void Cher2(MatrixLayout matrixLayout, UPLO uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr y, int incY, System.IntPtr a, int ldA)
+            public static void Cher2(MatrixLayout matrixLayout, UpLoCblas uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr y, int incY, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -625,7 +625,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Cher2(matrixLayout, uplo, n, alpha, x, incX, y, incY, a, ldA);
             }
 
-            public static void Zher2(MatrixLayout matrixLayout, UPLO uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr y, int incY, System.IntPtr a, int ldA)
+            public static void Zher2(MatrixLayout matrixLayout, UpLoCblas uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr y, int incY, System.IntPtr a, int ldA)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -636,7 +636,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zher2(matrixLayout, uplo, n, alpha, x, incX, y, incY, a, ldA);
             }
 
-            public static void Cher2k(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float beta,
+            public static void Cher2k(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, float beta,
                 System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -648,7 +648,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Cher2k(matrixLayout, uplo, trans, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Zher2k(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double beta,
+            public static void Zher2k(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, double beta,
                 System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -660,7 +660,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zher2k(matrixLayout, uplo, trans, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Cherk(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, float alpha, System.IntPtr a, int ldA, float beta, System.IntPtr c, int ldC)
+            public static void Cherk(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, float alpha, System.IntPtr a, int ldA, float beta, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -671,7 +671,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Cherk(matrixLayout, uplo, trans, n, k, alpha, a, ldA, beta, c, ldC);
             }
 
-            public static void Zherk(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, double alpha, System.IntPtr a, int ldA, double beta, System.IntPtr c, int ldC)
+            public static void Zherk(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, double alpha, System.IntPtr a, int ldA, double beta, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -682,7 +682,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zherk(matrixLayout, uplo, trans, n, k, alpha, a, ldA, beta, c, ldC);
             }
 
-            public static void Chpmv(MatrixLayout matrixLayout, UPLO uplo, int n, System.IntPtr alpha, System.IntPtr ap, System.IntPtr x, int incX, System.IntPtr beta, System.IntPtr y,
+            public static void Chpmv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, System.IntPtr alpha, System.IntPtr ap, System.IntPtr x, int incX, System.IntPtr beta, System.IntPtr y,
                 int incY)
             {
                 if (MKL.IsSupoprted)
@@ -694,7 +694,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Chpmv(matrixLayout, uplo, n, alpha, ap, x, incX, beta, y, incY);
             }
 
-            public static void Zhpmv(MatrixLayout matrixLayout, UPLO uplo, int n, System.IntPtr alpha, System.IntPtr ap, System.IntPtr x, int incX, System.IntPtr beta, System.IntPtr y,
+            public static void Zhpmv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, System.IntPtr alpha, System.IntPtr ap, System.IntPtr x, int incX, System.IntPtr beta, System.IntPtr y,
                 int incY)
             {
                 if (MKL.IsSupoprted)
@@ -706,7 +706,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zhpmv(matrixLayout, uplo, n, alpha, ap, x, incX, beta, y, incY);
             }
 
-            public static void Chpr(MatrixLayout matrixLayout, UPLO uplo, int n, float alpha, System.IntPtr x, int incX, System.IntPtr a)
+            public static void Chpr(MatrixLayout matrixLayout, UpLoCblas uplo, int n, float alpha, System.IntPtr x, int incX, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -717,7 +717,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Chpr(matrixLayout, uplo, n, alpha, x, incX, a);
             }
 
-            public static void Zhpr(MatrixLayout matrixLayout, UPLO uplo, int n, double alpha, System.IntPtr x, int incX, System.IntPtr a)
+            public static void Zhpr(MatrixLayout matrixLayout, UpLoCblas uplo, int n, double alpha, System.IntPtr x, int incX, System.IntPtr a)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -728,7 +728,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zhpr(matrixLayout, uplo, n, alpha, x, incX, a);
             }
 
-            public static void Chpr2(MatrixLayout matrixLayout, UPLO uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr y, int incY, System.IntPtr ap)
+            public static void Chpr2(MatrixLayout matrixLayout, UpLoCblas uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr y, int incY, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -739,7 +739,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Chpr2(matrixLayout, uplo, n, alpha, x, incX, y, incY, ap);
             }
 
-            public static void Zhpr2(MatrixLayout matrixLayout, UPLO uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr y, int incY, System.IntPtr ap)
+            public static void Zhpr2(MatrixLayout matrixLayout, UpLoCblas uplo, int n, System.IntPtr alpha, System.IntPtr x, int incX, System.IntPtr y, int incY, System.IntPtr ap)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -870,7 +870,7 @@ namespace Spreads
                 return OpenBLAS.CBLAS.Isamin(n, x, incX);
             }
 
-            public static void Ssbmv(MatrixLayout matrixLayout, UPLO uplo, int n, int k, float alpha, float* a, int ldA, float* x, int incX, float beta, float* y, int incY)
+            public static void Ssbmv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, int k, float alpha, float* a, int ldA, float* x, int incX, float beta, float* y, int incY)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -881,7 +881,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ssbmv(matrixLayout, uplo, n, k, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Dsbmv(MatrixLayout matrixLayout, UPLO uplo, int n, int k, double alpha, double* a, int ldA, double* x, int incX, double beta, double* y, int incY)
+            public static void Dsbmv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, int k, double alpha, double* a, int ldA, double* x, int incX, double beta, double* y, int incY)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -944,7 +944,7 @@ namespace Spreads
                 return OpenBLAS.CBLAS.Dsdot(n, x, incX, y, incY);
             }
 
-            public static void Sspmv(MatrixLayout matrixLayout, UPLO uplo, int n, float alpha, float* ap, float* x, int incX, float beta, float* y, int incY)
+            public static void Sspmv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, float alpha, float* ap, float* x, int incX, float beta, float* y, int incY)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -955,7 +955,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Sspmv(matrixLayout, uplo, n, alpha, ap, x, incX, beta, y, incY);
             }
 
-            public static void Dspmv(MatrixLayout matrixLayout, UPLO uplo, int n, double alpha, double* ap, double* x, int incX, double beta, double* y, int incY)
+            public static void Dspmv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, double alpha, double* ap, double* x, int incX, double beta, double* y, int incY)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -966,7 +966,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dspmv(matrixLayout, uplo, n, alpha, ap, x, incX, beta, y, incY);
             }
 
-            public static void Sspr(MatrixLayout matrixLayout, UPLO uplo, int n, float alpha, float* x, int incX, float* ap)
+            public static void Sspr(MatrixLayout matrixLayout, UpLoCblas uplo, int n, float alpha, float* x, int incX, float* ap)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -977,7 +977,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Sspr(matrixLayout, uplo, n, alpha, x, incX, ap);
             }
 
-            public static void Dspr(MatrixLayout matrixLayout, UPLO uplo, int n, double alpha, double* x, int incX, double* ap)
+            public static void Dspr(MatrixLayout matrixLayout, UpLoCblas uplo, int n, double alpha, double* x, int incX, double* ap)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -988,7 +988,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dspr(matrixLayout, uplo, n, alpha, x, incX, ap);
             }
 
-            public static void Sspr2(MatrixLayout matrixLayout, UPLO uplo, int n, float alpha, float* x, int incX, float* y, int incY, float* a)
+            public static void Sspr2(MatrixLayout matrixLayout, UpLoCblas uplo, int n, float alpha, float* x, int incX, float* y, int incY, float* a)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -999,7 +999,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Sspr2(matrixLayout, uplo, n, alpha, x, incX, y, incY, a);
             }
 
-            public static void Dspr2(MatrixLayout matrixLayout, UPLO uplo, int n, double alpha, double* x, int incX, double* y, int incY, double* a)
+            public static void Dspr2(MatrixLayout matrixLayout, UpLoCblas uplo, int n, double alpha, double* x, int incX, double* y, int incY, double* a)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1065,7 +1065,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zswap(n, x, incX, y, incY);
             }
 
-            public static void Ssymm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, int m, int n, float alpha, float* a, int ldA, float* b, int ldB, float beta, float* c, int ldC)
+            public static void Ssymm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, int m, int n, float alpha, float* a, int ldA, float* b, int ldB, float beta, float* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1076,7 +1076,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ssymm(matrixLayout, side, uplo, m, n, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Dsymm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, int m, int n, double alpha, double* a, int ldA, double* b, int ldB, double beta, double* c, int ldC)
+            public static void Dsymm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, int m, int n, double alpha, double* a, int ldA, double* b, int ldB, double beta, double* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1087,7 +1087,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dsymm(matrixLayout, side, uplo, m, n, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Csymm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr beta,
+            public static void Csymm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr beta,
                 System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -1099,7 +1099,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Csymm(matrixLayout, side, uplo, m, n, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Zsymm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr beta,
+            public static void Zsymm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB, System.IntPtr beta,
                 System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -1111,7 +1111,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zsymm(matrixLayout, side, uplo, m, n, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Ssymv(MatrixLayout matrixLayout, UPLO uplo, int n, float alpha, float* a, int ldA, float* x, int incX, float beta, float* y, int incY)
+            public static void Ssymv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, float alpha, float* a, int ldA, float* x, int incX, float beta, float* y, int incY)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1122,7 +1122,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ssymv(matrixLayout, uplo, n, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Dsymv(MatrixLayout matrixLayout, UPLO uplo, int n, double alpha, double* a, int ldA, double* x, int incX, double beta, double* y, int incY)
+            public static void Dsymv(MatrixLayout matrixLayout, UpLoCblas uplo, int n, double alpha, double* a, int ldA, double* x, int incX, double beta, double* y, int incY)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1133,7 +1133,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dsymv(matrixLayout, uplo, n, alpha, a, ldA, x, incX, beta, y, incY);
             }
 
-            public static void Ssyr(MatrixLayout matrixLayout, UPLO uplo, int n, float alpha, float* x, int incX, float* a, int ldA)
+            public static void Ssyr(MatrixLayout matrixLayout, UpLoCblas uplo, int n, float alpha, float* x, int incX, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1144,7 +1144,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ssyr(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
             }
 
-            public static void Dsyr(MatrixLayout matrixLayout, UPLO uplo, int n, double alpha, double* x, int incX, double* a, int ldA)
+            public static void Dsyr(MatrixLayout matrixLayout, UpLoCblas uplo, int n, double alpha, double* x, int incX, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1155,7 +1155,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dsyr(matrixLayout, uplo, n, alpha, x, incX, a, ldA);
             }
 
-            public static void Ssyr2(MatrixLayout matrixLayout, UPLO uplo, int n, float alpha, float* x, int incX, float* y, int incY, float* a, int ldA)
+            public static void Ssyr2(MatrixLayout matrixLayout, UpLoCblas uplo, int n, float alpha, float* x, int incX, float* y, int incY, float* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1166,7 +1166,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ssyr2(matrixLayout, uplo, n, alpha, x, incX, y, incY, a, ldA);
             }
 
-            public static void Dsyr2(MatrixLayout matrixLayout, UPLO uplo, int n, double alpha, double* x, int incX, double* y, int incY, double* a, int ldA)
+            public static void Dsyr2(MatrixLayout matrixLayout, UpLoCblas uplo, int n, double alpha, double* x, int incX, double* y, int incY, double* a, int ldA)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1177,7 +1177,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dsyr2(matrixLayout, uplo, n, alpha, x, incX, y, incY, a, ldA);
             }
 
-            public static void Ssyr2k(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, float alpha, float* a, int ldA, float* b, int ldB, float beta, float* c, int ldC)
+            public static void Ssyr2k(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, float alpha, float* a, int ldA, float* b, int ldB, float beta, float* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1188,7 +1188,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ssyr2k(matrixLayout, uplo, trans, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Dsyr2k(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, double alpha, double* a, int ldA, double* b, int ldB, double beta, double* c,
+            public static void Dsyr2k(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, double alpha, double* a, int ldA, double* b, int ldB, double beta, double* c,
                 int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -1200,7 +1200,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dsyr2k(matrixLayout, uplo, trans, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Csyr2k(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB,
+            public static void Csyr2k(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB,
                 System.IntPtr beta, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -1212,7 +1212,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Csyr2k(matrixLayout, uplo, trans, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Zsyr2k(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB,
+            public static void Zsyr2k(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b, int ldB,
                 System.IntPtr beta, System.IntPtr c, int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -1224,7 +1224,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zsyr2k(matrixLayout, uplo, trans, n, k, alpha, a, ldA, b, ldB, beta, c, ldC);
             }
 
-            public static void Ssyrk(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, float alpha, float* a, int ldA, float beta, float* c, int ldC)
+            public static void Ssyrk(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, float alpha, float* a, int ldA, float beta, float* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1235,7 +1235,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ssyrk(matrixLayout, uplo, trans, n, k, alpha, a, ldA, beta, c, ldC);
             }
 
-            public static void Dsyrk(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, double alpha, double* a, int ldA, double beta, double* c, int ldC)
+            public static void Dsyrk(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, double alpha, double* a, int ldA, double beta, double* c, int ldC)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1246,7 +1246,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dsyrk(matrixLayout, uplo, trans, n, k, alpha, a, ldA, beta, c, ldC);
             }
 
-            public static void Csyrk(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr beta, System.IntPtr c,
+            public static void Csyrk(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr beta, System.IntPtr c,
                 int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -1258,7 +1258,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Csyrk(matrixLayout, uplo, trans, n, k, alpha, a, ldA, beta, c, ldC);
             }
 
-            public static void Zsyrk(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr beta, System.IntPtr c,
+            public static void Zsyrk(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int n, int k, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr beta, System.IntPtr c,
                 int ldC)
             {
                 if (MKL.IsSupoprted)
@@ -1270,7 +1270,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Zsyrk(matrixLayout, uplo, trans, n, k, alpha, a, ldA, beta, c, ldC);
             }
 
-            public static void Stbmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, int k, float* a, int ldA, float* x, int incX)
+            public static void Stbmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, int k, float* a, int ldA, float* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1281,7 +1281,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Stbmv(matrixLayout, uplo, transA, diag, n, k, a, ldA, x, incX);
             }
 
-            public static void Dtbmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, int k, double* a, int ldA, double* x, int incX)
+            public static void Dtbmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, int k, double* a, int ldA, double* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1292,7 +1292,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dtbmv(matrixLayout, uplo, transA, diag, n, k, a, ldA, x, incX);
             }
 
-            public static void Ctbmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, int k, System.IntPtr a, int ldA, System.IntPtr x, int incX)
+            public static void Ctbmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, int k, System.IntPtr a, int ldA, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1303,7 +1303,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ctbmv(matrixLayout, uplo, transA, diag, n, k, a, ldA, x, incX);
             }
 
-            public static void Ztbmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, int k, System.IntPtr a, int ldA, System.IntPtr x, int incX)
+            public static void Ztbmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, int k, System.IntPtr a, int ldA, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1314,7 +1314,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ztbmv(matrixLayout, uplo, transA, diag, n, k, a, ldA, x, incX);
             }
 
-            public static void Stbsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, int k, float* a, int ldA, float* x, int incX)
+            public static void Stbsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, int k, float* a, int ldA, float* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1325,7 +1325,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Stbsv(matrixLayout, uplo, transA, diag, n, k, a, ldA, x, incX);
             }
 
-            public static void Dtbsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, int k, double* a, int ldA, double* x, int incX)
+            public static void Dtbsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, int k, double* a, int ldA, double* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1336,7 +1336,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dtbsv(matrixLayout, uplo, transA, diag, n, k, a, ldA, x, incX);
             }
 
-            public static void Ctbsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, int k, System.IntPtr a, int ldA, System.IntPtr x, int incX)
+            public static void Ctbsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, int k, System.IntPtr a, int ldA, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1347,7 +1347,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ctbsv(matrixLayout, uplo, transA, diag, n, k, a, ldA, x, incX);
             }
 
-            public static void Ztbsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, int k, System.IntPtr a, int ldA, System.IntPtr x, int incX)
+            public static void Ztbsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, int k, System.IntPtr a, int ldA, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1358,7 +1358,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ztbsv(matrixLayout, uplo, transA, diag, n, k, a, ldA, x, incX);
             }
 
-            public static void Stpmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, float* ap, float* x, int incX)
+            public static void Stpmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, float* ap, float* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1369,7 +1369,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Stpmv(matrixLayout, uplo, transA, diag, n, ap, x, incX);
             }
 
-            public static void Dtpmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, double* ap, double* x, int incX)
+            public static void Dtpmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, double* ap, double* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1380,7 +1380,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dtpmv(matrixLayout, uplo, transA, diag, n, ap, x, incX);
             }
 
-            public static void Ctpmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, System.IntPtr ap, System.IntPtr x, int incX)
+            public static void Ctpmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, System.IntPtr ap, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1391,7 +1391,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ctpmv(matrixLayout, uplo, transA, diag, n, ap, x, incX);
             }
 
-            public static void Ztpmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, System.IntPtr ap, System.IntPtr x, int incX)
+            public static void Ztpmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, System.IntPtr ap, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1402,7 +1402,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ztpmv(matrixLayout, uplo, transA, diag, n, ap, x, incX);
             }
 
-            public static void Stpsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, float* ap, float* x, int incX)
+            public static void Stpsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, float* ap, float* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1413,7 +1413,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Stpsv(matrixLayout, uplo, transA, diag, n, ap, x, incX);
             }
 
-            public static void Dtpsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, double* ap, double* x, int incX)
+            public static void Dtpsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, double* ap, double* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1424,7 +1424,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dtpsv(matrixLayout, uplo, transA, diag, n, ap, x, incX);
             }
 
-            public static void Ctpsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, System.IntPtr ap, System.IntPtr x, int incX)
+            public static void Ctpsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, System.IntPtr ap, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1435,7 +1435,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ctpsv(matrixLayout, uplo, transA, diag, n, ap, x, incX);
             }
 
-            public static void Ztpsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, System.IntPtr ap, System.IntPtr x, int incX)
+            public static void Ztpsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, System.IntPtr ap, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1446,7 +1446,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ztpsv(matrixLayout, uplo, transA, diag, n, ap, x, incX);
             }
 
-            public static void Strmm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, TRANSPOSE transA, DIAG diag, int m, int n, float alpha, float* a, int ldA, float* b, int ldB)
+            public static void Strmm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, TransCblas transA, DIAG diag, int m, int n, float alpha, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1457,7 +1457,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Strmm(matrixLayout, side, uplo, transA, diag, m, n, alpha, a, ldA, b, ldB);
             }
 
-            public static void Dtrmm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, TRANSPOSE transA, DIAG diag, int m, int n, double alpha, double* a, int ldA, double* b, int ldB)
+            public static void Dtrmm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, TransCblas transA, DIAG diag, int m, int n, double alpha, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1468,7 +1468,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dtrmm(matrixLayout, side, uplo, transA, diag, m, n, alpha, a, ldA, b, ldB);
             }
 
-            public static void Ctrmm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, TRANSPOSE transA, DIAG diag, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
+            public static void Ctrmm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, TransCblas transA, DIAG diag, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
                 int ldB)
             {
                 if (MKL.IsSupoprted)
@@ -1480,7 +1480,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ctrmm(matrixLayout, side, uplo, transA, diag, m, n, alpha, a, ldA, b, ldB);
             }
 
-            public static void Ztrmm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, TRANSPOSE transA, DIAG diag, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
+            public static void Ztrmm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, TransCblas transA, DIAG diag, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
                 int ldB)
             {
                 if (MKL.IsSupoprted)
@@ -1492,7 +1492,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ztrmm(matrixLayout, side, uplo, transA, diag, m, n, alpha, a, ldA, b, ldB);
             }
 
-            public static void Strmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, float* a, int ldA, float* x, int incX)
+            public static void Strmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, float* a, int ldA, float* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1503,7 +1503,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Strmv(matrixLayout, uplo, transA, diag, n, a, ldA, x, incX);
             }
 
-            public static void Dtrmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, double* a, int ldA, double* x, int incX)
+            public static void Dtrmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, double* a, int ldA, double* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1514,7 +1514,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dtrmv(matrixLayout, uplo, transA, diag, n, a, ldA, x, incX);
             }
 
-            public static void Ctrmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, System.IntPtr a, int ldA, System.IntPtr x, int incX)
+            public static void Ctrmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, System.IntPtr a, int ldA, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1525,7 +1525,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ctrmv(matrixLayout, uplo, transA, diag, n, a, ldA, x, incX);
             }
 
-            public static void Ztrmv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, System.IntPtr a, int ldA, System.IntPtr x, int incX)
+            public static void Ztrmv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, System.IntPtr a, int ldA, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1536,7 +1536,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ztrmv(matrixLayout, uplo, transA, diag, n, a, ldA, x, incX);
             }
 
-            public static void Strsm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, TRANSPOSE transA, DIAG diag, int m, int n, float alpha, float* a, int ldA, float* b, int ldB)
+            public static void Strsm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, TransCblas transA, DIAG diag, int m, int n, float alpha, float* a, int ldA, float* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1547,7 +1547,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Strsm(matrixLayout, side, uplo, transA, diag, m, n, alpha, a, ldA, b, ldB);
             }
 
-            public static void Dtrsm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, TRANSPOSE transA, DIAG diag, int m, int n, double alpha, double* a, int ldA, double* b, int ldB)
+            public static void Dtrsm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, TransCblas transA, DIAG diag, int m, int n, double alpha, double* a, int ldA, double* b, int ldB)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1558,7 +1558,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dtrsm(matrixLayout, side, uplo, transA, diag, m, n, alpha, a, ldA, b, ldB);
             }
 
-            public static void Ctrsm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, TRANSPOSE transA, DIAG diag, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
+            public static void Ctrsm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, TransCblas transA, DIAG diag, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
                 int ldB)
             {
                 if (MKL.IsSupoprted)
@@ -1570,7 +1570,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ctrsm(matrixLayout, side, uplo, transA, diag, m, n, alpha, a, ldA, b, ldB);
             }
 
-            public static void Ztrsm(MatrixLayout matrixLayout, SIDE side, UPLO uplo, TRANSPOSE transA, DIAG diag, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
+            public static void Ztrsm(MatrixLayout matrixLayout, SIDE side, UpLoCblas uplo, TransCblas transA, DIAG diag, int m, int n, System.IntPtr alpha, System.IntPtr a, int ldA, System.IntPtr b,
                 int ldB)
             {
                 if (MKL.IsSupoprted)
@@ -1582,7 +1582,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ztrsm(matrixLayout, side, uplo, transA, diag, m, n, alpha, a, ldA, b, ldB);
             }
 
-            public static void Strsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, float* a, int ldA, float* x, int incX)
+            public static void Strsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, float* a, int ldA, float* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1593,7 +1593,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Strsv(matrixLayout, uplo, transA, diag, n, a, ldA, x, incX);
             }
 
-            public static void Dtrsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, double* a, int ldA, double* x, int incX)
+            public static void Dtrsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, double* a, int ldA, double* x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1604,7 +1604,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Dtrsv(matrixLayout, uplo, transA, diag, n, a, ldA, x, incX);
             }
 
-            public static void Ctrsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, System.IntPtr a, int ldA, System.IntPtr x, int incX)
+            public static void Ctrsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, System.IntPtr a, int ldA, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {
@@ -1615,7 +1615,7 @@ namespace Spreads
                 OpenBLAS.CBLAS.Ctrsv(matrixLayout, uplo, transA, diag, n, a, ldA, x, incX);
             }
 
-            public static void Ztrsv(MatrixLayout matrixLayout, UPLO uplo, TRANSPOSE transA, DIAG diag, int n, System.IntPtr a, int ldA, System.IntPtr x, int incX)
+            public static void Ztrsv(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas transA, DIAG diag, int n, System.IntPtr a, int ldA, System.IntPtr x, int incX)
             {
                 if (MKL.IsSupoprted)
                 {

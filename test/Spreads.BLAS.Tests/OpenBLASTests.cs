@@ -48,7 +48,7 @@ namespace Spreads.Tests
             var c = new float[mnk * mnk];
             var hc = c.AsMemory().Pin();
             
-            CBLAS.Sgemm(LAYOUT.RowMajor, TRANSPOSE.NoTrans, TRANSPOSE.NoTrans,
+            CBLAS.Sgemm(LAYOUT.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
             
         }
@@ -109,7 +109,7 @@ namespace Spreads.Tests
                     {
                         for (int i = 0; i < count; i++)
                         {
-                            OpenBLAS.CBLAS.Sgemm(LAYOUT.RowMajor, TRANSPOSE.NoTrans, TRANSPOSE.NoTrans,
+                            OpenBLAS.CBLAS.Sgemm(LAYOUT.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
                                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
                         }
                     }
@@ -118,7 +118,7 @@ namespace Spreads.Tests
                     {
                         for (int i = 0; i < count; i++)
                         {
-                            MKL.CBLAS.Sgemm(LAYOUT.RowMajor, TRANSPOSE.NoTrans, TRANSPOSE.NoTrans,
+                            MKL.CBLAS.Sgemm(LAYOUT.RowMajor, TransCblas.NoTrans, TransCblas.NoTrans,
                                 mnk, mnk, mnk, alpha: 1f, (float*) h.Pointer, mnk, (float*) h.Pointer, mnk, beta: 0, (float*) hc.Pointer, mnk);
                         }
                     }

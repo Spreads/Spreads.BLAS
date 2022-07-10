@@ -10,6 +10,8 @@ namespace Spreads.Native
 {
     public static unsafe partial class MKL
     {
+        private const string LibName = "mkl_rt";
+        
         // TODO Rename IsAvailable
         public static bool IsSupoprted = Init();
 

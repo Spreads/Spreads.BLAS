@@ -102,7 +102,7 @@ namespace Spreads.Tests.LinAlg
                             for (int i = 0; i < count; i++)
                             {
                                 var data = Data;
-                                CBLAS.Dgemm(LAYOUT.RowMajor, TRANSPOSE.Trans, TRANSPOSE.NoTrans, Columns, Columns, Rows, alpha: 1.0,
+                                CBLAS.Dgemm(LAYOUT.RowMajor, TransCblas.Trans, TransCblas.NoTrans, Columns, Columns, Rows, alpha: 1.0,
                                     data, Columns,
                                     data, Columns,
                                     beta: 0.0,
@@ -116,7 +116,7 @@ namespace Spreads.Tests.LinAlg
                             for (int i = 0; i < count; i++)
                             {
                                 var data = Data;
-                                CBLAS.Dsyrk(LAYOUT.RowMajor, UPLO.Upper, TRANSPOSE.Trans, Columns, Rows, 1.0,
+                                CBLAS.Dsyrk(LAYOUT.RowMajor, UpLoCblas.Upper, TransCblas.Trans, Columns, Rows, 1.0,
                                     data, Columns, 0.0, xxN, Columns);
                             }
                         }

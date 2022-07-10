@@ -3,6 +3,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Spreads.Native;
 
@@ -10,7 +12,18 @@ namespace Spreads
 {
     public static partial class BLAS
     {
-        public static readonly bool IsUsingMKL = BLASSettings.UseMKLIfAvailable && MKL.IsSupoprted;
+        /// <summary>
+        /// If both MKL and OpenBlas are available then prefer MKL.
+        /// </summary>
+        public static bool MKLIsPreferred = true;
+        
+        /// <summary>
+        /// Require MKL. Calling a shared method will throw even if OpenBlas is available and could perform the required call. 
+        /// </summary>
+        public static bool RequireMkl = true;
+        
+        public static readonly bool IsUsingMKL = MKLIsPreferred && MKL.IsSupoprted;
+        public static readonly bool IsUsingOpenBlas = !RequireMkl && !IsUsingMKL && OpenBLAS.IsSupoprted;
 
         /// <summary>
         /// Not thread-safe, should be set at application startup.
@@ -23,9 +36,9 @@ namespace Spreads
                 if (IsUsingMKL)
                     return MKL.MKL_GetMaxThreads();
 
-                if(OpenBLAS.IsSupoprted)
+                if (OpenBLAS.IsSupoprted)
                     return OpenBLAS.OpenblasGetNumThreads();
-                
+
                 throw new InvalidOperationException("No native library is available");
             }
 
@@ -36,15 +49,18 @@ namespace Spreads
                 if (IsUsingMKL)
                     MKL.MKL_SetNumThreads(nt);
 
-                if(OpenBLAS.IsSupoprted)
+                if (OpenBLAS.IsSupoprted)
                     OpenBLAS.OpenblasSetNumThreads(nt);
 
                 throw new InvalidOperationException("No native library is available");
             }
         }
 
+        // TODO Other static fields for high-level params
+        public static MatrixLayout RowMajor = MatrixLayout.RowMajor;
+            
         /// <summary>
-        /// Matrix layout parameter both for CBLAS and LAPACKE
+        /// Matrix layout parameter for CBLAS and LAPACKE.
         /// </summary>
         public enum MatrixLayout
         {
@@ -53,39 +69,173 @@ namespace Spreads
         }
 
         /// <summary>
-        /// Transpose parameter for CBLAS
+        /// Native transpose parameter for CBLAS.
         /// </summary>
-        public enum TRANSPOSE
+        public enum TransCblas
         {
             NoTrans = 111,
             Trans = 112,
             ConjTrans = 113,
+            [Obsolete("OpenBlas-only, use a cast (TransCblas)114 instead")]
             ConjNoTrans = 114
         }
 
         /// <summary>
-        /// Transpose parameter for LAPACKE
+        /// Native transpose parameter for LAPACKE.
         /// </summary>
-        [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 1)]
-        public struct TRANS
+        public enum TransLapack : sbyte
         {
-            public static readonly TRANS NoTrans = new TRANS((sbyte) 'N');
-            public static readonly TRANS Trans = new TRANS((sbyte) 'T');
-            public static readonly TRANS ConjTrans = new TRANS((sbyte) 'C');
+            NoTrans = (sbyte)'N',
+            Trans = (sbyte)'T',
+            ConjTrans = (sbyte)'C'
+        }
+
+        /// <summary>
+        /// Transpose parameter for CBLAS and LAPACKE.
+        /// </summary>
+        [DebuggerDisplay("{ToString()}")]
+        [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 1)]
+        public readonly struct Transpose
+        {
+            public static readonly Transpose NoTrans = new Transpose((sbyte)'N');
+            public static readonly Transpose Trans = new Transpose((sbyte)'T');
+            public static readonly Transpose ConjTrans = new Transpose((sbyte)'C');
 
             [FieldOffset(0)]
             private readonly sbyte _value;
 
-            private TRANS(sbyte value)
+            private Transpose(sbyte value)
             {
                 _value = value;
             }
+
+            public static implicit operator TransLapack(Transpose transpose) => (TransLapack)transpose._value;
+
+            public static implicit operator TransCblas(Transpose transpose)
+            {
+                if ((char)transpose._value == 'N' || (char)transpose._value == 'n')
+                    return TransCblas.NoTrans;
+
+                if ((char)transpose._value == 'T' || (char)transpose._value == 't')
+                    return TransCblas.Trans;
+
+                if ((char)transpose._value == 'C' || (char)transpose._value == 'c')
+                    return TransCblas.ConjTrans;
+
+                ThrowIndalidValue((char)transpose._value);
+                return default;
+            }
+
+            public static implicit operator Transpose(char transposeChar)
+            {
+                if (transposeChar == 'N' || transposeChar == 'n')
+                    return NoTrans;
+
+                if (transposeChar == 'T' || transposeChar == 't')
+                    return Trans;
+
+                if (transposeChar == 'C' || transposeChar == 'c')
+                    return ConjTrans;
+
+                ThrowIndalidValue(transposeChar);
+                return default;
+            }
+
+            public override string ToString()
+            {
+                switch ((char)_value)
+                {
+                    case 'N':
+                    case 'n':
+                        return nameof(NoTrans);
+                    case 'T':
+                    case 't':
+                        return nameof(Trans);
+                    case 'C':
+                    case 'c':
+                        return nameof(ConjTrans);
+                    default:
+                        return "<invalid>";
+                }
+            }
+
+            [MethodImpl(MethodImplOptions.NoInlining)]
+            private static void ThrowIndalidValue(char value) => throw new InvalidCastException($"Invalid transpose value {value}");
         }
 
-        public enum UPLO
+        public enum UpLoCblas
         {
             Upper = 121,
             Lower = 122
+        }
+        
+        public enum UpLoLapack : sbyte
+        {
+            Upper = (sbyte)'U',
+            Lower = (sbyte)'L'
+        }
+        
+        /// <summary>
+        /// Transpose parameter for CBLAS and LAPACKE.
+        /// </summary>
+        [DebuggerDisplay("{ToString()}")]
+        [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 1)]
+        public readonly struct UpLo
+        {
+            public static readonly UpLo Upper = new UpLo((sbyte)'U');
+            public static readonly UpLo Lower = new UpLo((sbyte)'L');
+
+            [FieldOffset(0)]
+            private readonly sbyte _value;
+
+            private UpLo(sbyte value)
+            {
+                _value = value;
+            }
+
+            public static implicit operator UpLoLapack(UpLo upLo) => (UpLoLapack)upLo._value;
+
+            public static implicit operator UpLoCblas(UpLo upLo)
+            {
+                if ((char)upLo._value == 'U' || (char)upLo._value == 'u')
+                    return UpLoCblas.Upper;
+
+                if ((char)upLo._value == 'L' || (char)upLo._value == 'l')
+                    return UpLoCblas.Lower;
+
+                ThrowIndalidValue((char)upLo._value);
+                return default;
+            }
+
+            public static implicit operator UpLo(char upLoChar)
+            {
+                if (upLoChar == 'U' || upLoChar == 'u')
+                    return Upper;
+
+                if (upLoChar == 'T' || upLoChar == 't')
+                    return Lower;
+
+                ThrowIndalidValue(upLoChar);
+                return default;
+            }
+
+            public override string ToString()
+            {
+                switch ((char)_value)
+                {
+                    case 'U':
+                    case 'u':
+                        return nameof(Upper);
+                    case 'L':
+                    case 'l':
+                        return nameof(Lower);
+                    default:
+                        return "<invalid>";
+                }
+            }
+
+            [MethodImpl(MethodImplOptions.NoInlining)]
+            private static void ThrowIndalidValue(char value) => throw new InvalidCastException($"Invalid UpLo value {value}");
         }
 
         public enum DIAG
