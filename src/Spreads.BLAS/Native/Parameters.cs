@@ -3,7 +3,16 @@
 namespace Spreads.Native
 {
     /// <summary>
-    /// Native transpose parameter for CBLAS.
+    /// Matrix layout parameter for MKL trans APIs.
+    /// </summary>
+    public enum MatrixLayoutChar : sbyte
+    {
+        RowMajor = (sbyte)'R',
+        ColMajor = (sbyte)'C'
+    }
+    
+    /// <summary>
+    /// Native transpose CBLAS parameter.
     /// </summary>
     public enum TransCblas
     {
@@ -14,9 +23,9 @@ namespace Spreads.Native
     }
 
     /// <summary>
-    /// Native transpose parameter for LAPACKE.
+    /// Native transpose char parameter .
     /// </summary>
-    public enum TransLapack : sbyte
+    public enum TransChar : sbyte
     {
         NoTrans = (sbyte)'N',
         Trans = (sbyte)'T',
@@ -25,7 +34,7 @@ namespace Spreads.Native
     }
     
     /// <summary>
-    /// Native UpLo parameter for CBLAS.
+    /// Native UpLo CBLAS parameter.
     /// </summary>
     public enum UpLoCblas
     {
@@ -34,9 +43,9 @@ namespace Spreads.Native
     }
         
     /// <summary>
-    /// Native UpLo parameter for LAPACKE.
+    /// Native UpLo char parameter.
     /// </summary>
-    public enum UpLoLapack : sbyte
+    public enum UpLoChar : sbyte
     {
         Upper = (sbyte)'U',
         Lower = (sbyte)'L'

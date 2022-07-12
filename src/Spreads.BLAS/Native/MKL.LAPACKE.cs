@@ -28,16 +28,16 @@ namespace Spreads.Native
             public static extern double DlangeWork(MatrixLayout matrixLayout, sbyte norm, int m, int n, double* a, int lda, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlansy")]
-            public static extern double Dlansy(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, double* a, int lda);
+            public static extern double Dlansy(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlansy_work")]
-            public static extern double DlansyWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, double* a, int lda, double* work);
+            public static extern double DlansyWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, double* a, int lda, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlantr")]
-            public static extern double Dlantr(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int m, int n, double* a, int lda);
+            public static extern double Dlantr(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int m, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlantr_work")]
-            public static extern double DlantrWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int m, int n, double* a, int lda, double* work);
+            public static extern double DlantrWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int m, int n, double* a, int lda, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlapy2")]
             public static extern double Dlapy2(double x, double y);
@@ -58,10 +58,10 @@ namespace Spreads.Native
             public static extern double ZlangeWork(MatrixLayout matrixLayout, sbyte norm, int m, int n, IntPtr a, int lda, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlanhe")]
-            public static extern double Zlanhe(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern double Zlanhe(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlanhe_work")]
-            public static extern double ZlanheWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, IntPtr a, int lda, double* work);
+            public static extern double ZlanheWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, IntPtr a, int lda, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlarcm")]
             public static extern int Zlarcm(MatrixLayout matrixLayout, int m, int n, double* a, int lda, IntPtr b, int ldb, IntPtr c, int ldc);
@@ -76,16 +76,16 @@ namespace Spreads.Native
             public static extern int ZlacrmWork(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, double* b, int ldb, IntPtr c, int ldc, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlansy")]
-            public static extern double Zlansy(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern double Zlansy(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlansy_work")]
-            public static extern double ZlansyWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, IntPtr a, int lda, double* work);
+            public static extern double ZlansyWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, IntPtr a, int lda, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlantr")]
-            public static extern double Zlantr(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int m, int n, IntPtr a, int lda);
+            public static extern double Zlantr(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int m, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlantr_work")]
-            public static extern double ZlantrWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int m, int n, IntPtr a, int lda, double* work);
+            public static extern double ZlantrWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int m, int n, IntPtr a, int lda, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clange")]
             public static extern float Clange(MatrixLayout matrixLayout, sbyte norm, int m, int n, IntPtr a, int lda);
@@ -94,10 +94,10 @@ namespace Spreads.Native
             public static extern float ClangeWork(MatrixLayout matrixLayout, sbyte norm, int m, int n, IntPtr a, int lda, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clanhe")]
-            public static extern float Clanhe(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern float Clanhe(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clanhe_work")]
-            public static extern float ClanheWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, IntPtr a, int lda, float* work);
+            public static extern float ClanheWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, IntPtr a, int lda, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clarcm")]
             public static extern int Clarcm(MatrixLayout matrixLayout, int m, int n, float* a, int lda, IntPtr b, int ldb, IntPtr c, int ldc);
@@ -112,16 +112,16 @@ namespace Spreads.Native
             public static extern int ClacrmWork(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, float* b, int ldb, IntPtr c, int ldc, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clansy")]
-            public static extern float Clansy(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern float Clansy(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clansy_work")]
-            public static extern float ClansyWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, IntPtr a, int lda, float* work);
+            public static extern float ClansyWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, IntPtr a, int lda, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clantr")]
-            public static extern float Clantr(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int m, int n, IntPtr a, int lda);
+            public static extern float Clantr(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int m, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clantr_work")]
-            public static extern float ClantrWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int m, int n, IntPtr a, int lda, float* work);
+            public static extern float ClantrWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int m, int n, IntPtr a, int lda, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slamch")]
             public static extern float Slamch(sbyte cmach);
@@ -136,16 +136,16 @@ namespace Spreads.Native
             public static extern float SlangeWork(MatrixLayout matrixLayout, sbyte norm, int m, int n, float* a, int lda, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slansy")]
-            public static extern float Slansy(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, float* a, int lda);
+            public static extern float Slansy(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slansy_work")]
-            public static extern float SlansyWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, int n, float* a, int lda, float* work);
+            public static extern float SlansyWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, int n, float* a, int lda, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slantr")]
-            public static extern float Slantr(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int m, int n, float* a, int lda);
+            public static extern float Slantr(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int m, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slantr_work")]
-            public static extern float SlantrWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int m, int n, float* a, int lda, float* work);
+            public static extern float SlantrWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int m, int n, float* a, int lda, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slapy2")]
             public static extern float Slapy2(float x, float y);
@@ -160,16 +160,16 @@ namespace Spreads.Native
             public static extern float Slapy3Work(float x, float y, float z);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cbbcsd")]
-            public static extern int Cbbcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, int m, int p, int q, float* theta, float* phi, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, float* b11d, float* b11e, float* b12d, float* b12e, float* b21d, float* b21e, float* b22d, float* b22e);
+            public static extern int Cbbcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, int m, int p, int q, float* theta, float* phi, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, float* b11d, float* b11e, float* b12d, float* b12e, float* b21d, float* b21e, float* b22d, float* b22e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cbbcsd_work")]
-            public static extern int CbbcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, int m, int p, int q, float* theta, float* phi, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, float* b11d, float* b11e, float* b12d, float* b12e, float* b21d, float* b21e, float* b22d, float* b22e, float* rwork, int lrwork);
+            public static extern int CbbcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, int m, int p, int q, float* theta, float* phi, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, float* b11d, float* b11e, float* b12d, float* b12e, float* b21d, float* b21e, float* b22d, float* b22e, float* rwork, int lrwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cbdsqr")]
-            public static extern int Cbdsqr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, IntPtr vt, int ldvt, IntPtr u, int ldu, IntPtr c, int ldc);
+            public static extern int Cbdsqr(MatrixLayout matrixLayout, UpLoChar uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, IntPtr vt, int ldvt, IntPtr u, int ldu, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cbdsqr_work")]
-            public static extern int CbdsqrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, IntPtr vt, int ldvt, IntPtr u, int ldu, IntPtr c, int ldc, float* work);
+            public static extern int CbdsqrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, IntPtr vt, int ldvt, IntPtr u, int ldu, IntPtr c, int ldc, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbbrd")]
             public static extern int Cgbbrd(MatrixLayout matrixLayout, sbyte vect, int m, int n, int ncc, int kl, int ku, IntPtr ab, int ldab, float* d, float* e, IntPtr q, int ldq, IntPtr pt, int ldpt, IntPtr c, int ldc);
@@ -196,16 +196,16 @@ namespace Spreads.Native
             public static extern int CgbequbWork(MatrixLayout matrixLayout, int m, int n, int kl, int ku, IntPtr ab, int ldab, float* r, float* c, float* rowcnd, float* colcnd, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbrfs")]
-            public static extern int Cgbrfs(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Cgbrfs(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbrfs_work")]
-            public static extern int CgbrfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CgbrfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbrfsx")]
-            public static extern int Cgbrfsx(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Cgbrfsx(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbrfsx_work")]
-            public static extern int CgbrfsxWork(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int CgbrfsxWork(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbsv")]
             public static extern int Cgbsv(MatrixLayout matrixLayout, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
@@ -214,16 +214,16 @@ namespace Spreads.Native
             public static extern int CgbsvWork(MatrixLayout matrixLayout, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbsvx")]
-            public static extern int Cgbsvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, float* rpivot);
+            public static extern int Cgbsvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, float* rpivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbsvx_work")]
-            public static extern int CgbsvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CgbsvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbsvxx")]
-            public static extern int Cgbsvxx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Cgbsvxx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbsvxx_work")]
-            public static extern int CgbsvxxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int CgbsvxxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbtrf")]
             public static extern int Cgbtrf(MatrixLayout matrixLayout, int m, int n, int kl, int ku, IntPtr ab, int ldab, int* ipiv);
@@ -232,10 +232,10 @@ namespace Spreads.Native
             public static extern int CgbtrfWork(MatrixLayout matrixLayout, int m, int n, int kl, int ku, IntPtr ab, int ldab, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbtrs")]
-            public static extern int Cgbtrs(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
+            public static extern int Cgbtrs(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgbtrs_work")]
-            public static extern int CgbtrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
+            public static extern int CgbtrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgebak")]
             public static extern int Cgebak(MatrixLayout matrixLayout, sbyte job, sbyte side, int n, int ilo, int ihi, float* scale, int m, IntPtr v, int ldv);
@@ -322,10 +322,10 @@ namespace Spreads.Native
             public static extern int CgelqfWork(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgels")]
-            public static extern int Cgels(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Cgels(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgels_work")]
-            public static extern int CgelsWork(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int CgelsWork(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgelsd")]
             public static extern int Cgelsd(MatrixLayout matrixLayout, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, float* s, float rcond, int* rank);
@@ -346,10 +346,10 @@ namespace Spreads.Native
             public static extern int CgelsyWork(MatrixLayout matrixLayout, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, int* jpvt, float rcond, int* rank, IntPtr work, int lwork, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgemqrt")]
-            public static extern int Cgemqrt(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc);
+            public static extern int Cgemqrt(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgemqrt_work")]
-            public static extern int CgemqrtWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc, IntPtr work);
+            public static extern int CgemqrtWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgeqlf")]
             public static extern int Cgeqlf(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau);
@@ -406,16 +406,16 @@ namespace Spreads.Native
             public static extern int CgeqrtWork(MatrixLayout matrixLayout, int m, int n, int nb, IntPtr a, int lda, IntPtr t, int ldt, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgerfs")]
-            public static extern int Cgerfs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Cgerfs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgerfs_work")]
-            public static extern int CgerfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CgerfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgerfsx")]
-            public static extern int Cgerfsx(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Cgerfsx(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgerfsx_work")]
-            public static extern int CgerfsxWork(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int CgerfsxWork(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgerqf")]
             public static extern int Cgerqf(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau);
@@ -454,16 +454,16 @@ namespace Spreads.Native
             public static extern int CgesvjWork(MatrixLayout matrixLayout, sbyte joba, sbyte jobu, sbyte jobv, int m, int n, IntPtr a, int lda, float* sva, int mv, IntPtr v, int ldv, IntPtr cwork, int lwork, float* rwork, int lrwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgesvx")]
-            public static extern int Cgesvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, float* rpivot);
+            public static extern int Cgesvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, float* rpivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgesvx_work")]
-            public static extern int CgesvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CgesvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgesvxx")]
-            public static extern int Cgesvxx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Cgesvxx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgesvxx_work")]
-            public static extern int CgesvxxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int CgesvxxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgetf2")]
             public static extern int Cgetf2(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, int* ipiv);
@@ -490,10 +490,10 @@ namespace Spreads.Native
             public static extern int CgetriWork(MatrixLayout matrixLayout, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgetrs")]
-            public static extern int Cgetrs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Cgetrs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgetrs_work")]
-            public static extern int CgetrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int CgetrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cggbak")]
             public static extern int Cggbak(MatrixLayout matrixLayout, sbyte job, sbyte side, int n, int ilo, int ihi, float* lscale, float* rscale, int m, IntPtr v, int ldv);
@@ -610,10 +610,10 @@ namespace Spreads.Native
             public static extern int CgtconWork(sbyte norm, int n, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, float anorm, float* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgtrfs")]
-            public static extern int Cgtrfs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Cgtrfs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgtrfs_work")]
-            public static extern int CgtrfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CgtrfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgtsv")]
             public static extern int Cgtsv(MatrixLayout matrixLayout, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr b, int ldb);
@@ -622,10 +622,10 @@ namespace Spreads.Native
             public static extern int CgtsvWork(MatrixLayout matrixLayout, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgtsvx")]
-            public static extern int Cgtsvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Cgtsvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgtsvx_work")]
-            public static extern int CgtsvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CgtsvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgttrf")]
             public static extern int Cgttrf(int n, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv);
@@ -634,214 +634,214 @@ namespace Spreads.Native
             public static extern int CgttrfWork(int n, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgttrs")]
-            public static extern int Cgttrs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, IntPtr b, int ldb);
+            public static extern int Cgttrs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgttrs_work")]
-            public static extern int CgttrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, IntPtr b, int ldb);
+            public static extern int CgttrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbev")]
-            public static extern int Chbev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz);
+            public static extern int Chbev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbev_work")]
-            public static extern int ChbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz, IntPtr work, float* rwork);
+            public static extern int ChbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbevd")]
-            public static extern int Chbevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz);
+            public static extern int Chbevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbevd_work")]
-            public static extern int ChbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ChbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbevx")]
-            public static extern int Chbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Chbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbevx_work")]
-            public static extern int ChbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, float* rwork, int* iwork, int* ifail);
+            public static extern int ChbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, float* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbgst")]
-            public static extern int Chbgst(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr x, int ldx);
+            public static extern int Chbgst(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr x, int ldx);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbgst_work")]
-            public static extern int ChbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr x, int ldx, IntPtr work, float* rwork);
+            public static extern int ChbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr x, int ldx, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbgv")]
-            public static extern int Chbgv(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, float* w, IntPtr z, int ldz);
+            public static extern int Chbgv(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbgv_work")]
-            public static extern int ChbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, float* w, IntPtr z, int ldz, IntPtr work, float* rwork);
+            public static extern int ChbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, float* w, IntPtr z, int ldz, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbgvd")]
-            public static extern int Chbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, float* w, IntPtr z, int ldz);
+            public static extern int Chbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbgvd_work")]
-            public static extern int ChbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ChbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbgvx")]
-            public static extern int Chbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Chbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbgvx_work")]
-            public static extern int ChbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, float* rwork, int* iwork, int* ifail);
+            public static extern int ChbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, float* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbtrd")]
-            public static extern int Chbtrd(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* d, float* e, IntPtr q, int ldq);
+            public static extern int Chbtrd(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* d, float* e, IntPtr q, int ldq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbtrd_work")]
-            public static extern int ChbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* d, float* e, IntPtr q, int ldq, IntPtr work);
+            public static extern int ChbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* d, float* e, IntPtr q, int ldq, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_checon")]
-            public static extern int Checon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, float anorm, float* rcond);
+            public static extern int Checon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_checon_work")]
-            public static extern int CheconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, float anorm, float* rcond, IntPtr work);
+            public static extern int CheconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, float anorm, float* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheequb")]
-            public static extern int Cheequb(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, float* s, float* scond, float* amax);
+            public static extern int Cheequb(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheequb_work")]
-            public static extern int CheequbWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, float* s, float* scond, float* amax, IntPtr work);
+            public static extern int CheequbWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, float* s, float* scond, float* amax, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheev")]
-            public static extern int Cheev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, float* w);
+            public static extern int Cheev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheev_work")]
-            public static extern int CheevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, float* w, IntPtr work, int lwork, float* rwork);
+            public static extern int CheevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, float* w, IntPtr work, int lwork, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevd")]
-            public static extern int Cheevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, float* w);
+            public static extern int Cheevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevd_work")]
-            public static extern int CheevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, float* w, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int CheevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, float* w, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevr")]
-            public static extern int Cheevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* isuppz);
+            public static extern int Cheevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* isuppz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevr_work")]
-            public static extern int CheevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* isuppz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int CheevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* isuppz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevx")]
-            public static extern int Cheevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Cheevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevx_work")]
-            public static extern int CheevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int* iwork, int* ifail);
+            public static extern int CheevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegst")]
-            public static extern int Chegst(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Chegst(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegst_work")]
-            public static extern int ChegstWork(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int ChegstWork(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegv")]
-            public static extern int Chegv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w);
+            public static extern int Chegv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegv_work")]
-            public static extern int ChegvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w, IntPtr work, int lwork, float* rwork);
+            public static extern int ChegvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w, IntPtr work, int lwork, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegvd")]
-            public static extern int Chegvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w);
+            public static extern int Chegvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegvd_work")]
-            public static extern int ChegvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ChegvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegvx")]
-            public static extern int Chegvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Chegvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegvx_work")]
-            public static extern int ChegvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int* iwork, int* ifail);
+            public static extern int ChegvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cherfs")]
-            public static extern int Cherfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Cherfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cherfs_work")]
-            public static extern int CherfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CherfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cherfsx")]
-            public static extern int Cherfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Cherfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cherfsx_work")]
-            public static extern int CherfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int CherfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesv")]
-            public static extern int Chesv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Chesv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesv_work")]
-            public static extern int ChesvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ChesvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesvx")]
-            public static extern int Chesvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Chesvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesvx_work")]
-            public static extern int ChesvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, int lwork, float* rwork);
+            public static extern int ChesvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, int lwork, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesvxx")]
-            public static extern int Chesvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Chesvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesvxx_work")]
-            public static extern int ChesvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int ChesvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheswapr")]
-            public static extern int Cheswapr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int i1, int i2);
+            public static extern int Cheswapr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheswapr_work")]
-            public static extern int CheswaprWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int i1, int i2);
+            public static extern int CheswaprWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrd")]
-            public static extern int Chetrd(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, float* d, float* e, IntPtr tau);
+            public static extern int Chetrd(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, float* d, float* e, IntPtr tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrd_work")]
-            public static extern int ChetrdWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, float* d, float* e, IntPtr tau, IntPtr work, int lwork);
+            public static extern int ChetrdWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, float* d, float* e, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf")]
-            public static extern int Chetrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Chetrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf_rook")]
-            public static extern int ChetrfRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int ChetrfRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf_rook_work")]
-            public static extern int ChetrfRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int ChetrfRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf_work")]
-            public static extern int ChetrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int ChetrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetri")]
-            public static extern int Chetri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Chetri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetri2")]
-            public static extern int Chetri2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Chetri2(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetri2_work")]
-            public static extern int Chetri2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int Chetri2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetri2x")]
-            public static extern int Chetri2x(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, int nb);
+            public static extern int Chetri2x(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetri2x_work")]
-            public static extern int Chetri2xWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int nb);
+            public static extern int Chetri2xWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetri_work")]
-            public static extern int ChetriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work);
+            public static extern int ChetriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs")]
-            public static extern int Chetrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Chetrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs2")]
-            public static extern int Chetrs2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Chetrs2(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs2_work")]
-            public static extern int Chetrs2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work);
+            public static extern int Chetrs2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs_rook")]
-            public static extern int ChetrsRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ChetrsRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs_rook_work")]
-            public static extern int ChetrsRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ChetrsRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs_work")]
-            public static extern int ChetrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ChetrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chfrk")]
-            public static extern int Chfrk(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, TransLapack trans, int n, int k, float alpha, IntPtr a, int lda, float beta, IntPtr c);
+            public static extern int Chfrk(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, TransChar trans, int n, int k, float alpha, IntPtr a, int lda, float beta, IntPtr c);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chfrk_work")]
-            public static extern int ChfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, TransLapack trans, int n, int k, float alpha, IntPtr a, int lda, float beta, IntPtr c);
+            public static extern int ChfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, TransChar trans, int n, int k, float alpha, IntPtr a, int lda, float beta, IntPtr c);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chgeqz")]
             public static extern int Chgeqz(MatrixLayout matrixLayout, sbyte job, sbyte compq, sbyte compz, int n, int ilo, int ihi, IntPtr h, int ldh, IntPtr t, int ldt, IntPtr alpha, IntPtr beta, IntPtr q, int ldq, IntPtr z, int ldz);
@@ -850,94 +850,94 @@ namespace Spreads.Native
             public static extern int ChgeqzWork(MatrixLayout matrixLayout, sbyte job, sbyte compq, sbyte compz, int n, int ilo, int ihi, IntPtr h, int ldh, IntPtr t, int ldt, IntPtr alpha, IntPtr beta, IntPtr q, int ldq, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpcon")]
-            public static extern int Chpcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, float anorm, float* rcond);
+            public static extern int Chpcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpcon_work")]
-            public static extern int ChpconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, float anorm, float* rcond, IntPtr work);
+            public static extern int ChpconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, float anorm, float* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpev")]
-            public static extern int Chpev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, float* w, IntPtr z, int ldz);
+            public static extern int Chpev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpev_work")]
-            public static extern int ChpevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, float* w, IntPtr z, int ldz, IntPtr work, float* rwork);
+            public static extern int ChpevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, float* w, IntPtr z, int ldz, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpevd")]
-            public static extern int Chpevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, float* w, IntPtr z, int ldz);
+            public static extern int Chpevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpevd_work")]
-            public static extern int ChpevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ChpevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpevx")]
-            public static extern int Chpevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Chpevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpevx_work")]
-            public static extern int ChpevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, float* rwork, int* iwork, int* ifail);
+            public static extern int ChpevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, float* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpgst")]
-            public static extern int Chpgst(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp);
+            public static extern int Chpgst(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, IntPtr ap, IntPtr bp);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpgst_work")]
-            public static extern int ChpgstWork(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp);
+            public static extern int ChpgstWork(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, IntPtr ap, IntPtr bp);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpgv")]
-            public static extern int Chpgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, float* w, IntPtr z, int ldz);
+            public static extern int Chpgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpgv_work")]
-            public static extern int ChpgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, float* w, IntPtr z, int ldz, IntPtr work, float* rwork);
+            public static extern int ChpgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, float* w, IntPtr z, int ldz, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpgvd")]
-            public static extern int Chpgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, float* w, IntPtr z, int ldz);
+            public static extern int Chpgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpgvd_work")]
-            public static extern int ChpgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ChpgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpgvx")]
-            public static extern int Chpgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Chpgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpgvx_work")]
-            public static extern int ChpgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, float* rwork, int* iwork, int* ifail);
+            public static extern int ChpgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, float* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chprfs")]
-            public static extern int Chprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Chprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chprfs_work")]
-            public static extern int ChprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int ChprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpsv")]
-            public static extern int Chpsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int Chpsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpsv_work")]
-            public static extern int ChpsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int ChpsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpsvx")]
-            public static extern int Chpsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Chpsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chpsvx_work")]
-            public static extern int ChpsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int ChpsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chptrd")]
-            public static extern int Chptrd(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, float* d, float* e, IntPtr tau);
+            public static extern int Chptrd(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, float* d, float* e, IntPtr tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chptrd_work")]
-            public static extern int ChptrdWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, float* d, float* e, IntPtr tau);
+            public static extern int ChptrdWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, float* d, float* e, IntPtr tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chptrf")]
-            public static extern int Chptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int Chptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chptrf_work")]
-            public static extern int ChptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int ChptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chptri")]
-            public static extern int Chptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int Chptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chptri_work")]
-            public static extern int ChptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, IntPtr work);
+            public static extern int ChptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chptrs")]
-            public static extern int Chptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int Chptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chptrs_work")]
-            public static extern int ChptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int ChptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chsein")]
             public static extern int Chsein(MatrixLayout matrixLayout, sbyte job, sbyte eigsrc, sbyte initv, int* select, int n, IntPtr h, int ldh, IntPtr w, IntPtr vl, int ldvl, IntPtr vr, int ldvr, int mm, int* m, int* ifaill, int* ifailr);
@@ -964,16 +964,16 @@ namespace Spreads.Native
             public static extern int Clacn2Work(int n, IntPtr v, IntPtr x, float* est, int* kase, int* isave);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clacp2")]
-            public static extern int Clacp2(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, float* a, int lda, IntPtr b, int ldb);
+            public static extern int Clacp2(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, float* a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clacp2_work")]
-            public static extern int Clacp2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, float* a, int lda, IntPtr b, int ldb);
+            public static extern int Clacp2Work(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, float* a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clacpy")]
-            public static extern int Clacpy(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Clacpy(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clacpy_work")]
-            public static extern int ClacpyWork(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int ClacpyWork(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clag2z")]
             public static extern int Clag2z(MatrixLayout matrixLayout, int m, int n, IntPtr sa, int ldsa, IntPtr a, int lda);
@@ -1012,10 +1012,10 @@ namespace Spreads.Native
             public static extern int ClapmtWork(MatrixLayout matrixLayout, int forwrd, int m, int n, IntPtr x, int ldx, int* k);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clarfb")]
-            public static extern int Clarfb(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc);
+            public static extern int Clarfb(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clarfb_work")]
-            public static extern int ClarfbWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc, IntPtr work, int ldwork);
+            public static extern int ClarfbWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc, IntPtr work, int ldwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clarfg")]
             public static extern int Clarfg(int n, IntPtr alpha, IntPtr x, int incx, IntPtr tau);
@@ -1048,10 +1048,10 @@ namespace Spreads.Native
             public static extern int ClasclWork(MatrixLayout matrixLayout, sbyte type, int kl, int ku, float cfrom, float cto, int m, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_claset")]
-            public static extern int Claset(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, ComplexFloat alpha, ComplexFloat beta, IntPtr a, int lda);
+            public static extern int Claset(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, ComplexFloat alpha, ComplexFloat beta, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_claset_work")]
-            public static extern int ClasetWork(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, ComplexFloat alpha, ComplexFloat beta, IntPtr a, int lda);
+            public static extern int ClasetWork(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, ComplexFloat alpha, ComplexFloat beta, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_claswp")]
             public static extern int Claswp(MatrixLayout matrixLayout, int n, IntPtr a, int lda, int k1, int k2, int* ipiv, int incx);
@@ -1066,82 +1066,82 @@ namespace Spreads.Native
             public static extern int ClatmsWork(MatrixLayout matrixLayout, int m, int n, sbyte dist, int* iseed, sbyte sym, float* d, int mode, float cond, float dmax, int kl, int ku, sbyte pack, IntPtr a, int lda, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clauum")]
-            public static extern int Clauum(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Clauum(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_clauum_work")]
-            public static extern int ClauumWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int ClauumWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbcon")]
-            public static extern int Cpbcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float anorm, float* rcond);
+            public static extern int Cpbcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbcon_work")]
-            public static extern int CpbconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float anorm, float* rcond, IntPtr work, float* rwork);
+            public static extern int CpbconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float anorm, float* rcond, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbequ")]
-            public static extern int Cpbequ(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* s, float* scond, float* amax);
+            public static extern int Cpbequ(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbequ_work")]
-            public static extern int CpbequWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* s, float* scond, float* amax);
+            public static extern int CpbequWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbrfs")]
-            public static extern int Cpbrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Cpbrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbrfs_work")]
-            public static extern int CpbrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CpbrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbstf")]
-            public static extern int Cpbstf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kb, IntPtr bb, int ldbb);
+            public static extern int Cpbstf(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kb, IntPtr bb, int ldbb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbstf_work")]
-            public static extern int CpbstfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kb, IntPtr bb, int ldbb);
+            public static extern int CpbstfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kb, IntPtr bb, int ldbb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbsv")]
-            public static extern int Cpbsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int Cpbsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbsv_work")]
-            public static extern int CpbsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int CpbsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbsvx")]
-            public static extern int Cpbsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Cpbsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbsvx_work")]
-            public static extern int CpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbtrf")]
-            public static extern int Cpbtrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab);
+            public static extern int Cpbtrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbtrf_work")]
-            public static extern int CpbtrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab);
+            public static extern int CpbtrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbtrs")]
-            public static extern int Cpbtrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int Cpbtrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpbtrs_work")]
-            public static extern int CpbtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int CpbtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpftrf")]
-            public static extern int Cpftrf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a);
+            public static extern int Cpftrf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpftrf_work")]
-            public static extern int CpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a);
+            public static extern int CpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpftri")]
-            public static extern int Cpftri(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a);
+            public static extern int Cpftri(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpftri_work")]
-            public static extern int CpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a);
+            public static extern int CpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpftrs")]
-            public static extern int Cpftrs(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, int nrhs, IntPtr a, IntPtr b, int ldb);
+            public static extern int Cpftrs(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, int nrhs, IntPtr a, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpftrs_work")]
-            public static extern int CpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, int nrhs, IntPtr a, IntPtr b, int ldb);
+            public static extern int CpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, int nrhs, IntPtr a, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpocon")]
-            public static extern int Cpocon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, float anorm, float* rcond);
+            public static extern int Cpocon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpocon_work")]
-            public static extern int CpoconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, float anorm, float* rcond, IntPtr work, float* rwork);
+            public static extern int CpoconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, float anorm, float* rcond, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpoequ")]
             public static extern int Cpoequ(MatrixLayout matrixLayout, int n, IntPtr a, int lda, float* s, float* scond, float* amax);
@@ -1156,112 +1156,112 @@ namespace Spreads.Native
             public static extern int CpoequbWork(MatrixLayout matrixLayout, int n, IntPtr a, int lda, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cporfs")]
-            public static extern int Cporfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Cporfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cporfs_work")]
-            public static extern int CporfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CporfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cporfsx")]
-            public static extern int Cporfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Cporfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cporfsx_work")]
-            public static extern int CporfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int CporfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cposv")]
-            public static extern int Cposv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Cposv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cposv_work")]
-            public static extern int CposvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int CposvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cposvx")]
-            public static extern int Cposvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Cposvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cposvx_work")]
-            public static extern int CposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cposvxx")]
-            public static extern int Cposvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Cposvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cposvxx_work")]
-            public static extern int CposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int CposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpotrf")]
-            public static extern int Cpotrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Cpotrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpotrf2")]
-            public static extern int Cpotrf2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Cpotrf2(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpotrf2_work")]
-            public static extern int Cpotrf2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Cpotrf2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpotrf_work")]
-            public static extern int CpotrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int CpotrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpotri")]
-            public static extern int Cpotri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Cpotri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpotri_work")]
-            public static extern int CpotriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int CpotriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpotrs")]
-            public static extern int Cpotrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Cpotrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpotrs_work")]
-            public static extern int CpotrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int CpotrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cppcon")]
-            public static extern int Cppcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, float anorm, float* rcond);
+            public static extern int Cppcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cppcon_work")]
-            public static extern int CppconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, float anorm, float* rcond, IntPtr work, float* rwork);
+            public static extern int CppconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, float anorm, float* rcond, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cppequ")]
-            public static extern int Cppequ(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, float* s, float* scond, float* amax);
+            public static extern int Cppequ(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cppequ_work")]
-            public static extern int CppequWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, float* s, float* scond, float* amax);
+            public static extern int CppequWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpprfs")]
-            public static extern int Cpprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Cpprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpprfs_work")]
-            public static extern int CpprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CpprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cppsv")]
-            public static extern int Cppsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int Cppsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cppsv_work")]
-            public static extern int CppsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int CppsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cppsvx")]
-            public static extern int Cppsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Cppsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cppsvx_work")]
-            public static extern int CppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpptrf")]
-            public static extern int Cpptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap);
+            public static extern int Cpptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpptrf_work")]
-            public static extern int CpptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap);
+            public static extern int CpptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpptri")]
-            public static extern int Cpptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap);
+            public static extern int Cpptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpptri_work")]
-            public static extern int CpptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap);
+            public static extern int CpptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpptrs")]
-            public static extern int Cpptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int Cpptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpptrs_work")]
-            public static extern int CpptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int CpptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpstrf")]
-            public static extern int Cpstrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* piv, int* rank, float tol);
+            public static extern int Cpstrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* piv, int* rank, float tol);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpstrf_work")]
-            public static extern int CpstrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* piv, int* rank, float tol, float* work);
+            public static extern int CpstrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* piv, int* rank, float tol, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cptcon")]
             public static extern int Cptcon(int n, float* d, IntPtr e, float anorm, float* rcond);
@@ -1276,10 +1276,10 @@ namespace Spreads.Native
             public static extern int CpteqrWork(MatrixLayout matrixLayout, sbyte compz, int n, float* d, float* e, IntPtr z, int ldz, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cptrfs")]
-            public static extern int Cptrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* d, IntPtr e, float* df, IntPtr ef, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Cptrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* d, IntPtr e, float* df, IntPtr ef, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cptrfs_work")]
-            public static extern int CptrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* d, IntPtr e, float* df, IntPtr ef, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CptrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* d, IntPtr e, float* df, IntPtr ef, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cptsv")]
             public static extern int Cptsv(MatrixLayout matrixLayout, int n, int nrhs, float* d, IntPtr e, IntPtr b, int ldb);
@@ -1300,52 +1300,52 @@ namespace Spreads.Native
             public static extern int CpttrfWork(int n, float* d, IntPtr e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpttrs")]
-            public static extern int Cpttrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* d, IntPtr e, IntPtr b, int ldb);
+            public static extern int Cpttrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* d, IntPtr e, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cpttrs_work")]
-            public static extern int CpttrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* d, IntPtr e, IntPtr b, int ldb);
+            public static extern int CpttrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* d, IntPtr e, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cspcon")]
-            public static extern int Cspcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, float anorm, float* rcond);
+            public static extern int Cspcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cspcon_work")]
-            public static extern int CspconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, float anorm, float* rcond, IntPtr work);
+            public static extern int CspconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, float anorm, float* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csprfs")]
-            public static extern int Csprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Csprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csprfs_work")]
-            public static extern int CsprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CsprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cspsv")]
-            public static extern int Cspsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int Cspsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cspsv_work")]
-            public static extern int CspsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int CspsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cspsvx")]
-            public static extern int Cspsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Cspsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cspsvx_work")]
-            public static extern int CspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csptrf")]
-            public static extern int Csptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int Csptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csptrf_work")]
-            public static extern int CsptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int CsptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csptri")]
-            public static extern int Csptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int Csptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csptri_work")]
-            public static extern int CsptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, IntPtr work);
+            public static extern int CsptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csptrs")]
-            public static extern int Csptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int Csptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csptrs_work")]
-            public static extern int CsptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int CsptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cstedc")]
             public static extern int Cstedc(MatrixLayout matrixLayout, sbyte compz, int n, float* d, float* e, IntPtr z, int ldz);
@@ -1378,160 +1378,160 @@ namespace Spreads.Native
             public static extern int CsteqrWork(MatrixLayout matrixLayout, sbyte compz, int n, float* d, float* e, IntPtr z, int ldz, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csycon")]
-            public static extern int Csycon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, float anorm, float* rcond);
+            public static extern int Csycon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csycon_work")]
-            public static extern int CsyconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, float anorm, float* rcond, IntPtr work);
+            public static extern int CsyconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, float anorm, float* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyconv")]
-            public static extern int Csyconv(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte way, int n, IntPtr a, int lda, int* ipiv, IntPtr e);
+            public static extern int Csyconv(MatrixLayout matrixLayout, UpLoChar uplo, sbyte way, int n, IntPtr a, int lda, int* ipiv, IntPtr e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyconv_work")]
-            public static extern int CsyconvWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte way, int n, IntPtr a, int lda, int* ipiv, IntPtr e);
+            public static extern int CsyconvWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte way, int n, IntPtr a, int lda, int* ipiv, IntPtr e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyequb")]
-            public static extern int Csyequb(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, float* s, float* scond, float* amax);
+            public static extern int Csyequb(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyequb_work")]
-            public static extern int CsyequbWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, float* s, float* scond, float* amax, IntPtr work);
+            public static extern int CsyequbWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, float* s, float* scond, float* amax, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyr")]
-            public static extern int Csyr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, ComplexFloat alpha, IntPtr x, int incx, IntPtr a, int lda);
+            public static extern int Csyr(MatrixLayout matrixLayout, UpLoChar uplo, int n, ComplexFloat alpha, IntPtr x, int incx, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyr_work")]
-            public static extern int CsyrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, ComplexFloat alpha, IntPtr x, int incx, IntPtr a, int lda);
+            public static extern int CsyrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, ComplexFloat alpha, IntPtr x, int incx, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyrfs")]
-            public static extern int Csyrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Csyrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyrfs_work")]
-            public static extern int CsyrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CsyrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyrfsx")]
-            public static extern int Csyrfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Csyrfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyrfsx_work")]
-            public static extern int CsyrfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int CsyrfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv")]
-            public static extern int Csysv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Csysv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv_rook")]
-            public static extern int CsysvRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int CsysvRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv_rook_work")]
-            public static extern int CsysvRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int CsysvRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv_work")]
-            public static extern int CsysvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int CsysvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysvx")]
-            public static extern int Csysvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Csysvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysvx_work")]
-            public static extern int CsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, int lwork, float* rwork);
+            public static extern int CsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* ferr, float* berr, IntPtr work, int lwork, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysvxx")]
-            public static extern int Csysvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Csysvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysvxx_work")]
-            public static extern int CsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
+            public static extern int CsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, float* s, IntPtr b, int ldb, IntPtr x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyswapr")]
-            public static extern int Csyswapr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int i1, int i2);
+            public static extern int Csyswapr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csyswapr_work")]
-            public static extern int CsyswaprWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int i1, int i2);
+            public static extern int CsyswaprWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf")]
-            public static extern int Csytrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Csytrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf_rook")]
-            public static extern int CsytrfRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int CsytrfRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf_rook_work")]
-            public static extern int CsytrfRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int CsytrfRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf_work")]
-            public static extern int CsytrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int CsytrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytri")]
-            public static extern int Csytri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Csytri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytri2")]
-            public static extern int Csytri2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Csytri2(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytri2_work")]
-            public static extern int Csytri2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int Csytri2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytri2x")]
-            public static extern int Csytri2x(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, int nb);
+            public static extern int Csytri2x(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytri2x_work")]
-            public static extern int Csytri2xWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int nb);
+            public static extern int Csytri2xWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytri_work")]
-            public static extern int CsytriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work);
+            public static extern int CsytriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs")]
-            public static extern int Csytrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Csytrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs2")]
-            public static extern int Csytrs2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Csytrs2(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs2_work")]
-            public static extern int Csytrs2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work);
+            public static extern int Csytrs2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs_rook")]
-            public static extern int CsytrsRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int CsytrsRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs_rook_work")]
-            public static extern int CsytrsRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int CsytrsRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs_work")]
-            public static extern int CsytrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int CsytrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctbcon")]
-            public static extern int Ctbcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, int kd, IntPtr ab, int ldab, float* rcond);
+            public static extern int Ctbcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, int kd, IntPtr ab, int ldab, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctbcon_work")]
-            public static extern int CtbconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, int kd, IntPtr ab, int ldab, float* rcond, IntPtr work, float* rwork);
+            public static extern int CtbconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, int kd, IntPtr ab, int ldab, float* rcond, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctbrfs")]
-            public static extern int Ctbrfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Ctbrfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctbrfs_work")]
-            public static extern int CtbrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CtbrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctbtrs")]
-            public static extern int Ctbtrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int Ctbtrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctbtrs_work")]
-            public static extern int CtbtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int CtbtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctfsm")]
-            public static extern int Ctfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoLapack uplo, TransLapack trans, sbyte diag, int m, int n, ComplexFloat alpha, IntPtr a, IntPtr b, int ldb);
+            public static extern int Ctfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoChar uplo, TransChar trans, sbyte diag, int m, int n, ComplexFloat alpha, IntPtr a, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctfsm_work")]
-            public static extern int CtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoLapack uplo, TransLapack trans, sbyte diag, int m, int n, ComplexFloat alpha, IntPtr a, IntPtr b, int ldb);
+            public static extern int CtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoChar uplo, TransChar trans, sbyte diag, int m, int n, ComplexFloat alpha, IntPtr a, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctftri")]
-            public static extern int Ctftri(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, sbyte diag, int n, IntPtr a);
+            public static extern int Ctftri(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, sbyte diag, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctftri_work")]
-            public static extern int CtftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, sbyte diag, int n, IntPtr a);
+            public static extern int CtftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, sbyte diag, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctfttp")]
-            public static extern int Ctfttp(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr arf, IntPtr ap);
+            public static extern int Ctfttp(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr arf, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctfttp_work")]
-            public static extern int CtfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr arf, IntPtr ap);
+            public static extern int CtfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr arf, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctfttr")]
-            public static extern int Ctfttr(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr arf, IntPtr a, int lda);
+            public static extern int Ctfttr(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr arf, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctfttr_work")]
-            public static extern int CtfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr arf, IntPtr a, int lda);
+            public static extern int CtfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr arf, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctgevc")]
             public static extern int Ctgevc(MatrixLayout matrixLayout, sbyte side, sbyte howmny, int* select, int n, IntPtr s, int lds, IntPtr p, int ldp, IntPtr vl, int ldvl, IntPtr vr, int ldvr, int mm, int* m);
@@ -1564,22 +1564,22 @@ namespace Spreads.Native
             public static extern int CtgsnaWork(MatrixLayout matrixLayout, sbyte job, sbyte howmny, int* select, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr vl, int ldvl, IntPtr vr, int ldvr, float* s, float* dif, int mm, int* m, IntPtr work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctgsyl")]
-            public static extern int Ctgsyl(MatrixLayout matrixLayout, TransLapack trans, int ijob, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, IntPtr d, int ldd, IntPtr e, int lde, IntPtr f, int ldf, float* scale, float* dif);
+            public static extern int Ctgsyl(MatrixLayout matrixLayout, TransChar trans, int ijob, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, IntPtr d, int ldd, IntPtr e, int lde, IntPtr f, int ldf, float* scale, float* dif);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctgsyl_work")]
-            public static extern int CtgsylWork(MatrixLayout matrixLayout, TransLapack trans, int ijob, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, IntPtr d, int ldd, IntPtr e, int lde, IntPtr f, int ldf, float* scale, float* dif, IntPtr work, int lwork, int* iwork);
+            public static extern int CtgsylWork(MatrixLayout matrixLayout, TransChar trans, int ijob, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, IntPtr d, int ldd, IntPtr e, int lde, IntPtr f, int ldf, float* scale, float* dif, IntPtr work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctpcon")]
-            public static extern int Ctpcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, IntPtr ap, float* rcond);
+            public static extern int Ctpcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, IntPtr ap, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctpcon_work")]
-            public static extern int CtpconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, IntPtr ap, float* rcond, IntPtr work, float* rwork);
+            public static extern int CtpconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, IntPtr ap, float* rcond, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctpmqrt")]
-            public static extern int Ctpmqrt(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Ctpmqrt(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctpmqrt_work")]
-            public static extern int CtpmqrtWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work);
+            public static extern int CtpmqrtWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctpqrt")]
             public static extern int Ctpqrt(MatrixLayout matrixLayout, int m, int n, int l, int nb, IntPtr a, int lda, IntPtr b, int ldb, IntPtr t, int ldt);
@@ -1594,46 +1594,46 @@ namespace Spreads.Native
             public static extern int CtpqrtWork(MatrixLayout matrixLayout, int m, int n, int l, int nb, IntPtr a, int lda, IntPtr b, int ldb, IntPtr t, int ldt, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctprfb")]
-            public static extern int Ctprfb(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, int l, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Ctprfb(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, int l, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctprfb_work")]
-            public static extern int CtprfbWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, int l, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int ldwork);
+            public static extern int CtprfbWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, int l, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int ldwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctprfs")]
-            public static extern int Ctprfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Ctprfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctprfs_work")]
-            public static extern int CtprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CtprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctptri")]
-            public static extern int Ctptri(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, IntPtr ap);
+            public static extern int Ctptri(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctptri_work")]
-            public static extern int CtptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, IntPtr ap);
+            public static extern int CtptriWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctptrs")]
-            public static extern int Ctptrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int Ctptrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctptrs_work")]
-            public static extern int CtptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int CtptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctpttf")]
-            public static extern int Ctpttf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr ap, IntPtr arf);
+            public static extern int Ctpttf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr ap, IntPtr arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctpttf_work")]
-            public static extern int CtpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr ap, IntPtr arf);
+            public static extern int CtpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr ap, IntPtr arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctpttr")]
-            public static extern int Ctpttr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, IntPtr a, int lda);
+            public static extern int Ctpttr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctpttr_work")]
-            public static extern int CtpttrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, IntPtr a, int lda);
+            public static extern int CtpttrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrcon")]
-            public static extern int Ctrcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, IntPtr a, int lda, float* rcond);
+            public static extern int Ctrcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, IntPtr a, int lda, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrcon_work")]
-            public static extern int CtrconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, IntPtr a, int lda, float* rcond, IntPtr work, float* rwork);
+            public static extern int CtrconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, IntPtr a, int lda, float* rcond, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrevc")]
             public static extern int Ctrevc(MatrixLayout matrixLayout, sbyte side, sbyte howmny, int* select, int n, IntPtr t, int ldt, IntPtr vl, int ldvl, IntPtr vr, int ldvr, int mm, int* m);
@@ -1648,10 +1648,10 @@ namespace Spreads.Native
             public static extern int CtrexcWork(MatrixLayout matrixLayout, sbyte compq, int n, IntPtr t, int ldt, IntPtr q, int ldq, int ifst, int ilst);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrrfs")]
-            public static extern int Ctrrfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
+            public static extern int Ctrrfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrrfs_work")]
-            public static extern int CtrrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
+            public static extern int CtrrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, float* ferr, float* berr, IntPtr work, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrsen")]
             public static extern int Ctrsen(MatrixLayout matrixLayout, sbyte job, sbyte compq, int* select, int n, IntPtr t, int ldt, IntPtr q, int ldq, IntPtr w, int* m, float* s, float* sep);
@@ -1672,28 +1672,28 @@ namespace Spreads.Native
             public static extern int CtrsylWork(MatrixLayout matrixLayout, sbyte trana, sbyte tranb, int isgn, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, float* scale);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrtri")]
-            public static extern int Ctrtri(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, IntPtr a, int lda);
+            public static extern int Ctrtri(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrtri_work")]
-            public static extern int CtrtriWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, IntPtr a, int lda);
+            public static extern int CtrtriWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrtrs")]
-            public static extern int Ctrtrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Ctrtrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrtrs_work")]
-            public static extern int CtrtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int CtrtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrttf")]
-            public static extern int Ctrttf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr arf);
+            public static extern int Ctrttf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrttf_work")]
-            public static extern int CtrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr arf);
+            public static extern int CtrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrttp")]
-            public static extern int Ctrttp(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr ap);
+            public static extern int Ctrttp(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctrttp_work")]
-            public static extern int CtrttpWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr ap);
+            public static extern int CtrttpWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ctzrzf")]
             public static extern int Ctzrzf(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau);
@@ -1702,13 +1702,13 @@ namespace Spreads.Native
             public static extern int CtzrzfWork(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunbdb")]
-            public static extern int Cunbdb(MatrixLayout matrixLayout, TransLapack trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, float* theta, float* phi, IntPtr taup1, IntPtr taup2, IntPtr tauq1, IntPtr tauq2);
+            public static extern int Cunbdb(MatrixLayout matrixLayout, TransChar trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, float* theta, float* phi, IntPtr taup1, IntPtr taup2, IntPtr tauq1, IntPtr tauq2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunbdb_work")]
-            public static extern int CunbdbWork(MatrixLayout matrixLayout, TransLapack trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, float* theta, float* phi, IntPtr taup1, IntPtr taup2, IntPtr tauq1, IntPtr tauq2, IntPtr work, int lwork);
+            public static extern int CunbdbWork(MatrixLayout matrixLayout, TransChar trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, float* theta, float* phi, IntPtr taup1, IntPtr taup2, IntPtr tauq1, IntPtr tauq2, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cuncsd")]
-            public static extern int Cuncsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, float* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t);
+            public static extern int Cuncsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, float* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cuncsd2by1")]
             public static extern int Cuncsd2by1(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x21, int ldx21, float* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t);
@@ -1717,7 +1717,7 @@ namespace Spreads.Native
             public static extern int Cuncsd2by1Work(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x21, int ldx21, float* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cuncsd_work")]
-            public static extern int CuncsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, float* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork);
+            public static extern int CuncsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, float* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cungbr")]
             public static extern int Cungbr(MatrixLayout matrixLayout, sbyte vect, int m, int n, int k, IntPtr a, int lda, IntPtr tau);
@@ -1756,94 +1756,94 @@ namespace Spreads.Native
             public static extern int CungrqWork(MatrixLayout matrixLayout, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cungtr")]
-            public static extern int Cungtr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tau);
+            public static extern int Cungtr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cungtr_work")]
-            public static extern int CungtrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
+            public static extern int CungtrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmbr")]
-            public static extern int Cunmbr(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Cunmbr(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmbr_work")]
-            public static extern int CunmbrWork(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CunmbrWork(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmhr")]
-            public static extern int Cunmhr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int ilo, int ihi, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Cunmhr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int ilo, int ihi, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmhr_work")]
-            public static extern int CunmhrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int ilo, int ihi, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CunmhrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int ilo, int ihi, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmlq")]
-            public static extern int Cunmlq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Cunmlq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmlq_work")]
-            public static extern int CunmlqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CunmlqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmql")]
-            public static extern int Cunmql(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Cunmql(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmql_work")]
-            public static extern int CunmqlWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CunmqlWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmqr")]
-            public static extern int Cunmqr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Cunmqr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmqr_work")]
-            public static extern int CunmqrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CunmqrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmrq")]
-            public static extern int Cunmrq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Cunmrq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmrq_work")]
-            public static extern int CunmrqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CunmrqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmrz")]
-            public static extern int Cunmrz(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Cunmrz(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmrz_work")]
-            public static extern int CunmrzWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CunmrzWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmtr")]
-            public static extern int Cunmtr(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Cunmtr(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cunmtr_work")]
-            public static extern int CunmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CunmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cupgtr")]
-            public static extern int Cupgtr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, IntPtr tau, IntPtr q, int ldq);
+            public static extern int Cupgtr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, IntPtr tau, IntPtr q, int ldq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cupgtr_work")]
-            public static extern int CupgtrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, IntPtr tau, IntPtr q, int ldq, IntPtr work);
+            public static extern int CupgtrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, IntPtr tau, IntPtr q, int ldq, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cupmtr")]
-            public static extern int Cupmtr(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, IntPtr ap, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Cupmtr(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, IntPtr ap, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cupmtr_work")]
-            public static extern int CupmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, IntPtr ap, IntPtr tau, IntPtr c, int ldc, IntPtr work);
+            public static extern int CupmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, IntPtr ap, IntPtr tau, IntPtr c, int ldc, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dbbcsd")]
-            public static extern int Dbbcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, int m, int p, int q, double* theta, double* phi, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t, double* v2t, int ldv2t, double* b11d, double* b11e, double* b12d, double* b12e, double* b21d, double* b21e, double* b22d, double* b22e);
+            public static extern int Dbbcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, int m, int p, int q, double* theta, double* phi, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t, double* v2t, int ldv2t, double* b11d, double* b11e, double* b12d, double* b12e, double* b21d, double* b21e, double* b22d, double* b22e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dbbcsd_work")]
-            public static extern int DbbcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, int m, int p, int q, double* theta, double* phi, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t, double* v2t, int ldv2t, double* b11d, double* b11e, double* b12d, double* b12e, double* b21d, double* b21e, double* b22d, double* b22e, double* work, int lwork);
+            public static extern int DbbcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, int m, int p, int q, double* theta, double* phi, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t, double* v2t, int ldv2t, double* b11d, double* b11e, double* b12d, double* b12e, double* b21d, double* b21e, double* b22d, double* b22e, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dbdsdc")]
-            public static extern int Dbdsdc(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte compq, int n, double* d, double* e, double* u, int ldu, double* vt, int ldvt, double* q, int* iq);
+            public static extern int Dbdsdc(MatrixLayout matrixLayout, UpLoChar uplo, sbyte compq, int n, double* d, double* e, double* u, int ldu, double* vt, int ldvt, double* q, int* iq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dbdsdc_work")]
-            public static extern int DbdsdcWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte compq, int n, double* d, double* e, double* u, int ldu, double* vt, int ldvt, double* q, int* iq, double* work, int* iwork);
+            public static extern int DbdsdcWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte compq, int n, double* d, double* e, double* u, int ldu, double* vt, int ldvt, double* q, int* iq, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dbdsqr")]
-            public static extern int Dbdsqr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, double* vt, int ldvt, double* u, int ldu, double* c, int ldc);
+            public static extern int Dbdsqr(MatrixLayout matrixLayout, UpLoChar uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, double* vt, int ldvt, double* u, int ldu, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dbdsqr_work")]
-            public static extern int DbdsqrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, double* vt, int ldvt, double* u, int ldu, double* c, int ldc, double* work);
+            public static extern int DbdsqrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, double* vt, int ldvt, double* u, int ldu, double* c, int ldc, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dbdsvdx")]
-            public static extern int Dbdsvdx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte jobz, sbyte range, int n, double* d, double* e, double vl, double vu, int il, int iu, int* ns, double* s, double* z, int ldz, int* superb);
+            public static extern int Dbdsvdx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte jobz, sbyte range, int n, double* d, double* e, double vl, double vu, int il, int iu, int* ns, double* s, double* z, int ldz, int* superb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dbdsvdx_work")]
-            public static extern int DbdsvdxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte jobz, sbyte range, int n, double* d, double* e, double vl, double vu, int il, int iu, int* ns, double* s, double* z, int ldz, double* work, int* iwork);
+            public static extern int DbdsvdxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte jobz, sbyte range, int n, double* d, double* e, double vl, double vu, int il, int iu, int* ns, double* s, double* z, int ldz, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ddisna")]
             public static extern int Ddisna(sbyte job, int m, int n, double* d, double* sep);
@@ -1876,16 +1876,16 @@ namespace Spreads.Native
             public static extern int DgbequbWork(MatrixLayout matrixLayout, int m, int n, int kl, int ku, double* ab, int ldab, double* r, double* c, double* rowcnd, double* colcnd, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbrfs")]
-            public static extern int Dgbrfs(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dgbrfs(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbrfs_work")]
-            public static extern int DgbrfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DgbrfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbrfsx")]
-            public static extern int Dgbrfsx(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Dgbrfsx(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbrfsx_work")]
-            public static extern int DgbrfsxWork(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
+            public static extern int DgbrfsxWork(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbsv")]
             public static extern int Dgbsv(MatrixLayout matrixLayout, int n, int kl, int ku, int nrhs, double* ab, int ldab, int* ipiv, double* b, int ldb);
@@ -1894,16 +1894,16 @@ namespace Spreads.Native
             public static extern int DgbsvWork(MatrixLayout matrixLayout, int n, int kl, int ku, int nrhs, double* ab, int ldab, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbsvx")]
-            public static extern int Dgbsvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* rpivot);
+            public static extern int Dgbsvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* rpivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbsvx_work")]
-            public static extern int DgbsvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DgbsvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbsvxx")]
-            public static extern int Dgbsvxx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Dgbsvxx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbsvxx_work")]
-            public static extern int DgbsvxxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
+            public static extern int DgbsvxxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, double* afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbtrf")]
             public static extern int Dgbtrf(MatrixLayout matrixLayout, int m, int n, int kl, int ku, double* ab, int ldab, int* ipiv);
@@ -1912,10 +1912,10 @@ namespace Spreads.Native
             public static extern int DgbtrfWork(MatrixLayout matrixLayout, int m, int n, int kl, int ku, double* ab, int ldab, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbtrs")]
-            public static extern int Dgbtrs(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, int* ipiv, double* b, int ldb);
+            public static extern int Dgbtrs(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgbtrs_work")]
-            public static extern int DgbtrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, int* ipiv, double* b, int ldb);
+            public static extern int DgbtrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, double* ab, int ldab, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgebak")]
             public static extern int Dgebak(MatrixLayout matrixLayout, sbyte job, sbyte side, int n, int ilo, int ihi, double* scale, int m, double* v, int ldv);
@@ -2002,10 +2002,10 @@ namespace Spreads.Native
             public static extern int DgelqfWork(MatrixLayout matrixLayout, int m, int n, double* a, int lda, double* tau, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgels")]
-            public static extern int Dgels(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, double* a, int lda, double* b, int ldb);
+            public static extern int Dgels(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgels_work")]
-            public static extern int DgelsWork(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, double* a, int lda, double* b, int ldb, double* work, int lwork);
+            public static extern int DgelsWork(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, double* a, int lda, double* b, int ldb, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgelsd")]
             public static extern int Dgelsd(MatrixLayout matrixLayout, int m, int n, int nrhs, double* a, int lda, double* b, int ldb, double* s, double rcond, int* rank);
@@ -2026,10 +2026,10 @@ namespace Spreads.Native
             public static extern int DgelsyWork(MatrixLayout matrixLayout, int m, int n, int nrhs, double* a, int lda, double* b, int ldb, int* jpvt, double rcond, int* rank, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgemqrt")]
-            public static extern int Dgemqrt(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int nb, double* v, int ldv, double* t, int ldt, double* c, int ldc);
+            public static extern int Dgemqrt(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int nb, double* v, int ldv, double* t, int ldt, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgemqrt_work")]
-            public static extern int DgemqrtWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int nb, double* v, int ldv, double* t, int ldt, double* c, int ldc, double* work);
+            public static extern int DgemqrtWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int nb, double* v, int ldv, double* t, int ldt, double* c, int ldc, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgeqlf")]
             public static extern int Dgeqlf(MatrixLayout matrixLayout, int m, int n, double* a, int lda, double* tau);
@@ -2086,16 +2086,16 @@ namespace Spreads.Native
             public static extern int DgeqrtWork(MatrixLayout matrixLayout, int m, int n, int nb, double* a, int lda, double* t, int ldt, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgerfs")]
-            public static extern int Dgerfs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dgerfs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgerfs_work")]
-            public static extern int DgerfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DgerfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgerfsx")]
-            public static extern int Dgerfsx(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Dgerfsx(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgerfsx_work")]
-            public static extern int DgerfsxWork(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
+            public static extern int DgerfsxWork(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgerqf")]
             public static extern int Dgerqf(MatrixLayout matrixLayout, int m, int n, double* a, int lda, double* tau);
@@ -2134,16 +2134,16 @@ namespace Spreads.Native
             public static extern int DgesvjWork(MatrixLayout matrixLayout, sbyte joba, sbyte jobu, sbyte jobv, int m, int n, double* a, int lda, double* sva, int mv, double* v, int ldv, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgesvx")]
-            public static extern int Dgesvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* rpivot);
+            public static extern int Dgesvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* rpivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgesvx_work")]
-            public static extern int DgesvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DgesvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgesvxx")]
-            public static extern int Dgesvxx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Dgesvxx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgesvxx_work")]
-            public static extern int DgesvxxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
+            public static extern int DgesvxxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgetf2")]
             public static extern int Dgetf2(MatrixLayout matrixLayout, int m, int n, double* a, int lda, int* ipiv);
@@ -2170,10 +2170,10 @@ namespace Spreads.Native
             public static extern int DgetriWork(MatrixLayout matrixLayout, int n, double* a, int lda, int* ipiv, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgetrs")]
-            public static extern int Dgetrs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int Dgetrs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgetrs_work")]
-            public static extern int DgetrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int DgetrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dggbak")]
             public static extern int Dggbak(MatrixLayout matrixLayout, sbyte job, sbyte side, int n, int ilo, int ihi, double* lscale, double* rscale, int m, double* v, int ldv);
@@ -2290,10 +2290,10 @@ namespace Spreads.Native
             public static extern int DgtconWork(sbyte norm, int n, double* dl, double* d, double* du, double* du2, int* ipiv, double anorm, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgtrfs")]
-            public static extern int Dgtrfs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, double* dl, double* d, double* du, double* dlf, double* df, double* duf, double* du2, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dgtrfs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, double* dl, double* d, double* du, double* dlf, double* df, double* duf, double* du2, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgtrfs_work")]
-            public static extern int DgtrfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, double* dl, double* d, double* du, double* dlf, double* df, double* duf, double* du2, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DgtrfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, double* dl, double* d, double* du, double* dlf, double* df, double* duf, double* du2, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgtsv")]
             public static extern int Dgtsv(MatrixLayout matrixLayout, int n, int nrhs, double* dl, double* d, double* du, double* b, int ldb);
@@ -2302,10 +2302,10 @@ namespace Spreads.Native
             public static extern int DgtsvWork(MatrixLayout matrixLayout, int n, int nrhs, double* dl, double* d, double* du, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgtsvx")]
-            public static extern int Dgtsvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, double* dl, double* d, double* du, double* dlf, double* df, double* duf, double* du2, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Dgtsvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, double* dl, double* d, double* du, double* dlf, double* df, double* duf, double* du2, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgtsvx_work")]
-            public static extern int DgtsvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, double* dl, double* d, double* du, double* dlf, double* df, double* duf, double* du2, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DgtsvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, double* dl, double* d, double* du, double* dlf, double* df, double* duf, double* du2, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgttrf")]
             public static extern int Dgttrf(int n, double* dl, double* d, double* du, double* du2, int* ipiv);
@@ -2314,10 +2314,10 @@ namespace Spreads.Native
             public static extern int DgttrfWork(int n, double* dl, double* d, double* du, double* du2, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgttrs")]
-            public static extern int Dgttrs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, double* dl, double* d, double* du, double* du2, int* ipiv, double* b, int ldb);
+            public static extern int Dgttrs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, double* dl, double* d, double* du, double* du2, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgttrs_work")]
-            public static extern int DgttrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, double* dl, double* d, double* du, double* du2, int* ipiv, double* b, int ldb);
+            public static extern int DgttrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, double* dl, double* d, double* du, double* du2, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dhgeqz")]
             public static extern int Dhgeqz(MatrixLayout matrixLayout, sbyte job, sbyte compq, sbyte compz, int n, int ilo, int ihi, double* h, int ldh, double* t, int ldt, double* alphar, double* alphai, double* beta, double* q, int ldq, double* z, int ldz);
@@ -2344,10 +2344,10 @@ namespace Spreads.Native
             public static extern int Dlacn2Work(int n, double* v, double* x, int* isgn, double* est, int* kase, int* isave);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlacpy")]
-            public static extern int Dlacpy(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, double* a, int lda, double* b, int ldb);
+            public static extern int Dlacpy(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlacpy_work")]
-            public static extern int DlacpyWork(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, double* a, int lda, double* b, int ldb);
+            public static extern int DlacpyWork(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlag2s")]
             public static extern int Dlag2s(MatrixLayout matrixLayout, int m, int n, double* a, int lda, float* sa, int ldsa);
@@ -2380,10 +2380,10 @@ namespace Spreads.Native
             public static extern int DlapmtWork(MatrixLayout matrixLayout, int forwrd, int m, int n, double* x, int ldx, int* k);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlarfb")]
-            public static extern int Dlarfb(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, double* v, int ldv, double* t, int ldt, double* c, int ldc);
+            public static extern int Dlarfb(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, double* v, int ldv, double* t, int ldt, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlarfb_work")]
-            public static extern int DlarfbWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, double* v, int ldv, double* t, int ldt, double* c, int ldc, double* work, int ldwork);
+            public static extern int DlarfbWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, double* v, int ldv, double* t, int ldt, double* c, int ldc, double* work, int ldwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlarfg")]
             public static extern int Dlarfg(int n, double* alpha, double* x, int incx, double* tau);
@@ -2428,10 +2428,10 @@ namespace Spreads.Native
             public static extern int DlasclWork(MatrixLayout matrixLayout, sbyte type, int kl, int ku, double cfrom, double cto, int m, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlaset")]
-            public static extern int Dlaset(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, double alpha, double beta, double* a, int lda);
+            public static extern int Dlaset(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, double alpha, double beta, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlaset_work")]
-            public static extern int DlasetWork(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, double alpha, double beta, double* a, int lda);
+            public static extern int DlasetWork(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, double alpha, double beta, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlasrt")]
             public static extern int Dlasrt(sbyte id, int n, double* d);
@@ -2452,31 +2452,31 @@ namespace Spreads.Native
             public static extern int DlatmsWork(MatrixLayout matrixLayout, int m, int n, sbyte dist, int* iseed, sbyte sym, double* d, int mode, double cond, double dmax, int kl, int ku, sbyte pack, double* a, int lda, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlauum")]
-            public static extern int Dlauum(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda);
+            public static extern int Dlauum(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dlauum_work")]
-            public static extern int DlauumWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda);
+            public static extern int DlauumWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dopgtr")]
-            public static extern int Dopgtr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double* tau, double* q, int ldq);
+            public static extern int Dopgtr(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double* tau, double* q, int ldq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dopgtr_work")]
-            public static extern int DopgtrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double* tau, double* q, int ldq, double* work);
+            public static extern int DopgtrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double* tau, double* q, int ldq, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dopmtr")]
-            public static extern int Dopmtr(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, double* ap, double* tau, double* c, int ldc);
+            public static extern int Dopmtr(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, double* ap, double* tau, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dopmtr_work")]
-            public static extern int DopmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, double* ap, double* tau, double* c, int ldc, double* work);
+            public static extern int DopmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, double* ap, double* tau, double* c, int ldc, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dorbdb")]
-            public static extern int Dorbdb(MatrixLayout matrixLayout, TransLapack trans, sbyte signs, int m, int p, int q, double* x11, int ldx11, double* x12, int ldx12, double* x21, int ldx21, double* x22, int ldx22, double* theta, double* phi, double* taup1, double* taup2, double* tauq1, double* tauq2);
+            public static extern int Dorbdb(MatrixLayout matrixLayout, TransChar trans, sbyte signs, int m, int p, int q, double* x11, int ldx11, double* x12, int ldx12, double* x21, int ldx21, double* x22, int ldx22, double* theta, double* phi, double* taup1, double* taup2, double* tauq1, double* tauq2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dorbdb_work")]
-            public static extern int DorbdbWork(MatrixLayout matrixLayout, TransLapack trans, sbyte signs, int m, int p, int q, double* x11, int ldx11, double* x12, int ldx12, double* x21, int ldx21, double* x22, int ldx22, double* theta, double* phi, double* taup1, double* taup2, double* tauq1, double* tauq2, double* work, int lwork);
+            public static extern int DorbdbWork(MatrixLayout matrixLayout, TransChar trans, sbyte signs, int m, int p, int q, double* x11, int ldx11, double* x12, int ldx12, double* x21, int ldx21, double* x22, int ldx22, double* theta, double* phi, double* taup1, double* taup2, double* tauq1, double* tauq2, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dorcsd")]
-            public static extern int Dorcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, sbyte signs, int m, int p, int q, double* x11, int ldx11, double* x12, int ldx12, double* x21, int ldx21, double* x22, int ldx22, double* theta, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t, double* v2t, int ldv2t);
+            public static extern int Dorcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, sbyte signs, int m, int p, int q, double* x11, int ldx11, double* x12, int ldx12, double* x21, int ldx21, double* x22, int ldx22, double* theta, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t, double* v2t, int ldv2t);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dorcsd2by1")]
             public static extern int Dorcsd2by1(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, int m, int p, int q, double* x11, int ldx11, double* x21, int ldx21, double* theta, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t);
@@ -2485,7 +2485,7 @@ namespace Spreads.Native
             public static extern int Dorcsd2by1Work(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, int m, int p, int q, double* x11, int ldx11, double* x21, int ldx21, double* theta, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t, double* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dorcsd_work")]
-            public static extern int DorcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, sbyte signs, int m, int p, int q, double* x11, int ldx11, double* x12, int ldx12, double* x21, int ldx21, double* x22, int ldx22, double* theta, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t, double* v2t, int ldv2t, double* work, int lwork, int* iwork);
+            public static extern int DorcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, sbyte signs, int m, int p, int q, double* x11, int ldx11, double* x12, int ldx12, double* x21, int ldx21, double* x22, int ldx22, double* theta, double* u1, int ldu1, double* u2, int ldu2, double* v1t, int ldv1t, double* v2t, int ldv2t, double* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dorgbr")]
             public static extern int Dorgbr(MatrixLayout matrixLayout, sbyte vect, int m, int n, int k, double* a, int lda, double* tau);
@@ -2524,130 +2524,130 @@ namespace Spreads.Native
             public static extern int DorgrqWork(MatrixLayout matrixLayout, int m, int n, int k, double* a, int lda, double* tau, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dorgtr")]
-            public static extern int Dorgtr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* tau);
+            public static extern int Dorgtr(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dorgtr_work")]
-            public static extern int DorgtrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* tau, double* work, int lwork);
+            public static extern int DorgtrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* tau, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormbr")]
-            public static extern int Dormbr(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
+            public static extern int Dormbr(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormbr_work")]
-            public static extern int DormbrWork(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
+            public static extern int DormbrWork(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormhr")]
-            public static extern int Dormhr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int ilo, int ihi, double* a, int lda, double* tau, double* c, int ldc);
+            public static extern int Dormhr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int ilo, int ihi, double* a, int lda, double* tau, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormhr_work")]
-            public static extern int DormhrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int ilo, int ihi, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
+            public static extern int DormhrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int ilo, int ihi, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormlq")]
-            public static extern int Dormlq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
+            public static extern int Dormlq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormlq_work")]
-            public static extern int DormlqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
+            public static extern int DormlqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormql")]
-            public static extern int Dormql(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
+            public static extern int Dormql(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormql_work")]
-            public static extern int DormqlWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
+            public static extern int DormqlWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormqr")]
-            public static extern int Dormqr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
+            public static extern int Dormqr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormqr_work")]
-            public static extern int DormqrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
+            public static extern int DormqrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormrq")]
-            public static extern int Dormrq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
+            public static extern int Dormrq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormrq_work")]
-            public static extern int DormrqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
+            public static extern int DormrqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormrz")]
-            public static extern int Dormrz(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, double* a, int lda, double* tau, double* c, int ldc);
+            public static extern int Dormrz(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, double* a, int lda, double* tau, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormrz_work")]
-            public static extern int DormrzWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
+            public static extern int DormrzWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormtr")]
-            public static extern int Dormtr(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, double* a, int lda, double* tau, double* c, int ldc);
+            public static extern int Dormtr(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, double* a, int lda, double* tau, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dormtr_work")]
-            public static extern int DormtrWork(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
+            public static extern int DormtrWork(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, double* a, int lda, double* tau, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbcon")]
-            public static extern int Dpbcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double anorm, double* rcond);
+            public static extern int Dpbcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, double* ab, int ldab, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbcon_work")]
-            public static extern int DpbconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double anorm, double* rcond, double* work, int* iwork);
+            public static extern int DpbconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, double* ab, int ldab, double anorm, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbequ")]
-            public static extern int Dpbequ(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* s, double* scond, double* amax);
+            public static extern int Dpbequ(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbequ_work")]
-            public static extern int DpbequWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* s, double* scond, double* amax);
+            public static extern int DpbequWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbrfs")]
-            public static extern int Dpbrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dpbrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbrfs_work")]
-            public static extern int DpbrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DpbrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbstf")]
-            public static extern int Dpbstf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kb, double* bb, int ldbb);
+            public static extern int Dpbstf(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kb, double* bb, int ldbb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbstf_work")]
-            public static extern int DpbstfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kb, double* bb, int ldbb);
+            public static extern int DpbstfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kb, double* bb, int ldbb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbsv")]
-            public static extern int Dpbsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
+            public static extern int Dpbsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbsv_work")]
-            public static extern int DpbsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
+            public static extern int DpbsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbsvx")]
-            public static extern int Dpbsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Dpbsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbsvx_work")]
-            public static extern int DpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int kd, int nrhs, double* ab, int ldab, double* afb, int ldafb, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbtrf")]
-            public static extern int Dpbtrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, double* ab, int ldab);
+            public static extern int Dpbtrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, double* ab, int ldab);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbtrf_work")]
-            public static extern int DpbtrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, double* ab, int ldab);
+            public static extern int DpbtrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, double* ab, int ldab);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbtrs")]
-            public static extern int Dpbtrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
+            public static extern int Dpbtrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpbtrs_work")]
-            public static extern int DpbtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
+            public static extern int DpbtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpftrf")]
-            public static extern int Dpftrf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* a);
+            public static extern int Dpftrf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpftrf_work")]
-            public static extern int DpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* a);
+            public static extern int DpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpftri")]
-            public static extern int Dpftri(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* a);
+            public static extern int Dpftri(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpftri_work")]
-            public static extern int DpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* a);
+            public static extern int DpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpftrs")]
-            public static extern int Dpftrs(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, int nrhs, double* a, double* b, int ldb);
+            public static extern int Dpftrs(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, int nrhs, double* a, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpftrs_work")]
-            public static extern int DpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, int nrhs, double* a, double* b, int ldb);
+            public static extern int DpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, int nrhs, double* a, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpocon")]
-            public static extern int Dpocon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double anorm, double* rcond);
+            public static extern int Dpocon(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpocon_work")]
-            public static extern int DpoconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double anorm, double* rcond, double* work, int* iwork);
+            public static extern int DpoconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double anorm, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpoequ")]
             public static extern int Dpoequ(MatrixLayout matrixLayout, int n, double* a, int lda, double* s, double* scond, double* amax);
@@ -2662,112 +2662,112 @@ namespace Spreads.Native
             public static extern int DpoequbWork(MatrixLayout matrixLayout, int n, double* a, int lda, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dporfs")]
-            public static extern int Dporfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dporfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dporfs_work")]
-            public static extern int DporfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DporfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dporfsx")]
-            public static extern int Dporfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Dporfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dporfsx_work")]
-            public static extern int DporfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
+            public static extern int DporfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dposv")]
-            public static extern int Dposv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* b, int ldb);
+            public static extern int Dposv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dposv_work")]
-            public static extern int DposvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* b, int ldb);
+            public static extern int DposvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dposvx")]
-            public static extern int Dposvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Dposvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dposvx_work")]
-            public static extern int DposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dposvxx")]
-            public static extern int Dposvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Dposvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dposvxx_work")]
-            public static extern int DposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
+            public static extern int DposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpotrf")]
-            public static extern int Dpotrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda);
+            public static extern int Dpotrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpotrf2")]
-            public static extern int Dpotrf2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda);
+            public static extern int Dpotrf2(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpotrf2_work")]
-            public static extern int Dpotrf2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda);
+            public static extern int Dpotrf2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpotrf_work")]
-            public static extern int DpotrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda);
+            public static extern int DpotrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpotri")]
-            public static extern int Dpotri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda);
+            public static extern int Dpotri(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpotri_work")]
-            public static extern int DpotriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda);
+            public static extern int DpotriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpotrs")]
-            public static extern int Dpotrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* b, int ldb);
+            public static extern int Dpotrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpotrs_work")]
-            public static extern int DpotrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* b, int ldb);
+            public static extern int DpotrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dppcon")]
-            public static extern int Dppcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double anorm, double* rcond);
+            public static extern int Dppcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dppcon_work")]
-            public static extern int DppconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double anorm, double* rcond, double* work, int* iwork);
+            public static extern int DppconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double anorm, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dppequ")]
-            public static extern int Dppequ(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double* s, double* scond, double* amax);
+            public static extern int Dppequ(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dppequ_work")]
-            public static extern int DppequWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double* s, double* scond, double* amax);
+            public static extern int DppequWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpprfs")]
-            public static extern int Dpprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, double* afp, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dpprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, double* afp, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpprfs_work")]
-            public static extern int DpprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, double* afp, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DpprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, double* afp, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dppsv")]
-            public static extern int Dppsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, double* b, int ldb);
+            public static extern int Dppsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dppsv_work")]
-            public static extern int DppsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, double* b, int ldb);
+            public static extern int DppsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dppsvx")]
-            public static extern int Dppsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* ap, double* afp, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Dppsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* ap, double* afp, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dppsvx_work")]
-            public static extern int DppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* ap, double* afp, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* ap, double* afp, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpptrf")]
-            public static extern int Dpptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap);
+            public static extern int Dpptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpptrf_work")]
-            public static extern int DpptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap);
+            public static extern int DpptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpptri")]
-            public static extern int Dpptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap);
+            public static extern int Dpptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpptri_work")]
-            public static extern int DpptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap);
+            public static extern int DpptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpptrs")]
-            public static extern int Dpptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, double* b, int ldb);
+            public static extern int Dpptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpptrs_work")]
-            public static extern int DpptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, double* b, int ldb);
+            public static extern int DpptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpstrf")]
-            public static extern int Dpstrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* piv, int* rank, double tol);
+            public static extern int Dpstrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* piv, int* rank, double tol);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dpstrf_work")]
-            public static extern int DpstrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* piv, int* rank, double tol, double* work);
+            public static extern int DpstrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* piv, int* rank, double tol, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dptcon")]
             public static extern int Dptcon(int n, double* d, double* e, double anorm, double* rcond);
@@ -2812,58 +2812,58 @@ namespace Spreads.Native
             public static extern int DpttrsWork(MatrixLayout matrixLayout, int n, int nrhs, double* d, double* e, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbev")]
-            public static extern int Dsbev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz);
+            public static extern int Dsbev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbev_work")]
-            public static extern int DsbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz, double* work);
+            public static extern int DsbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbevd")]
-            public static extern int Dsbevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz);
+            public static extern int Dsbevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbevd_work")]
-            public static extern int DsbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
+            public static extern int DsbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbevx")]
-            public static extern int Dsbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
+            public static extern int Dsbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbevx_work")]
-            public static extern int DsbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int* iwork, int* ifail);
+            public static extern int DsbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbgst")]
-            public static extern int Dsbgst(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* x, int ldx);
+            public static extern int Dsbgst(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* x, int ldx);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbgst_work")]
-            public static extern int DsbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* x, int ldx, double* work);
+            public static extern int DsbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* x, int ldx, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbgv")]
-            public static extern int Dsbgv(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldz);
+            public static extern int Dsbgv(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbgv_work")]
-            public static extern int DsbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldz, double* work);
+            public static extern int DsbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldz, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbgvd")]
-            public static extern int Dsbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldz);
+            public static extern int Dsbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbgvd_work")]
-            public static extern int DsbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
+            public static extern int DsbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbgvx")]
-            public static extern int Dsbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
+            public static extern int Dsbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbgvx_work")]
-            public static extern int DsbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int* iwork, int* ifail);
+            public static extern int DsbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int ka, int kb, double* ab, int ldab, double* bb, int ldbb, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbtrd")]
-            public static extern int Dsbtrd(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* d, double* e, double* q, int ldq);
+            public static extern int Dsbtrd(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* d, double* e, double* q, int ldq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbtrd_work")]
-            public static extern int DsbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* d, double* e, double* q, int ldq, double* work);
+            public static extern int DsbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* d, double* e, double* q, int ldq, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsfrk")]
-            public static extern int Dsfrk(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, TransLapack trans, int n, int k, double alpha, double* a, int lda, double beta, double* c);
+            public static extern int Dsfrk(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, TransChar trans, int n, int k, double alpha, double* a, int lda, double beta, double* c);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsfrk_work")]
-            public static extern int DsfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, TransLapack trans, int n, int k, double alpha, double* a, int lda, double beta, double* c);
+            public static extern int DsfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, TransChar trans, int n, int k, double alpha, double* a, int lda, double beta, double* c);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsgesv")]
             public static extern int Dsgesv(MatrixLayout matrixLayout, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* x, int ldx, int* iter);
@@ -2872,100 +2872,100 @@ namespace Spreads.Native
             public static extern int DsgesvWork(MatrixLayout matrixLayout, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* x, int ldx, double* work, float* swork, int* iter);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspcon")]
-            public static extern int Dspcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, int* ipiv, double anorm, double* rcond);
+            public static extern int Dspcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, int* ipiv, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspcon_work")]
-            public static extern int DspconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, int* ipiv, double anorm, double* rcond, double* work, int* iwork);
+            public static extern int DspconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, int* ipiv, double anorm, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspev")]
-            public static extern int Dspev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* ap, double* w, double* z, int ldz);
+            public static extern int Dspev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* ap, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspev_work")]
-            public static extern int DspevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* ap, double* w, double* z, int ldz, double* work);
+            public static extern int DspevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* ap, double* w, double* z, int ldz, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspevd")]
-            public static extern int Dspevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* ap, double* w, double* z, int ldz);
+            public static extern int Dspevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* ap, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspevd_work")]
-            public static extern int DspevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* ap, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
+            public static extern int DspevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* ap, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspevx")]
-            public static extern int Dspevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
+            public static extern int Dspevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspevx_work")]
-            public static extern int DspevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int* iwork, int* ifail);
+            public static extern int DspevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspgst")]
-            public static extern int Dspgst(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, double* ap, double* bp);
+            public static extern int Dspgst(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, double* ap, double* bp);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspgst_work")]
-            public static extern int DspgstWork(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, double* ap, double* bp);
+            public static extern int DspgstWork(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, double* ap, double* bp);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspgv")]
-            public static extern int Dspgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* ap, double* bp, double* w, double* z, int ldz);
+            public static extern int Dspgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* ap, double* bp, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspgv_work")]
-            public static extern int DspgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* ap, double* bp, double* w, double* z, int ldz, double* work);
+            public static extern int DspgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* ap, double* bp, double* w, double* z, int ldz, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspgvd")]
-            public static extern int Dspgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* ap, double* bp, double* w, double* z, int ldz);
+            public static extern int Dspgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* ap, double* bp, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspgvd_work")]
-            public static extern int DspgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* ap, double* bp, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
+            public static extern int DspgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* ap, double* bp, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspgvx")]
-            public static extern int Dspgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* ap, double* bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
+            public static extern int Dspgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* ap, double* bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspgvx_work")]
-            public static extern int DspgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* ap, double* bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int* iwork, int* ifail);
+            public static extern int DspgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* ap, double* bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsposv")]
-            public static extern int Dsposv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* b, int ldb, double* x, int ldx, int* iter);
+            public static extern int Dsposv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* b, int ldb, double* x, int ldx, int* iter);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsposv_work")]
-            public static extern int DsposvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* b, int ldb, double* x, int ldx, double* work, float* swork, int* iter);
+            public static extern int DsposvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* b, int ldb, double* x, int ldx, double* work, float* swork, int* iter);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsprfs")]
-            public static extern int Dsprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dsprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsprfs_work")]
-            public static extern int DsprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DsprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspsv")]
-            public static extern int Dspsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldb);
+            public static extern int Dspsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspsv_work")]
-            public static extern int DspsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldb);
+            public static extern int DspsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspsvx")]
-            public static extern int Dspsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Dspsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dspsvx_work")]
-            public static extern int DspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* ap, double* afp, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsptrd")]
-            public static extern int Dsptrd(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double* d, double* e, double* tau);
+            public static extern int Dsptrd(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double* d, double* e, double* tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsptrd_work")]
-            public static extern int DsptrdWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double* d, double* e, double* tau);
+            public static extern int DsptrdWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double* d, double* e, double* tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsptrf")]
-            public static extern int Dsptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, int* ipiv);
+            public static extern int Dsptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsptrf_work")]
-            public static extern int DsptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, int* ipiv);
+            public static extern int DsptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsptri")]
-            public static extern int Dsptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, int* ipiv);
+            public static extern int Dsptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsptri_work")]
-            public static extern int DsptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, int* ipiv, double* work);
+            public static extern int DsptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, int* ipiv, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsptrs")]
-            public static extern int Dsptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldb);
+            public static extern int Dsptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsptrs_work")]
-            public static extern int DsptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldb);
+            public static extern int DsptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* ap, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dstebz")]
             public static extern int Dstebz(sbyte range, sbyte order, int n, double vl, double vu, int il, int iu, double abstol, double* d, double* e, int* m, int* nsplit, double* w, int* iblock, int* isplit);
@@ -3034,208 +3034,208 @@ namespace Spreads.Native
             public static extern int DstevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, int n, double* d, double* e, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsycon")]
-            public static extern int Dsycon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv, double anorm, double* rcond);
+            public static extern int Dsycon(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsycon_work")]
-            public static extern int DsyconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv, double anorm, double* rcond, double* work, int* iwork);
+            public static extern int DsyconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv, double anorm, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyconv")]
-            public static extern int Dsyconv(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte way, int n, double* a, int lda, int* ipiv, double* e);
+            public static extern int Dsyconv(MatrixLayout matrixLayout, UpLoChar uplo, sbyte way, int n, double* a, int lda, int* ipiv, double* e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyconv_work")]
-            public static extern int DsyconvWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte way, int n, double* a, int lda, int* ipiv, double* e);
+            public static extern int DsyconvWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte way, int n, double* a, int lda, int* ipiv, double* e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyequb")]
-            public static extern int Dsyequb(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* s, double* scond, double* amax);
+            public static extern int Dsyequb(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyequb_work")]
-            public static extern int DsyequbWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* s, double* scond, double* amax, double* work);
+            public static extern int DsyequbWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* s, double* scond, double* amax, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyev")]
-            public static extern int Dsyev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* w);
+            public static extern int Dsyev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyev_work")]
-            public static extern int DsyevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* w, double* work, int lwork);
+            public static extern int DsyevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* w, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevd")]
-            public static extern int Dsyevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* w);
+            public static extern int Dsyevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevd_work")]
-            public static extern int DsyevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* w, double* work, int lwork, int* iwork, int liwork);
+            public static extern int DsyevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* w, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevr")]
-            public static extern int Dsyevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* isuppz);
+            public static extern int Dsyevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* isuppz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevr_work")]
-            public static extern int DsyevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* isuppz, double* work, int lwork, int* iwork, int liwork);
+            public static extern int DsyevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* isuppz, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevx")]
-            public static extern int Dsyevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
+            public static extern int Dsyevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevx_work")]
-            public static extern int DsyevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int* ifail);
+            public static extern int DsyevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygst")]
-            public static extern int Dsygst(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb);
+            public static extern int Dsygst(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygst_work")]
-            public static extern int DsygstWork(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb);
+            public static extern int DsygstWork(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygv")]
-            public static extern int Dsygv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb, double* w);
+            public static extern int Dsygv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygv_work")]
-            public static extern int DsygvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb, double* w, double* work, int lwork);
+            public static extern int DsygvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb, double* w, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygvd")]
-            public static extern int Dsygvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb, double* w);
+            public static extern int Dsygvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygvd_work")]
-            public static extern int DsygvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb, double* w, double* work, int lwork, int* iwork, int liwork);
+            public static extern int DsygvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb, double* w, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygvx")]
-            public static extern int Dsygvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
+            public static extern int Dsygvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygvx_work")]
-            public static extern int DsygvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int* ifail);
+            public static extern int DsygvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyrfs")]
-            public static extern int Dsyrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dsyrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyrfs_work")]
-            public static extern int DsyrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DsyrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyrfsx")]
-            public static extern int Dsyrfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Dsyrfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyrfsx_work")]
-            public static extern int DsyrfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
+            public static extern int DsyrfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv")]
-            public static extern int Dsysv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int Dsysv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv_rook")]
-            public static extern int DsysvRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int DsysvRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv_rook_work")]
-            public static extern int DsysvRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work, int lwork);
+            public static extern int DsysvRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv_work")]
-            public static extern int DsysvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work, int lwork);
+            public static extern int DsysvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysvx")]
-            public static extern int Dsysvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Dsysvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysvx_work")]
-            public static extern int DsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int lwork, int* iwork);
+            public static extern int DsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, double* b, int ldb, double* x, int ldx, double* rcond, double* ferr, double* berr, double* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysvxx")]
-            public static extern int Dsysvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Dsysvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysvxx_work")]
-            public static extern int DsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
+            public static extern int DsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* af, int ldaf, int* ipiv, sbyte* equed, double* s, double* b, int ldb, double* x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyswapr")]
-            public static extern int Dsyswapr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int i1, int i2);
+            public static extern int Dsyswapr(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyswapr_work")]
-            public static extern int DsyswaprWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int i1, int i2);
+            public static extern int DsyswaprWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrd")]
-            public static extern int Dsytrd(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* d, double* e, double* tau);
+            public static extern int Dsytrd(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* d, double* e, double* tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrd_work")]
-            public static extern int DsytrdWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* d, double* e, double* tau, double* work, int lwork);
+            public static extern int DsytrdWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* d, double* e, double* tau, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf")]
-            public static extern int Dsytrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv);
+            public static extern int Dsytrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf_rook")]
-            public static extern int DsytrfRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv);
+            public static extern int DsytrfRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf_rook_work")]
-            public static extern int DsytrfRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv, double* work, int lwork);
+            public static extern int DsytrfRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf_work")]
-            public static extern int DsytrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv, double* work, int lwork);
+            public static extern int DsytrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytri")]
-            public static extern int Dsytri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv);
+            public static extern int Dsytri(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytri2")]
-            public static extern int Dsytri2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv);
+            public static extern int Dsytri2(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytri2_work")]
-            public static extern int Dsytri2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv, double* work, int lwork);
+            public static extern int Dsytri2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytri2x")]
-            public static extern int Dsytri2x(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv, int nb);
+            public static extern int Dsytri2x(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytri2x_work")]
-            public static extern int Dsytri2xWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv, double* work, int nb);
+            public static extern int Dsytri2xWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv, double* work, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytri_work")]
-            public static extern int DsytriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv, double* work);
+            public static extern int DsytriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs")]
-            public static extern int Dsytrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int Dsytrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs2")]
-            public static extern int Dsytrs2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int Dsytrs2(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs2_work")]
-            public static extern int Dsytrs2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work);
+            public static extern int Dsytrs2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs_rook")]
-            public static extern int DsytrsRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int DsytrsRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs_rook_work")]
-            public static extern int DsytrsRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int DsytrsRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs_work")]
-            public static extern int DsytrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int DsytrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtbcon")]
-            public static extern int Dtbcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, int kd, double* ab, int ldab, double* rcond);
+            public static extern int Dtbcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, int kd, double* ab, int ldab, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtbcon_work")]
-            public static extern int DtbconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, int kd, double* ab, int ldab, double* rcond, double* work, int* iwork);
+            public static extern int DtbconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, int kd, double* ab, int ldab, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtbrfs")]
-            public static extern int Dtbrfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dtbrfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtbrfs_work")]
-            public static extern int DtbrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DtbrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtbtrs")]
-            public static extern int Dtbtrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
+            public static extern int Dtbtrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtbtrs_work")]
-            public static extern int DtbtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
+            public static extern int DtbtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, double* ab, int ldab, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtfsm")]
-            public static extern int Dtfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoLapack uplo, TransLapack trans, sbyte diag, int m, int n, double alpha, double* a, double* b, int ldb);
+            public static extern int Dtfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoChar uplo, TransChar trans, sbyte diag, int m, int n, double alpha, double* a, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtfsm_work")]
-            public static extern int DtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoLapack uplo, TransLapack trans, sbyte diag, int m, int n, double alpha, double* a, double* b, int ldb);
+            public static extern int DtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoChar uplo, TransChar trans, sbyte diag, int m, int n, double alpha, double* a, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtftri")]
-            public static extern int Dtftri(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, sbyte diag, int n, double* a);
+            public static extern int Dtftri(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, sbyte diag, int n, double* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtftri_work")]
-            public static extern int DtftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, sbyte diag, int n, double* a);
+            public static extern int DtftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, sbyte diag, int n, double* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtfttp")]
-            public static extern int Dtfttp(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* arf, double* ap);
+            public static extern int Dtfttp(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* arf, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtfttp_work")]
-            public static extern int DtfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* arf, double* ap);
+            public static extern int DtfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* arf, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtfttr")]
-            public static extern int Dtfttr(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* arf, double* a, int lda);
+            public static extern int Dtfttr(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* arf, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtfttr_work")]
-            public static extern int DtfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* arf, double* a, int lda);
+            public static extern int DtfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* arf, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtgevc")]
             public static extern int Dtgevc(MatrixLayout matrixLayout, sbyte side, sbyte howmny, int* select, int n, double* s, int lds, double* p, int ldp, double* vl, int ldvl, double* vr, int ldvr, int mm, int* m);
@@ -3268,22 +3268,22 @@ namespace Spreads.Native
             public static extern int DtgsnaWork(MatrixLayout matrixLayout, sbyte job, sbyte howmny, int* select, int n, double* a, int lda, double* b, int ldb, double* vl, int ldvl, double* vr, int ldvr, double* s, double* dif, int mm, int* m, double* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtgsyl")]
-            public static extern int Dtgsyl(MatrixLayout matrixLayout, TransLapack trans, int ijob, int m, int n, double* a, int lda, double* b, int ldb, double* c, int ldc, double* d, int ldd, double* e, int lde, double* f, int ldf, double* scale, double* dif);
+            public static extern int Dtgsyl(MatrixLayout matrixLayout, TransChar trans, int ijob, int m, int n, double* a, int lda, double* b, int ldb, double* c, int ldc, double* d, int ldd, double* e, int lde, double* f, int ldf, double* scale, double* dif);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtgsyl_work")]
-            public static extern int DtgsylWork(MatrixLayout matrixLayout, TransLapack trans, int ijob, int m, int n, double* a, int lda, double* b, int ldb, double* c, int ldc, double* d, int ldd, double* e, int lde, double* f, int ldf, double* scale, double* dif, double* work, int lwork, int* iwork);
+            public static extern int DtgsylWork(MatrixLayout matrixLayout, TransChar trans, int ijob, int m, int n, double* a, int lda, double* b, int ldb, double* c, int ldc, double* d, int ldd, double* e, int lde, double* f, int ldf, double* scale, double* dif, double* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtpcon")]
-            public static extern int Dtpcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, double* ap, double* rcond);
+            public static extern int Dtpcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, double* ap, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtpcon_work")]
-            public static extern int DtpconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, double* ap, double* rcond, double* work, int* iwork);
+            public static extern int DtpconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, double* ap, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtpmqrt")]
-            public static extern int Dtpmqrt(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, int nb, double* v, int ldv, double* t, int ldt, double* a, int lda, double* b, int ldb);
+            public static extern int Dtpmqrt(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, int nb, double* v, int ldv, double* t, int ldt, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtpmqrt_work")]
-            public static extern int DtpmqrtWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, int nb, double* v, int ldv, double* t, int ldt, double* a, int lda, double* b, int ldb, double* work);
+            public static extern int DtpmqrtWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, int nb, double* v, int ldv, double* t, int ldt, double* a, int lda, double* b, int ldb, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtpqrt")]
             public static extern int Dtpqrt(MatrixLayout matrixLayout, int m, int n, int l, int nb, double* a, int lda, double* b, int ldb, double* t, int ldt);
@@ -3298,46 +3298,46 @@ namespace Spreads.Native
             public static extern int DtpqrtWork(MatrixLayout matrixLayout, int m, int n, int l, int nb, double* a, int lda, double* b, int ldb, double* t, int ldt, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtprfb")]
-            public static extern int Dtprfb(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, int l, double* v, int ldv, double* t, int ldt, double* a, int lda, double* b, int ldb);
+            public static extern int Dtprfb(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, int l, double* v, int ldv, double* t, int ldt, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtprfb_work")]
-            public static extern int DtprfbWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, int l, double* v, int ldv, double* t, int ldt, double* a, int lda, double* b, int ldb, double* work, int ldwork);
+            public static extern int DtprfbWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, int l, double* v, int ldv, double* t, int ldt, double* a, int lda, double* b, int ldb, double* work, int ldwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtprfs")]
-            public static extern int Dtprfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dtprfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtprfs_work")]
-            public static extern int DtprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DtprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtptri")]
-            public static extern int Dtptri(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, double* ap);
+            public static extern int Dtptri(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtptri_work")]
-            public static extern int DtptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, double* ap);
+            public static extern int DtptriWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtptrs")]
-            public static extern int Dtptrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldb);
+            public static extern int Dtptrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtptrs_work")]
-            public static extern int DtptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldb);
+            public static extern int DtptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, double* ap, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtpttf")]
-            public static extern int Dtpttf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* ap, double* arf);
+            public static extern int Dtpttf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* ap, double* arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtpttf_work")]
-            public static extern int DtpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* ap, double* arf);
+            public static extern int DtpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* ap, double* arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtpttr")]
-            public static extern int Dtpttr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double* a, int lda);
+            public static extern int Dtpttr(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtpttr_work")]
-            public static extern int DtpttrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* ap, double* a, int lda);
+            public static extern int DtpttrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* ap, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrcon")]
-            public static extern int Dtrcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, double* a, int lda, double* rcond);
+            public static extern int Dtrcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, double* a, int lda, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrcon_work")]
-            public static extern int DtrconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, double* a, int lda, double* rcond, double* work, int* iwork);
+            public static extern int DtrconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, double* a, int lda, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrevc")]
             public static extern int Dtrevc(MatrixLayout matrixLayout, sbyte side, sbyte howmny, int* select, int n, double* t, int ldt, double* vl, int ldvl, double* vr, int ldvr, int mm, int* m);
@@ -3352,10 +3352,10 @@ namespace Spreads.Native
             public static extern int DtrexcWork(MatrixLayout matrixLayout, sbyte compq, int n, double* t, int ldt, double* q, int ldq, int* ifst, int* ilst, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrrfs")]
-            public static extern int Dtrrfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int lda, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
+            public static extern int Dtrrfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, double* a, int lda, double* b, int ldb, double* x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrrfs_work")]
-            public static extern int DtrrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int lda, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
+            public static extern int DtrrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, double* a, int lda, double* b, int ldb, double* x, int ldx, double* ferr, double* berr, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrsen")]
             public static extern int Dtrsen(MatrixLayout matrixLayout, sbyte job, sbyte compq, int* select, int n, double* t, int ldt, double* q, int ldq, double* wr, double* wi, int* m, double* s, double* sep);
@@ -3376,28 +3376,28 @@ namespace Spreads.Native
             public static extern int DtrsylWork(MatrixLayout matrixLayout, sbyte trana, sbyte tranb, int isgn, int m, int n, double* a, int lda, double* b, int ldb, double* c, int ldc, double* scale);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrtri")]
-            public static extern int Dtrtri(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, double* a, int lda);
+            public static extern int Dtrtri(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrtri_work")]
-            public static extern int DtrtriWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, double* a, int lda);
+            public static extern int DtrtriWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrtrs")]
-            public static extern int Dtrtrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int lda, double* b, int ldb);
+            public static extern int Dtrtrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrtrs_work")]
-            public static extern int DtrtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, double* a, int lda, double* b, int ldb);
+            public static extern int DtrtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrttf")]
-            public static extern int Dtrttf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* a, int lda, double* arf);
+            public static extern int Dtrttf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* a, int lda, double* arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrttf_work")]
-            public static extern int DtrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, double* a, int lda, double* arf);
+            public static extern int DtrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, double* a, int lda, double* arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrttp")]
-            public static extern int Dtrttp(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* ap);
+            public static extern int Dtrttp(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtrttp_work")]
-            public static extern int DtrttpWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* ap);
+            public static extern int DtrttpWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dtzrzf")]
             public static extern int Dtzrzf(MatrixLayout matrixLayout, int m, int n, double* a, int lda, double* tau);
@@ -3412,16 +3412,16 @@ namespace Spreads.Native
             public static extern int MklCgetrfnpiWork(MatrixLayout matrixLayout, int m, int n, int nfact, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_ctppack")]
-            public static extern int MklCtppack(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
+            public static extern int MklCtppack(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_ctppack_work")]
-            public static extern int MklCtppackWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
+            public static extern int MklCtppackWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_ctpunpack")]
-            public static extern int MklCtpunpack(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
+            public static extern int MklCtpunpack(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_ctpunpack_work")]
-            public static extern int MklCtpunpackWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
+            public static extern int MklCtpunpackWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_dgetrfnpi")]
             public static extern int MklDgetrfnpi(MatrixLayout matrixLayout, int m, int n, int nfact, double* a, int lda);
@@ -3430,16 +3430,16 @@ namespace Spreads.Native
             public static extern int MklDgetrfnpiWork(MatrixLayout matrixLayout, int m, int n, int nfact, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_dtppack")]
-            public static extern int MklDtppack(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, double* ap, int i, int j, int rows, int cols, double* a, int lda);
+            public static extern int MklDtppack(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, double* ap, int i, int j, int rows, int cols, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_dtppack_work")]
-            public static extern int MklDtppackWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, double* ap, int i, int j, int rows, int cols, double* a, int lda);
+            public static extern int MklDtppackWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, double* ap, int i, int j, int rows, int cols, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_dtpunpack")]
-            public static extern int MklDtpunpack(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, double* ap, int i, int j, int rows, int cols, double* a, int lda);
+            public static extern int MklDtpunpack(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, double* ap, int i, int j, int rows, int cols, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_dtpunpack_work")]
-            public static extern int MklDtpunpackWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, double* ap, int i, int j, int rows, int cols, double* a, int lda);
+            public static extern int MklDtpunpackWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, double* ap, int i, int j, int rows, int cols, double* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_sgetrfnpi")]
             public static extern int MklSgetrfnpi(MatrixLayout matrixLayout, int m, int n, int nfact, float* a, int lda);
@@ -3448,16 +3448,16 @@ namespace Spreads.Native
             public static extern int MklSgetrfnpiWork(MatrixLayout matrixLayout, int m, int n, int nfact, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_stppack")]
-            public static extern int MklStppack(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, float* ap, int i, int j, int rows, int cols, float* a, int lda);
+            public static extern int MklStppack(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, float* ap, int i, int j, int rows, int cols, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_stppack_work")]
-            public static extern int MklStppackWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, float* ap, int i, int j, int rows, int cols, float* a, int lda);
+            public static extern int MklStppackWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, float* ap, int i, int j, int rows, int cols, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_stpunpack")]
-            public static extern int MklStpunpack(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, float* ap, int i, int j, int rows, int cols, float* a, int lda);
+            public static extern int MklStpunpack(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, float* ap, int i, int j, int rows, int cols, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_stpunpack_work")]
-            public static extern int MklStpunpackWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, float* ap, int i, int j, int rows, int cols, float* a, int lda);
+            public static extern int MklStpunpackWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, float* ap, int i, int j, int rows, int cols, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_zgetrfnpi")]
             public static extern int MklZgetrfnpi(MatrixLayout matrixLayout, int m, int n, int nfact, IntPtr a, int lda);
@@ -3466,40 +3466,40 @@ namespace Spreads.Native
             public static extern int MklZgetrfnpiWork(MatrixLayout matrixLayout, int m, int n, int nfact, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_ztppack")]
-            public static extern int MklZtppack(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
+            public static extern int MklZtppack(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_ztppack_work")]
-            public static extern int MklZtppackWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
+            public static extern int MklZtppackWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_ztpunpack")]
-            public static extern int MklZtpunpack(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
+            public static extern int MklZtpunpack(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_ztpunpack_work")]
-            public static extern int MklZtpunpackWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
+            public static extern int MklZtpunpackWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, int n, IntPtr ap, int i, int j, int rows, int cols, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sbbcsd")]
-            public static extern int Sbbcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, int m, int p, int q, float* theta, float* phi, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t, float* v2t, int ldv2t, float* b11d, float* b11e, float* b12d, float* b12e, float* b21d, float* b21e, float* b22d, float* b22e);
+            public static extern int Sbbcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, int m, int p, int q, float* theta, float* phi, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t, float* v2t, int ldv2t, float* b11d, float* b11e, float* b12d, float* b12e, float* b21d, float* b21e, float* b22d, float* b22e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sbbcsd_work")]
-            public static extern int SbbcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, int m, int p, int q, float* theta, float* phi, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t, float* v2t, int ldv2t, float* b11d, float* b11e, float* b12d, float* b12e, float* b21d, float* b21e, float* b22d, float* b22e, float* work, int lwork);
+            public static extern int SbbcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, int m, int p, int q, float* theta, float* phi, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t, float* v2t, int ldv2t, float* b11d, float* b11e, float* b12d, float* b12e, float* b21d, float* b21e, float* b22d, float* b22e, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sbdsdc")]
-            public static extern int Sbdsdc(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte compq, int n, float* d, float* e, float* u, int ldu, float* vt, int ldvt, float* q, int* iq);
+            public static extern int Sbdsdc(MatrixLayout matrixLayout, UpLoChar uplo, sbyte compq, int n, float* d, float* e, float* u, int ldu, float* vt, int ldvt, float* q, int* iq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sbdsdc_work")]
-            public static extern int SbdsdcWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte compq, int n, float* d, float* e, float* u, int ldu, float* vt, int ldvt, float* q, int* iq, float* work, int* iwork);
+            public static extern int SbdsdcWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte compq, int n, float* d, float* e, float* u, int ldu, float* vt, int ldvt, float* q, int* iq, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sbdsqr")]
-            public static extern int Sbdsqr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, float* vt, int ldvt, float* u, int ldu, float* c, int ldc);
+            public static extern int Sbdsqr(MatrixLayout matrixLayout, UpLoChar uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, float* vt, int ldvt, float* u, int ldu, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sbdsqr_work")]
-            public static extern int SbdsqrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, float* vt, int ldvt, float* u, int ldu, float* c, int ldc, float* work);
+            public static extern int SbdsqrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int ncvt, int nru, int ncc, float* d, float* e, float* vt, int ldvt, float* u, int ldu, float* c, int ldc, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sbdsvdx")]
-            public static extern int Sbdsvdx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte jobz, sbyte range, int n, float* d, float* e, float vl, float vu, int il, int iu, int* ns, float* s, float* z, int ldz, int* superb);
+            public static extern int Sbdsvdx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte jobz, sbyte range, int n, float* d, float* e, float vl, float vu, int il, int iu, int* ns, float* s, float* z, int ldz, int* superb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sbdsvdx_work")]
-            public static extern int SbdsvdxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte jobz, sbyte range, int n, float* d, float* e, float vl, float vu, int il, int iu, int* ns, float* s, float* z, int ldz, float* work, int* iwork);
+            public static extern int SbdsvdxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte jobz, sbyte range, int n, float* d, float* e, float vl, float vu, int il, int iu, int* ns, float* s, float* z, int ldz, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sdisna")]
             public static extern int Sdisna(sbyte job, int m, int n, float* d, float* sep);
@@ -3532,16 +3532,16 @@ namespace Spreads.Native
             public static extern int SgbequbWork(MatrixLayout matrixLayout, int m, int n, int kl, int ku, float* ab, int ldab, float* r, float* c, float* rowcnd, float* colcnd, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbrfs")]
-            public static extern int Sgbrfs(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Sgbrfs(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbrfs_work")]
-            public static extern int SgbrfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SgbrfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbrfsx")]
-            public static extern int Sgbrfsx(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Sgbrfsx(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbrfsx_work")]
-            public static extern int SgbrfsxWork(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
+            public static extern int SgbrfsxWork(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbsv")]
             public static extern int Sgbsv(MatrixLayout matrixLayout, int n, int kl, int ku, int nrhs, float* ab, int ldab, int* ipiv, float* b, int ldb);
@@ -3550,16 +3550,16 @@ namespace Spreads.Native
             public static extern int SgbsvWork(MatrixLayout matrixLayout, int n, int kl, int ku, int nrhs, float* ab, int ldab, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbsvx")]
-            public static extern int Sgbsvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* rpivot);
+            public static extern int Sgbsvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* rpivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbsvx_work")]
-            public static extern int SgbsvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SgbsvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbsvxx")]
-            public static extern int Sgbsvxx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Sgbsvxx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbsvxx_work")]
-            public static extern int SgbsvxxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
+            public static extern int SgbsvxxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, float* afb, int ldafb, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbtrf")]
             public static extern int Sgbtrf(MatrixLayout matrixLayout, int m, int n, int kl, int ku, float* ab, int ldab, int* ipiv);
@@ -3568,10 +3568,10 @@ namespace Spreads.Native
             public static extern int SgbtrfWork(MatrixLayout matrixLayout, int m, int n, int kl, int ku, float* ab, int ldab, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbtrs")]
-            public static extern int Sgbtrs(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, int* ipiv, float* b, int ldb);
+            public static extern int Sgbtrs(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgbtrs_work")]
-            public static extern int SgbtrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, int* ipiv, float* b, int ldb);
+            public static extern int SgbtrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, float* ab, int ldab, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgebak")]
             public static extern int Sgebak(MatrixLayout matrixLayout, sbyte job, sbyte side, int n, int ilo, int ihi, float* scale, int m, float* v, int ldv);
@@ -3658,10 +3658,10 @@ namespace Spreads.Native
             public static extern int SgelqfWork(MatrixLayout matrixLayout, int m, int n, float* a, int lda, float* tau, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgels")]
-            public static extern int Sgels(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, float* a, int lda, float* b, int ldb);
+            public static extern int Sgels(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgels_work")]
-            public static extern int SgelsWork(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, float* a, int lda, float* b, int ldb, float* work, int lwork);
+            public static extern int SgelsWork(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, float* a, int lda, float* b, int ldb, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgelsd")]
             public static extern int Sgelsd(MatrixLayout matrixLayout, int m, int n, int nrhs, float* a, int lda, float* b, int ldb, float* s, float rcond, int* rank);
@@ -3682,10 +3682,10 @@ namespace Spreads.Native
             public static extern int SgelsyWork(MatrixLayout matrixLayout, int m, int n, int nrhs, float* a, int lda, float* b, int ldb, int* jpvt, float rcond, int* rank, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgemqrt")]
-            public static extern int Sgemqrt(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int nb, float* v, int ldv, float* t, int ldt, float* c, int ldc);
+            public static extern int Sgemqrt(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int nb, float* v, int ldv, float* t, int ldt, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgemqrt_work")]
-            public static extern int SgemqrtWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int nb, float* v, int ldv, float* t, int ldt, float* c, int ldc, float* work);
+            public static extern int SgemqrtWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int nb, float* v, int ldv, float* t, int ldt, float* c, int ldc, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgeqlf")]
             public static extern int Sgeqlf(MatrixLayout matrixLayout, int m, int n, float* a, int lda, float* tau);
@@ -3742,16 +3742,16 @@ namespace Spreads.Native
             public static extern int SgeqrtWork(MatrixLayout matrixLayout, int m, int n, int nb, float* a, int lda, float* t, int ldt, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgerfs")]
-            public static extern int Sgerfs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Sgerfs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgerfs_work")]
-            public static extern int SgerfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SgerfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgerfsx")]
-            public static extern int Sgerfsx(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Sgerfsx(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgerfsx_work")]
-            public static extern int SgerfsxWork(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
+            public static extern int SgerfsxWork(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgerqf")]
             public static extern int Sgerqf(MatrixLayout matrixLayout, int m, int n, float* a, int lda, float* tau);
@@ -3790,16 +3790,16 @@ namespace Spreads.Native
             public static extern int SgesvjWork(MatrixLayout matrixLayout, sbyte joba, sbyte jobu, sbyte jobv, int m, int n, float* a, int lda, float* sva, int mv, float* v, int ldv, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgesvx")]
-            public static extern int Sgesvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* rpivot);
+            public static extern int Sgesvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* rpivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgesvx_work")]
-            public static extern int SgesvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SgesvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgesvxx")]
-            public static extern int Sgesvxx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Sgesvxx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgesvxx_work")]
-            public static extern int SgesvxxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
+            public static extern int SgesvxxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* r, float* c, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgetf2")]
             public static extern int Sgetf2(MatrixLayout matrixLayout, int m, int n, float* a, int lda, int* ipiv);
@@ -3826,10 +3826,10 @@ namespace Spreads.Native
             public static extern int SgetriWork(MatrixLayout matrixLayout, int n, float* a, int lda, int* ipiv, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgetrs")]
-            public static extern int Sgetrs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int Sgetrs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgetrs_work")]
-            public static extern int SgetrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int SgetrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sggbak")]
             public static extern int Sggbak(MatrixLayout matrixLayout, sbyte job, sbyte side, int n, int ilo, int ihi, float* lscale, float* rscale, int m, float* v, int ldv);
@@ -3946,10 +3946,10 @@ namespace Spreads.Native
             public static extern int SgtconWork(sbyte norm, int n, float* dl, float* d, float* du, float* du2, int* ipiv, float anorm, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgtrfs")]
-            public static extern int Sgtrfs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, float* dl, float* d, float* du, float* dlf, float* df, float* duf, float* du2, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Sgtrfs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, float* dl, float* d, float* du, float* dlf, float* df, float* duf, float* du2, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgtrfs_work")]
-            public static extern int SgtrfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, float* dl, float* d, float* du, float* dlf, float* df, float* duf, float* du2, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SgtrfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, float* dl, float* d, float* du, float* dlf, float* df, float* duf, float* du2, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgtsv")]
             public static extern int Sgtsv(MatrixLayout matrixLayout, int n, int nrhs, float* dl, float* d, float* du, float* b, int ldb);
@@ -3958,10 +3958,10 @@ namespace Spreads.Native
             public static extern int SgtsvWork(MatrixLayout matrixLayout, int n, int nrhs, float* dl, float* d, float* du, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgtsvx")]
-            public static extern int Sgtsvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, float* dl, float* d, float* du, float* dlf, float* df, float* duf, float* du2, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Sgtsvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, float* dl, float* d, float* du, float* dlf, float* df, float* duf, float* du2, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgtsvx_work")]
-            public static extern int SgtsvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, float* dl, float* d, float* du, float* dlf, float* df, float* duf, float* du2, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SgtsvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, float* dl, float* d, float* du, float* dlf, float* df, float* duf, float* du2, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgttrf")]
             public static extern int Sgttrf(int n, float* dl, float* d, float* du, float* du2, int* ipiv);
@@ -3970,10 +3970,10 @@ namespace Spreads.Native
             public static extern int SgttrfWork(int n, float* dl, float* d, float* du, float* du2, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgttrs")]
-            public static extern int Sgttrs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, float* dl, float* d, float* du, float* du2, int* ipiv, float* b, int ldb);
+            public static extern int Sgttrs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, float* dl, float* d, float* du, float* du2, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgttrs_work")]
-            public static extern int SgttrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, float* dl, float* d, float* du, float* du2, int* ipiv, float* b, int ldb);
+            public static extern int SgttrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, float* dl, float* d, float* du, float* du2, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_shgeqz")]
             public static extern int Shgeqz(MatrixLayout matrixLayout, sbyte job, sbyte compq, sbyte compz, int n, int ilo, int ihi, float* h, int ldh, float* t, int ldt, float* alphar, float* alphai, float* beta, float* q, int ldq, float* z, int ldz);
@@ -4000,10 +4000,10 @@ namespace Spreads.Native
             public static extern int Slacn2Work(int n, float* v, float* x, int* isgn, float* est, int* kase, int* isave);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slacpy")]
-            public static extern int Slacpy(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, float* a, int lda, float* b, int ldb);
+            public static extern int Slacpy(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slacpy_work")]
-            public static extern int SlacpyWork(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, float* a, int lda, float* b, int ldb);
+            public static extern int SlacpyWork(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slag2d")]
             public static extern int Slag2d(MatrixLayout matrixLayout, int m, int n, float* sa, int ldsa, double* a, int lda);
@@ -4036,10 +4036,10 @@ namespace Spreads.Native
             public static extern int SlapmtWork(MatrixLayout matrixLayout, int forwrd, int m, int n, float* x, int ldx, int* k);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slarfb")]
-            public static extern int Slarfb(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, float* v, int ldv, float* t, int ldt, float* c, int ldc);
+            public static extern int Slarfb(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, float* v, int ldv, float* t, int ldt, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slarfb_work")]
-            public static extern int SlarfbWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, float* v, int ldv, float* t, int ldt, float* c, int ldc, float* work, int ldwork);
+            public static extern int SlarfbWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, float* v, int ldv, float* t, int ldt, float* c, int ldc, float* work, int ldwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slarfg")]
             public static extern int Slarfg(int n, float* alpha, float* x, int incx, float* tau);
@@ -4084,10 +4084,10 @@ namespace Spreads.Native
             public static extern int SlasclWork(MatrixLayout matrixLayout, sbyte type, int kl, int ku, float cfrom, float cto, int m, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slaset")]
-            public static extern int Slaset(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, float alpha, float beta, float* a, int lda);
+            public static extern int Slaset(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, float alpha, float beta, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slaset_work")]
-            public static extern int SlasetWork(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, float alpha, float beta, float* a, int lda);
+            public static extern int SlasetWork(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, float alpha, float beta, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slasrt")]
             public static extern int Slasrt(sbyte id, int n, float* d);
@@ -4108,31 +4108,31 @@ namespace Spreads.Native
             public static extern int SlatmsWork(MatrixLayout matrixLayout, int m, int n, sbyte dist, int* iseed, sbyte sym, float* d, int mode, float cond, float dmax, int kl, int ku, sbyte pack, float* a, int lda, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slauum")]
-            public static extern int Slauum(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda);
+            public static extern int Slauum(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_slauum_work")]
-            public static extern int SlauumWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda);
+            public static extern int SlauumWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sopgtr")]
-            public static extern int Sopgtr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float* tau, float* q, int ldq);
+            public static extern int Sopgtr(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float* tau, float* q, int ldq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sopgtr_work")]
-            public static extern int SopgtrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float* tau, float* q, int ldq, float* work);
+            public static extern int SopgtrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float* tau, float* q, int ldq, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sopmtr")]
-            public static extern int Sopmtr(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, float* ap, float* tau, float* c, int ldc);
+            public static extern int Sopmtr(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, float* ap, float* tau, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sopmtr_work")]
-            public static extern int SopmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, float* ap, float* tau, float* c, int ldc, float* work);
+            public static extern int SopmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, float* ap, float* tau, float* c, int ldc, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sorbdb")]
-            public static extern int Sorbdb(MatrixLayout matrixLayout, TransLapack trans, sbyte signs, int m, int p, int q, float* x11, int ldx11, float* x12, int ldx12, float* x21, int ldx21, float* x22, int ldx22, float* theta, float* phi, float* taup1, float* taup2, float* tauq1, float* tauq2);
+            public static extern int Sorbdb(MatrixLayout matrixLayout, TransChar trans, sbyte signs, int m, int p, int q, float* x11, int ldx11, float* x12, int ldx12, float* x21, int ldx21, float* x22, int ldx22, float* theta, float* phi, float* taup1, float* taup2, float* tauq1, float* tauq2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sorbdb_work")]
-            public static extern int SorbdbWork(MatrixLayout matrixLayout, TransLapack trans, sbyte signs, int m, int p, int q, float* x11, int ldx11, float* x12, int ldx12, float* x21, int ldx21, float* x22, int ldx22, float* theta, float* phi, float* taup1, float* taup2, float* tauq1, float* tauq2, float* work, int lwork);
+            public static extern int SorbdbWork(MatrixLayout matrixLayout, TransChar trans, sbyte signs, int m, int p, int q, float* x11, int ldx11, float* x12, int ldx12, float* x21, int ldx21, float* x22, int ldx22, float* theta, float* phi, float* taup1, float* taup2, float* tauq1, float* tauq2, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sorcsd")]
-            public static extern int Sorcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, sbyte signs, int m, int p, int q, float* x11, int ldx11, float* x12, int ldx12, float* x21, int ldx21, float* x22, int ldx22, float* theta, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t, float* v2t, int ldv2t);
+            public static extern int Sorcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, sbyte signs, int m, int p, int q, float* x11, int ldx11, float* x12, int ldx12, float* x21, int ldx21, float* x22, int ldx22, float* theta, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t, float* v2t, int ldv2t);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sorcsd2by1")]
             public static extern int Sorcsd2by1(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, int m, int p, int q, float* x11, int ldx11, float* x21, int ldx21, float* theta, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t);
@@ -4141,7 +4141,7 @@ namespace Spreads.Native
             public static extern int Sorcsd2by1Work(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, int m, int p, int q, float* x11, int ldx11, float* x21, int ldx21, float* theta, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t, float* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sorcsd_work")]
-            public static extern int SorcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, sbyte signs, int m, int p, int q, float* x11, int ldx11, float* x12, int ldx12, float* x21, int ldx21, float* x22, int ldx22, float* theta, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t, float* v2t, int ldv2t, float* work, int lwork, int* iwork);
+            public static extern int SorcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, sbyte signs, int m, int p, int q, float* x11, int ldx11, float* x12, int ldx12, float* x21, int ldx21, float* x22, int ldx22, float* theta, float* u1, int ldu1, float* u2, int ldu2, float* v1t, int ldv1t, float* v2t, int ldv2t, float* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sorgbr")]
             public static extern int Sorgbr(MatrixLayout matrixLayout, sbyte vect, int m, int n, int k, float* a, int lda, float* tau);
@@ -4180,130 +4180,130 @@ namespace Spreads.Native
             public static extern int SorgrqWork(MatrixLayout matrixLayout, int m, int n, int k, float* a, int lda, float* tau, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sorgtr")]
-            public static extern int Sorgtr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* tau);
+            public static extern int Sorgtr(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sorgtr_work")]
-            public static extern int SorgtrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* tau, float* work, int lwork);
+            public static extern int SorgtrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* tau, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormbr")]
-            public static extern int Sormbr(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
+            public static extern int Sormbr(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormbr_work")]
-            public static extern int SormbrWork(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
+            public static extern int SormbrWork(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormhr")]
-            public static extern int Sormhr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int ilo, int ihi, float* a, int lda, float* tau, float* c, int ldc);
+            public static extern int Sormhr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int ilo, int ihi, float* a, int lda, float* tau, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormhr_work")]
-            public static extern int SormhrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int ilo, int ihi, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
+            public static extern int SormhrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int ilo, int ihi, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormlq")]
-            public static extern int Sormlq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
+            public static extern int Sormlq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormlq_work")]
-            public static extern int SormlqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
+            public static extern int SormlqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormql")]
-            public static extern int Sormql(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
+            public static extern int Sormql(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormql_work")]
-            public static extern int SormqlWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
+            public static extern int SormqlWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormqr")]
-            public static extern int Sormqr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
+            public static extern int Sormqr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormqr_work")]
-            public static extern int SormqrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
+            public static extern int SormqrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormrq")]
-            public static extern int Sormrq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
+            public static extern int Sormrq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormrq_work")]
-            public static extern int SormrqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
+            public static extern int SormrqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormrz")]
-            public static extern int Sormrz(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, float* a, int lda, float* tau, float* c, int ldc);
+            public static extern int Sormrz(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, float* a, int lda, float* tau, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormrz_work")]
-            public static extern int SormrzWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
+            public static extern int SormrzWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormtr")]
-            public static extern int Sormtr(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, float* a, int lda, float* tau, float* c, int ldc);
+            public static extern int Sormtr(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, float* a, int lda, float* tau, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sormtr_work")]
-            public static extern int SormtrWork(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
+            public static extern int SormtrWork(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, float* a, int lda, float* tau, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbcon")]
-            public static extern int Spbcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float anorm, float* rcond);
+            public static extern int Spbcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, float* ab, int ldab, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbcon_work")]
-            public static extern int SpbconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float anorm, float* rcond, float* work, int* iwork);
+            public static extern int SpbconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, float* ab, int ldab, float anorm, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbequ")]
-            public static extern int Spbequ(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* s, float* scond, float* amax);
+            public static extern int Spbequ(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbequ_work")]
-            public static extern int SpbequWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* s, float* scond, float* amax);
+            public static extern int SpbequWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbrfs")]
-            public static extern int Spbrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Spbrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbrfs_work")]
-            public static extern int SpbrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SpbrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbstf")]
-            public static extern int Spbstf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kb, float* bb, int ldbb);
+            public static extern int Spbstf(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kb, float* bb, int ldbb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbstf_work")]
-            public static extern int SpbstfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kb, float* bb, int ldbb);
+            public static extern int SpbstfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kb, float* bb, int ldbb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbsv")]
-            public static extern int Spbsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
+            public static extern int Spbsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbsv_work")]
-            public static extern int SpbsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
+            public static extern int SpbsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbsvx")]
-            public static extern int Spbsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Spbsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbsvx_work")]
-            public static extern int SpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int kd, int nrhs, float* ab, int ldab, float* afb, int ldafb, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbtrf")]
-            public static extern int Spbtrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, float* ab, int ldab);
+            public static extern int Spbtrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, float* ab, int ldab);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbtrf_work")]
-            public static extern int SpbtrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, float* ab, int ldab);
+            public static extern int SpbtrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, float* ab, int ldab);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbtrs")]
-            public static extern int Spbtrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
+            public static extern int Spbtrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spbtrs_work")]
-            public static extern int SpbtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
+            public static extern int SpbtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spftrf")]
-            public static extern int Spftrf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* a);
+            public static extern int Spftrf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spftrf_work")]
-            public static extern int SpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* a);
+            public static extern int SpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spftri")]
-            public static extern int Spftri(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* a);
+            public static extern int Spftri(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spftri_work")]
-            public static extern int SpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* a);
+            public static extern int SpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spftrs")]
-            public static extern int Spftrs(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, int nrhs, float* a, float* b, int ldb);
+            public static extern int Spftrs(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, int nrhs, float* a, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spftrs_work")]
-            public static extern int SpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, int nrhs, float* a, float* b, int ldb);
+            public static extern int SpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, int nrhs, float* a, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spocon")]
-            public static extern int Spocon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float anorm, float* rcond);
+            public static extern int Spocon(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spocon_work")]
-            public static extern int SpoconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float anorm, float* rcond, float* work, int* iwork);
+            public static extern int SpoconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float anorm, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spoequ")]
             public static extern int Spoequ(MatrixLayout matrixLayout, int n, float* a, int lda, float* s, float* scond, float* amax);
@@ -4318,112 +4318,112 @@ namespace Spreads.Native
             public static extern int SpoequbWork(MatrixLayout matrixLayout, int n, float* a, int lda, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sporfs")]
-            public static extern int Sporfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Sporfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sporfs_work")]
-            public static extern int SporfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SporfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sporfsx")]
-            public static extern int Sporfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Sporfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sporfsx_work")]
-            public static extern int SporfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
+            public static extern int SporfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sposv")]
-            public static extern int Sposv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* b, int ldb);
+            public static extern int Sposv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sposv_work")]
-            public static extern int SposvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* b, int ldb);
+            public static extern int SposvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sposvx")]
-            public static extern int Sposvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Sposvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sposvx_work")]
-            public static extern int SposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sposvxx")]
-            public static extern int Sposvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Sposvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sposvxx_work")]
-            public static extern int SposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
+            public static extern int SposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spotrf")]
-            public static extern int Spotrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda);
+            public static extern int Spotrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spotrf2")]
-            public static extern int Spotrf2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda);
+            public static extern int Spotrf2(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spotrf2_work")]
-            public static extern int Spotrf2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda);
+            public static extern int Spotrf2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spotrf_work")]
-            public static extern int SpotrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda);
+            public static extern int SpotrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spotri")]
-            public static extern int Spotri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda);
+            public static extern int Spotri(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spotri_work")]
-            public static extern int SpotriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda);
+            public static extern int SpotriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spotrs")]
-            public static extern int Spotrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* b, int ldb);
+            public static extern int Spotrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spotrs_work")]
-            public static extern int SpotrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* b, int ldb);
+            public static extern int SpotrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sppcon")]
-            public static extern int Sppcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float anorm, float* rcond);
+            public static extern int Sppcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sppcon_work")]
-            public static extern int SppconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float anorm, float* rcond, float* work, int* iwork);
+            public static extern int SppconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float anorm, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sppequ")]
-            public static extern int Sppequ(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float* s, float* scond, float* amax);
+            public static extern int Sppequ(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sppequ_work")]
-            public static extern int SppequWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float* s, float* scond, float* amax);
+            public static extern int SppequWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spprfs")]
-            public static extern int Spprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, float* afp, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Spprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, float* afp, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spprfs_work")]
-            public static extern int SpprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, float* afp, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SpprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, float* afp, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sppsv")]
-            public static extern int Sppsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, float* b, int ldb);
+            public static extern int Sppsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sppsv_work")]
-            public static extern int SppsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, float* b, int ldb);
+            public static extern int SppsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sppsvx")]
-            public static extern int Sppsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* ap, float* afp, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Sppsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* ap, float* afp, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sppsvx_work")]
-            public static extern int SppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* ap, float* afp, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* ap, float* afp, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spptrf")]
-            public static extern int Spptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap);
+            public static extern int Spptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spptrf_work")]
-            public static extern int SpptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap);
+            public static extern int SpptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spptri")]
-            public static extern int Spptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap);
+            public static extern int Spptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spptri_work")]
-            public static extern int SpptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap);
+            public static extern int SpptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spptrs")]
-            public static extern int Spptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, float* b, int ldb);
+            public static extern int Spptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spptrs_work")]
-            public static extern int SpptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, float* b, int ldb);
+            public static extern int SpptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spstrf")]
-            public static extern int Spstrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* piv, int* rank, float tol);
+            public static extern int Spstrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* piv, int* rank, float tol);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_spstrf_work")]
-            public static extern int SpstrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* piv, int* rank, float tol, float* work);
+            public static extern int SpstrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* piv, int* rank, float tol, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sptcon")]
             public static extern int Sptcon(int n, float* d, float* e, float anorm, float* rcond);
@@ -4468,148 +4468,148 @@ namespace Spreads.Native
             public static extern int SpttrsWork(MatrixLayout matrixLayout, int n, int nrhs, float* d, float* e, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbev")]
-            public static extern int Ssbev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz);
+            public static extern int Ssbev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbev_work")]
-            public static extern int SsbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz, float* work);
+            public static extern int SsbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbevd")]
-            public static extern int Ssbevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz);
+            public static extern int Ssbevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbevd_work")]
-            public static extern int SsbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
+            public static extern int SsbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbevx")]
-            public static extern int Ssbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
+            public static extern int Ssbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbevx_work")]
-            public static extern int SsbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int* iwork, int* ifail);
+            public static extern int SsbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbgst")]
-            public static extern int Ssbgst(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* x, int ldx);
+            public static extern int Ssbgst(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* x, int ldx);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbgst_work")]
-            public static extern int SsbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* x, int ldx, float* work);
+            public static extern int SsbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* x, int ldx, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbgv")]
-            public static extern int Ssbgv(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldz);
+            public static extern int Ssbgv(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbgv_work")]
-            public static extern int SsbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldz, float* work);
+            public static extern int SsbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldz, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbgvd")]
-            public static extern int Ssbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldz);
+            public static extern int Ssbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbgvd_work")]
-            public static extern int SsbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
+            public static extern int SsbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbgvx")]
-            public static extern int Ssbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
+            public static extern int Ssbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbgvx_work")]
-            public static extern int SsbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int* iwork, int* ifail);
+            public static extern int SsbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int ka, int kb, float* ab, int ldab, float* bb, int ldbb, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbtrd")]
-            public static extern int Ssbtrd(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* d, float* e, float* q, int ldq);
+            public static extern int Ssbtrd(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* d, float* e, float* q, int ldq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbtrd_work")]
-            public static extern int SsbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* d, float* e, float* q, int ldq, float* work);
+            public static extern int SsbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* d, float* e, float* q, int ldq, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssfrk")]
-            public static extern int Ssfrk(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, TransLapack trans, int n, int k, float alpha, float* a, int lda, float beta, float* c);
+            public static extern int Ssfrk(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, TransChar trans, int n, int k, float alpha, float* a, int lda, float beta, float* c);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssfrk_work")]
-            public static extern int SsfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, TransLapack trans, int n, int k, float alpha, float* a, int lda, float beta, float* c);
+            public static extern int SsfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, TransChar trans, int n, int k, float alpha, float* a, int lda, float beta, float* c);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspcon")]
-            public static extern int Sspcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, int* ipiv, float anorm, float* rcond);
+            public static extern int Sspcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, int* ipiv, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspcon_work")]
-            public static extern int SspconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, int* ipiv, float anorm, float* rcond, float* work, int* iwork);
+            public static extern int SspconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, int* ipiv, float anorm, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspev")]
-            public static extern int Sspev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* ap, float* w, float* z, int ldz);
+            public static extern int Sspev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* ap, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspev_work")]
-            public static extern int SspevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* ap, float* w, float* z, int ldz, float* work);
+            public static extern int SspevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* ap, float* w, float* z, int ldz, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspevd")]
-            public static extern int Sspevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* ap, float* w, float* z, int ldz);
+            public static extern int Sspevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* ap, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspevd_work")]
-            public static extern int SspevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* ap, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
+            public static extern int SspevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* ap, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspevx")]
-            public static extern int Sspevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
+            public static extern int Sspevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspevx_work")]
-            public static extern int SspevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int* iwork, int* ifail);
+            public static extern int SspevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* ap, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspgst")]
-            public static extern int Sspgst(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, float* ap, float* bp);
+            public static extern int Sspgst(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, float* ap, float* bp);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspgst_work")]
-            public static extern int SspgstWork(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, float* ap, float* bp);
+            public static extern int SspgstWork(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, float* ap, float* bp);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspgv")]
-            public static extern int Sspgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* ap, float* bp, float* w, float* z, int ldz);
+            public static extern int Sspgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* ap, float* bp, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspgv_work")]
-            public static extern int SspgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* ap, float* bp, float* w, float* z, int ldz, float* work);
+            public static extern int SspgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* ap, float* bp, float* w, float* z, int ldz, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspgvd")]
-            public static extern int Sspgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* ap, float* bp, float* w, float* z, int ldz);
+            public static extern int Sspgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* ap, float* bp, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspgvd_work")]
-            public static extern int SspgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* ap, float* bp, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
+            public static extern int SspgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* ap, float* bp, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspgvx")]
-            public static extern int Sspgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* ap, float* bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
+            public static extern int Sspgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* ap, float* bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspgvx_work")]
-            public static extern int SspgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* ap, float* bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int* iwork, int* ifail);
+            public static extern int SspgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* ap, float* bp, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssprfs")]
-            public static extern int Ssprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Ssprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssprfs_work")]
-            public static extern int SsprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SsprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspsv")]
-            public static extern int Sspsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldb);
+            public static extern int Sspsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspsv_work")]
-            public static extern int SspsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldb);
+            public static extern int SspsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspsvx")]
-            public static extern int Sspsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Sspsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sspsvx_work")]
-            public static extern int SspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* ap, float* afp, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssptrd")]
-            public static extern int Ssptrd(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float* d, float* e, float* tau);
+            public static extern int Ssptrd(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float* d, float* e, float* tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssptrd_work")]
-            public static extern int SsptrdWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float* d, float* e, float* tau);
+            public static extern int SsptrdWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float* d, float* e, float* tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssptrf")]
-            public static extern int Ssptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, int* ipiv);
+            public static extern int Ssptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssptrf_work")]
-            public static extern int SsptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, int* ipiv);
+            public static extern int SsptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssptri")]
-            public static extern int Ssptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, int* ipiv);
+            public static extern int Ssptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssptri_work")]
-            public static extern int SsptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, int* ipiv, float* work);
+            public static extern int SsptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, int* ipiv, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssptrs")]
-            public static extern int Ssptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldb);
+            public static extern int Ssptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssptrs_work")]
-            public static extern int SsptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldb);
+            public static extern int SsptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* ap, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sstebz")]
             public static extern int Sstebz(sbyte range, sbyte order, int n, float vl, float vu, int il, int iu, float abstol, float* d, float* e, int* m, int* nsplit, float* w, int* iblock, int* isplit);
@@ -4678,208 +4678,208 @@ namespace Spreads.Native
             public static extern int SstevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, int n, float* d, float* e, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssycon")]
-            public static extern int Ssycon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv, float anorm, float* rcond);
+            public static extern int Ssycon(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssycon_work")]
-            public static extern int SsyconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv, float anorm, float* rcond, float* work, int* iwork);
+            public static extern int SsyconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv, float anorm, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyconv")]
-            public static extern int Ssyconv(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte way, int n, float* a, int lda, int* ipiv, float* e);
+            public static extern int Ssyconv(MatrixLayout matrixLayout, UpLoChar uplo, sbyte way, int n, float* a, int lda, int* ipiv, float* e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyconv_work")]
-            public static extern int SsyconvWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte way, int n, float* a, int lda, int* ipiv, float* e);
+            public static extern int SsyconvWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte way, int n, float* a, int lda, int* ipiv, float* e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyequb")]
-            public static extern int Ssyequb(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* s, float* scond, float* amax);
+            public static extern int Ssyequb(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* s, float* scond, float* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyequb_work")]
-            public static extern int SsyequbWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* s, float* scond, float* amax, float* work);
+            public static extern int SsyequbWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* s, float* scond, float* amax, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyev")]
-            public static extern int Ssyev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* w);
+            public static extern int Ssyev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyev_work")]
-            public static extern int SsyevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* w, float* work, int lwork);
+            public static extern int SsyevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* w, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevd")]
-            public static extern int Ssyevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* w);
+            public static extern int Ssyevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevd_work")]
-            public static extern int SsyevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* w, float* work, int lwork, int* iwork, int liwork);
+            public static extern int SsyevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* w, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevr")]
-            public static extern int Ssyevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* isuppz);
+            public static extern int Ssyevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* isuppz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevr_work")]
-            public static extern int SsyevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* isuppz, float* work, int lwork, int* iwork, int liwork);
+            public static extern int SsyevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* isuppz, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevx")]
-            public static extern int Ssyevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
+            public static extern int Ssyevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevx_work")]
-            public static extern int SsyevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int* ifail);
+            public static extern int SsyevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygst")]
-            public static extern int Ssygst(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb);
+            public static extern int Ssygst(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygst_work")]
-            public static extern int SsygstWork(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb);
+            public static extern int SsygstWork(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygv")]
-            public static extern int Ssygv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb, float* w);
+            public static extern int Ssygv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygv_work")]
-            public static extern int SsygvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb, float* w, float* work, int lwork);
+            public static extern int SsygvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb, float* w, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygvd")]
-            public static extern int Ssygvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb, float* w);
+            public static extern int Ssygvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygvd_work")]
-            public static extern int SsygvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb, float* w, float* work, int lwork, int* iwork, int liwork);
+            public static extern int SsygvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb, float* w, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygvx")]
-            public static extern int Ssygvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
+            public static extern int Ssygvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygvx_work")]
-            public static extern int SsygvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int* ifail);
+            public static extern int SsygvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyrfs")]
-            public static extern int Ssyrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Ssyrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyrfs_work")]
-            public static extern int SsyrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int SsyrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyrfsx")]
-            public static extern int Ssyrfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Ssyrfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyrfsx_work")]
-            public static extern int SsyrfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
+            public static extern int SsyrfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv")]
-            public static extern int Ssysv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int Ssysv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv_rook")]
-            public static extern int SsysvRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int SsysvRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv_rook_work")]
-            public static extern int SsysvRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work, int lwork);
+            public static extern int SsysvRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv_work")]
-            public static extern int SsysvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work, int lwork);
+            public static extern int SsysvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysvx")]
-            public static extern int Ssysvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
+            public static extern int Ssysvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysvx_work")]
-            public static extern int SsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int lwork, int* iwork);
+            public static extern int SsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, float* b, int ldb, float* x, int ldx, float* rcond, float* ferr, float* berr, float* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysvxx")]
-            public static extern int Ssysvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
+            public static extern int Ssysvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysvxx_work")]
-            public static extern int SsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
+            public static extern int SsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* af, int ldaf, int* ipiv, sbyte* equed, float* s, float* b, int ldb, float* x, int ldx, float* rcond, float* rpvgrw, float* berr, int n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, int nparams, float* @params, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyswapr")]
-            public static extern int Ssyswapr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int i1, int i2);
+            public static extern int Ssyswapr(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyswapr_work")]
-            public static extern int SsyswaprWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int i1, int i2);
+            public static extern int SsyswaprWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrd")]
-            public static extern int Ssytrd(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* d, float* e, float* tau);
+            public static extern int Ssytrd(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* d, float* e, float* tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrd_work")]
-            public static extern int SsytrdWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* d, float* e, float* tau, float* work, int lwork);
+            public static extern int SsytrdWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* d, float* e, float* tau, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf")]
-            public static extern int Ssytrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv);
+            public static extern int Ssytrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf_rook")]
-            public static extern int SsytrfRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv);
+            public static extern int SsytrfRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf_rook_work")]
-            public static extern int SsytrfRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv, float* work, int lwork);
+            public static extern int SsytrfRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf_work")]
-            public static extern int SsytrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv, float* work, int lwork);
+            public static extern int SsytrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytri")]
-            public static extern int Ssytri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv);
+            public static extern int Ssytri(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytri2")]
-            public static extern int Ssytri2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv);
+            public static extern int Ssytri2(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytri2_work")]
-            public static extern int Ssytri2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv, float* work, int lwork);
+            public static extern int Ssytri2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytri2x")]
-            public static extern int Ssytri2x(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv, int nb);
+            public static extern int Ssytri2x(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytri2x_work")]
-            public static extern int Ssytri2xWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv, float* work, int nb);
+            public static extern int Ssytri2xWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv, float* work, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytri_work")]
-            public static extern int SsytriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv, float* work);
+            public static extern int SsytriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs")]
-            public static extern int Ssytrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int Ssytrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs2")]
-            public static extern int Ssytrs2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int Ssytrs2(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs2_work")]
-            public static extern int Ssytrs2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work);
+            public static extern int Ssytrs2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs_rook")]
-            public static extern int SsytrsRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int SsytrsRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs_rook_work")]
-            public static extern int SsytrsRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int SsytrsRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs_work")]
-            public static extern int SsytrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int SsytrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stbcon")]
-            public static extern int Stbcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, int kd, float* ab, int ldab, float* rcond);
+            public static extern int Stbcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, int kd, float* ab, int ldab, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stbcon_work")]
-            public static extern int StbconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, int kd, float* ab, int ldab, float* rcond, float* work, int* iwork);
+            public static extern int StbconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, int kd, float* ab, int ldab, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stbrfs")]
-            public static extern int Stbrfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Stbrfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stbrfs_work")]
-            public static extern int StbrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int StbrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stbtrs")]
-            public static extern int Stbtrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
+            public static extern int Stbtrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stbtrs_work")]
-            public static extern int StbtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
+            public static extern int StbtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, float* ab, int ldab, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stfsm")]
-            public static extern int Stfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoLapack uplo, TransLapack trans, sbyte diag, int m, int n, float alpha, float* a, float* b, int ldb);
+            public static extern int Stfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoChar uplo, TransChar trans, sbyte diag, int m, int n, float alpha, float* a, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stfsm_work")]
-            public static extern int StfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoLapack uplo, TransLapack trans, sbyte diag, int m, int n, float alpha, float* a, float* b, int ldb);
+            public static extern int StfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoChar uplo, TransChar trans, sbyte diag, int m, int n, float alpha, float* a, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stftri")]
-            public static extern int Stftri(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, sbyte diag, int n, float* a);
+            public static extern int Stftri(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, sbyte diag, int n, float* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stftri_work")]
-            public static extern int StftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, sbyte diag, int n, float* a);
+            public static extern int StftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, sbyte diag, int n, float* a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stfttp")]
-            public static extern int Stfttp(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* arf, float* ap);
+            public static extern int Stfttp(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* arf, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stfttp_work")]
-            public static extern int StfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* arf, float* ap);
+            public static extern int StfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* arf, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stfttr")]
-            public static extern int Stfttr(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* arf, float* a, int lda);
+            public static extern int Stfttr(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* arf, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stfttr_work")]
-            public static extern int StfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* arf, float* a, int lda);
+            public static extern int StfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* arf, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stgevc")]
             public static extern int Stgevc(MatrixLayout matrixLayout, sbyte side, sbyte howmny, int* select, int n, float* s, int lds, float* p, int ldp, float* vl, int ldvl, float* vr, int ldvr, int mm, int* m);
@@ -4912,22 +4912,22 @@ namespace Spreads.Native
             public static extern int StgsnaWork(MatrixLayout matrixLayout, sbyte job, sbyte howmny, int* select, int n, float* a, int lda, float* b, int ldb, float* vl, int ldvl, float* vr, int ldvr, float* s, float* dif, int mm, int* m, float* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stgsyl")]
-            public static extern int Stgsyl(MatrixLayout matrixLayout, TransLapack trans, int ijob, int m, int n, float* a, int lda, float* b, int ldb, float* c, int ldc, float* d, int ldd, float* e, int lde, float* f, int ldf, float* scale, float* dif);
+            public static extern int Stgsyl(MatrixLayout matrixLayout, TransChar trans, int ijob, int m, int n, float* a, int lda, float* b, int ldb, float* c, int ldc, float* d, int ldd, float* e, int lde, float* f, int ldf, float* scale, float* dif);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stgsyl_work")]
-            public static extern int StgsylWork(MatrixLayout matrixLayout, TransLapack trans, int ijob, int m, int n, float* a, int lda, float* b, int ldb, float* c, int ldc, float* d, int ldd, float* e, int lde, float* f, int ldf, float* scale, float* dif, float* work, int lwork, int* iwork);
+            public static extern int StgsylWork(MatrixLayout matrixLayout, TransChar trans, int ijob, int m, int n, float* a, int lda, float* b, int ldb, float* c, int ldc, float* d, int ldd, float* e, int lde, float* f, int ldf, float* scale, float* dif, float* work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stpcon")]
-            public static extern int Stpcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, float* ap, float* rcond);
+            public static extern int Stpcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, float* ap, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stpcon_work")]
-            public static extern int StpconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, float* ap, float* rcond, float* work, int* iwork);
+            public static extern int StpconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, float* ap, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stpmqrt")]
-            public static extern int Stpmqrt(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, int nb, float* v, int ldv, float* t, int ldt, float* a, int lda, float* b, int ldb);
+            public static extern int Stpmqrt(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, int nb, float* v, int ldv, float* t, int ldt, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stpmqrt_work")]
-            public static extern int StpmqrtWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, int nb, float* v, int ldv, float* t, int ldt, float* a, int lda, float* b, int ldb, float* work);
+            public static extern int StpmqrtWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, int nb, float* v, int ldv, float* t, int ldt, float* a, int lda, float* b, int ldb, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stpqrt")]
             public static extern int Stpqrt(MatrixLayout matrixLayout, int m, int n, int l, int nb, float* a, int lda, float* b, int ldb, float* t, int ldt);
@@ -4942,46 +4942,46 @@ namespace Spreads.Native
             public static extern int StpqrtWork(MatrixLayout matrixLayout, int m, int n, int l, int nb, float* a, int lda, float* b, int ldb, float* t, int ldt, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stprfb")]
-            public static extern int Stprfb(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, int l, float* v, int ldv, float* t, int ldt, float* a, int lda, float* b, int ldb);
+            public static extern int Stprfb(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, int l, float* v, int ldv, float* t, int ldt, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stprfb_work")]
-            public static extern int StprfbWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, int l, float* v, int ldv, float* t, int ldt, float* a, int lda, float* b, int ldb, float* work, int ldwork);
+            public static extern int StprfbWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, int l, float* v, int ldv, float* t, int ldt, float* a, int lda, float* b, int ldb, float* work, int ldwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stprfs")]
-            public static extern int Stprfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Stprfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stprfs_work")]
-            public static extern int StprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int StprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stptri")]
-            public static extern int Stptri(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, float* ap);
+            public static extern int Stptri(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stptri_work")]
-            public static extern int StptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, float* ap);
+            public static extern int StptriWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stptrs")]
-            public static extern int Stptrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldb);
+            public static extern int Stptrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stptrs_work")]
-            public static extern int StptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldb);
+            public static extern int StptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, float* ap, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stpttf")]
-            public static extern int Stpttf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* ap, float* arf);
+            public static extern int Stpttf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* ap, float* arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stpttf_work")]
-            public static extern int StpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* ap, float* arf);
+            public static extern int StpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* ap, float* arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stpttr")]
-            public static extern int Stpttr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float* a, int lda);
+            public static extern int Stpttr(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stpttr_work")]
-            public static extern int StpttrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* ap, float* a, int lda);
+            public static extern int StpttrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* ap, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strcon")]
-            public static extern int Strcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, float* a, int lda, float* rcond);
+            public static extern int Strcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, float* a, int lda, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strcon_work")]
-            public static extern int StrconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, float* a, int lda, float* rcond, float* work, int* iwork);
+            public static extern int StrconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, float* a, int lda, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strevc")]
             public static extern int Strevc(MatrixLayout matrixLayout, sbyte side, sbyte howmny, int* select, int n, float* t, int ldt, float* vl, int ldvl, float* vr, int ldvr, int mm, int* m);
@@ -4996,10 +4996,10 @@ namespace Spreads.Native
             public static extern int StrexcWork(MatrixLayout matrixLayout, sbyte compq, int n, float* t, int ldt, float* q, int ldq, int* ifst, int* ilst, float* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strrfs")]
-            public static extern int Strrfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int lda, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
+            public static extern int Strrfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, float* a, int lda, float* b, int ldb, float* x, int ldx, float* ferr, float* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strrfs_work")]
-            public static extern int StrrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int lda, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
+            public static extern int StrrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, float* a, int lda, float* b, int ldb, float* x, int ldx, float* ferr, float* berr, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strsen")]
             public static extern int Strsen(MatrixLayout matrixLayout, sbyte job, sbyte compq, int* select, int n, float* t, int ldt, float* q, int ldq, float* wr, float* wi, int* m, float* s, float* sep);
@@ -5020,28 +5020,28 @@ namespace Spreads.Native
             public static extern int StrsylWork(MatrixLayout matrixLayout, sbyte trana, sbyte tranb, int isgn, int m, int n, float* a, int lda, float* b, int ldb, float* c, int ldc, float* scale);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strtri")]
-            public static extern int Strtri(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, float* a, int lda);
+            public static extern int Strtri(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strtri_work")]
-            public static extern int StrtriWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, float* a, int lda);
+            public static extern int StrtriWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, float* a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strtrs")]
-            public static extern int Strtrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int lda, float* b, int ldb);
+            public static extern int Strtrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strtrs_work")]
-            public static extern int StrtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, float* a, int lda, float* b, int ldb);
+            public static extern int StrtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strttf")]
-            public static extern int Strttf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* a, int lda, float* arf);
+            public static extern int Strttf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* a, int lda, float* arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strttf_work")]
-            public static extern int StrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, float* a, int lda, float* arf);
+            public static extern int StrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, float* a, int lda, float* arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strttp")]
-            public static extern int Strttp(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* ap);
+            public static extern int Strttp(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_strttp_work")]
-            public static extern int StrttpWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* ap);
+            public static extern int StrttpWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_stzrzf")]
             public static extern int Stzrzf(MatrixLayout matrixLayout, int m, int n, float* a, int lda, float* tau);
@@ -5050,16 +5050,16 @@ namespace Spreads.Native
             public static extern int StzrzfWork(MatrixLayout matrixLayout, int m, int n, float* a, int lda, float* tau, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zbbcsd")]
-            public static extern int Zbbcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, int m, int p, int q, double* theta, double* phi, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, double* b11d, double* b11e, double* b12d, double* b12e, double* b21d, double* b21e, double* b22d, double* b22e);
+            public static extern int Zbbcsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, int m, int p, int q, double* theta, double* phi, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, double* b11d, double* b11e, double* b12d, double* b12e, double* b21d, double* b21e, double* b22d, double* b22e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zbbcsd_work")]
-            public static extern int ZbbcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, int m, int p, int q, double* theta, double* phi, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, double* b11d, double* b11e, double* b12d, double* b12e, double* b21d, double* b21e, double* b22d, double* b22e, double* rwork, int lrwork);
+            public static extern int ZbbcsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, int m, int p, int q, double* theta, double* phi, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, double* b11d, double* b11e, double* b12d, double* b12e, double* b21d, double* b21e, double* b22d, double* b22e, double* rwork, int lrwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zbdsqr")]
-            public static extern int Zbdsqr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, IntPtr vt, int ldvt, IntPtr u, int ldu, IntPtr c, int ldc);
+            public static extern int Zbdsqr(MatrixLayout matrixLayout, UpLoChar uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, IntPtr vt, int ldvt, IntPtr u, int ldu, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zbdsqr_work")]
-            public static extern int ZbdsqrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, IntPtr vt, int ldvt, IntPtr u, int ldu, IntPtr c, int ldc, double* work);
+            public static extern int ZbdsqrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int ncvt, int nru, int ncc, double* d, double* e, IntPtr vt, int ldvt, IntPtr u, int ldu, IntPtr c, int ldc, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zcgesv")]
             public static extern int Zcgesv(MatrixLayout matrixLayout, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, int* iter);
@@ -5068,10 +5068,10 @@ namespace Spreads.Native
             public static extern int ZcgesvWork(MatrixLayout matrixLayout, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, IntPtr work, IntPtr swork, double* rwork, int* iter);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zcposv")]
-            public static extern int Zcposv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, int* iter);
+            public static extern int Zcposv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, int* iter);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zcposv_work")]
-            public static extern int ZcposvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, IntPtr work, IntPtr swork, double* rwork, int* iter);
+            public static extern int ZcposvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, IntPtr work, IntPtr swork, double* rwork, int* iter);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbbrd")]
             public static extern int Zgbbrd(MatrixLayout matrixLayout, sbyte vect, int m, int n, int ncc, int kl, int ku, IntPtr ab, int ldab, double* d, double* e, IntPtr q, int ldq, IntPtr pt, int ldpt, IntPtr c, int ldc);
@@ -5098,16 +5098,16 @@ namespace Spreads.Native
             public static extern int ZgbequbWork(MatrixLayout matrixLayout, int m, int n, int kl, int ku, IntPtr ab, int ldab, double* r, double* c, double* rowcnd, double* colcnd, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbrfs")]
-            public static extern int Zgbrfs(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zgbrfs(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbrfs_work")]
-            public static extern int ZgbrfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZgbrfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbrfsx")]
-            public static extern int Zgbrfsx(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zgbrfsx(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbrfsx_work")]
-            public static extern int ZgbrfsxWork(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZgbrfsxWork(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbsv")]
             public static extern int Zgbsv(MatrixLayout matrixLayout, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
@@ -5116,16 +5116,16 @@ namespace Spreads.Native
             public static extern int ZgbsvWork(MatrixLayout matrixLayout, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbsvx")]
-            public static extern int Zgbsvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, double* rpivot);
+            public static extern int Zgbsvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, double* rpivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbsvx_work")]
-            public static extern int ZgbsvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZgbsvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbsvxx")]
-            public static extern int Zgbsvxx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zgbsvxx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbsvxx_work")]
-            public static extern int ZgbsvxxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZgbsvxxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbtrf")]
             public static extern int Zgbtrf(MatrixLayout matrixLayout, int m, int n, int kl, int ku, IntPtr ab, int ldab, int* ipiv);
@@ -5134,10 +5134,10 @@ namespace Spreads.Native
             public static extern int ZgbtrfWork(MatrixLayout matrixLayout, int m, int n, int kl, int ku, IntPtr ab, int ldab, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbtrs")]
-            public static extern int Zgbtrs(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zgbtrs(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgbtrs_work")]
-            public static extern int ZgbtrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZgbtrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int kl, int ku, int nrhs, IntPtr ab, int ldab, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgebak")]
             public static extern int Zgebak(MatrixLayout matrixLayout, sbyte job, sbyte side, int n, int ilo, int ihi, double* scale, int m, IntPtr v, int ldv);
@@ -5224,10 +5224,10 @@ namespace Spreads.Native
             public static extern int ZgelqfWork(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgels")]
-            public static extern int Zgels(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Zgels(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgels_work")]
-            public static extern int ZgelsWork(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZgelsWork(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgelsd")]
             public static extern int Zgelsd(MatrixLayout matrixLayout, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, double* s, double rcond, int* rank);
@@ -5248,10 +5248,10 @@ namespace Spreads.Native
             public static extern int ZgelsyWork(MatrixLayout matrixLayout, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, int* jpvt, double rcond, int* rank, IntPtr work, int lwork, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgemqrt")]
-            public static extern int Zgemqrt(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc);
+            public static extern int Zgemqrt(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgemqrt_work")]
-            public static extern int ZgemqrtWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc, IntPtr work);
+            public static extern int ZgemqrtWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgeqlf")]
             public static extern int Zgeqlf(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau);
@@ -5308,16 +5308,16 @@ namespace Spreads.Native
             public static extern int ZgeqrtWork(MatrixLayout matrixLayout, int m, int n, int nb, IntPtr a, int lda, IntPtr t, int ldt, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgerfs")]
-            public static extern int Zgerfs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zgerfs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgerfs_work")]
-            public static extern int ZgerfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZgerfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgerfsx")]
-            public static extern int Zgerfsx(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zgerfsx(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgerfsx_work")]
-            public static extern int ZgerfsxWork(MatrixLayout matrixLayout, TransLapack trans, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZgerfsxWork(MatrixLayout matrixLayout, TransChar trans, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgerqf")]
             public static extern int Zgerqf(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau);
@@ -5356,16 +5356,16 @@ namespace Spreads.Native
             public static extern int ZgesvjWork(MatrixLayout matrixLayout, sbyte joba, sbyte jobu, sbyte jobv, int m, int n, IntPtr a, int lda, double* sva, int mv, IntPtr v, int ldv, IntPtr cwork, int lwork, double* rwork, int lrwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgesvx")]
-            public static extern int Zgesvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, double* rpivot);
+            public static extern int Zgesvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, double* rpivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgesvx_work")]
-            public static extern int ZgesvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZgesvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgesvxx")]
-            public static extern int Zgesvxx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zgesvxx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgesvxx_work")]
-            public static extern int ZgesvxxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZgesvxxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* r, double* c, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgetf2")]
             public static extern int Zgetf2(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, int* ipiv);
@@ -5392,10 +5392,10 @@ namespace Spreads.Native
             public static extern int ZgetriWork(MatrixLayout matrixLayout, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgetrs")]
-            public static extern int Zgetrs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zgetrs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgetrs_work")]
-            public static extern int ZgetrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZgetrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zggbak")]
             public static extern int Zggbak(MatrixLayout matrixLayout, sbyte job, sbyte side, int n, int ilo, int ihi, double* lscale, double* rscale, int m, IntPtr v, int ldv);
@@ -5512,10 +5512,10 @@ namespace Spreads.Native
             public static extern int ZgtconWork(sbyte norm, int n, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, double anorm, double* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgtrfs")]
-            public static extern int Zgtrfs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zgtrfs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgtrfs_work")]
-            public static extern int ZgtrfsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZgtrfsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgtsv")]
             public static extern int Zgtsv(MatrixLayout matrixLayout, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr b, int ldb);
@@ -5524,10 +5524,10 @@ namespace Spreads.Native
             public static extern int ZgtsvWork(MatrixLayout matrixLayout, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgtsvx")]
-            public static extern int Zgtsvx(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Zgtsvx(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgtsvx_work")]
-            public static extern int ZgtsvxWork(MatrixLayout matrixLayout, sbyte fact, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZgtsvxWork(MatrixLayout matrixLayout, sbyte fact, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr dlf, IntPtr df, IntPtr duf, IntPtr du2, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgttrf")]
             public static extern int Zgttrf(int n, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv);
@@ -5536,214 +5536,214 @@ namespace Spreads.Native
             public static extern int ZgttrfWork(int n, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgttrs")]
-            public static extern int Zgttrs(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zgttrs(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgttrs_work")]
-            public static extern int ZgttrsWork(MatrixLayout matrixLayout, TransLapack trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZgttrsWork(MatrixLayout matrixLayout, TransChar trans, int n, int nrhs, IntPtr dl, IntPtr d, IntPtr du, IntPtr du2, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbev")]
-            public static extern int Zhbev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz);
+            public static extern int Zhbev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbev_work")]
-            public static extern int ZhbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz, IntPtr work, double* rwork);
+            public static extern int ZhbevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbevd")]
-            public static extern int Zhbevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz);
+            public static extern int Zhbevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbevd_work")]
-            public static extern int ZhbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ZhbevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbevx")]
-            public static extern int Zhbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Zhbevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbevx_work")]
-            public static extern int ZhbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, double* rwork, int* iwork, int* ifail);
+            public static extern int ZhbevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, double* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbgst")]
-            public static extern int Zhbgst(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr x, int ldx);
+            public static extern int Zhbgst(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr x, int ldx);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbgst_work")]
-            public static extern int ZhbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr x, int ldx, IntPtr work, double* rwork);
+            public static extern int ZhbgstWork(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr x, int ldx, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbgv")]
-            public static extern int Zhbgv(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, double* w, IntPtr z, int ldz);
+            public static extern int Zhbgv(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbgv_work")]
-            public static extern int ZhbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, double* w, IntPtr z, int ldz, IntPtr work, double* rwork);
+            public static extern int ZhbgvWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, double* w, IntPtr z, int ldz, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbgvd")]
-            public static extern int Zhbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, double* w, IntPtr z, int ldz);
+            public static extern int Zhbgvd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbgvd_work")]
-            public static extern int ZhbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ZhbgvdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbgvx")]
-            public static extern int Zhbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Zhbgvx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbgvx_work")]
-            public static extern int ZhbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, double* rwork, int* iwork, int* ifail);
+            public static extern int ZhbgvxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int ka, int kb, IntPtr ab, int ldab, IntPtr bb, int ldbb, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, double* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbtrd")]
-            public static extern int Zhbtrd(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* d, double* e, IntPtr q, int ldq);
+            public static extern int Zhbtrd(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* d, double* e, IntPtr q, int ldq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbtrd_work")]
-            public static extern int ZhbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* d, double* e, IntPtr q, int ldq, IntPtr work);
+            public static extern int ZhbtrdWork(MatrixLayout matrixLayout, sbyte vect, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* d, double* e, IntPtr q, int ldq, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhecon")]
-            public static extern int Zhecon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, double anorm, double* rcond);
+            public static extern int Zhecon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhecon_work")]
-            public static extern int ZheconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, double anorm, double* rcond, IntPtr work);
+            public static extern int ZheconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, double anorm, double* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheequb")]
-            public static extern int Zheequb(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, double* s, double* scond, double* amax);
+            public static extern int Zheequb(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheequb_work")]
-            public static extern int ZheequbWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, double* s, double* scond, double* amax, IntPtr work);
+            public static extern int ZheequbWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, double* s, double* scond, double* amax, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheev")]
-            public static extern int Zheev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, double* w);
+            public static extern int Zheev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheev_work")]
-            public static extern int ZheevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, double* w, IntPtr work, int lwork, double* rwork);
+            public static extern int ZheevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, double* w, IntPtr work, int lwork, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevd")]
-            public static extern int Zheevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, double* w);
+            public static extern int Zheevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevd_work")]
-            public static extern int ZheevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, double* w, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ZheevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, double* w, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevr")]
-            public static extern int Zheevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* isuppz);
+            public static extern int Zheevr(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* isuppz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevr_work")]
-            public static extern int ZheevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* isuppz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ZheevrWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* isuppz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevx")]
-            public static extern int Zheevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Zheevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevx_work")]
-            public static extern int ZheevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int* iwork, int* ifail);
+            public static extern int ZheevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegst")]
-            public static extern int Zhegst(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Zhegst(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegst_work")]
-            public static extern int ZhegstWork(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int ZhegstWork(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegv")]
-            public static extern int Zhegv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w);
+            public static extern int Zhegv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegv_work")]
-            public static extern int ZhegvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w, IntPtr work, int lwork, double* rwork);
+            public static extern int ZhegvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w, IntPtr work, int lwork, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegvd")]
-            public static extern int Zhegvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w);
+            public static extern int Zhegvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegvd_work")]
-            public static extern int ZhegvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ZhegvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegvx")]
-            public static extern int Zhegvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Zhegvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegvx_work")]
-            public static extern int ZhegvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int* iwork, int* ifail);
+            public static extern int ZhegvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zherfs")]
-            public static extern int Zherfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zherfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zherfs_work")]
-            public static extern int ZherfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZherfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zherfsx")]
-            public static extern int Zherfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zherfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zherfsx_work")]
-            public static extern int ZherfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZherfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesv")]
-            public static extern int Zhesv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zhesv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesv_work")]
-            public static extern int ZhesvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZhesvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesvx")]
-            public static extern int Zhesvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Zhesvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesvx_work")]
-            public static extern int ZhesvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, int lwork, double* rwork);
+            public static extern int ZhesvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, int lwork, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesvxx")]
-            public static extern int Zhesvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zhesvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesvxx_work")]
-            public static extern int ZhesvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZhesvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheswapr")]
-            public static extern int Zheswapr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int i1, int i2);
+            public static extern int Zheswapr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheswapr_work")]
-            public static extern int ZheswaprWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int i1, int i2);
+            public static extern int ZheswaprWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrd")]
-            public static extern int Zhetrd(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, double* d, double* e, IntPtr tau);
+            public static extern int Zhetrd(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, double* d, double* e, IntPtr tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrd_work")]
-            public static extern int ZhetrdWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, double* d, double* e, IntPtr tau, IntPtr work, int lwork);
+            public static extern int ZhetrdWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, double* d, double* e, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf")]
-            public static extern int Zhetrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Zhetrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf_rook")]
-            public static extern int ZhetrfRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int ZhetrfRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf_rook_work")]
-            public static extern int ZhetrfRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int ZhetrfRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf_work")]
-            public static extern int ZhetrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int ZhetrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetri")]
-            public static extern int Zhetri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Zhetri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetri2")]
-            public static extern int Zhetri2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Zhetri2(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetri2_work")]
-            public static extern int Zhetri2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int Zhetri2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetri2x")]
-            public static extern int Zhetri2x(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, int nb);
+            public static extern int Zhetri2x(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetri2x_work")]
-            public static extern int Zhetri2xWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int nb);
+            public static extern int Zhetri2xWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetri_work")]
-            public static extern int ZhetriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work);
+            public static extern int ZhetriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs")]
-            public static extern int Zhetrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zhetrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs2")]
-            public static extern int Zhetrs2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zhetrs2(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs2_work")]
-            public static extern int Zhetrs2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work);
+            public static extern int Zhetrs2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs_rook")]
-            public static extern int ZhetrsRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZhetrsRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs_rook_work")]
-            public static extern int ZhetrsRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZhetrsRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs_work")]
-            public static extern int ZhetrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZhetrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhfrk")]
-            public static extern int Zhfrk(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, TransLapack trans, int n, int k, double alpha, IntPtr a, int lda, double beta, IntPtr c);
+            public static extern int Zhfrk(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, TransChar trans, int n, int k, double alpha, IntPtr a, int lda, double beta, IntPtr c);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhfrk_work")]
-            public static extern int ZhfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, TransLapack trans, int n, int k, double alpha, IntPtr a, int lda, double beta, IntPtr c);
+            public static extern int ZhfrkWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, TransChar trans, int n, int k, double alpha, IntPtr a, int lda, double beta, IntPtr c);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhgeqz")]
             public static extern int Zhgeqz(MatrixLayout matrixLayout, sbyte job, sbyte compq, sbyte compz, int n, int ilo, int ihi, IntPtr h, int ldh, IntPtr t, int ldt, IntPtr alpha, IntPtr beta, IntPtr q, int ldq, IntPtr z, int ldz);
@@ -5752,94 +5752,94 @@ namespace Spreads.Native
             public static extern int ZhgeqzWork(MatrixLayout matrixLayout, sbyte job, sbyte compq, sbyte compz, int n, int ilo, int ihi, IntPtr h, int ldh, IntPtr t, int ldt, IntPtr alpha, IntPtr beta, IntPtr q, int ldq, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpcon")]
-            public static extern int Zhpcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, double anorm, double* rcond);
+            public static extern int Zhpcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpcon_work")]
-            public static extern int ZhpconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, double anorm, double* rcond, IntPtr work);
+            public static extern int ZhpconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, double anorm, double* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpev")]
-            public static extern int Zhpev(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, double* w, IntPtr z, int ldz);
+            public static extern int Zhpev(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpev_work")]
-            public static extern int ZhpevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, double* w, IntPtr z, int ldz, IntPtr work, double* rwork);
+            public static extern int ZhpevWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, double* w, IntPtr z, int ldz, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpevd")]
-            public static extern int Zhpevd(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, double* w, IntPtr z, int ldz);
+            public static extern int Zhpevd(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpevd_work")]
-            public static extern int ZhpevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ZhpevdWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpevx")]
-            public static extern int Zhpevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Zhpevx(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpevx_work")]
-            public static extern int ZhpevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, double* rwork, int* iwork, int* ifail);
+            public static extern int ZhpevxWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr ap, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, double* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpgst")]
-            public static extern int Zhpgst(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp);
+            public static extern int Zhpgst(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, IntPtr ap, IntPtr bp);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpgst_work")]
-            public static extern int ZhpgstWork(MatrixLayout matrixLayout, int itype, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp);
+            public static extern int ZhpgstWork(MatrixLayout matrixLayout, int itype, UpLoChar uplo, int n, IntPtr ap, IntPtr bp);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpgv")]
-            public static extern int Zhpgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, double* w, IntPtr z, int ldz);
+            public static extern int Zhpgv(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpgv_work")]
-            public static extern int ZhpgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, double* w, IntPtr z, int ldz, IntPtr work, double* rwork);
+            public static extern int ZhpgvWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, double* w, IntPtr z, int ldz, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpgvd")]
-            public static extern int Zhpgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, double* w, IntPtr z, int ldz);
+            public static extern int Zhpgvd(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpgvd_work")]
-            public static extern int ZhpgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int ZhpgvdWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpgvx")]
-            public static extern int Zhpgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Zhpgvx(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpgvx_work")]
-            public static extern int ZhpgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr ap, IntPtr bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, double* rwork, int* iwork, int* ifail);
+            public static extern int ZhpgvxWork(MatrixLayout matrixLayout, int itype, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr ap, IntPtr bp, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, double* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhprfs")]
-            public static extern int Zhprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zhprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhprfs_work")]
-            public static extern int ZhprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZhprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpsv")]
-            public static extern int Zhpsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zhpsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpsv_work")]
-            public static extern int ZhpsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZhpsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpsvx")]
-            public static extern int Zhpsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Zhpsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhpsvx_work")]
-            public static extern int ZhpsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZhpsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhptrd")]
-            public static extern int Zhptrd(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, double* d, double* e, IntPtr tau);
+            public static extern int Zhptrd(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, double* d, double* e, IntPtr tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhptrd_work")]
-            public static extern int ZhptrdWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, double* d, double* e, IntPtr tau);
+            public static extern int ZhptrdWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, double* d, double* e, IntPtr tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhptrf")]
-            public static extern int Zhptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int Zhptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhptrf_work")]
-            public static extern int ZhptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int ZhptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhptri")]
-            public static extern int Zhptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int Zhptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhptri_work")]
-            public static extern int ZhptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, IntPtr work);
+            public static extern int ZhptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhptrs")]
-            public static extern int Zhptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zhptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhptrs_work")]
-            public static extern int ZhptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZhptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhsein")]
             public static extern int Zhsein(MatrixLayout matrixLayout, sbyte job, sbyte eigsrc, sbyte initv, int* select, int n, IntPtr h, int ldh, IntPtr w, IntPtr vl, int ldvl, IntPtr vr, int ldvr, int mm, int* m, int* ifaill, int* ifailr);
@@ -5866,16 +5866,16 @@ namespace Spreads.Native
             public static extern int Zlacn2Work(int n, IntPtr v, IntPtr x, double* est, int* kase, int* isave);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlacp2")]
-            public static extern int Zlacp2(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, double* a, int lda, IntPtr b, int ldb);
+            public static extern int Zlacp2(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, double* a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlacp2_work")]
-            public static extern int Zlacp2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, double* a, int lda, IntPtr b, int ldb);
+            public static extern int Zlacp2Work(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, double* a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlacpy")]
-            public static extern int Zlacpy(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Zlacpy(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlacpy_work")]
-            public static extern int ZlacpyWork(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int ZlacpyWork(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlag2c")]
             public static extern int Zlag2c(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr sa, int ldsa);
@@ -5914,10 +5914,10 @@ namespace Spreads.Native
             public static extern int ZlapmtWork(MatrixLayout matrixLayout, int forwrd, int m, int n, IntPtr x, int ldx, int* k);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlarfb")]
-            public static extern int Zlarfb(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc);
+            public static extern int Zlarfb(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlarfb_work")]
-            public static extern int ZlarfbWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc, IntPtr work, int ldwork);
+            public static extern int ZlarfbWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr c, int ldc, IntPtr work, int ldwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlarfg")]
             public static extern int Zlarfg(int n, IntPtr alpha, IntPtr x, int incx, IntPtr tau);
@@ -5950,10 +5950,10 @@ namespace Spreads.Native
             public static extern int ZlasclWork(MatrixLayout matrixLayout, sbyte type, int kl, int ku, double cfrom, double cto, int m, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlaset")]
-            public static extern int Zlaset(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, IntPtr alpha, IntPtr beta, IntPtr a, int lda);
+            public static extern int Zlaset(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, IntPtr alpha, IntPtr beta, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlaset_work")]
-            public static extern int ZlasetWork(MatrixLayout matrixLayout, UpLoLapack uplo, int m, int n, IntPtr alpha, IntPtr beta, IntPtr a, int lda);
+            public static extern int ZlasetWork(MatrixLayout matrixLayout, UpLoChar uplo, int m, int n, IntPtr alpha, IntPtr beta, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlaswp")]
             public static extern int Zlaswp(MatrixLayout matrixLayout, int n, IntPtr a, int lda, int k1, int k2, int* ipiv, int incx);
@@ -5968,82 +5968,82 @@ namespace Spreads.Native
             public static extern int ZlatmsWork(MatrixLayout matrixLayout, int m, int n, sbyte dist, int* iseed, sbyte sym, double* d, int mode, double cond, double dmax, int kl, int ku, sbyte pack, IntPtr a, int lda, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlauum")]
-            public static extern int Zlauum(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Zlauum(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zlauum_work")]
-            public static extern int ZlauumWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int ZlauumWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbcon")]
-            public static extern int Zpbcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double anorm, double* rcond);
+            public static extern int Zpbcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbcon_work")]
-            public static extern int ZpbconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double anorm, double* rcond, IntPtr work, double* rwork);
+            public static extern int ZpbconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double anorm, double* rcond, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbequ")]
-            public static extern int Zpbequ(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* s, double* scond, double* amax);
+            public static extern int Zpbequ(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbequ_work")]
-            public static extern int ZpbequWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* s, double* scond, double* amax);
+            public static extern int ZpbequWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbrfs")]
-            public static extern int Zpbrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zpbrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbrfs_work")]
-            public static extern int ZpbrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZpbrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbstf")]
-            public static extern int Zpbstf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kb, IntPtr bb, int ldbb);
+            public static extern int Zpbstf(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kb, IntPtr bb, int ldbb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbstf_work")]
-            public static extern int ZpbstfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kb, IntPtr bb, int ldbb);
+            public static extern int ZpbstfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kb, IntPtr bb, int ldbb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbsv")]
-            public static extern int Zpbsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int Zpbsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbsv_work")]
-            public static extern int ZpbsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int ZpbsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbsvx")]
-            public static extern int Zpbsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Zpbsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbsvx_work")]
-            public static extern int ZpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZpbsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr afb, int ldafb, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbtrf")]
-            public static extern int Zpbtrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab);
+            public static extern int Zpbtrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbtrf_work")]
-            public static extern int ZpbtrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab);
+            public static extern int ZpbtrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbtrs")]
-            public static extern int Zpbtrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int Zpbtrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpbtrs_work")]
-            public static extern int ZpbtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int ZpbtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpftrf")]
-            public static extern int Zpftrf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a);
+            public static extern int Zpftrf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpftrf_work")]
-            public static extern int ZpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a);
+            public static extern int ZpftrfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpftri")]
-            public static extern int Zpftri(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a);
+            public static extern int Zpftri(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpftri_work")]
-            public static extern int ZpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a);
+            public static extern int ZpftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpftrs")]
-            public static extern int Zpftrs(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, int nrhs, IntPtr a, IntPtr b, int ldb);
+            public static extern int Zpftrs(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, int nrhs, IntPtr a, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpftrs_work")]
-            public static extern int ZpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, int nrhs, IntPtr a, IntPtr b, int ldb);
+            public static extern int ZpftrsWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, int nrhs, IntPtr a, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpocon")]
-            public static extern int Zpocon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, double anorm, double* rcond);
+            public static extern int Zpocon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpocon_work")]
-            public static extern int ZpoconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, double anorm, double* rcond, IntPtr work, double* rwork);
+            public static extern int ZpoconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, double anorm, double* rcond, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpoequ")]
             public static extern int Zpoequ(MatrixLayout matrixLayout, int n, IntPtr a, int lda, double* s, double* scond, double* amax);
@@ -6058,112 +6058,112 @@ namespace Spreads.Native
             public static extern int ZpoequbWork(MatrixLayout matrixLayout, int n, IntPtr a, int lda, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zporfs")]
-            public static extern int Zporfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zporfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zporfs_work")]
-            public static extern int ZporfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZporfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zporfsx")]
-            public static extern int Zporfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zporfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zporfsx_work")]
-            public static extern int ZporfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZporfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zposv")]
-            public static extern int Zposv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Zposv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zposv_work")]
-            public static extern int ZposvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int ZposvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zposvx")]
-            public static extern int Zposvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Zposvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zposvx_work")]
-            public static extern int ZposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZposvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zposvxx")]
-            public static extern int Zposvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zposvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zposvxx_work")]
-            public static extern int ZposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZposvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpotrf")]
-            public static extern int Zpotrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Zpotrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpotrf2")]
-            public static extern int Zpotrf2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Zpotrf2(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpotrf2_work")]
-            public static extern int Zpotrf2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Zpotrf2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpotrf_work")]
-            public static extern int ZpotrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int ZpotrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpotri")]
-            public static extern int Zpotri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int Zpotri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpotri_work")]
-            public static extern int ZpotriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda);
+            public static extern int ZpotriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpotrs")]
-            public static extern int Zpotrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Zpotrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpotrs_work")]
-            public static extern int ZpotrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int ZpotrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zppcon")]
-            public static extern int Zppcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, double anorm, double* rcond);
+            public static extern int Zppcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zppcon_work")]
-            public static extern int ZppconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, double anorm, double* rcond, IntPtr work, double* rwork);
+            public static extern int ZppconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, double anorm, double* rcond, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zppequ")]
-            public static extern int Zppequ(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, double* s, double* scond, double* amax);
+            public static extern int Zppequ(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zppequ_work")]
-            public static extern int ZppequWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, double* s, double* scond, double* amax);
+            public static extern int ZppequWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpprfs")]
-            public static extern int Zpprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zpprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpprfs_work")]
-            public static extern int ZpprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZpprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zppsv")]
-            public static extern int Zppsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int Zppsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zppsv_work")]
-            public static extern int ZppsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int ZppsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zppsvx")]
-            public static extern int Zppsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Zppsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zppsvx_work")]
-            public static extern int ZppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZppsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpptrf")]
-            public static extern int Zpptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap);
+            public static extern int Zpptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpptrf_work")]
-            public static extern int ZpptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap);
+            public static extern int ZpptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpptri")]
-            public static extern int Zpptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap);
+            public static extern int Zpptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpptri_work")]
-            public static extern int ZpptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap);
+            public static extern int ZpptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpptrs")]
-            public static extern int Zpptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int Zpptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpptrs_work")]
-            public static extern int ZpptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int ZpptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpstrf")]
-            public static extern int Zpstrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* piv, int* rank, double tol);
+            public static extern int Zpstrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* piv, int* rank, double tol);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpstrf_work")]
-            public static extern int ZpstrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* piv, int* rank, double tol, double* work);
+            public static extern int ZpstrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* piv, int* rank, double tol, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zptcon")]
             public static extern int Zptcon(int n, double* d, IntPtr e, double anorm, double* rcond);
@@ -6178,10 +6178,10 @@ namespace Spreads.Native
             public static extern int ZpteqrWork(MatrixLayout matrixLayout, sbyte compz, int n, double* d, double* e, IntPtr z, int ldz, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zptrfs")]
-            public static extern int Zptrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* d, IntPtr e, double* df, IntPtr ef, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zptrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* d, IntPtr e, double* df, IntPtr ef, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zptrfs_work")]
-            public static extern int ZptrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* d, IntPtr e, double* df, IntPtr ef, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZptrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* d, IntPtr e, double* df, IntPtr ef, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zptsv")]
             public static extern int Zptsv(MatrixLayout matrixLayout, int n, int nrhs, double* d, IntPtr e, IntPtr b, int ldb);
@@ -6202,52 +6202,52 @@ namespace Spreads.Native
             public static extern int ZpttrfWork(int n, double* d, IntPtr e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpttrs")]
-            public static extern int Zpttrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* d, IntPtr e, IntPtr b, int ldb);
+            public static extern int Zpttrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* d, IntPtr e, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zpttrs_work")]
-            public static extern int ZpttrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* d, IntPtr e, IntPtr b, int ldb);
+            public static extern int ZpttrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* d, IntPtr e, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zspcon")]
-            public static extern int Zspcon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, double anorm, double* rcond);
+            public static extern int Zspcon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zspcon_work")]
-            public static extern int ZspconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, double anorm, double* rcond, IntPtr work);
+            public static extern int ZspconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, double anorm, double* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsprfs")]
-            public static extern int Zsprfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zsprfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsprfs_work")]
-            public static extern int ZsprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZsprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zspsv")]
-            public static extern int Zspsv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zspsv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zspsv_work")]
-            public static extern int ZspsvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZspsvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zspsvx")]
-            public static extern int Zspsvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Zspsvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zspsvx_work")]
-            public static extern int ZspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZspsvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr ap, IntPtr afp, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsptrf")]
-            public static extern int Zsptrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int Zsptrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsptrf_work")]
-            public static extern int ZsptrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int ZsptrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsptri")]
-            public static extern int Zsptri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv);
+            public static extern int Zsptri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsptri_work")]
-            public static extern int ZsptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, int* ipiv, IntPtr work);
+            public static extern int ZsptriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, int* ipiv, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsptrs")]
-            public static extern int Zsptrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zsptrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsptrs_work")]
-            public static extern int ZsptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZsptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr ap, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zstedc")]
             public static extern int Zstedc(MatrixLayout matrixLayout, sbyte compz, int n, double* d, double* e, IntPtr z, int ldz);
@@ -6280,160 +6280,160 @@ namespace Spreads.Native
             public static extern int ZsteqrWork(MatrixLayout matrixLayout, sbyte compz, int n, double* d, double* e, IntPtr z, int ldz, double* work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsycon")]
-            public static extern int Zsycon(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, double anorm, double* rcond);
+            public static extern int Zsycon(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsycon_work")]
-            public static extern int ZsyconWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, double anorm, double* rcond, IntPtr work);
+            public static extern int ZsyconWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, double anorm, double* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyconv")]
-            public static extern int Zsyconv(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte way, int n, IntPtr a, int lda, int* ipiv, IntPtr e);
+            public static extern int Zsyconv(MatrixLayout matrixLayout, UpLoChar uplo, sbyte way, int n, IntPtr a, int lda, int* ipiv, IntPtr e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyconv_work")]
-            public static extern int ZsyconvWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte way, int n, IntPtr a, int lda, int* ipiv, IntPtr e);
+            public static extern int ZsyconvWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte way, int n, IntPtr a, int lda, int* ipiv, IntPtr e);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyequb")]
-            public static extern int Zsyequb(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, double* s, double* scond, double* amax);
+            public static extern int Zsyequb(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, double* s, double* scond, double* amax);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyequb_work")]
-            public static extern int ZsyequbWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, double* s, double* scond, double* amax, IntPtr work);
+            public static extern int ZsyequbWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, double* s, double* scond, double* amax, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyr")]
-            public static extern int Zsyr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr alpha, IntPtr x, int incx, IntPtr a, int lda);
+            public static extern int Zsyr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr alpha, IntPtr x, int incx, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyr_work")]
-            public static extern int ZsyrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr alpha, IntPtr x, int incx, IntPtr a, int lda);
+            public static extern int ZsyrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr alpha, IntPtr x, int incx, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyrfs")]
-            public static extern int Zsyrfs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Zsyrfs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyrfs_work")]
-            public static extern int ZsyrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZsyrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyrfsx")]
-            public static extern int Zsyrfsx(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zsyrfsx(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyrfsx_work")]
-            public static extern int ZsyrfsxWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZsyrfsxWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte equed, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv")]
-            public static extern int Zsysv(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zsysv(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv_rook")]
-            public static extern int ZsysvRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZsysvRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv_rook_work")]
-            public static extern int ZsysvRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZsysvRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv_work")]
-            public static extern int ZsysvWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZsysvWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysvx")]
-            public static extern int Zsysvx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
+            public static extern int Zsysvx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysvx_work")]
-            public static extern int ZsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, int lwork, double* rwork);
+            public static extern int ZsysvxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* ferr, double* berr, IntPtr work, int lwork, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysvxx")]
-            public static extern int Zsysvxx(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
+            public static extern int Zsysvxx(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysvxx_work")]
-            public static extern int ZsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
+            public static extern int ZsysvxxWork(MatrixLayout matrixLayout, sbyte fact, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr af, int ldaf, int* ipiv, sbyte* equed, double* s, IntPtr b, int ldb, IntPtr x, int ldx, double* rcond, double* rpvgrw, double* berr, int n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, int nparams, double* @params, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyswapr")]
-            public static extern int Zsyswapr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int i1, int i2);
+            public static extern int Zsyswapr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsyswapr_work")]
-            public static extern int ZsyswaprWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int i1, int i2);
+            public static extern int ZsyswaprWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int i1, int i2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf")]
-            public static extern int Zsytrf(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Zsytrf(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf_rook")]
-            public static extern int ZsytrfRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int ZsytrfRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf_rook_work")]
-            public static extern int ZsytrfRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int ZsytrfRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf_work")]
-            public static extern int ZsytrfWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int ZsytrfWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytri")]
-            public static extern int Zsytri(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Zsytri(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytri2")]
-            public static extern int Zsytri2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int Zsytri2(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytri2_work")]
-            public static extern int Zsytri2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int Zsytri2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytri2x")]
-            public static extern int Zsytri2x(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, int nb);
+            public static extern int Zsytri2x(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytri2x_work")]
-            public static extern int Zsytri2xWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int nb);
+            public static extern int Zsytri2xWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int nb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytri_work")]
-            public static extern int ZsytriWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work);
+            public static extern int ZsytriWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs")]
-            public static extern int Zsytrs(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zsytrs(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs2")]
-            public static extern int Zsytrs2(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zsytrs2(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs2_work")]
-            public static extern int Zsytrs2Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work);
+            public static extern int Zsytrs2Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs_rook")]
-            public static extern int ZsytrsRook(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZsytrsRook(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs_rook_work")]
-            public static extern int ZsytrsRookWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZsytrsRookWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs_work")]
-            public static extern int ZsytrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZsytrsWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztbcon")]
-            public static extern int Ztbcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, int kd, IntPtr ab, int ldab, double* rcond);
+            public static extern int Ztbcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, int kd, IntPtr ab, int ldab, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztbcon_work")]
-            public static extern int ZtbconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, int kd, IntPtr ab, int ldab, double* rcond, IntPtr work, double* rwork);
+            public static extern int ZtbconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, int kd, IntPtr ab, int ldab, double* rcond, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztbrfs")]
-            public static extern int Ztbrfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Ztbrfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztbrfs_work")]
-            public static extern int ZtbrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZtbrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztbtrs")]
-            public static extern int Ztbtrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int Ztbtrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztbtrs_work")]
-            public static extern int ZtbtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
+            public static extern int ZtbtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int kd, int nrhs, IntPtr ab, int ldab, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztfsm")]
-            public static extern int Ztfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoLapack uplo, TransLapack trans, sbyte diag, int m, int n, IntPtr alpha, IntPtr a, IntPtr b, int ldb);
+            public static extern int Ztfsm(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoChar uplo, TransChar trans, sbyte diag, int m, int n, IntPtr alpha, IntPtr a, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztfsm_work")]
-            public static extern int ZtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoLapack uplo, TransLapack trans, sbyte diag, int m, int n, IntPtr alpha, IntPtr a, IntPtr b, int ldb);
+            public static extern int ZtfsmWork(MatrixLayout matrixLayout, sbyte transr, sbyte side, UpLoChar uplo, TransChar trans, sbyte diag, int m, int n, IntPtr alpha, IntPtr a, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztftri")]
-            public static extern int Ztftri(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, sbyte diag, int n, IntPtr a);
+            public static extern int Ztftri(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, sbyte diag, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztftri_work")]
-            public static extern int ZtftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, sbyte diag, int n, IntPtr a);
+            public static extern int ZtftriWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, sbyte diag, int n, IntPtr a);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztfttp")]
-            public static extern int Ztfttp(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr arf, IntPtr ap);
+            public static extern int Ztfttp(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr arf, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztfttp_work")]
-            public static extern int ZtfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr arf, IntPtr ap);
+            public static extern int ZtfttpWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr arf, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztfttr")]
-            public static extern int Ztfttr(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr arf, IntPtr a, int lda);
+            public static extern int Ztfttr(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr arf, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztfttr_work")]
-            public static extern int ZtfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr arf, IntPtr a, int lda);
+            public static extern int ZtfttrWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr arf, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztgevc")]
             public static extern int Ztgevc(MatrixLayout matrixLayout, sbyte side, sbyte howmny, int* select, int n, IntPtr s, int lds, IntPtr p, int ldp, IntPtr vl, int ldvl, IntPtr vr, int ldvr, int mm, int* m);
@@ -6466,22 +6466,22 @@ namespace Spreads.Native
             public static extern int ZtgsnaWork(MatrixLayout matrixLayout, sbyte job, sbyte howmny, int* select, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr vl, int ldvl, IntPtr vr, int ldvr, double* s, double* dif, int mm, int* m, IntPtr work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztgsyl")]
-            public static extern int Ztgsyl(MatrixLayout matrixLayout, TransLapack trans, int ijob, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, IntPtr d, int ldd, IntPtr e, int lde, IntPtr f, int ldf, double* scale, double* dif);
+            public static extern int Ztgsyl(MatrixLayout matrixLayout, TransChar trans, int ijob, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, IntPtr d, int ldd, IntPtr e, int lde, IntPtr f, int ldf, double* scale, double* dif);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztgsyl_work")]
-            public static extern int ZtgsylWork(MatrixLayout matrixLayout, TransLapack trans, int ijob, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, IntPtr d, int ldd, IntPtr e, int lde, IntPtr f, int ldf, double* scale, double* dif, IntPtr work, int lwork, int* iwork);
+            public static extern int ZtgsylWork(MatrixLayout matrixLayout, TransChar trans, int ijob, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, IntPtr d, int ldd, IntPtr e, int lde, IntPtr f, int ldf, double* scale, double* dif, IntPtr work, int lwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztpcon")]
-            public static extern int Ztpcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, IntPtr ap, double* rcond);
+            public static extern int Ztpcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, IntPtr ap, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztpcon_work")]
-            public static extern int ZtpconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, IntPtr ap, double* rcond, IntPtr work, double* rwork);
+            public static extern int ZtpconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, IntPtr ap, double* rcond, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztpmqrt")]
-            public static extern int Ztpmqrt(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Ztpmqrt(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztpmqrt_work")]
-            public static extern int ZtpmqrtWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work);
+            public static extern int ZtpmqrtWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, int nb, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztpqrt")]
             public static extern int Ztpqrt(MatrixLayout matrixLayout, int m, int n, int l, int nb, IntPtr a, int lda, IntPtr b, int ldb, IntPtr t, int ldt);
@@ -6496,46 +6496,46 @@ namespace Spreads.Native
             public static extern int ZtpqrtWork(MatrixLayout matrixLayout, int m, int n, int l, int nb, IntPtr a, int lda, IntPtr b, int ldb, IntPtr t, int ldt, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztprfb")]
-            public static extern int Ztprfb(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, int l, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Ztprfb(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, int l, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztprfb_work")]
-            public static extern int ZtprfbWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, sbyte direct, sbyte storev, int m, int n, int k, int l, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int ldwork);
+            public static extern int ZtprfbWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, sbyte direct, sbyte storev, int m, int n, int k, int l, IntPtr v, int ldv, IntPtr t, int ldt, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int ldwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztprfs")]
-            public static extern int Ztprfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Ztprfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztprfs_work")]
-            public static extern int ZtprfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZtprfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztptri")]
-            public static extern int Ztptri(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, IntPtr ap);
+            public static extern int Ztptri(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztptri_work")]
-            public static extern int ZtptriWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, IntPtr ap);
+            public static extern int ZtptriWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztptrs")]
-            public static extern int Ztptrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int Ztptrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztptrs_work")]
-            public static extern int ZtptrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
+            public static extern int ZtptrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr ap, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztpttf")]
-            public static extern int Ztpttf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr ap, IntPtr arf);
+            public static extern int Ztpttf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr ap, IntPtr arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztpttf_work")]
-            public static extern int ZtpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr ap, IntPtr arf);
+            public static extern int ZtpttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr ap, IntPtr arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztpttr")]
-            public static extern int Ztpttr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, IntPtr a, int lda);
+            public static extern int Ztpttr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztpttr_work")]
-            public static extern int ZtpttrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, IntPtr a, int lda);
+            public static extern int ZtpttrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrcon")]
-            public static extern int Ztrcon(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, IntPtr a, int lda, double* rcond);
+            public static extern int Ztrcon(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, IntPtr a, int lda, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrcon_work")]
-            public static extern int ZtrconWork(MatrixLayout matrixLayout, sbyte norm, UpLoLapack uplo, sbyte diag, int n, IntPtr a, int lda, double* rcond, IntPtr work, double* rwork);
+            public static extern int ZtrconWork(MatrixLayout matrixLayout, sbyte norm, UpLoChar uplo, sbyte diag, int n, IntPtr a, int lda, double* rcond, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrevc")]
             public static extern int Ztrevc(MatrixLayout matrixLayout, sbyte side, sbyte howmny, int* select, int n, IntPtr t, int ldt, IntPtr vl, int ldvl, IntPtr vr, int ldvr, int mm, int* m);
@@ -6550,10 +6550,10 @@ namespace Spreads.Native
             public static extern int ZtrexcWork(MatrixLayout matrixLayout, sbyte compq, int n, IntPtr t, int ldt, IntPtr q, int ldq, int ifst, int ilst);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrrfs")]
-            public static extern int Ztrrfs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
+            public static extern int Ztrrfs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrrfs_work")]
-            public static extern int ZtrrfsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
+            public static extern int ZtrrfsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr x, int ldx, double* ferr, double* berr, IntPtr work, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrsen")]
             public static extern int Ztrsen(MatrixLayout matrixLayout, sbyte job, sbyte compq, int* select, int n, IntPtr t, int ldt, IntPtr q, int ldq, IntPtr w, int* m, double* s, double* sep);
@@ -6574,28 +6574,28 @@ namespace Spreads.Native
             public static extern int ZtrsylWork(MatrixLayout matrixLayout, sbyte trana, sbyte tranb, int isgn, int m, int n, IntPtr a, int lda, IntPtr b, int ldb, IntPtr c, int ldc, double* scale);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrtri")]
-            public static extern int Ztrtri(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, IntPtr a, int lda);
+            public static extern int Ztrtri(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrtri_work")]
-            public static extern int ZtrtriWork(MatrixLayout matrixLayout, UpLoLapack uplo, sbyte diag, int n, IntPtr a, int lda);
+            public static extern int ZtrtriWork(MatrixLayout matrixLayout, UpLoChar uplo, sbyte diag, int n, IntPtr a, int lda);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrtrs")]
-            public static extern int Ztrtrs(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Ztrtrs(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrtrs_work")]
-            public static extern int ZtrtrsWork(MatrixLayout matrixLayout, UpLoLapack uplo, TransLapack trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int ZtrtrsWork(MatrixLayout matrixLayout, UpLoChar uplo, TransChar trans, sbyte diag, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrttf")]
-            public static extern int Ztrttf(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr arf);
+            public static extern int Ztrttf(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrttf_work")]
-            public static extern int ZtrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr arf);
+            public static extern int ZtrttfWork(MatrixLayout matrixLayout, sbyte transr, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr arf);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrttp")]
-            public static extern int Ztrttp(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr ap);
+            public static extern int Ztrttp(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztrttp_work")]
-            public static extern int ZtrttpWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr ap);
+            public static extern int ZtrttpWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr ap);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ztzrzf")]
             public static extern int Ztzrzf(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau);
@@ -6604,13 +6604,13 @@ namespace Spreads.Native
             public static extern int ZtzrzfWork(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunbdb")]
-            public static extern int Zunbdb(MatrixLayout matrixLayout, TransLapack trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, double* theta, double* phi, IntPtr taup1, IntPtr taup2, IntPtr tauq1, IntPtr tauq2);
+            public static extern int Zunbdb(MatrixLayout matrixLayout, TransChar trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, double* theta, double* phi, IntPtr taup1, IntPtr taup2, IntPtr tauq1, IntPtr tauq2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunbdb_work")]
-            public static extern int ZunbdbWork(MatrixLayout matrixLayout, TransLapack trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, double* theta, double* phi, IntPtr taup1, IntPtr taup2, IntPtr tauq1, IntPtr tauq2, IntPtr work, int lwork);
+            public static extern int ZunbdbWork(MatrixLayout matrixLayout, TransChar trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, double* theta, double* phi, IntPtr taup1, IntPtr taup2, IntPtr tauq1, IntPtr tauq2, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zuncsd")]
-            public static extern int Zuncsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, double* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t);
+            public static extern int Zuncsd(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, double* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zuncsd2by1")]
             public static extern int Zuncsd2by1(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x21, int ldx21, double* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t);
@@ -6619,7 +6619,7 @@ namespace Spreads.Native
             public static extern int Zuncsd2by1Work(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x21, int ldx21, double* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zuncsd_work")]
-            public static extern int ZuncsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransLapack trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, double* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork);
+            public static extern int ZuncsdWork(MatrixLayout matrixLayout, sbyte jobu1, sbyte jobu2, sbyte jobv1t, sbyte jobv2t, TransChar trans, sbyte signs, int m, int p, int q, IntPtr x11, int ldx11, IntPtr x12, int ldx12, IntPtr x21, int ldx21, IntPtr x22, int ldx22, double* theta, IntPtr u1, int ldu1, IntPtr u2, int ldu2, IntPtr v1t, int ldv1t, IntPtr v2t, int ldv2t, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zungbr")]
             public static extern int Zungbr(MatrixLayout matrixLayout, sbyte vect, int m, int n, int k, IntPtr a, int lda, IntPtr tau);
@@ -6658,151 +6658,151 @@ namespace Spreads.Native
             public static extern int ZungrqWork(MatrixLayout matrixLayout, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zungtr")]
-            public static extern int Zungtr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tau);
+            public static extern int Zungtr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tau);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zungtr_work")]
-            public static extern int ZungtrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
+            public static extern int ZungtrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tau, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmbr")]
-            public static extern int Zunmbr(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Zunmbr(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmbr_work")]
-            public static extern int ZunmbrWork(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZunmbrWork(MatrixLayout matrixLayout, sbyte vect, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmhr")]
-            public static extern int Zunmhr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int ilo, int ihi, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Zunmhr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int ilo, int ihi, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmhr_work")]
-            public static extern int ZunmhrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int ilo, int ihi, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZunmhrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int ilo, int ihi, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmlq")]
-            public static extern int Zunmlq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Zunmlq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmlq_work")]
-            public static extern int ZunmlqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZunmlqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmql")]
-            public static extern int Zunmql(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Zunmql(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmql_work")]
-            public static extern int ZunmqlWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZunmqlWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmqr")]
-            public static extern int Zunmqr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Zunmqr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmqr_work")]
-            public static extern int ZunmqrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZunmqrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmrq")]
-            public static extern int Zunmrq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Zunmrq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmrq_work")]
-            public static extern int ZunmrqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZunmrqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmrz")]
-            public static extern int Zunmrz(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Zunmrz(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmrz_work")]
-            public static extern int ZunmrzWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, int l, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZunmrzWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, int l, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmtr")]
-            public static extern int Zunmtr(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Zunmtr(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zunmtr_work")]
-            public static extern int ZunmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZunmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, IntPtr a, int lda, IntPtr tau, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zupgtr")]
-            public static extern int Zupgtr(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, IntPtr tau, IntPtr q, int ldq);
+            public static extern int Zupgtr(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, IntPtr tau, IntPtr q, int ldq);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zupgtr_work")]
-            public static extern int ZupgtrWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr ap, IntPtr tau, IntPtr q, int ldq, IntPtr work);
+            public static extern int ZupgtrWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr ap, IntPtr tau, IntPtr q, int ldq, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zupmtr")]
-            public static extern int Zupmtr(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, IntPtr ap, IntPtr tau, IntPtr c, int ldc);
+            public static extern int Zupmtr(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, IntPtr ap, IntPtr tau, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zupmtr_work")]
-            public static extern int ZupmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoLapack uplo, TransLapack trans, int m, int n, IntPtr ap, IntPtr tau, IntPtr c, int ldc, IntPtr work);
+            public static extern int ZupmtrWork(MatrixLayout matrixLayout, sbyte side, UpLoChar uplo, TransChar trans, int m, int n, IntPtr ap, IntPtr tau, IntPtr c, int ldc, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ilaver")]
             public static extern void Ilaver(int* vers_major, int* vers_minor, int* vers_patch);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesv_aa")]
-            public static extern int ChesvAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ChesvAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesv_aa_work")]
-            public static extern int ChesvAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ChesvAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf_aa")]
-            public static extern int ChetrfAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int ChetrfAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf_aa_work")]
-            public static extern int ChetrfAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int ChetrfAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs_aa")]
-            public static extern int ChetrsAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ChetrsAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs_aa_work")]
-            public static extern int ChetrsAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ChetrsAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv_aa")]
-            public static extern int DsysvAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int DsysvAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv_aa_work")]
-            public static extern int DsysvAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work, int lwork);
+            public static extern int DsysvAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf_aa")]
-            public static extern int DsytrfAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv);
+            public static extern int DsytrfAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf_aa_work")]
-            public static extern int DsytrfAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, int* ipiv, double* work, int lwork);
+            public static extern int DsytrfAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, int* ipiv, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs_aa")]
-            public static extern int DsytrsAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
+            public static extern int DsytrsAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs_aa_work")]
-            public static extern int DsytrsAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work, int lwork);
+            public static extern int DsytrsAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, int* ipiv, double* b, int ldb, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv_aa")]
-            public static extern int SsysvAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int SsysvAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv_aa_work")]
-            public static extern int SsysvAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work, int lwork);
+            public static extern int SsysvAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf_aa")]
-            public static extern int SsytrfAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv);
+            public static extern int SsytrfAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf_aa_work")]
-            public static extern int SsytrfAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, int* ipiv, float* work, int lwork);
+            public static extern int SsytrfAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, int* ipiv, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs_aa")]
-            public static extern int SsytrsAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
+            public static extern int SsytrsAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs_aa_work")]
-            public static extern int SsytrsAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work, int lwork);
+            public static extern int SsytrsAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, int* ipiv, float* b, int ldb, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesv_aa")]
-            public static extern int ZhesvAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZhesvAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesv_aa_work")]
-            public static extern int ZhesvAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZhesvAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf_aa")]
-            public static extern int ZhetrfAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int ZhetrfAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf_aa_work")]
-            public static extern int ZhetrfAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int ZhetrfAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs_aa")]
-            public static extern int ZhetrsAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZhetrsAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs_aa_work")]
-            public static extern int ZhetrsAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZhetrsAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgemqr")]
-            public static extern int Cgemqr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc);
+            public static extern int Cgemqr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgemqr_work")]
-            public static extern int CgemqrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CgemqrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgeqr")]
             public static extern int Cgeqr(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr t, int tsize);
@@ -6811,10 +6811,10 @@ namespace Spreads.Native
             public static extern int CgeqrWork(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr t, int tsize, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgemqr")]
-            public static extern int Dgemqr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* t, int tsize, double* c, int ldc);
+            public static extern int Dgemqr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* t, int tsize, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgemqr_work")]
-            public static extern int DgemqrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* t, int tsize, double* c, int ldc, double* work, int lwork);
+            public static extern int DgemqrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* t, int tsize, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgeqr")]
             public static extern int Dgeqr(MatrixLayout matrixLayout, int m, int n, double* a, int lda, double* t, int tsize);
@@ -6823,10 +6823,10 @@ namespace Spreads.Native
             public static extern int DgeqrWork(MatrixLayout matrixLayout, int m, int n, double* a, int lda, double* t, int tsize, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgemqr")]
-            public static extern int Sgemqr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* t, int tsize, float* c, int ldc);
+            public static extern int Sgemqr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* t, int tsize, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgemqr_work")]
-            public static extern int SgemqrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* t, int tsize, float* c, int ldc, float* work, int lwork);
+            public static extern int SgemqrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* t, int tsize, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgeqr")]
             public static extern int Sgeqr(MatrixLayout matrixLayout, int m, int n, float* a, int lda, float* t, int tsize);
@@ -6835,10 +6835,10 @@ namespace Spreads.Native
             public static extern int SgeqrWork(MatrixLayout matrixLayout, int m, int n, float* a, int lda, float* t, int tsize, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgemqr")]
-            public static extern int Zgemqr(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc);
+            public static extern int Zgemqr(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgemqr_work")]
-            public static extern int ZgemqrWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZgemqrWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgeqr")]
             public static extern int Zgeqr(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr t, int tsize);
@@ -6853,10 +6853,10 @@ namespace Spreads.Native
             public static extern int CgelqWork(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr t, int tsize, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgemlq")]
-            public static extern int Cgemlq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc);
+            public static extern int Cgemlq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgemlq_work")]
-            public static extern int CgemlqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int CgemlqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgelq")]
             public static extern int Dgelq(MatrixLayout matrixLayout, int m, int n, double* a, int lda, double* t, int tsize);
@@ -6865,10 +6865,10 @@ namespace Spreads.Native
             public static extern int DgelqWork(MatrixLayout matrixLayout, int m, int n, double* a, int lda, double* t, int tsize, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgemlq")]
-            public static extern int Dgemlq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* t, int tsize, double* c, int ldc);
+            public static extern int Dgemlq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* t, int tsize, double* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgemlq_work")]
-            public static extern int DgemlqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, double* a, int lda, double* t, int tsize, double* c, int ldc, double* work, int lwork);
+            public static extern int DgemlqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, double* a, int lda, double* t, int tsize, double* c, int ldc, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgelq")]
             public static extern int Sgelq(MatrixLayout matrixLayout, int m, int n, float* a, int lda, float* t, int tsize);
@@ -6877,10 +6877,10 @@ namespace Spreads.Native
             public static extern int SgelqWork(MatrixLayout matrixLayout, int m, int n, float* a, int lda, float* t, int tsize, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgemlq")]
-            public static extern int Sgemlq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* t, int tsize, float* c, int ldc);
+            public static extern int Sgemlq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* t, int tsize, float* c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgemlq_work")]
-            public static extern int SgemlqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, float* a, int lda, float* t, int tsize, float* c, int ldc, float* work, int lwork);
+            public static extern int SgemlqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, float* a, int lda, float* t, int tsize, float* c, int ldc, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgelq")]
             public static extern int Zgelq(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr t, int tsize);
@@ -6889,442 +6889,442 @@ namespace Spreads.Native
             public static extern int ZgelqWork(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda, IntPtr t, int tsize, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgemlq")]
-            public static extern int Zgemlq(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc);
+            public static extern int Zgemlq(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgemlq_work")]
-            public static extern int ZgemlqWork(MatrixLayout matrixLayout, sbyte side, TransLapack trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc, IntPtr work, int lwork);
+            public static extern int ZgemlqWork(MatrixLayout matrixLayout, sbyte side, TransChar trans, int m, int n, int k, IntPtr a, int lda, IntPtr t, int tsize, IntPtr c, int ldc, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgetsls")]
-            public static extern int Cgetsls(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Cgetsls(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cgetsls_work")]
-            public static extern int CgetslsWork(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int CgetslsWork(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgetsls")]
-            public static extern int Dgetsls(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, double* a, int lda, double* b, int ldb);
+            public static extern int Dgetsls(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, double* a, int lda, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dgetsls_work")]
-            public static extern int DgetslsWork(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, double* a, int lda, double* b, int ldb, double* work, int lwork);
+            public static extern int DgetslsWork(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, double* a, int lda, double* b, int ldb, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgetsls")]
-            public static extern int Sgetsls(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, float* a, int lda, float* b, int ldb);
+            public static extern int Sgetsls(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, float* a, int lda, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_sgetsls_work")]
-            public static extern int SgetslsWork(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, float* a, int lda, float* b, int ldb, float* work, int lwork);
+            public static extern int SgetslsWork(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, float* a, int lda, float* b, int ldb, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgetsls")]
-            public static extern int Zgetsls(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
+            public static extern int Zgetsls(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zgetsls_work")]
-            public static extern int ZgetslsWork(MatrixLayout matrixLayout, TransLapack trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZgetslsWork(MatrixLayout matrixLayout, TransChar trans, int m, int n, int nrhs, IntPtr a, int lda, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_checon_3")]
-            public static extern int Checon3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, float anorm, float* rcond);
+            public static extern int Checon3(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_checon_3_work")]
-            public static extern int Checon3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, float anorm, float* rcond, IntPtr work);
+            public static extern int Checon3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, float anorm, float* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesv_rk")]
-            public static extern int ChesvRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int ChesvRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesv_rk_work")]
-            public static extern int ChesvRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ChesvRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf_rk")]
-            public static extern int ChetrfRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
+            public static extern int ChetrfRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf_rk_work")]
-            public static extern int ChetrfRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
+            public static extern int ChetrfRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetri_3")]
-            public static extern int Chetri3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
+            public static extern int Chetri3(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetri_3_work")]
-            public static extern int Chetri3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
+            public static extern int Chetri3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs_3")]
-            public static extern int Chetrs3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int Chetrs3(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs_3_work")]
-            public static extern int Chetrs3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int Chetrs3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csycon_3")]
-            public static extern int Csycon3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, float anorm, float* rcond);
+            public static extern int Csycon3(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csycon_3_work")]
-            public static extern int Csycon3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, float anorm, float* rcond, IntPtr work);
+            public static extern int Csycon3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, float anorm, float* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv_aa")]
-            public static extern int CsysvAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int CsysvAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv_aa_work")]
-            public static extern int CsysvAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int CsysvAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv_rk")]
-            public static extern int CsysvRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int CsysvRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv_rk_work")]
-            public static extern int CsysvRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int CsysvRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf_aa")]
-            public static extern int CsytrfAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int CsytrfAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf_aa_work")]
-            public static extern int CsytrfAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int CsytrfAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf_rk")]
-            public static extern int CsytrfRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
+            public static extern int CsytrfRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf_rk_work")]
-            public static extern int CsytrfRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
+            public static extern int CsytrfRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytri_3")]
-            public static extern int Csytri3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
+            public static extern int Csytri3(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytri_3_work")]
-            public static extern int Csytri3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
+            public static extern int Csytri3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs_3")]
-            public static extern int Csytrs3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int Csytrs3(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs_3_work")]
-            public static extern int Csytrs3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int Csytrs3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs_aa")]
-            public static extern int CsytrsAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int CsytrsAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs_aa_work")]
-            public static extern int CsytrsAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int CsytrsAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsycon_3")]
-            public static extern int Dsycon3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* e, int* ipiv, double anorm, double* rcond);
+            public static extern int Dsycon3(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* e, int* ipiv, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsycon_3_work")]
-            public static extern int Dsycon3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* e, int* ipiv, double anorm, double* rcond, double* work, int* iwork);
+            public static extern int Dsycon3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* e, int* ipiv, double anorm, double* rcond, double* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv_rk")]
-            public static extern int DsysvRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* e, int* ipiv, double* b, int ldb);
+            public static extern int DsysvRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* e, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv_rk_work")]
-            public static extern int DsysvRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* e, int* ipiv, double* b, int ldb, double* work, int lwork);
+            public static extern int DsysvRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* e, int* ipiv, double* b, int ldb, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf_rk")]
-            public static extern int DsytrfRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* e, int* ipiv);
+            public static extern int DsytrfRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf_rk_work")]
-            public static extern int DsytrfRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* e, int* ipiv, double* work, int lwork);
+            public static extern int DsytrfRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* e, int* ipiv, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytri_3")]
-            public static extern int Dsytri3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* e, int* ipiv);
+            public static extern int Dsytri3(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytri_3_work")]
-            public static extern int Dsytri3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* e, int* ipiv, double* work, int lwork);
+            public static extern int Dsytri3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* e, int* ipiv, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs_3")]
-            public static extern int Dsytrs3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* e, int* ipiv, double* b, int ldb);
+            public static extern int Dsytrs3(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* e, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs_3_work")]
-            public static extern int Dsytrs3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* e, int* ipiv, double* b, int ldb);
+            public static extern int Dsytrs3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* e, int* ipiv, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssycon_3")]
-            public static extern int Ssycon3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* e, int* ipiv, float anorm, float* rcond);
+            public static extern int Ssycon3(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* e, int* ipiv, float anorm, float* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssycon_3_work")]
-            public static extern int Ssycon3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* e, int* ipiv, float anorm, float* rcond, float* work, int* iwork);
+            public static extern int Ssycon3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* e, int* ipiv, float anorm, float* rcond, float* work, int* iwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv_rk")]
-            public static extern int SsysvRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* e, int* ipiv, float* b, int ldb);
+            public static extern int SsysvRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* e, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv_rk_work")]
-            public static extern int SsysvRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* e, int* ipiv, float* b, int ldb, float* work, int lwork);
+            public static extern int SsysvRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* e, int* ipiv, float* b, int ldb, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf_rk")]
-            public static extern int SsytrfRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* e, int* ipiv);
+            public static extern int SsytrfRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf_rk_work")]
-            public static extern int SsytrfRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* e, int* ipiv, float* work, int lwork);
+            public static extern int SsytrfRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* e, int* ipiv, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytri_3")]
-            public static extern int Ssytri3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* e, int* ipiv);
+            public static extern int Ssytri3(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytri_3_work")]
-            public static extern int Ssytri3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* e, int* ipiv, float* work, int lwork);
+            public static extern int Ssytri3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* e, int* ipiv, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs_3")]
-            public static extern int Ssytrs3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* e, int* ipiv, float* b, int ldb);
+            public static extern int Ssytrs3(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* e, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs_3_work")]
-            public static extern int Ssytrs3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* e, int* ipiv, float* b, int ldb);
+            public static extern int Ssytrs3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* e, int* ipiv, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhecon_3")]
-            public static extern int Zhecon3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, double anorm, double* rcond);
+            public static extern int Zhecon3(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhecon_3_work")]
-            public static extern int Zhecon3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, double anorm, double* rcond, IntPtr work);
+            public static extern int Zhecon3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, double anorm, double* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesv_rk")]
-            public static extern int ZhesvRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZhesvRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesv_rk_work")]
-            public static extern int ZhesvRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZhesvRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf_rk")]
-            public static extern int ZhetrfRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
+            public static extern int ZhetrfRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf_rk_work")]
-            public static extern int ZhetrfRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
+            public static extern int ZhetrfRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetri_3")]
-            public static extern int Zhetri3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
+            public static extern int Zhetri3(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetri_3_work")]
-            public static extern int Zhetri3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
+            public static extern int Zhetri3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs_3")]
-            public static extern int Zhetrs3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zhetrs3(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs_3_work")]
-            public static extern int Zhetrs3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zhetrs3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsycon_3")]
-            public static extern int Zsycon3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, double anorm, double* rcond);
+            public static extern int Zsycon3(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, double anorm, double* rcond);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsycon_3_work")]
-            public static extern int Zsycon3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, double anorm, double* rcond, IntPtr work);
+            public static extern int Zsycon3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, double anorm, double* rcond, IntPtr work);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv_aa")]
-            public static extern int ZsysvAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZsysvAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv_aa_work")]
-            public static extern int ZsysvAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZsysvAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv_rk")]
-            public static extern int ZsysvRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZsysvRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv_rk_work")]
-            public static extern int ZsysvRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZsysvRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf_aa")]
-            public static extern int ZsytrfAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv);
+            public static extern int ZsytrfAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf_aa_work")]
-            public static extern int ZsytrfAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
+            public static extern int ZsytrfAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf_rk")]
-            public static extern int ZsytrfRk(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
+            public static extern int ZsytrfRk(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf_rk_work")]
-            public static extern int ZsytrfRkWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
+            public static extern int ZsytrfRkWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytri_3")]
-            public static extern int Zsytri3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
+            public static extern int Zsytri3(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytri_3_work")]
-            public static extern int Zsytri3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
+            public static extern int Zsytri3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs_3")]
-            public static extern int Zsytrs3(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zsytrs3(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs_3_work")]
-            public static extern int Zsytrs3Work(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
+            public static extern int Zsytrs3Work(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr e, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs_aa")]
-            public static extern int ZsytrsAa(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
+            public static extern int ZsytrsAa(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs_aa_work")]
-            public static extern int ZsytrsAaWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZsytrsAaWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, int* ipiv, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbev_2stage")]
-            public static extern int Chbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz);
+            public static extern int Chbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbev_2stage_work")]
-            public static extern int Chbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork);
+            public static extern int Chbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbevd_2stage")]
-            public static extern int Chbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz);
+            public static extern int Chbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbevd_2stage_work")]
-            public static extern int Chbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int Chbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbevx_2stage")]
-            public static extern int Chbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Chbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chbevx_2stage_work")]
-            public static extern int Chbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int* iwork, int* ifail);
+            public static extern int Chbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheev_2stage")]
-            public static extern int Cheev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, float* w);
+            public static extern int Cheev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheev_2stage_work")]
-            public static extern int Cheev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, float* w, IntPtr work, int lwork, float* rwork);
+            public static extern int Cheev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, float* w, IntPtr work, int lwork, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevd_2stage")]
-            public static extern int Cheevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, float* w);
+            public static extern int Cheevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevd_2stage_work")]
-            public static extern int Cheevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, float* w, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int Cheevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, float* w, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevr_2stage")]
-            public static extern int Cheevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* isuppz);
+            public static extern int Cheevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* isuppz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevr_2stage_work")]
-            public static extern int Cheevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* isuppz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int Cheevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* isuppz, IntPtr work, int lwork, float* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevx_2stage")]
-            public static extern int Cheevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Cheevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_cheevx_2stage_work")]
-            public static extern int Cheevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int* iwork, int* ifail);
+            public static extern int Cheevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, IntPtr z, int ldz, IntPtr work, int lwork, float* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegv_2stage")]
-            public static extern int Chegv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w);
+            public static extern int Chegv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chegv_2stage_work")]
-            public static extern int Chegv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w, IntPtr work, int lwork, float* rwork);
+            public static extern int Chegv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, float* w, IntPtr work, int lwork, float* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbev_2stage")]
-            public static extern int Dsbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz);
+            public static extern int Dsbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbev_2stage_work")]
-            public static extern int Dsbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz, double* work, int lwork);
+            public static extern int Dsbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbevd_2stage")]
-            public static extern int Dsbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz);
+            public static extern int Dsbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbevd_2stage_work")]
-            public static extern int Dsbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
+            public static extern int Dsbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbevx_2stage")]
-            public static extern int Dsbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
+            public static extern int Dsbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsbevx_2stage_work")]
-            public static extern int Dsbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, double* ab, int ldab, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int* ifail);
+            public static extern int Dsbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, double* ab, int ldab, double* q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyev_2stage")]
-            public static extern int Dsyev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* w);
+            public static extern int Dsyev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyev_2stage_work")]
-            public static extern int Dsyev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* w, double* work, int lwork);
+            public static extern int Dsyev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* w, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevd_2stage")]
-            public static extern int Dsyevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* w);
+            public static extern int Dsyevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevd_2stage_work")]
-            public static extern int Dsyevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* w, double* work, int lwork, int* iwork, int liwork);
+            public static extern int Dsyevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* w, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevr_2stage")]
-            public static extern int Dsyevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* isuppz);
+            public static extern int Dsyevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* isuppz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevr_2stage_work")]
-            public static extern int Dsyevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* isuppz, double* work, int lwork, int* iwork, int liwork);
+            public static extern int Dsyevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* isuppz, double* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevx_2stage")]
-            public static extern int Dsyevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
+            public static extern int Dsyevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsyevx_2stage_work")]
-            public static extern int Dsyevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int* ifail);
+            public static extern int Dsyevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, double* a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, double* z, int ldz, double* work, int lwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygv_2stage")]
-            public static extern int Dsygv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb, double* w);
+            public static extern int Dsygv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsygv_2stage_work")]
-            public static extern int Dsygv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, double* a, int lda, double* b, int ldb, double* w, double* work, int lwork);
+            public static extern int Dsygv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, double* a, int lda, double* b, int ldb, double* w, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbev_2stage")]
-            public static extern int Ssbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz);
+            public static extern int Ssbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbev_2stage_work")]
-            public static extern int Ssbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz, float* work, int lwork);
+            public static extern int Ssbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbevd_2stage")]
-            public static extern int Ssbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz);
+            public static extern int Ssbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbevd_2stage_work")]
-            public static extern int Ssbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
+            public static extern int Ssbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbevx_2stage")]
-            public static extern int Ssbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
+            public static extern int Ssbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssbevx_2stage_work")]
-            public static extern int Ssbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, float* ab, int ldab, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int* ifail);
+            public static extern int Ssbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, float* ab, int ldab, float* q, int ldq, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyev_2stage")]
-            public static extern int Ssyev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* w);
+            public static extern int Ssyev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyev_2stage_work")]
-            public static extern int Ssyev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* w, float* work, int lwork);
+            public static extern int Ssyev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* w, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevd_2stage")]
-            public static extern int Ssyevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* w);
+            public static extern int Ssyevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevd_2stage_work")]
-            public static extern int Ssyevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* w, float* work, int lwork, int* iwork, int liwork);
+            public static extern int Ssyevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* w, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevr_2stage")]
-            public static extern int Ssyevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* isuppz);
+            public static extern int Ssyevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* isuppz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevr_2stage_work")]
-            public static extern int Ssyevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* isuppz, float* work, int lwork, int* iwork, int liwork);
+            public static extern int Ssyevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* isuppz, float* work, int lwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevx_2stage")]
-            public static extern int Ssyevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
+            public static extern int Ssyevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssyevx_2stage_work")]
-            public static extern int Ssyevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int* ifail);
+            public static extern int Ssyevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, float* a, int lda, float vl, float vu, int il, int iu, float abstol, int* m, float* w, float* z, int ldz, float* work, int lwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygv_2stage")]
-            public static extern int Ssygv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb, float* w);
+            public static extern int Ssygv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb, float* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssygv_2stage_work")]
-            public static extern int Ssygv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, float* a, int lda, float* b, int ldb, float* w, float* work, int lwork);
+            public static extern int Ssygv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, float* a, int lda, float* b, int ldb, float* w, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbev_2stage")]
-            public static extern int Zhbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz);
+            public static extern int Zhbev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbev_2stage_work")]
-            public static extern int Zhbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork);
+            public static extern int Zhbev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbevd_2stage")]
-            public static extern int Zhbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz);
+            public static extern int Zhbevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbevd_2stage_work")]
-            public static extern int Zhbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int Zhbevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbevx_2stage")]
-            public static extern int Zhbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Zhbevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhbevx_2stage_work")]
-            public static extern int Zhbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int* iwork, int* ifail);
+            public static extern int Zhbevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, int kd, IntPtr ab, int ldab, IntPtr q, int ldq, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheev_2stage")]
-            public static extern int Zheev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, double* w);
+            public static extern int Zheev2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheev_2stage_work")]
-            public static extern int Zheev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, double* w, IntPtr work, int lwork, double* rwork);
+            public static extern int Zheev2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, double* w, IntPtr work, int lwork, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevd_2stage")]
-            public static extern int Zheevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, double* w);
+            public static extern int Zheevd2stage(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevd_2stage_work")]
-            public static extern int Zheevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, double* w, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int Zheevd2stageWork(MatrixLayout matrixLayout, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, double* w, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevr_2stage")]
-            public static extern int Zheevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* isuppz);
+            public static extern int Zheevr2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* isuppz);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevr_2stage_work")]
-            public static extern int Zheevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* isuppz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
+            public static extern int Zheevr2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* isuppz, IntPtr work, int lwork, double* rwork, int lrwork, int* iwork, int liwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevx_2stage")]
-            public static extern int Zheevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
+            public static extern int Zheevx2stage(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zheevx_2stage_work")]
-            public static extern int Zheevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoLapack uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int* iwork, int* ifail);
+            public static extern int Zheevx2stageWork(MatrixLayout matrixLayout, sbyte jobz, sbyte range, UpLoChar uplo, int n, IntPtr a, int lda, double vl, double vu, int il, int iu, double abstol, int* m, double* w, IntPtr z, int ldz, IntPtr work, int lwork, double* rwork, int* iwork, int* ifail);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegv_2stage")]
-            public static extern int Zhegv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w);
+            public static extern int Zhegv2stage(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhegv_2stage_work")]
-            public static extern int Zhegv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w, IntPtr work, int lwork, double* rwork);
+            public static extern int Zhegv2stageWork(MatrixLayout matrixLayout, int itype, sbyte jobz, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr b, int ldb, double* w, IntPtr work, int lwork, double* rwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_mkl_cgetrfnp")]
             public static extern int MklCgetrfnp(MatrixLayout matrixLayout, int m, int n, IntPtr a, int lda);
@@ -7381,112 +7381,112 @@ namespace Spreads.Native
             public static extern int GetNancheck();
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesv_aa_2stage")]
-            public static extern int ChesvAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int ChesvAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf_aa_2stage")]
-            public static extern int ChetrfAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2);
+            public static extern int ChetrfAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chesv_aa_2stage_work")]
-            public static extern int ChesvAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ChesvAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrf_aa_2stage_work")]
-            public static extern int ChetrfAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr work, int lwork);
+            public static extern int ChetrfAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs_aa_2stage")]
-            public static extern int ChetrsAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int ChetrsAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_chetrs_aa_2stage_work")]
-            public static extern int ChetrsAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int ChetrsAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv_aa_2stage")]
-            public static extern int CsysvAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int CsysvAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csysv_aa_2stage_work")]
-            public static extern int CsysvAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int CsysvAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf_aa_2stage")]
-            public static extern int CsytrfAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2);
+            public static extern int CsytrfAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrf_aa_2stage_work")]
-            public static extern int CsytrfAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr work, int lwork);
+            public static extern int CsytrfAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs_aa_2stage")]
-            public static extern int CsytrsAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int CsytrsAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_csytrs_aa_2stage_work")]
-            public static extern int CsytrsAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int CsytrsAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv_aa_2stage")]
-            public static extern int DsysvAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldb);
+            public static extern int DsysvAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsysv_aa_2stage_work")]
-            public static extern int DsysvAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldb, double* work, int lwork);
+            public static extern int DsysvAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldb, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf_aa_2stage")]
-            public static extern int DsytrfAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2);
+            public static extern int DsytrfAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrf_aa_2stage_work")]
-            public static extern int DsytrfAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* work, int lwork);
+            public static extern int DsytrfAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs_aa_2stage")]
-            public static extern int DsytrsAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldb);
+            public static extern int DsytrsAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_dsytrs_aa_2stage_work")]
-            public static extern int DsytrsAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldb);
+            public static extern int DsytrsAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, double* a, int lda, double* tb, int ltb, int* ipiv, int* ipiv2, double* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv_aa_2stage")]
-            public static extern int ZsysvAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int ZsysvAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsysv_aa_2stage_work")]
-            public static extern int ZsysvAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZsysvAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf_aa_2stage")]
-            public static extern int ZsytrfAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2);
+            public static extern int ZsytrfAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrf_aa_2stage_work")]
-            public static extern int ZsytrfAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr work, int lwork);
+            public static extern int ZsytrfAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs_aa_2stage")]
-            public static extern int ZsytrsAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int ZsytrsAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zsytrs_aa_2stage_work")]
-            public static extern int ZsytrsAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int ZsytrsAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv_aa_2stage")]
-            public static extern int SsysvAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldb);
+            public static extern int SsysvAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssysv_aa_2stage_work")]
-            public static extern int SsysvAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldb, float* work, int lwork);
+            public static extern int SsysvAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldb, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf_aa_2stage")]
-            public static extern int SsytrfAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2);
+            public static extern int SsytrfAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrf_aa_2stage_work")]
-            public static extern int SsytrfAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* work, int lwork);
+            public static extern int SsytrfAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs_aa_2stage")]
-            public static extern int SsytrsAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldb);
+            public static extern int SsytrsAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_ssytrs_aa_2stage_work")]
-            public static extern int SsytrsAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldb);
+            public static extern int SsytrsAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, float* a, int lda, float* tb, int ltb, int* ipiv, int* ipiv2, float* b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesv_aa_2stage")]
-            public static extern int ZhesvAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int ZhesvAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhesv_aa_2stage_work")]
-            public static extern int ZhesvAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb, IntPtr work, int lwork);
+            public static extern int ZhesvAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf_aa_2stage_work")]
-            public static extern int ZhetrfAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr work, int lwork);
+            public static extern int ZhetrfAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr work, int lwork);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrf_aa_2stage")]
-            public static extern int ZhetrfAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2);
+            public static extern int ZhetrfAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs_aa_2stage")]
-            public static extern int ZhetrsAa2stage(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int ZhetrsAa2stage(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "LAPACKE_zhetrs_aa_2stage_work")]
-            public static extern int ZhetrsAa2stageWork(MatrixLayout matrixLayout, UpLoLapack uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
+            public static extern int ZhetrsAa2stageWork(MatrixLayout matrixLayout, UpLoChar uplo, int n, int nrhs, IntPtr a, int lda, IntPtr tb, int ltb, int* ipiv, int* ipiv2, IntPtr b, int ldb);
         }
     }
 }

@@ -17,8 +17,8 @@
   <ItemGroup>
     <EmbeddedResource Remove="Generated\**" />
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="Generated\**" />
-  </ItemGroup>
+<!--  <ItemGroup>-->
+<!--    <None Remove="Generated\**" />-->
+<!--  </ItemGroup>-->
   
 </Project>

@@ -39,7 +39,7 @@ namespace Spreads
             _value = value;
         }
 
-        public static implicit operator TransLapack(Transpose transpose) => (TransLapack)transpose._value;
+        public static implicit operator TransChar(Transpose transpose) => (TransChar)transpose._value;
 
         public static implicit operator TransCblas(Transpose transpose)
         {
@@ -117,7 +117,7 @@ namespace Spreads
             _value = value;
         }
 
-        public static implicit operator UpLoLapack(UpLo upLo) => (UpLoLapack)upLo._value;
+        public static implicit operator UpLoChar(UpLo upLo) => (UpLoChar)upLo._value;
 
         public static implicit operator UpLoCblas(UpLo upLo)
         {

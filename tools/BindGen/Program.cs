@@ -3,6 +3,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -19,15 +20,21 @@ namespace BindGen
     {
         public static void Main(string[] args)
         {
-            new HighLevelGen("CBLAS").GenForTypes(typeof(Spreads.Native.OpenBLAS.CBLAS), typeof(Spreads.Native.MKL.CBLAS));
-            new HighLevelGen("LAPACKE").GenForTypes(typeof(Spreads.Native.OpenBLAS.LAPACKE), typeof(Spreads.Native.MKL.LAPACKE));
-            // ConsoleDriver.Run(new OpenBlasLibrary());
-            // ConsoleDriver.Run(new MklLibrary());
+            var mklLibrary = new MklLibrary();
+            ConsoleDriver.Run(mklLibrary);
+            var mklAst = mklLibrary.AstCtx;
+            // new HighLevelGen("CBLAS").GenForTypes(typeof(Spreads.Native.OpenBLAS.CBLAS), typeof(Spreads.Native.MKL.CBLAS));
+            // new HighLevelGen("LAPACKE").GenForTypes(typeof(Spreads.Native.OpenBLAS.LAPACKE), typeof(Spreads.Native.MKL.LAPACKE));
+            ConsoleDriver.Run(new OpenBlasLibrary());
+
+            Console.WriteLine(mklAst);
         }
     }
 
     public class MklLibrary : ILibrary
     {
+        public ASTContext AstCtx { get; set; } 
+        
         public void Preprocess(Driver driver, ASTContext ctx)
         {
             driver.Context.TypeMaps.TypeMaps.Add("MKL_Complex8", new ComplexFloat());
@@ -61,12 +68,20 @@ namespace BindGen
             ctx.IgnoreEnumWithMatchingItem("CBLAS_OFFSET");
             ctx.IgnoreEnumWithMatchingItem("MklJitStatusT");
             ctx.IgnoreEnumWithMatchingItem("MKL_COMPACT_PACK");
+
+            foreach (var fortranFn in ctx.TranslationUnits.SelectMany(x => x.Declarations).Where(x => x.Name == x.Name.ToUpper()))
+            {
+                fortranFn.ExplicitlyIgnore();
+            }
+            
         }
 
         public void Postprocess(Driver driver, ASTContext ctx)
         {
+            AstCtx = ctx;
         }
 
+        
         public void Setup(Driver driver)
         {
             var options = driver.Options;
@@ -87,6 +102,12 @@ namespace BindGen
             module.Headers.Add("mkl_cblas.h");
             module.Headers.Add("mkl_lapacke.h");
             
+            // TODO Add those to Native.MKL
+            module.Headers.Add("mkl_trans.h");
+            module.Headers.Add("mkl_vml.h");
+            module.Headers.Add("mkl_vsl.h");
+            module.Headers.Add("mkl_rci.h");
+            
             module.OutputNamespace = "Spreads.Native.MKL";
             
             driver.ParserOptions.Verbose = true;
@@ -96,10 +117,16 @@ namespace BindGen
         {
             driver.AddTranslationUnitPass(new RemoveFunctionPrefixPass());
         }
+
+        public void GenerateCode(Driver driver, List<GeneratorOutput> outputs)
+        {
+        }
     }
 
     public class OpenBlasLibrary : ILibrary
     {
+        public ASTContext AstCtx { get; set; } 
+        
         public void Preprocess(Driver driver, ASTContext ctx)
         {
             driver.Context.TypeMaps.TypeMaps.Add("openblas_complex_float", new ComplexFloat());
@@ -121,10 +148,7 @@ namespace BindGen
 
         public void Postprocess(Driver driver, ASTContext ctx)
         {
-            Console.WriteLine("Catch me");
-            var p = ctx.FindFunction("Zbbcsd").First().Parameters.Single(x => x.Name == "v2t");
-            
-            p.QualifiedType = new QualifiedType(new PointerType(new QualifiedType(new CustomType("custom_type"))));
+            AstCtx = ctx;
         }
 
         public void Setup(Driver driver)

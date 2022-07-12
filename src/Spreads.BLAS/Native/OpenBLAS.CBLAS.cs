@@ -509,6 +509,20 @@ namespace Spreads.Native
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_zaxpby")]
             public static extern void Zaxpby(int n, IntPtr alpha, IntPtr x, int incx, IntPtr beta, IntPtr y, int incy);
 
+            
+            [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_sgeadd")]
+            public static extern void Sgeadd(MatrixLayout matrixLayout, int crows, int ccols, float calpha, float* a, int clda, float cbeta, float* c, int cldc);
+
+            [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_dgeadd")]
+            public static extern void Dgeadd(MatrixLayout matrixLayout, int crows, int ccols, double calpha, double* a, int clda, double cbeta, double* c, int cldc);
+
+            [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_cgeadd")]
+            public static extern void Cgeadd(MatrixLayout matrixLayout, int crows, int ccols, float* calpha, float* a, int clda, float* cbeta, float* c, int cldc);
+
+            [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_zgeadd")]
+            public static extern void Zgeadd(MatrixLayout matrixLayout, int crows, int ccols, double* calpha, double* a, int clda, double* cbeta, double* c, int cldc);
+            
+            
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_somatcopy")]
             public static extern void Somatcopy(MatrixLayout matrixLayout, TransCblas trans, int crows, int ccols, float calpha, float* a, int clda, float* b, int cldb);
 
@@ -533,17 +547,7 @@ namespace Spreads.Native
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_zimatcopy")]
             public static extern void Zimatcopy(MatrixLayout matrixLayout, TransCblas trans, int crows, int ccols, double* calpha, double* a, int clda, int cldb);
 
-            [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_sgeadd")]
-            public static extern void Sgeadd(MatrixLayout matrixLayout, int crows, int ccols, float calpha, float* a, int clda, float cbeta, float* c, int cldc);
-
-            [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_dgeadd")]
-            public static extern void Dgeadd(MatrixLayout matrixLayout, int crows, int ccols, double calpha, double* a, int clda, double cbeta, double* c, int cldc);
-
-            [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_cgeadd")]
-            public static extern void Cgeadd(MatrixLayout matrixLayout, int crows, int ccols, float* calpha, float* a, int clda, float* cbeta, float* c, int cldc);
-
-            [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_zgeadd")]
-            public static extern void Zgeadd(MatrixLayout matrixLayout, int crows, int ccols, double* calpha, double* a, int clda, double* cbeta, double* c, int cldc);
+            
         }
     }
 }

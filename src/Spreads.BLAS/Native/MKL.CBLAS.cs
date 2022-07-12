@@ -571,6 +571,54 @@ namespace Spreads.Native
 
             [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "cblas_zher2k")]
             public static extern void Zher2k(MatrixLayout matrixLayout, UpLoCblas uplo, TransCblas trans, int N, int K, IntPtr alpha, IntPtr A, int lda, IntPtr B, int ldb, double beta, IntPtr C, int ldc);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Simatcopy", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Simatcopy(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, float alpha, float* AB, ulong lda, ulong ldb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Dimatcopy", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Dimatcopy(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, double alpha, double* AB, ulong lda, ulong ldb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Cimatcopy", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Cimatcopy(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, Spreads.DataTypes.ComplexFloat alpha, IntPtr AB, ulong lda, ulong ldb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Zimatcopy", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Zimatcopy(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, IntPtr alpha, IntPtr AB, ulong lda, ulong ldb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Somatcopy", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Somatcopy(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, float alpha, float* A, ulong lda, float* B, ulong ldb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Domatcopy", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Domatcopy(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, double alpha, double* A, ulong lda, double* B, ulong ldb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Comatcopy", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Comatcopy(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, Spreads.DataTypes.ComplexFloat alpha, IntPtr A, ulong lda, IntPtr B, ulong ldb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Zomatcopy", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Zomatcopy(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, IntPtr alpha, IntPtr A, ulong lda, IntPtr B, ulong ldb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Somatcopy2", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Somatcopy2(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, float alpha, float* A, ulong lda, ulong stridea, float* B, ulong ldb, ulong strideb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Domatcopy2", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Domatcopy2(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, double alpha, double* A, ulong lda, ulong stridea, double* B, ulong ldb, ulong strideb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Comatcopy2", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Comatcopy2(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, DataTypes.ComplexFloat alpha, IntPtr A, ulong lda, ulong stridea, IntPtr B, ulong ldb, ulong strideb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Zomatcopy2", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Zomatcopy2(MatrixLayoutChar matrixLayout, TransChar trans, ulong rows, ulong cols, IntPtr alpha, IntPtr A, ulong lda, ulong stridea, IntPtr B, ulong ldb, ulong strideb);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Somatadd", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Somatadd(MatrixLayoutChar matrixLayout, TransChar transa, TransChar transb, ulong rows, ulong cols, float alpha, float* A, ulong lda, float beta, float* B, ulong ldb, float* C, ulong ldc);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Domatadd", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Domatadd(MatrixLayoutChar matrixLayout, TransChar transa, TransChar transb, ulong rows, ulong cols, double alpha, double* A, ulong lda, double beta, double* B, ulong ldb, double* C, ulong ldc);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Comatadd", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Comatadd(MatrixLayoutChar matrixLayout, TransChar transa, TransChar transb, ulong rows, ulong cols, DataTypes.ComplexFloat alpha, IntPtr A, ulong lda, Spreads.DataTypes.ComplexFloat beta, IntPtr B, ulong ldb, IntPtr C, ulong ldc);
+
+            [SuppressUnmanagedCodeSecurity, DllImport("mkl_rt", EntryPoint = "MKL_Zomatadd", CallingConvention = CallingConvention.Cdecl)]
+            internal static extern void Zomatadd(MatrixLayoutChar matrixLayout, TransChar transa, TransChar transb, ulong rows, ulong cols, IntPtr alpha, IntPtr A, ulong lda, IntPtr beta, IntPtr B, ulong ldb, IntPtr C, ulong ldc);
         }
     }
 }
