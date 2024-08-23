@@ -23,18 +23,21 @@ namespace BindGen
             var mklLibrary = new MklLibrary();
             ConsoleDriver.Run(mklLibrary);
             var mklAst = mklLibrary.AstCtx;
-            // new HighLevelGen("CBLAS").GenForTypes(typeof(Spreads.Native.OpenBLAS.CBLAS), typeof(Spreads.Native.MKL.CBLAS));
-            // new HighLevelGen("LAPACKE").GenForTypes(typeof(Spreads.Native.OpenBLAS.LAPACKE), typeof(Spreads.Native.MKL.LAPACKE));
-            ConsoleDriver.Run(new OpenBlasLibrary());
 
-            Console.WriteLine(mklAst);
+            var openBlasLibrary = new OpenBlasLibrary();
+            ConsoleDriver.Run(openBlasLibrary);
+            var obAst = openBlasLibrary.AstCtx;
+            
+            new HighLevelGen("CBLAS", mklAst, obAst).GenForTypes(typeof(Spreads.Native.OpenBLAS.CBLAS), typeof(Spreads.Native.MKL.CBLAS));
+            new HighLevelGen("LAPACKE", mklAst, obAst).GenForTypes(typeof(Spreads.Native.OpenBLAS.LAPACKE), typeof(Spreads.Native.MKL.LAPACKE));
+
         }
     }
 
     public class MklLibrary : ILibrary
     {
-        public ASTContext AstCtx { get; set; } 
-        
+        public ASTContext AstCtx { get; set; }
+
         public void Preprocess(Driver driver, ASTContext ctx)
         {
             driver.Context.TypeMaps.TypeMaps.Add("MKL_Complex8", new ComplexFloat());
@@ -73,7 +76,7 @@ namespace BindGen
             {
                 fortranFn.ExplicitlyIgnore();
             }
-            
+
         }
 
         public void Postprocess(Driver driver, ASTContext ctx)
@@ -81,7 +84,6 @@ namespace BindGen
             AstCtx = ctx;
         }
 
-        
         public void Setup(Driver driver)
         {
             var options = driver.Options;
@@ -91,7 +93,7 @@ namespace BindGen
             options.Verbose = true;
             options.GenerateSingleCSharpFile = false;
             options.GenerateFunctionTemplates = false;
-
+            options.DryRun = true;
             driver.Options.CheckSymbols = false;
 
             var module = options.AddModule("mkl_rt");
@@ -101,15 +103,15 @@ namespace BindGen
             module.Headers.Add("mkl_service.h");
             module.Headers.Add("mkl_cblas.h");
             module.Headers.Add("mkl_lapacke.h");
-            
+
             // TODO Add those to Native.MKL
             module.Headers.Add("mkl_trans.h");
-            module.Headers.Add("mkl_vml.h");
-            module.Headers.Add("mkl_vsl.h");
-            module.Headers.Add("mkl_rci.h");
-            
+            // module.Headers.Add("mkl_vml.h");
+            // module.Headers.Add("mkl_vsl.h");
+            // module.Headers.Add("mkl_rci.h");
+
             module.OutputNamespace = "Spreads.Native.MKL";
-            
+
             driver.ParserOptions.Verbose = true;
         }
 
@@ -125,15 +127,15 @@ namespace BindGen
 
     public class OpenBlasLibrary : ILibrary
     {
-        public ASTContext AstCtx { get; set; } 
-        
+        public ASTContext AstCtx { get; set; }
+
         public void Preprocess(Driver driver, ASTContext ctx)
         {
             driver.Context.TypeMaps.TypeMaps.Add("openblas_complex_float", new ComplexFloat());
             driver.Context.TypeMaps.TypeMaps.Add("openblas_complex_double", new ComplexDouble());
             driver.Context.TypeMaps.TypeMaps.Add("lapack_complex_float", new ComplexFloat());
             driver.Context.TypeMaps.TypeMaps.Add("lapack_complex_double", new ComplexDouble());
-            
+
             driver.Context.TypeMaps.TypeMaps.Add("double _Complex", new ComplexDouble());
             driver.Context.TypeMaps.TypeMaps.Add("CBLAS_ORDER", new CBLAS_LAYOUT());
             driver.Context.TypeMaps.TypeMaps.Add("CBLAS_TRANSPOSE", new CBLAS_TRANSPOSE());
@@ -160,7 +162,8 @@ namespace BindGen
             options.Verbose = true;
             options.GenerateSingleCSharpFile = false;
             options.GenerateFunctionTemplates = false;
-
+            options.DryRun = true;
+            
             driver.Options.CheckSymbols = false;
 
             var module = options.AddModule("libopenblas");
@@ -206,7 +209,7 @@ namespace BindGen
         public override bool IsIgnored => false;
 
         public override bool IsValueType => true;
-        
+
         public override Type CSharpSignatureType(TypePrinterContext ctx)
         {
             return new CustomType("Spreads.DataTypes.ComplexDouble");
@@ -286,7 +289,7 @@ namespace BindGen
     public class RemoveFunctionPrefixPass : TranslationUnitPass
     {
         private string[] Prefixes = new[] { "cblas_", "LAPACKE_", "MKL_", "openblas_" };
-        
+
         public override bool VisitFunctionDecl(Function function)
         {
             foreach (string prefix in Prefixes)
@@ -297,7 +300,7 @@ namespace BindGen
                     return false;
                 }
             }
-            
+
             return true;
         }
     }

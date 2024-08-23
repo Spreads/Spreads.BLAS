@@ -27,22 +27,22 @@ namespace Spreads.Native
             return false;
         }
 
-        [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_set_num_threads")]
-        public static extern void SetNumThreads(int num_threads);
+        [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_set_num_threads")]
+        public static extern void SetNumThreads(int numThreads);
         
-        [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_num_threads")]
+        [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_num_threads")]
         public static extern int GetNumThreads();
 
-        [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_num_procs")]
+        [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_num_procs")]
         public static extern int GetNumProcs();
 
-        [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_config")]
+        [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_config")]
         public static extern sbyte* GetConfig();
 
-        [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_corename")]
+        [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_corename")]
         public static extern sbyte* GetCorename();
 
-        [SuppressUnmanagedCodeSecurity, DllImport("openblas", CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_parallel")]
+        [SuppressUnmanagedCodeSecurity, DllImport(LibName, CallingConvention = CallingConvention.Cdecl, EntryPoint = "openblas_get_parallel")]
         public static extern int GetParallel();
     }
 }

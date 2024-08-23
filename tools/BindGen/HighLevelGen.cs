@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using CppSharp.AST;
+using Type = System.Type;
 
 // ReSharper disable HeapView.BoxingAllocation
 
@@ -12,13 +14,16 @@ namespace BindGen
     public class HighLevelGen
     {
         private readonly string _apiName;
+        private readonly ASTContext _mklContext;
+        private readonly ASTContext _obContext;
 
-        public HighLevelGen(string apiName)
+        public HighLevelGen(string apiName, ASTContext mklContext, ASTContext obContext)
         {
             _apiName = apiName;
-
+            _mklContext = mklContext;
+            _obContext = obContext;
         }
-        
+
         /// <summary>
         /// Generate high level API for all shared functions and the ones available in OB
         /// </summary>
@@ -33,36 +38,59 @@ namespace BindGen
                 .ToDictionary(x => x.Name, x => x);
 
             var sharedMethods = obMethods.Join(mkMethods, x => x.Key, x => x.Key,
-                    (x, y) => (x, y))
-                .Select(t => (t.x.Key, t.x.Value, t.y.Value))
-                .OrderBy(t => t.Key.Substring(1))
-                .ThenBy(t =>
-                {
-                    var c = t.Key.ToLower()[0];
-                    switch (c)
+                    (x, y) => (x: x, y))
+                .Select<(KeyValuePair<string, MethodInfo> x, KeyValuePair<string, MethodInfo> y), (string MethodName, MethodInfo obMethodInfo, MethodInfo mklMethodInfo)>(t => 
+                    (t.x.Key, t.x.Value, t.y.Value))
+                .GroupBy(t => t.MethodName.Substring(1))
+                .ToDictionary(x => x.Key,
+                    x =>
                     {
-                        case 's':
-                            return 0;
-                        case 'd':
-                            return 1;
-                        case 'c':
-                            return 2;
-                        default:
-                            return 3;
+                        return x.OrderBy(t =>
+                        {
+                            var c = t.MethodName.ToLower()[0];
+                            switch (c)
+                            {
+                                case 's':
+                                    return 0;
+                                case 'd':
+                                    return 1;
+                                case 'c':
+                                    return 2;
+                                default:
+                                    return 3;
+                            }
+                        }).ToArray();
                     }
-                })
-                .ToArray();
+                );
+
+            Directory.CreateDirectory(@"..\..\Generated\HighLevel");
             
             var sb = new StringBuilder();
-
-            foreach (var sharedMethod in sharedMethods)
+            foreach (var sharedMethod in sharedMethods.Values.SelectMany(x => x))
             {
                 GenMethod(sharedMethod, sb);
             }
-
-            Directory.CreateDirectory(@"..\..\Generated\HighLevel");
-
             File.WriteAllText($@"..\..\Generated\HighLevel\{_apiName}.cspart", sb.ToString());
+            
+            var sb2 = new StringBuilder();
+            foreach (var (methodFamily, methodInfos) in sharedMethods)  
+            {
+                GenMethodFamily(methodFamily, methodInfos, sb2);
+            }
+            // File.WriteAllText($@"..\..\Generated\HighLevel\{_apiName}2.cspart", sb.ToString());
+            
+        }
+
+        private void GenMethodFamily(string methodFamily, (string MethodName, MethodInfo obMethodInfo, MethodInfo mklMethodInfo)[] methodInfos, StringBuilder sb2)
+        {
+            if (methodInfos.Length != 4)
+            {
+                Console.WriteLine($"method family is not 4: {methodFamily}");
+                foreach (var (methodName, _, _) in methodInfos)
+                {
+                    Console.WriteLine($"\t {methodName}");
+                }
+            }
         }
 
         private void GenMethod((string methodName, MethodInfo ob, MethodInfo mk) m, StringBuilder sb)
